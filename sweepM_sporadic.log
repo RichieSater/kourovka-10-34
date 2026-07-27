@@ -1,0 +1,43 @@
+M24 (|S| = 244823040, out = 
+1): ALL k >= 1 EXCLUDED, ALL X, via (|U|,|V|,p,d) = [ 6072, 168, 5, 1 ]
+J3 (|S| = 50232960, out = 2): ALL k >= 1 EXCLUDED, ALL X, via (|U|,|V|,p,d) = 
+[ 1920, 1152, 19, 1 ]
+J4 (|S| = 86775571046077562880, out = 
+1): ALL k >= 1 EXCLUDED, ALL X, via (|U|,|V|,p,d) = [ 602, 444, 31, 1 ]
+HS (|S| = 44352000, out = 2): ALL k >= 1 EXCLUDED, ALL X, via (|U|,|V|,p,d) = 
+[ 2880, 1200, 11, 1 ]
+McL (|S| = 898128000, out = 
+2): ALL k >= 1 EXCLUDED, ALL X, via (|U|,|V|,p,d) = [ 7920, 3000, 7, 1 ]
+Co1 (|S| = 4157776806543360000, out = 
+1): ALL k >= 1 EXCLUDED, ALL X, via (|U|,|V|,p,d) = [ 3528, 3000, 23, 1 ]
+Co2 (|S| = 42305421312000, out = 
+1): ALL k >= 1 EXCLUDED, ALL X, via (|U|,|V|,p,d) = [ 933120, 12000, 23, 1 ]
+Co3 (|S| = 495766656000, out = 
+1): ALL k >= 1 EXCLUDED, ALL X, via (|U|,|V|,p,d) = [ 9072, 1440, 23, 1 ]
+Suz (|S| = 448345497600, out = 
+2): ALL k >= 1 EXCLUDED, ALL X, via (|U|,|V|,p,d) = [ 7800, 2520, 11, 1 ]
+He (|S| = 4030387200, out = 
+2): ALL k >= 1 EXCLUDED, ALL X, via (|U|,|V|,p,d) = [ 3528, 1200, 17, 1 ]
+Ru (|S| = 145926144000, out = 
+1): ALL k >= 1 EXCLUDED, ALL X, via (|U|,|V|,p,d) = [ 1440, 1200, 29, 1 ]
+ON (|S| = 460815505920, out = 
+2): ALL k >= 1 EXCLUDED, ALL X, via (|U|,|V|,p,d) = [ 161280, 10752, 31, 1 ]
+Fi22 (|S| = 64561751654400, out = 
+2): ALL k >= 1 EXCLUDED, ALL X, via (|U|,|V|,p,d) = [ 5038848, 95040, 13, 1 ]
+Fi23 (|S| = 4089470473293004800, out = 
+1): ALL k >= 1 EXCLUDED, ALL X, via (|U|,|V|,p,d) = [ 3916800, 6072, 13, 1 ]
+Fi24' (|S| = 1255205709190661721292800, out = 
+2): ALL k >= 1 EXCLUDED, ALL X, via (|U|,|V|,p,d) = [ 105840, 406, 23, 1 ]
+HN (|S| = 273030912000000, out = 
+2): ALL k >= 1 EXCLUDED, ALL X, via (|U|,|V|,p,d) = [ 93312, 58320, 19, 1 ]
+Ly (|S| = 51765179004000000, out = 
+1): ALL k >= 1 EXCLUDED, ALL X, via (|U|,|V|,p,d) = [ 1474, 666, 31, 1 ]
+Th (|S| = 90745943887872000, out = 
+1): ALL k >= 1 EXCLUDED, ALL X, via (|U|,|V|,p,d) = [ 465, 120, 19, 1 ]
+B (|S| = 4154781481226426191177580544000000, out = 
+1): ALL k >= 1 EXCLUDED, ALL X, via (|U|,|V|,p,d) = [ 1320, 1081, 31, 1 ]
+M (|S| = 808017424794512875886459904961710757005754368000000000, out = 
+1): ALL k >= 1 EXCLUDED, ALL X, via (|U|,|V|,p,d) = [ 1711, 1640, 71, 1 ]
+2F4(2)' (|S| = 17971200, out = 
+2): ALL k >= 1 EXCLUDED, ALL X, via (|U|,|V|,p,d) = [ 6144, 1200, 13, 1 ]
+SWEEP M DONE.

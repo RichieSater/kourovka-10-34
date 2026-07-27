@@ -1,0 +1,4 @@
+.DS_Store
+paper/*.aux
+paper/*.out
+paper/kourovka1034.log

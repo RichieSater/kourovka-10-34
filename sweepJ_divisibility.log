@@ -1,0 +1,192 @@
+### A5: |S| = 60 = [ [ 2, 2 ], [ 3, 1 ], [ 5, 1 ] ], |Out| = 
+2, maximal classes [ 6, 12, 10 ]
+    X/Inn = 1 (x=1): ALL k >= 2 EXCLUDED via (|U|,|V|,p,d) = [ 6, 12, 5, 1 ]
+    X/Inn = C2 (x=2): ALL k >= 2 EXCLUDED via (|U|,|V|,p,d) = [ 6, 12, 5, 1 ]
+    ==> A5^k EXCLUDED FOR ALL k >= 2 AND ALL X.
+### L3_2: |S| = 168 = [ [ 2, 3 ], [ 3, 1 ], [ 7, 1 ] ], |Out| = 
+2, maximal classes [ 24, 24, 21 ]
+    X/Inn = 1 (x=1): ALL k >= 2 EXCLUDED via (|U|,|V|,p,d) = [ 24, 24, 7, 1 ]
+    X/Inn = C2 (x=2): NOT all-k excluded; stable classes 
+[ 21 ]; k<=30 excluded: [  ]
+    ==> L3_2 SURVIVES for X with x in [ 2 ]
+### A6: |S| = 360 = [ [ 2, 3 ], [ 3, 2 ], [ 5, 1 ] ], |Out| = 
+4, maximal classes [ 60, 60, 36, 24, 24 ]
+    X/Inn = 1 (x=1): ALL k >= 2 EXCLUDED via (|U|,|V|,p,d) = [ 24, 24, 5, 1 ]
+    X/Inn = C2 (x=2): NOT all-k excluded; stable classes 
+[ 36 ]; k<=30 excluded: [  ]
+    X/Inn = C2 (x=2): ALL k >= 2 EXCLUDED via (|U|,|V|,p,d) = [ 24, 24, 5, 1 ]
+    X/Inn = C2 (x=2): NOT all-k excluded; stable classes 
+[ 36 ]; k<=30 excluded: [  ]
+    X/Inn = C2 x C2 (x=4): NOT all-k excluded; stable classes 
+[ 36 ]; k<=30 excluded: [  ]
+    ==> A6 SURVIVES for X with x in [ 2, 2, 4 ]
+### L2_8: |S| = 504 = [ [ 2, 3 ], [ 3, 2 ], [ 7, 1 ] ], |Out| = 
+3, maximal classes [ 56, 18, 14 ]
+    X/Inn = 1 (x=1): ALL k >= 2 EXCLUDED via (|U|,|V|,p,d) = [ 18, 14, 2, 1 ]
+    X/Inn = C3 (x=3): ALL k >= 2 EXCLUDED via (|U|,|V|,p,d) = [ 18, 14, 2, 1 ]
+    ==> L2_8^k EXCLUDED FOR ALL k >= 2 AND ALL X.
+### L2_11: |S| = 660 = [ [ 2, 2 ], [ 3, 1 ], [ 5, 1 ], [ 11, 1 ] ], |Out| = 
+2, maximal classes [ 60, 60, 55, 12 ]
+    X/Inn = 1 (x=1): ALL k >= 2 EXCLUDED via (|U|,|V|,p,d) = [ 60, 12, 11, 1 ]
+    X/Inn = C2 (x=2): NOT all-k excluded; stable classes 
+[ 55, 12 ]; k<=30 excluded: [  ]
+    ==> L2_11 SURVIVES for X with x in [ 2 ]
+### L2_13: |S| = 1092 = [ [ 2, 2 ], [ 3, 1 ], [ 7, 1 ], [ 13, 1 ] ], |Out| = 
+2, maximal classes [ 78, 14, 12, 12 ]
+    X/Inn = 1 (x=1): ALL k >= 2 EXCLUDED via (|U|,|V|,p,d) = [ 12, 12, 13, 1 ]
+    X/Inn = C2 (x=2): ALL k >= 2 EXCLUDED via (|U|,|V|,p,d) = [ 12, 12, 13, 1 
+ ]
+    ==> L2_13^k EXCLUDED FOR ALL k >= 2 AND ALL X.
+### L2_17: |S| = 2448 = [ [ 2, 4 ], [ 3, 2 ], [ 17, 1 ] ], |Out| = 
+2, maximal classes [ 136, 24, 24, 18, 16 ]
+    X/Inn = 1 (x=1): ALL k >= 2 EXCLUDED via (|U|,|V|,p,d) = [ 18, 16, 17, 1 ]
+    X/Inn = C2 (x=2): ALL k >= 2 EXCLUDED via (|U|,|V|,p,d) = [ 18, 16, 17, 1 
+ ]
+    ==> L2_17^k EXCLUDED FOR ALL k >= 2 AND ALL X.
+### A7: |S| = 2520 = [ [ 2, 3 ], [ 3, 2 ], [ 5, 1 ], [ 7, 1 ] ], |Out| = 
+2, maximal classes [ 72, 120, 360, 168, 168 ]
+    X/Inn = 1 (x=1): ALL k >= 2 EXCLUDED via (|U|,|V|,p,d) = [ 168, 168, 5, 1 
+ ]
+    X/Inn = C2 (x=2): ALL k >= 2 EXCLUDED via (|U|,|V|,p,d) = 
+[ 120, 360, 7, 1 ]
+    ==> A7^k EXCLUDED FOR ALL k >= 2 AND ALL X.
+### L2_19: |S| = 3420 = [ [ 2, 2 ], [ 3, 2 ], [ 5, 1 ], [ 19, 1 ] ], |Out| = 
+2, maximal classes [ 171, 60, 60, 20, 18 ]
+    X/Inn = 1 (x=1): ALL k >= 2 EXCLUDED via (|U|,|V|,p,d) = [ 20, 18, 19, 1 ]
+    X/Inn = C2 (x=2): ALL k >= 2 EXCLUDED via (|U|,|V|,p,d) = [ 20, 18, 19, 1 
+ ]
+    ==> L2_19^k EXCLUDED FOR ALL k >= 2 AND ALL X.
+### L2_16: |S| = 4080 = [ [ 2, 4 ], [ 3, 1 ], [ 5, 1 ], [ 17, 1 ] ], |Out| = 
+4, maximal classes [ 240, 60, 34, 30 ]
+    X/Inn = 1 (x=1): ALL k >= 2 EXCLUDED via (|U|,|V|,p,d) = [ 34, 30, 2, 2 ]
+    X/Inn = C2 (x=2): ALL k >= 2 EXCLUDED via (|U|,|V|,p,d) = [ 34, 30, 2, 2 ]
+    X/Inn = C4 (x=4): ALL k >= 2 EXCLUDED via (|U|,|V|,p,d) = [ 60, 30, 17, 1 
+ ]
+    ==> L2_16^k EXCLUDED FOR ALL k >= 2 AND ALL X.
+### L3_3: |S| = 5616 = [ [ 2, 4 ], [ 3, 3 ], [ 13, 1 ] ], |Out| = 
+2, maximal classes [ 432, 432, 39, 24 ]
+    X/Inn = 1 (x=1): ALL k >= 2 EXCLUDED via (|U|,|V|,p,d) = [ 39, 24, 3, 1 ]
+    X/Inn = C2 (x=2): ALL k >= 2 EXCLUDED via (|U|,|V|,p,d) = [ 39, 24, 3, 1 ]
+    ==> L3_3^k EXCLUDED FOR ALL k >= 2 AND ALL X.
+### U3_3: |S| = 6048 = [ [ 2, 5 ], [ 3, 3 ], [ 7, 1 ] ], |Out| = 
+2, maximal classes [ 216, 168, 96, 96 ]
+    X/Inn = 1 (x=1): ALL k >= 2 EXCLUDED via (|U|,|V|,p,d) = [ 96, 96, 7, 1 ]
+    X/Inn = C2 (x=2): ALL k >= 2 EXCLUDED via (|U|,|V|,p,d) = [ 96, 96, 7, 1 ]
+    ==> U3_3^k EXCLUDED FOR ALL k >= 2 AND ALL X.
+### L2_23: |S| = 6072 = [ [ 2, 3 ], [ 3, 1 ], [ 11, 1 ], [ 23, 1 ] ], |Out| = 
+2, maximal classes [ 253, 24, 24, 24, 22 ]
+    X/Inn = 1 (x=1): ALL k >= 2 EXCLUDED via (|U|,|V|,p,d) = [ 24, 22, 23, 1 ]
+    X/Inn = C2 (x=2): ALL k >= 2 EXCLUDED via (|U|,|V|,p,d) = [ 24, 22, 23, 1 
+ ]
+    ==> L2_23^k EXCLUDED FOR ALL k >= 2 AND ALL X.
+### L2_25: |S| = 7800 = [ [ 2, 3 ], [ 3, 1 ], [ 5, 2 ], [ 13, 1 ] ], |Out| = 
+4, maximal classes [ 300, 120, 120, 26, 24 ]
+    X/Inn = 1 (x=1): ALL k >= 2 EXCLUDED via (|U|,|V|,p,d) = [ 26, 24, 5, 2 ]
+    X/Inn = C2 (x=2): ALL k >= 2 EXCLUDED via (|U|,|V|,p,d) = [ 26, 24, 5, 2 ]
+    X/Inn = C2 (x=2): ALL k >= 2 EXCLUDED via (|U|,|V|,p,d) = [ 26, 24, 5, 2 ]
+    X/Inn = C2 (x=2): ALL k >= 2 EXCLUDED via (|U|,|V|,p,d) = [ 26, 24, 5, 2 ]
+    X/Inn = C2 x C2 (x=4): ALL k >= 2 EXCLUDED via (|U|,|V|,p,d) = 
+[ 26, 24, 5, 2 ]
+    ==> L2_25^k EXCLUDED FOR ALL k >= 2 AND ALL X.
+### M11: |S| = 7920 = [ [ 2, 4 ], [ 3, 2 ], [ 5, 1 ], [ 11, 1 ] ], |Out| = 
+1, maximal classes [ 720, 660, 144, 120, 48 ]
+    X/Inn = 1 (x=1): ALL k >= 2 EXCLUDED via (|U|,|V|,p,d) = [ 120, 48, 11, 1 
+ ]
+    ==> M11^k EXCLUDED FOR ALL k >= 2 AND ALL X.
+### L2_27: |S| = 9828 = [ [ 2, 2 ], [ 3, 3 ], [ 7, 1 ], [ 13, 1 ] ], |Out| = 
+6, maximal classes [ 351, 28, 26, 12 ]
+    X/Inn = 1 (x=1): ALL k >= 2 EXCLUDED via (|U|,|V|,p,d) = [ 26, 12, 7, 1 ]
+    X/Inn = C2 (x=2): ALL k >= 2 EXCLUDED via (|U|,|V|,p,d) = [ 26, 12, 7, 1 ]
+    X/Inn = C3 (x=3): ALL k >= 2 EXCLUDED via (|U|,|V|,p,d) = [ 26, 12, 7, 1 ]
+    X/Inn = C6 (x=6): ALL k >= 2 EXCLUDED via (|U|,|V|,p,d) = [ 26, 12, 7, 1 ]
+    ==> L2_27^k EXCLUDED FOR ALL k >= 2 AND ALL X.
+### L2_29: |S| = 12180 = [ [ 2, 2 ], [ 3, 1 ], [ 5, 1 ], [ 7, 1 ], [ 29, 1 ] 
+ ], |Out| = 2, maximal classes [ 406, 60, 60, 30, 28 ]
+    X/Inn = 1 (x=1): ALL k >= 2 EXCLUDED via (|U|,|V|,p,d) = [ 30, 28, 29, 1 ]
+    X/Inn = C2 (x=2): ALL k >= 2 EXCLUDED via (|U|,|V|,p,d) = [ 30, 28, 29, 1 
+ ]
+    ==> L2_29^k EXCLUDED FOR ALL k >= 2 AND ALL X.
+### L2_31: |S| = 14880 = [ [ 2, 5 ], [ 3, 1 ], [ 5, 1 ], [ 31, 1 ] ], |Out| = 
+2, maximal classes [ 465, 60, 60, 32, 30, 24, 24 ]
+    X/Inn = 1 (x=1): ALL k >= 2 EXCLUDED via (|U|,|V|,p,d) = [ 24, 24, 31, 1 ]
+    X/Inn = C2 (x=2): ALL k >= 2 EXCLUDED via (|U|,|V|,p,d) = [ 32, 30, 31, 1 
+ ]
+    ==> L2_31^k EXCLUDED FOR ALL k >= 2 AND ALL X.
+### A8: |S| = 20160 = [ [ 2, 6 ], [ 3, 2 ], [ 5, 1 ], [ 7, 1 ] ], |Out| = 
+2, maximal classes [ 360, 720, 2520, 576, 1344, 1344 ]
+    X/Inn = 1 (x=1): ALL k >= 2 EXCLUDED via (|U|,|V|,p,d) = 
+[ 1344, 1344, 5, 1 ]
+    X/Inn = C2 (x=2): ALL k >= 2 EXCLUDED via (|U|,|V|,p,d) = 
+[ 720, 576, 7, 1 ]
+    ==> A8^k EXCLUDED FOR ALL k >= 2 AND ALL X.
+### L3_4: |S| = 20160 = [ [ 2, 6 ], [ 3, 2 ], [ 5, 1 ], [ 7, 1 ] ], |Out| = 
+12, maximal classes [ 960, 960, 360, 360, 360, 168, 168, 168, 72 ]
+    X/Inn = 1 (x=1): ALL k >= 2 EXCLUDED via (|U|,|V|,p,d) = [ 168, 72, 5, 1 ]
+    X/Inn = C2 (x=2): ALL k >= 2 EXCLUDED via (|U|,|V|,p,d) = [ 168, 72, 5, 1 
+ ]
+    X/Inn = C2 (x=2): ALL k >= 2 EXCLUDED via (|U|,|V|,p,d) = [ 168, 72, 5, 1 
+ ]
+    X/Inn = C2 (x=2): ALL k >= 2 EXCLUDED via (|U|,|V|,p,d) = [ 168, 72, 5, 1 
+ ]
+    X/Inn = C3 (x=3): ALL k >= 2 EXCLUDED via (|U|,|V|,p,d) = [ 960, 72, 7, 1 
+ ]
+    X/Inn = C2 x C2 (x=4): ALL k >= 2 EXCLUDED via (|U|,|V|,p,d) = 
+[ 168, 72, 5, 1 ]
+    X/Inn = S3 (x=6): NOT all-k excluded; stable classes 
+[ 72 ]; k<=30 excluded: [  ]
+    X/Inn = S3 (x=6): ALL k >= 2 EXCLUDED via (|U|,|V|,p,d) = [ 960, 72, 7, 1 
+ ]
+    X/Inn = C6 (x=6): NOT all-k excluded; stable classes 
+[ 72 ]; k<=30 excluded: [  ]
+    X/Inn = D12 (x=12): NOT all-k excluded; stable classes 
+[ 72 ]; k<=30 excluded: [  ]
+    ==> L3_4 SURVIVES for X with x in [ 6, 6, 12 ]
+### L2_37: |S| = 25308 = [ [ 2, 2 ], [ 3, 2 ], [ 19, 1 ], [ 37, 1 ] 
+ ], |Out| = 2, maximal classes [ 666, 38, 36, 12 ]
+    X/Inn = 1 (x=1): ALL k >= 2 EXCLUDED via (|U|,|V|,p,d) = [ 36, 12, 37, 1 ]
+    X/Inn = C2 (x=2): ALL k >= 2 EXCLUDED via (|U|,|V|,p,d) = [ 36, 12, 37, 1 
+ ]
+    ==> L2_37^k EXCLUDED FOR ALL k >= 2 AND ALL X.
+### Sp43: |S| = 25920 = [ [ 2, 6 ], [ 3, 4 ], [ 5, 1 ] ], |Out| = 
+2, maximal classes [ 960, 720, 648, 648, 576 ]
+    X/Inn = 1 (x=1): ALL k >= 2 EXCLUDED via (|U|,|V|,p,d) = [ 648, 576, 5, 1 
+ ]
+    X/Inn = C2 (x=2): ALL k >= 2 EXCLUDED via (|U|,|V|,p,d) = 
+[ 648, 576, 5, 1 ]
+    ==> Sp43^k EXCLUDED FOR ALL k >= 2 AND ALL X.
+Error, no method found! For debugging hints type ?Recovery from NoMethodFound
+Error, no 1st choice method found for `NormalizerOp' on 2 arguments
+Sz8: ERROR, skipped
+### L2_32: |S| = 32736 = [ [ 2, 5 ], [ 3, 1 ], [ 11, 1 ], [ 31, 1 ] 
+ ], |Out| = 5, maximal classes [ 992, 66, 62 ]
+    X/Inn = 1 (x=1): ALL k >= 2 EXCLUDED via (|U|,|V|,p,d) = [ 66, 62, 2, 3 ]
+    X/Inn = C5 (x=5): ALL k >= 2 EXCLUDED via (|U|,|V|,p,d) = [ 66, 62, 2, 3 ]
+    ==> L2_32^k EXCLUDED FOR ALL k >= 2 AND ALL X.
+### U3_4: |S| = 62400 = [ [ 2, 6 ], [ 3, 1 ], [ 5, 2 ], [ 13, 1 ] ], |Out| = 
+4, maximal classes [ 960, 300, 150, 39 ]
+    X/Inn = 1 (x=1): ALL k >= 2 EXCLUDED via (|U|,|V|,p,d) = [ 150, 39, 2, 5 ]
+    X/Inn = C2 (x=2): ALL k >= 2 EXCLUDED via (|U|,|V|,p,d) = [ 150, 39, 2, 5 
+ ]
+    X/Inn = C4 (x=4): ALL k >= 2 EXCLUDED via (|U|,|V|,p,d) = [ 150, 39, 2, 5 
+ ]
+    ==> U3_4^k EXCLUDED FOR ALL k >= 2 AND ALL X.
+### M12: |S| = 95040 = [ [ 2, 6 ], [ 3, 3 ], [ 5, 1 ], [ 11, 1 ] ], |Out| = 
+2, maximal classes [ 7920, 7920, 1440, 1440, 660, 432, 432, 240, 192, 192, 72 
+ ]
+    X/Inn = 1 (x=1): ALL k >= 2 EXCLUDED via (|U|,|V|,p,d) = [ 192, 72, 11, 1 
+ ]
+    X/Inn = C2 (x=2): ALL k >= 2 EXCLUDED via (|U|,|V|,p,d) = 
+[ 192, 72, 11, 1 ]
+    ==> M12^k EXCLUDED FOR ALL k >= 2 AND ALL X.
+### U3_5: |S| = 126000 = [ [ 2, 4 ], [ 3, 2 ], [ 5, 3 ], [ 7, 1 ] ], |Out| = 
+6, maximal classes [ 2520, 2520, 2520, 1000, 720, 720, 720, 240 ]
+    X/Inn = 1 (x=1): ALL k >= 2 EXCLUDED via (|U|,|V|,p,d) = [ 720, 240, 7, 1 
+ ]
+    X/Inn = C2 (x=2): ALL k >= 2 EXCLUDED via (|U|,|V|,p,d) = 
+[ 720, 240, 7, 1 ]
+    X/Inn = C3 (x=3): ALL k >= 2 EXCLUDED via (|U|,|V|,p,d) = 
+[ 1000, 240, 7, 1 ]
+    X/Inn = S3 (x=6): ALL k >= 2 EXCLUDED via (|U|,|V|,p,d) = 
+[ 1000, 240, 7, 1 ]
+    ==> U3_5^k EXCLUDED FOR ALL k >= 2 AND ALL X.
+Error, Variable: 'JankoGroup' must have a value

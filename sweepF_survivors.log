@@ -1,0 +1,55 @@
+=== socle Sp43^2:  |S|^k = 671846400,  |W/N| = 8
+    |G| = 1343692800  [G:N] = 2  maxclasses = 8 (suppl: 
+7)  fails: supp-supp sizes 51840,51840
+    |G| = 2687385600  [G:N] = 4  maxclasses = 10 (suppl: 
+7)  fails: supp-supp sizes 103680,103680
+    |G| = 2687385600  [G:N] = 4  maxclasses = 6 (suppl: 
+5)  fails: supp-supp sizes 3686400,2073600
+    |G| = 5374771200  [G:N] = 8  maxclasses = 8 (suppl: 
+5)  fails: supp-supp sizes 7372800,4147200
+=== socle Sp43^2 DONE: 4 transitive-top candidates tested
+=== socle A9^2:  |S|^k = 32920473600,  |W/N| = 8
+    |G| = 65840947200  [G:N] = 2  maxclasses = 11 (suppl: 
+10)  fails: supp-supp sizes 362880,362880
+    |G| = 131681894400  [G:N] = 4  maxclasses = 11 (suppl: 
+8)  fails: supp-supp sizes 725760,725760
+    |G| = 131681894400  [G:N] = 4  maxclasses = 7 (suppl: 
+6)  fails: supp-supp sizes 8294400,18662400
+    |G| = 263363788800  [G:N] = 8  maxclasses = 9 (suppl: 
+6)  fails: supp-supp sizes 16588800,37324800
+=== socle A9^2 DONE: 4 transitive-top candidates tested
+=== socle M22^2:  |S|^k = 196709990400,  |W/N| = 8
+    |G| = 393419980800  [G:N] = 2  maxclasses = 11 (suppl: 
+10)  fails: supp-supp sizes 887040,887040
+    |G| = 786839961600  [G:N] = 4  maxclasses = 11 (suppl: 
+8)  fails: supp-supp sizes 1774080,1774080
+    |G| = 786839961600  [G:N] = 4  maxclasses = 7 (suppl: 
+6)  fails: supp-supp sizes 1625702400,132710400
+    |G| = 1573679923200  [G:N] = 8  maxclasses = 9 (suppl: 
+6)  fails: supp-supp sizes 3251404800,265420800
+=== socle M22^2 DONE: 4 transitive-top candidates tested
+=== socle U35^2:  |S|^k = 15876000000,  |W/N| = 72
+    |G| = 31752000000  [G:N] = 2  maxclasses = 13 (suppl: 
+12)  fails: supp-supp sizes 252000,252000
+    |G| = 63504000000  [G:N] = 4  maxclasses = 10 (suppl: 
+7)  fails: supp-supp sizes 504000,504000
+    |G| = 63504000000  [G:N] = 4  maxclasses = 6 (suppl: 
+5)  fails: supp-supp sizes 25401600,2073600
+    |G| = 95256000000  [G:N] = 6  maxclasses = 8 (suppl: 
+6)  fails: supp-supp sizes 756000,6000000
+    |G| = 95256000000  [G:N] = 6  maxclasses = 10 (suppl: 
+8)  fails: supp-supp sizes 756000,756000
+    |G| = 127008000000  [G:N] = 8  maxclasses = 8 (suppl: 
+5)  fails: supp-supp sizes 50803200,4147200
+    |G| = 190512000000  [G:N] = 12  maxclasses = 10 (suppl: 
+6)  fails: supp-supp sizes 1512000,12000000
+    |G| = 285768000000  [G:N] = 18  maxclasses = 8 (suppl: 
+5)  fails: supp-supp sizes 18000000,1036800
+    |G| = 571536000000  [G:N] = 36  maxclasses = 10 (suppl: 
+5)  fails: supp-supp sizes 36000000,2073600
+    |G| = 571536000000  [G:N] = 36  maxclasses = 7 (suppl: 
+5)  fails: supp-supp sizes 36000000,2073600
+    |G| = 1143072000000  [G:N] = 72  maxclasses = 9 (suppl: 
+5)  fails: supp-supp sizes 72000000,4147200
+=== socle U35^2 DONE: 11 transitive-top candidates tested
+SWEEP F DONE.

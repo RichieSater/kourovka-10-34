@@ -1,0 +1,25 @@
+### J1: |S| = 175560 = [ [ 2, 3 ], [ 3, 1 ], [ 5, 1 ], [ 7, 1 ], [ 11, 1 ], 
+  [ 19, 1 ] ], |Out| = 1, maximal classes [ 660, 168, 120, 114, 110, 60, 42 ]
+    X/Inn = 1 (x=1): ALL k >= 2 EXCLUDED via (|U|,|V|,p,d) = [ 60, 42, 19, 1 ]
+    ==> J1^k EXCLUDED FOR ALL k >= 2 AND ALL X.
+### A9: |S| = 181440 = [ [ 2, 6 ], [ 3, 4 ], [ 5, 1 ], [ 7, 1 ] ], |Out| = 
+2, maximal classes [ 1440, 2160, 5040, 20160, 648, 216, 1512, 1512 ]
+    X/Inn = 1 (x=1): ALL k >= 2 EXCLUDED via (|U|,|V|,p,d) = 
+[ 1512, 1512, 5, 1 ]
+    X/Inn = C2 (x=2): ALL k >= 2 EXCLUDED via (|U|,|V|,p,d) = 
+[ 648, 216, 7, 1 ]
+    ==> A9^k EXCLUDED FOR ALL k >= 2 AND ALL X.
+### L3_5: |S| = 372000 = [ [ 2, 5 ], [ 3, 1 ], [ 5, 3 ], [ 31, 1 ] ], |Out| = 
+2, maximal classes [ 12000, 12000, 120, 96, 93 ]
+    X/Inn = 1 (x=1): ALL k >= 2 EXCLUDED via (|U|,|V|,p,d) = [ 96, 93, 5, 3 ]
+    X/Inn = C2 (x=2): ALL k >= 2 EXCLUDED via (|U|,|V|,p,d) = [ 96, 93, 5, 3 ]
+    ==> L3_5^k EXCLUDED FOR ALL k >= 2 AND ALL X.
+### M22: |S| = 443520 = [ [ 2, 7 ], [ 3, 2 ], [ 5, 1 ], [ 7, 1 ], [ 11, 1 ] 
+ ], |Out| = 2, maximal classes [ 20160, 5760, 2520, 2520, 1920, 1344, 720, 
+  660 ]
+    X/Inn = 1 (x=1): ALL k >= 2 EXCLUDED via (|U|,|V|,p,d) = [ 720, 660, 7, 1 
+ ]
+    X/Inn = C2 (x=2): ALL k >= 2 EXCLUDED via (|U|,|V|,p,d) = 
+[ 720, 660, 7, 1 ]
+    ==> M22^k EXCLUDED FOR ALL k >= 2 AND ALL X.
+SWEEP J2 DONE.
