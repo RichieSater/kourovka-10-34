@@ -1,0 +1,12 @@
+We prove that every finite group which coincides with the product of any
+two of its non-conjugate maximal subgroups is soluble, answering Problem
+10.34 of the Kourovka Notebook (V. S. Monakhov, 1986) in the negative.
+The proof combines a reduction to groups with a unique minimal normal
+subgroup S^k, a divisibility criterion that excludes a simple group S
+for all k >= 1 at once from a single pair of automorphism-stable
+conjugacy classes of subgroups of S, a uniform construction of such
+pairs for every infinite family of finite simple groups (with Zsigmondy
+primes as the arithmetic obstruction), and machine-generated
+certificates, produced in GAP, covering the sporadic groups and all
+small cases, including every non-abelian simple group of order at most
+1.05 x 10^7.
