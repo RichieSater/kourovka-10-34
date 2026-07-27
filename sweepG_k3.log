@@ -1,0 +1,757 @@
+=== socle M11^3:  |S|^k = 496793088000,  |W/N| = 6
+    |G| = 1490379264000  [G:N] = 3  maxclasses = 7 (suppl: 
+6)  fails: supp-supp sizes 23760,1119744000
+    |G| = 2980758528000  [G:N] = 6  maxclasses = 8 (suppl: 
+6)  fails: supp-supp sizes 47520,2239488000
+=== socle M11^3 DONE: 2 transitive-top candidates tested
+=== socle A7^3:  |S|^k = 16003008000,  |W/N| = 48
+    |G| = 48009024000  [G:N] = 3  maxclasses = 7 (suppl: 
+6)  fails: supp-supp sizes 7560,1119744
+    |G| = 96018048000  [G:N] = 6  maxclasses = 7 (suppl: 
+5)  fails: supp-supp sizes 15120,2239488
+    |G| = 96018048000  [G:N] = 6  maxclasses = 8 (suppl: 
+6)  fails: supp-supp sizes 15120,2239488
+    |G| = 96018048000  [G:N] = 6  maxclasses = 7 (suppl: 
+5)  fails: supp-supp sizes 15120,2239488
+    |G| = 192036096000  [G:N] = 12  maxclasses = 6 (suppl: 
+4)  fails: supp-supp sizes 4478976,20736000
+    |G| = 192036096000  [G:N] = 12  maxclasses = 9 (suppl: 
+5)  fails: supp-supp sizes 30240,4478976
+    |G| = 384072192000  [G:N] = 24  maxclasses = 7 (suppl: 
+4)  fails: supp-supp sizes 8957952,41472000
+    |G| = 384072192000  [G:N] = 24  maxclasses = 7 (suppl: 
+4)  fails: supp-supp sizes 8957952,41472000
+    |G| = 384072192000  [G:N] = 24  maxclasses = 7 (suppl: 
+4)  fails: supp-supp sizes 8957952,41472000
+    |G| = 768144384000  [G:N] = 48  maxclasses = 9 (suppl: 
+4)  fails: supp-supp sizes 17915904,82944000
+=== socle A7^3 DONE: 10 transitive-top candidates tested
+=== socle A8^3:  |S|^k = 8193540096000,  |W/N| = 48
+    |G| = 24580620288000  [G:N] = 3  maxclasses = 8 (suppl: 
+7)  fails: supp-supp sizes 60480,139968000
+    |G| = 49161240576000  [G:N] = 6  maxclasses = 9 (suppl: 
+7)  fails: supp-supp sizes 120960,279936000
+    |G| = 49161240576000  [G:N] = 6  maxclasses = 9 (suppl: 
+7)  fails: supp-supp sizes 120960,279936000
+    |G| = 49161240576000  [G:N] = 6  maxclasses = 9 (suppl: 
+7)  fails: supp-supp sizes 120960,279936000
+    |G| = 98322481152000  [G:N] = 12  maxclasses = 8 (suppl: 
+6)  fails: supp-supp sizes 559872000,4478976000
+    |G| = 98322481152000  [G:N] = 12  maxclasses = 11 (suppl: 
+7)  fails: supp-supp sizes 241920,559872000
+    |G| = 196644962304000  [G:N] = 24  maxclasses = 9 (suppl: 
+6)  fails: supp-supp sizes 1119744000,8957952000
+    |G| = 196644962304000  [G:N] = 24  maxclasses = 9 (suppl: 
+6)  fails: supp-supp sizes 1119744000,8957952000
+    |G| = 196644962304000  [G:N] = 24  maxclasses = 9 (suppl: 
+6)  fails: supp-supp sizes 1119744000,8957952000
+    |G| = 393289924608000  [G:N] = 48  maxclasses = 11 (suppl: 
+6)  fails: supp-supp sizes 2239488000,17915904000
+=== socle A8^3 DONE: 10 transitive-top candidates tested
+=== socle A9^3:  |S|^k = 5973090729984000,  |W/N| = 48
+    |G| = 17919272189952000  [G:N] = 3  maxclasses = 10 (suppl: 
+9)  fails: supp-supp sizes 544320,8957952000
+    |G| = 35838544379904000  [G:N] = 6  maxclasses = 9 (suppl: 
+7)  fails: supp-supp sizes 1088640,17915904000
+    |G| = 35838544379904000  [G:N] = 6  maxclasses = 11 (suppl: 
+9)  fails: supp-supp sizes 1088640,17915904000
+    |G| = 35838544379904000  [G:N] = 6  maxclasses = 9 (suppl: 
+7)  fails: supp-supp sizes 1088640,17915904000
+    |G| = 71677088759808000  [G:N] = 12  maxclasses = 8 (suppl: 
+6)  fails: supp-supp sizes 35831808000,120932352000
+    |G| = 71677088759808000  [G:N] = 12  maxclasses = 11 (suppl: 
+7)  fails: supp-supp sizes 2177280,35831808000
+    |G| = 143354177519616000  [G:N] = 24  maxclasses = 9 (suppl: 
+6)  fails: supp-supp sizes 71663616000,241864704000
+    |G| = 143354177519616000  [G:N] = 24  maxclasses = 9 (suppl: 
+6)  fails: supp-supp sizes 71663616000,241864704000
+    |G| = 143354177519616000  [G:N] = 24  maxclasses = 9 (suppl: 
+6)  fails: supp-supp sizes 71663616000,241864704000
+    |G| = 286708355039232000  [G:N] = 48  maxclasses = 11 (suppl: 
+6)  fails: supp-supp sizes 143327232000,483729408000
+=== socle A9^3 DONE: 10 transitive-top candidates tested
+=== socle M22^3:  |S|^k = 87244814942208000,  |W/N| = 48
+    |G| = 261734444826624000  [G:N] = 3  maxclasses = 10 (suppl: 
+9)  fails: supp-supp sizes 1330560,24580620288000
+    |G| = 523468889653248000  [G:N] = 6  maxclasses = 9 (suppl: 
+7)  fails: supp-supp sizes 2661120,49161240576000
+    |G| = 523468889653248000  [G:N] = 6  maxclasses = 11 (suppl: 
+9)  fails: supp-supp sizes 2661120,49161240576000
+    |G| = 523468889653248000  [G:N] = 6  maxclasses = 9 (suppl: 
+7)  fails: supp-supp sizes 2661120,49161240576000
+    |G| = 1046937779306496000  [G:N] = 12  maxclasses = 8 (suppl: 
+6)  fails: supp-supp sizes 98322481152000,2293235712000
+    |G| = 1046937779306496000  [G:N] = 12  maxclasses = 11 (suppl: 
+7)  fails: supp-supp sizes 5322240,98322481152000
+    |G| = 2093875558612992000  [G:N] = 24  maxclasses = 9 (suppl: 
+6)  fails: supp-supp sizes 196644962304000,4586471424000
+    |G| = 2093875558612992000  [G:N] = 24  maxclasses = 9 (suppl: 
+6)  fails: supp-supp sizes 196644962304000,4586471424000
+    |G| = 2093875558612992000  [G:N] = 24  maxclasses = 9 (suppl: 
+6)  fails: supp-supp sizes 196644962304000,4586471424000
+    |G| = 4187751117225984000  [G:N] = 48  maxclasses = 11 (suppl: 
+6)  fails: supp-supp sizes 393289924608000,9172942848000
+=== socle M22^3 DONE: 10 transitive-top candidates tested
+=== socle U33^3:  |S|^k = 221225582592,  |W/N| = 48
+    |G| = 663676747776  [G:N] = 3  maxclasses = 6 (suppl: 
+5)  fails: supp-supp sizes 18144,30233088
+    |G| = 1327353495552  [G:N] = 6  maxclasses = 7 (suppl: 
+5)  fails: supp-supp sizes 36288,60466176
+    |G| = 1327353495552  [G:N] = 6  maxclasses = 7 (suppl: 
+5)  fails: supp-supp sizes 36288,60466176
+    |G| = 1327353495552  [G:N] = 6  maxclasses = 7 (suppl: 
+5)  fails: supp-supp sizes 36288,60466176
+    |G| = 2654706991104  [G:N] = 12  maxclasses = 6 (suppl: 
+4)  fails: supp-supp sizes 120932352,10616832
+    |G| = 2654706991104  [G:N] = 12  maxclasses = 9 (suppl: 
+5)  fails: supp-supp sizes 72576,120932352
+    |G| = 5309413982208  [G:N] = 24  maxclasses = 7 (suppl: 
+4)  fails: supp-supp sizes 241864704,21233664
+    |G| = 5309413982208  [G:N] = 24  maxclasses = 7 (suppl: 
+4)  fails: supp-supp sizes 241864704,21233664
+    |G| = 5309413982208  [G:N] = 24  maxclasses = 7 (suppl: 
+4)  fails: supp-supp sizes 241864704,21233664
+    |G| = 10618827964416  [G:N] = 48  maxclasses = 9 (suppl: 
+4)  fails: supp-supp sizes 483729408,42467328
+=== socle U33^3 DONE: 10 transitive-top candidates tested
+=== socle Sp43^3:  |S|^k = 17414258688000,  |W/N| = 48
+    |G| = 52242776064000  [G:N] = 3  maxclasses = 7 (suppl: 
+6)  fails: supp-supp sizes 77760,2654208000
+    |G| = 104485552128000  [G:N] = 6  maxclasses = 8 (suppl: 
+6)  fails: supp-supp sizes 155520,5308416000
+    |G| = 104485552128000  [G:N] = 6  maxclasses = 8 (suppl: 
+6)  fails: supp-supp sizes 155520,5308416000
+    |G| = 104485552128000  [G:N] = 6  maxclasses = 8 (suppl: 
+6)  fails: supp-supp sizes 155520,5308416000
+    |G| = 208971104256000  [G:N] = 12  maxclasses = 7 (suppl: 
+5)  fails: supp-supp sizes 10616832000,4478976000
+    |G| = 208971104256000  [G:N] = 12  maxclasses = 10 (suppl: 
+6)  fails: supp-supp sizes 311040,10616832000
+    |G| = 417942208512000  [G:N] = 24  maxclasses = 8 (suppl: 
+5)  fails: supp-supp sizes 21233664000,8957952000
+    |G| = 417942208512000  [G:N] = 24  maxclasses = 8 (suppl: 
+5)  fails: supp-supp sizes 21233664000,8957952000
+    |G| = 417942208512000  [G:N] = 24  maxclasses = 8 (suppl: 
+5)  fails: supp-supp sizes 21233664000,8957952000
+    |G| = 835884417024000  [G:N] = 48  maxclasses = 10 (suppl: 
+5)  fails: supp-supp sizes 42467328000,17915904000
+=== socle Sp43^3 DONE: 10 transitive-top candidates tested
+=== socle L2_16^3:  |S|^k = 67917312000,  |W/N| = 384
+    |G| = 203751936000  [G:N] = 3  maxclasses = 6 (suppl: 
+5)  fails: supp-supp sizes 12240,41472000
+    |G| = 407503872000  [G:N] = 6  maxclasses = 7 (suppl: 
+5)  fails: supp-supp sizes 24480,82944000
+    |G| = 407503872000  [G:N] = 6  maxclasses = 7 (suppl: 
+5)  fails: supp-supp sizes 24480,82944000
+    |G| = 407503872000  [G:N] = 6  maxclasses = 7 (suppl: 
+5)  fails: supp-supp sizes 24480,82944000
+    |G| = 815007744000  [G:N] = 12  maxclasses = 7 (suppl: 
+5)  fails: supp-supp sizes 48960,165888000
+    |G| = 815007744000  [G:N] = 12  maxclasses = 7 (suppl: 
+5)  fails: supp-supp sizes 48960,165888000
+    |G| = 815007744000  [G:N] = 12  maxclasses = 6 (suppl: 
+4)  fails: supp-supp sizes 165888000,2592000
+    |G| = 815007744000  [G:N] = 12  maxclasses = 9 (suppl: 
+5)  fails: supp-supp sizes 48960,165888000
+    |G| = 1630015488000  [G:N] = 24  maxclasses = 7 (suppl: 
+4)  fails: supp-supp sizes 331776000,5184000
+    |G| = 1630015488000  [G:N] = 24  maxclasses = 7 (suppl: 
+4)  fails: supp-supp sizes 331776000,5184000
+    |G| = 1630015488000  [G:N] = 24  maxclasses = 9 (suppl: 
+5)  fails: supp-supp sizes 97920,331776000
+    |G| = 1630015488000  [G:N] = 24  maxclasses = 7 (suppl: 
+4)  fails: supp-supp sizes 331776000,5184000
+    |G| = 3260030976000  [G:N] = 48  maxclasses = 7 (suppl: 
+4)  fails: supp-supp sizes 663552000,10368000
+    |G| = 3260030976000  [G:N] = 48  maxclasses = 6 (suppl: 
+4)  fails: supp-supp sizes 663552000,10368000
+    |G| = 3260030976000  [G:N] = 48  maxclasses = 9 (suppl: 
+4)  fails: supp-supp sizes 663552000,10368000
+    |G| = 3260030976000  [G:N] = 48  maxclasses = 7 (suppl: 
+4)  fails: supp-supp sizes 663552000,10368000
+    |G| = 6520061952000  [G:N] = 96  maxclasses = 7 (suppl: 
+4)  fails: supp-supp sizes 1327104000,20736000
+    |G| = 6520061952000  [G:N] = 96  maxclasses = 9 (suppl: 
+4)  fails: supp-supp sizes 1327104000,20736000
+    |G| = 6520061952000  [G:N] = 96  maxclasses = 7 (suppl: 
+4)  fails: supp-supp sizes 1327104000,20736000
+    |G| = 6520061952000  [G:N] = 96  maxclasses = 7 (suppl: 
+4)  fails: supp-supp sizes 1327104000,20736000
+    |G| = 13040123904000  [G:N] = 192  maxclasses = 7 (suppl: 
+4)  fails: supp-supp sizes 2654208000,41472000
+    |G| = 13040123904000  [G:N] = 192  maxclasses = 9 (suppl: 
+4)  fails: supp-supp sizes 2654208000,41472000
+    |G| = 13040123904000  [G:N] = 192  maxclasses = 7 (suppl: 
+4)  fails: supp-supp sizes 2654208000,41472000
+    |G| = 26080247808000  [G:N] = 384  maxclasses = 9 (suppl: 
+4)  fails: supp-supp sizes 5308416000,82944000
+=== socle L2_16^3 DONE: 24 transitive-top candidates tested
+=== socle L2_32^3:  |S|^k = 35081393504256,  |W/N| = 750
+    |G| = 105244180512768  [G:N] = 3  maxclasses = 5 (suppl: 
+4)  fails: supp-supp sizes 98208,2928574464
+    |G| = 210488361025536  [G:N] = 6  maxclasses = 6 (suppl: 
+4)  fails: supp-supp sizes 196416,5857148928
+    |G| = 526220902563840  [G:N] = 15  maxclasses = 6 (suppl: 
+4)  fails: supp-supp sizes 491040,14642872320
+    |G| = 1052441805127680  [G:N] = 30  maxclasses = 7 (suppl: 
+4)  fails: supp-supp sizes 982080,29285744640
+    |G| = 2631104512819200  [G:N] = 75  maxclasses = 5 (suppl: 
+3)  fails: supp-supp sizes 73214361600,17874600
+    |G| = 5262209025638400  [G:N] = 150  maxclasses = 6 (suppl: 
+3)  fails: supp-supp sizes 146428723200,35749200
+    |G| = 13155522564096000  [G:N] = 375  maxclasses = 6 (suppl: 
+3)  fails: supp-supp sizes 366071808000,89373000
+    |G| = 26311045128192000  [G:N] = 750  maxclasses = 7 (suppl: 
+3)  fails: supp-supp sizes 732143616000,178746000
+=== socle L2_32^3 DONE: 8 transitive-top candidates tested
+=== socle L3_4^3:  |S|^k = 8193540096000,  |W/N| = 10368
+    |G| = 24580620288000  [G:N] = 3  maxclasses = 13 (suppl: 
+12)  fails: supp-supp sizes 60480,60480
+    |G| = 49161240576000  [G:N] = 6  maxclasses = 12 (suppl: 
+10)  fails: supp-supp sizes 120960,279936000
+    |G| = 49161240576000  [G:N] = 6  maxclasses = 10 (suppl: 
+8)  fails: supp-supp sizes 120960,120960
+    |G| = 49161240576000  [G:N] = 6  maxclasses = 10 (suppl: 
+8)  fails: supp-supp sizes 120960,120960
+    |G| = 49161240576000  [G:N] = 6  maxclasses = 12 (suppl: 
+10)  fails: supp-supp sizes 120960,5308416000
+    |G| = 49161240576000  [G:N] = 6  maxclasses = 14 (suppl: 
+12)  fails: supp-supp sizes 120960,120960
+    |G| = 49161240576000  [G:N] = 6  maxclasses = 8 (suppl: 
+6)  fails: supp-supp sizes 120960,279936000
+    |G| = 49161240576000  [G:N] = 6  maxclasses = 8 (suppl: 
+6)  fails: supp-supp sizes 120960,5308416000
+    |G| = 73741860864000  [G:N] = 9  maxclasses = 5 (suppl: 
+4)  fails: supp-supp sizes 7962624000,7962624000
+    |G| = 73741860864000  [G:N] = 9  maxclasses = 11 (suppl: 
+7)  fails: supp-supp sizes 181440,181440
+    |G| = 98322481152000  [G:N] = 12  maxclasses = 12 (suppl: 
+8)  fails: supp-supp sizes 241920,241920
+    |G| = 98322481152000  [G:N] = 12  maxclasses = 14 (suppl: 
+10)  fails: supp-supp sizes 241920,559872000
+    |G| = 98322481152000  [G:N] = 12  maxclasses = 10 (suppl: 
+6)  fails: supp-supp sizes 241920,559872000
+    |G| = 98322481152000  [G:N] = 12  maxclasses = 10 (suppl: 
+6)  fails: supp-supp sizes 241920,559872000
+    |G| = 98322481152000  [G:N] = 12  maxclasses = 10 (suppl: 
+6)  fails: supp-supp sizes 241920,559872000
+    |G| = 98322481152000  [G:N] = 12  maxclasses = 10 (suppl: 
+6)  fails: supp-supp sizes 241920,10616832000
+    |G| = 98322481152000  [G:N] = 12  maxclasses = 10 (suppl: 
+6)  fails: supp-supp sizes 241920,559872000
+    |G| = 98322481152000  [G:N] = 12  maxclasses = 11 (suppl: 
+9)  fails: supp-supp sizes 559872000,559872000
+    |G| = 98322481152000  [G:N] = 12  maxclasses = 7 (suppl: 
+5)  fails: supp-supp sizes 559872000,84934656
+    |G| = 98322481152000  [G:N] = 12  maxclasses = 7 (suppl: 
+5)  fails: supp-supp sizes 559872000,84934656
+    |G| = 98322481152000  [G:N] = 12  maxclasses = 7 (suppl: 
+5)  fails: supp-supp sizes 10616832000,10616832000
+    |G| = 147483721728000  [G:N] = 18  maxclasses = 8 (suppl: 
+5)  fails: supp-supp sizes 362880,15925248000
+    |G| = 147483721728000  [G:N] = 18  maxclasses = 6 (suppl: 
+4)  fails: supp-supp sizes 127401984,6718464
+    |G| = 147483721728000  [G:N] = 18  maxclasses = 12 (suppl: 
+7)  fails: supp-supp sizes 362880,362880
+    |G| = 147483721728000  [G:N] = 18  maxclasses = 8 (suppl: 
+5)  fails: supp-supp sizes 362880,127401984
+    |G| = 147483721728000  [G:N] = 18  maxclasses = 8 (suppl: 
+5)  fails: supp-supp sizes 362880,127401984
+    |G| = 147483721728000  [G:N] = 18  maxclasses = 6 (suppl: 
+4)  fails: supp-supp sizes 127401984,6718464
+    |G| = 147483721728000  [G:N] = 18  maxclasses = 12 (suppl: 
+7)  fails: supp-supp sizes 362880,362880
+    |G| = 147483721728000  [G:N] = 18  maxclasses = 6 (suppl: 
+4)  fails: supp-supp sizes 15925248000,15925248000
+    |G| = 147483721728000  [G:N] = 18  maxclasses = 12 (suppl: 
+7)  fails: supp-supp sizes 362880,362880
+    |G| = 147483721728000  [G:N] = 18  maxclasses = 8 (suppl: 
+5)  fails: supp-supp sizes 362880,15925248000
+    |G| = 196644962304000  [G:N] = 24  maxclasses = 8 (suppl: 
+5)  fails: supp-supp sizes 1119744000,169869312
+    |G| = 196644962304000  [G:N] = 24  maxclasses = 8 (suppl: 
+5)  fails: supp-supp sizes 21233664000,21233664000
+    |G| = 196644962304000  [G:N] = 24  maxclasses = 8 (suppl: 
+5)  fails: supp-supp sizes 21233664000,21233664000
+    |G| = 196644962304000  [G:N] = 24  maxclasses = 8 (suppl: 
+5)  fails: supp-supp sizes 1119744000,169869312
+    |G| = 196644962304000  [G:N] = 24  maxclasses = 8 (suppl: 
+5)  fails: supp-supp sizes 1119744000,169869312
+    |G| = 196644962304000  [G:N] = 24  maxclasses = 8 (suppl: 
+5)  fails: supp-supp sizes 1119744000,169869312
+    |G| = 196644962304000  [G:N] = 24  maxclasses = 8 (suppl: 
+5)  fails: supp-supp sizes 1119744000,169869312
+    |G| = 196644962304000  [G:N] = 24  maxclasses = 8 (suppl: 
+5)  fails: supp-supp sizes 1119744000,169869312
+    |G| = 196644962304000  [G:N] = 24  maxclasses = 8 (suppl: 
+5)  fails: supp-supp sizes 1119744000,169869312
+    |G| = 196644962304000  [G:N] = 24  maxclasses = 12 (suppl: 
+9)  fails: supp-supp sizes 1119744000,1119744000
+    |G| = 196644962304000  [G:N] = 24  maxclasses = 8 (suppl: 
+5)  fails: supp-supp sizes 1119744000,169869312
+    |G| = 196644962304000  [G:N] = 24  maxclasses = 8 (suppl: 
+5)  fails: supp-supp sizes 1119744000,169869312
+    |G| = 196644962304000  [G:N] = 24  maxclasses = 8 (suppl: 
+5)  fails: supp-supp sizes 1119744000,169869312
+    |G| = 196644962304000  [G:N] = 24  maxclasses = 12 (suppl: 
+9)  fails: supp-supp sizes 1119744000,1119744000
+    |G| = 196644962304000  [G:N] = 24  maxclasses = 14 (suppl: 
+6)  fails: supp-supp sizes 483840,1119744000
+    |G| = 196644962304000  [G:N] = 24  maxclasses = 8 (suppl: 
+5)  fails: supp-supp sizes 1119744000,169869312
+    |G| = 196644962304000  [G:N] = 24  maxclasses = 8 (suppl: 
+5)  fails: supp-supp sizes 1119744000,169869312
+    |G| = 196644962304000  [G:N] = 24  maxclasses = 8 (suppl: 
+5)  fails: supp-supp sizes 1119744000,169869312
+    |G| = 196644962304000  [G:N] = 24  maxclasses = 8 (suppl: 
+5)  fails: supp-supp sizes 1119744000,169869312
+    |G| = 196644962304000  [G:N] = 24  maxclasses = 8 (suppl: 
+5)  fails: supp-supp sizes 1119744000,169869312
+    |G| = 196644962304000  [G:N] = 24  maxclasses = 12 (suppl: 
+9)  fails: supp-supp sizes 1119744000,1119744000
+    |G| = 196644962304000  [G:N] = 24  maxclasses = 8 (suppl: 
+5)  fails: supp-supp sizes 21233664000,21233664000
+    |G| = 196644962304000  [G:N] = 24  maxclasses = 8 (suppl: 
+5)  fails: supp-supp sizes 1119744000,169869312
+    |G| = 196644962304000  [G:N] = 24  maxclasses = 8 (suppl: 
+5)  fails: supp-supp sizes 1119744000,169869312
+    |G| = 196644962304000  [G:N] = 24  maxclasses = 8 (suppl: 
+5)  fails: supp-supp sizes 1119744000,169869312
+    |G| = 221225582592000  [G:N] = 27  maxclasses = 8 (suppl: 
+4)  fails: supp-supp sizes 23887872000,23887872000
+    |G| = 221225582592000  [G:N] = 27  maxclasses = 8 (suppl: 
+4)  fails: supp-supp sizes 23887872000,23887872000
+    |G| = 294967443456000  [G:N] = 36  maxclasses = 10 (suppl: 
+5)  fails: supp-supp sizes 725760,31850496000
+    |G| = 294967443456000  [G:N] = 36  maxclasses = 10 (suppl: 
+5)  fails: supp-supp sizes 725760,254803968
+    |G| = 294967443456000  [G:N] = 36  maxclasses = 10 (suppl: 
+5)  fails: supp-supp sizes 725760,254803968
+    |G| = 294967443456000  [G:N] = 36  maxclasses = 10 (suppl: 
+5)  fails: supp-supp sizes 725760,254803968
+    |G| = 294967443456000  [G:N] = 36  maxclasses = 10 (suppl: 
+5)  fails: supp-supp sizes 725760,254803968
+    |G| = 294967443456000  [G:N] = 36  maxclasses = 14 (suppl: 
+7)  fails: supp-supp sizes 725760,725760
+    |G| = 294967443456000  [G:N] = 36  maxclasses = 8 (suppl: 
+4)  fails: supp-supp sizes 254803968,13436928
+    |G| = 294967443456000  [G:N] = 36  maxclasses = 6 (suppl: 
+4)  fails: supp-supp sizes 254803968,13436928
+    |G| = 294967443456000  [G:N] = 36  maxclasses = 10 (suppl: 
+5)  fails: supp-supp sizes 725760,254803968
+    |G| = 294967443456000  [G:N] = 36  maxclasses = 9 (suppl: 
+4)  fails: supp-supp sizes 254803968,13436928
+    |G| = 393289924608000  [G:N] = 48  maxclasses = 10 (suppl: 
+5)  fails: supp-supp sizes 2239488000,339738624
+    |G| = 393289924608000  [G:N] = 48  maxclasses = 10 (suppl: 
+5)  fails: supp-supp sizes 2239488000,339738624
+    |G| = 393289924608000  [G:N] = 48  maxclasses = 10 (suppl: 
+5)  fails: supp-supp sizes 2239488000,339738624
+    |G| = 393289924608000  [G:N] = 48  maxclasses = 10 (suppl: 
+5)  fails: supp-supp sizes 2239488000,339738624
+    |G| = 393289924608000  [G:N] = 48  maxclasses = 10 (suppl: 
+5)  fails: supp-supp sizes 2239488000,339738624
+    |G| = 393289924608000  [G:N] = 48  maxclasses = 10 (suppl: 
+5)  fails: supp-supp sizes 2239488000,339738624
+    |G| = 393289924608000  [G:N] = 48  maxclasses = 10 (suppl: 
+5)  fails: supp-supp sizes 2239488000,339738624
+    |G| = 393289924608000  [G:N] = 48  maxclasses = 10 (suppl: 
+5)  fails: supp-supp sizes 2239488000,339738624
+    |G| = 393289924608000  [G:N] = 48  maxclasses = 10 (suppl: 
+5)  fails: supp-supp sizes 2239488000,339738624
+    |G| = 393289924608000  [G:N] = 48  maxclasses = 10 (suppl: 
+5)  fails: supp-supp sizes 2239488000,339738624
+    |G| = 393289924608000  [G:N] = 48  maxclasses = 10 (suppl: 
+5)  fails: supp-supp sizes 2239488000,339738624
+    |G| = 393289924608000  [G:N] = 48  maxclasses = 14 (suppl: 
+9)  fails: supp-supp sizes 2239488000,2239488000
+    |G| = 393289924608000  [G:N] = 48  maxclasses = 10 (suppl: 
+5)  fails: supp-supp sizes 2239488000,339738624
+    |G| = 393289924608000  [G:N] = 48  maxclasses = 10 (suppl: 
+5)  fails: supp-supp sizes 2239488000,339738624
+    |G| = 393289924608000  [G:N] = 48  maxclasses = 10 (suppl: 
+5)  fails: supp-supp sizes 2239488000,339738624
+    |G| = 393289924608000  [G:N] = 48  maxclasses = 10 (suppl: 
+5)  fails: supp-supp sizes 2239488000,339738624
+    |G| = 393289924608000  [G:N] = 48  maxclasses = 10 (suppl: 
+5)  fails: supp-supp sizes 2239488000,339738624
+    |G| = 393289924608000  [G:N] = 48  maxclasses = 10 (suppl: 
+5)  fails: supp-supp sizes 42467328000,42467328000
+    |G| = 393289924608000  [G:N] = 48  maxclasses = 10 (suppl: 
+5)  fails: supp-supp sizes 2239488000,339738624
+    |G| = 393289924608000  [G:N] = 48  maxclasses = 11 (suppl: 
+5)  fails: supp-supp sizes 2239488000,339738624
+    |G| = 393289924608000  [G:N] = 48  maxclasses = 10 (suppl: 
+5)  fails: supp-supp sizes 2239488000,339738624
+    |G| = 393289924608000  [G:N] = 48  maxclasses = 10 (suppl: 
+5)  fails: supp-supp sizes 2239488000,339738624
+    |G| = 393289924608000  [G:N] = 48  maxclasses = 10 (suppl: 
+5)  fails: supp-supp sizes 2239488000,339738624
+    |G| = 442451165184000  [G:N] = 54  maxclasses = 9 (suppl: 
+4)  fails: supp-supp sizes 382205952,20155392
+    |G| = 442451165184000  [G:N] = 54  maxclasses = 7 (suppl: 
+4)  fails: supp-supp sizes 47775744000,47775744000
+    |G| = 442451165184000  [G:N] = 54  maxclasses = 9 (suppl: 
+4)  fails: supp-supp sizes 47775744000,47775744000
+    |G| = 442451165184000  [G:N] = 54  maxclasses = 7 (suppl: 
+4)  fails: supp-supp sizes 382205952,20155392
+    |G| = 442451165184000  [G:N] = 54  maxclasses = 7 (suppl: 
+4)  fails: supp-supp sizes 47775744000,47775744000
+    |G| = 442451165184000  [G:N] = 54  maxclasses = 7 (suppl: 
+4)  fails: supp-supp sizes 382205952,20155392
+    |G| = 442451165184000  [G:N] = 54  maxclasses = 9 (suppl: 
+4)  fails: supp-supp sizes 382205952,20155392
+    |G| = 442451165184000  [G:N] = 54  maxclasses = 7 (suppl: 
+4)  fails: supp-supp sizes 47775744000,47775744000
+    |G| = 442451165184000  [G:N] = 54  maxclasses = 7 (suppl: 
+4)  fails: supp-supp sizes 382205952,20155392
+    |G| = 442451165184000  [G:N] = 54  maxclasses = 9 (suppl: 
+4)  fails: supp-supp sizes 382205952,20155392
+    |G| = 589934886912000  [G:N] = 72  maxclasses = 7 (suppl: 
+4)  fails: supp-supp sizes 509607936,26873856
+    |G| = 589934886912000  [G:N] = 72  maxclasses = 8 (suppl: 
+4)  fails: supp-supp sizes 509607936,26873856
+    |G| = 589934886912000  [G:N] = 72  maxclasses = 10 (suppl: 
+4)  fails: supp-supp sizes 509607936,26873856
+    |G| = 589934886912000  [G:N] = 72  maxclasses = 8 (suppl: 
+4)  fails: supp-supp sizes 509607936,26873856
+    |G| = 589934886912000  [G:N] = 72  maxclasses = 8 (suppl: 
+4)  fails: supp-supp sizes 509607936,26873856
+    |G| = 589934886912000  [G:N] = 72  maxclasses = 10 (suppl: 
+4)  fails: supp-supp sizes 509607936,26873856
+    |G| = 589934886912000  [G:N] = 72  maxclasses = 10 (suppl: 
+4)  fails: supp-supp sizes 509607936,26873856
+    |G| = 589934886912000  [G:N] = 72  maxclasses = 14 (suppl: 
+5)  fails: supp-supp sizes 1451520,509607936
+    |G| = 589934886912000  [G:N] = 72  maxclasses = 7 (suppl: 
+4)  fails: supp-supp sizes 509607936,26873856
+    |G| = 589934886912000  [G:N] = 72  maxclasses = 7 (suppl: 
+4)  fails: supp-supp sizes 509607936,26873856
+    |G| = 589934886912000  [G:N] = 72  maxclasses = 8 (suppl: 
+4)  fails: supp-supp sizes 509607936,26873856
+    |G| = 663676747776000  [G:N] = 81  maxclasses = 8 (suppl: 
+4)  fails: supp-supp sizes 71663616000,71663616000
+    |G| = 786579849216000  [G:N] = 96  maxclasses = 12 (suppl: 
+5)  fails: supp-supp sizes 4478976000,679477248
+    |G| = 786579849216000  [G:N] = 96  maxclasses = 12 (suppl: 
+5)  fails: supp-supp sizes 4478976000,679477248
+    |G| = 786579849216000  [G:N] = 96  maxclasses = 12 (suppl: 
+5)  fails: supp-supp sizes 4478976000,679477248
+    |G| = 786579849216000  [G:N] = 96  maxclasses = 14 (suppl: 
+5)  fails: supp-supp sizes 4478976000,679477248
+    |G| = 786579849216000  [G:N] = 96  maxclasses = 10 (suppl: 
+5)  fails: supp-supp sizes 4478976000,679477248
+    |G| = 786579849216000  [G:N] = 96  maxclasses = 10 (suppl: 
+5)  fails: supp-supp sizes 4478976000,679477248
+    |G| = 786579849216000  [G:N] = 96  maxclasses = 10 (suppl: 
+5)  fails: supp-supp sizes 4478976000,679477248
+    |G| = 786579849216000  [G:N] = 96  maxclasses = 10 (suppl: 
+5)  fails: supp-supp sizes 4478976000,679477248
+    |G| = 786579849216000  [G:N] = 96  maxclasses = 14 (suppl: 
+5)  fails: supp-supp sizes 4478976000,679477248
+    |G| = 786579849216000  [G:N] = 96  maxclasses = 14 (suppl: 
+5)  fails: supp-supp sizes 4478976000,679477248
+    |G| = 884902330368000  [G:N] = 108  maxclasses = 9 (suppl: 
+4)  fails: supp-supp sizes 764411904,40310784
+    |G| = 884902330368000  [G:N] = 108  maxclasses = 11 (suppl: 
+4)  fails: supp-supp sizes 764411904,40310784
+    |G| = 884902330368000  [G:N] = 108  maxclasses = 9 (suppl: 
+4)  fails: supp-supp sizes 764411904,40310784
+    |G| = 884902330368000  [G:N] = 108  maxclasses = 9 (suppl: 
+4)  fails: supp-supp sizes 764411904,40310784
+    |G| = 884902330368000  [G:N] = 108  maxclasses = 9 (suppl: 
+4)  fails: supp-supp sizes 764411904,40310784
+    |G| = 884902330368000  [G:N] = 108  maxclasses = 9 (suppl: 
+4)  fails: supp-supp sizes 764411904,40310784
+    |G| = 884902330368000  [G:N] = 108  maxclasses = 9 (suppl: 
+4)  fails: supp-supp sizes 95551488000,95551488000
+    |G| = 884902330368000  [G:N] = 108  maxclasses = 9 (suppl: 
+4)  fails: supp-supp sizes 764411904,40310784
+    |G| = 884902330368000  [G:N] = 108  maxclasses = 9 (suppl: 
+4)  fails: supp-supp sizes 764411904,40310784
+    |G| = 884902330368000  [G:N] = 108  maxclasses = 9 (suppl: 
+4)  fails: supp-supp sizes 764411904,40310784
+    |G| = 1179869773824000  [G:N] = 144  maxclasses = 10 (suppl: 
+4)  fails: supp-supp sizes 1019215872,53747712
+    |G| = 1179869773824000  [G:N] = 144  maxclasses = 10 (suppl: 
+4)  fails: supp-supp sizes 1019215872,53747712
+    |G| = 1179869773824000  [G:N] = 144  maxclasses = 10 (suppl: 
+4)  fails: supp-supp sizes 1019215872,53747712
+    |G| = 1179869773824000  [G:N] = 144  maxclasses = 10 (suppl: 
+4)  fails: supp-supp sizes 1019215872,53747712
+    |G| = 1179869773824000  [G:N] = 144  maxclasses = 12 (suppl: 
+4)  fails: supp-supp sizes 1019215872,53747712
+    |G| = 1179869773824000  [G:N] = 144  maxclasses = 9 (suppl: 
+4)  fails: supp-supp sizes 1019215872,53747712
+    |G| = 1179869773824000  [G:N] = 144  maxclasses = 10 (suppl: 
+4)  fails: supp-supp sizes 1019215872,53747712
+    |G| = 1179869773824000  [G:N] = 144  maxclasses = 10 (suppl: 
+4)  fails: supp-supp sizes 1019215872,53747712
+    |G| = 1327353495552000  [G:N] = 162  maxclasses = 7 (suppl: 
+4)  fails: supp-supp sizes 143327232000,143327232000
+    |G| = 1327353495552000  [G:N] = 162  maxclasses = 7 (suppl: 
+4)  fails: supp-supp sizes 1146617856,60466176
+    |G| = 1327353495552000  [G:N] = 162  maxclasses = 9 (suppl: 
+4)  fails: supp-supp sizes 1146617856,60466176
+    |G| = 1327353495552000  [G:N] = 162  maxclasses = 9 (suppl: 
+4)  fails: supp-supp sizes 1146617856,60466176
+    |G| = 1327353495552000  [G:N] = 162  maxclasses = 7 (suppl: 
+4)  fails: supp-supp sizes 1146617856,60466176
+    |G| = 1327353495552000  [G:N] = 162  maxclasses = 9 (suppl: 
+4)  fails: supp-supp sizes 143327232000,143327232000
+    |G| = 1327353495552000  [G:N] = 162  maxclasses = 7 (suppl: 
+4)  fails: supp-supp sizes 143327232000,143327232000
+    |G| = 1573159698432000  [G:N] = 192  maxclasses = 12 (suppl: 
+5)  fails: supp-supp sizes 8957952000,1358954496
+    |G| = 1573159698432000  [G:N] = 192  maxclasses = 12 (suppl: 
+5)  fails: supp-supp sizes 8957952000,1358954496
+    |G| = 1573159698432000  [G:N] = 192  maxclasses = 12 (suppl: 
+5)  fails: supp-supp sizes 8957952000,1358954496
+    |G| = 1573159698432000  [G:N] = 192  maxclasses = 14 (suppl: 
+5)  fails: supp-supp sizes 8957952000,1358954496
+    |G| = 1573159698432000  [G:N] = 192  maxclasses = 12 (suppl: 
+5)  fails: supp-supp sizes 8957952000,1358954496
+    |G| = 1573159698432000  [G:N] = 192  maxclasses = 12 (suppl: 
+5)  fails: supp-supp sizes 8957952000,1358954496
+    |G| = 1573159698432000  [G:N] = 192  maxclasses = 12 (suppl: 
+5)  fails: supp-supp sizes 8957952000,1358954496
+    |G| = 1769804660736000  [G:N] = 216  maxclasses = 8 (suppl: 
+4)  fails: supp-supp sizes 1528823808,80621568
+    |G| = 1769804660736000  [G:N] = 216  maxclasses = 8 (suppl: 
+4)  fails: supp-supp sizes 1528823808,80621568
+    |G| = 1769804660736000  [G:N] = 216  maxclasses = 10 (suppl: 
+4)  fails: supp-supp sizes 1528823808,80621568
+    |G| = 1769804660736000  [G:N] = 216  maxclasses = 10 (suppl: 
+4)  fails: supp-supp sizes 1528823808,80621568
+    |G| = 1769804660736000  [G:N] = 216  maxclasses = 13 (suppl: 
+4)  fails: supp-supp sizes 1528823808,80621568
+    |G| = 1769804660736000  [G:N] = 216  maxclasses = 10 (suppl: 
+4)  fails: supp-supp sizes 1528823808,80621568
+    |G| = 1769804660736000  [G:N] = 216  maxclasses = 8 (suppl: 
+4)  fails: supp-supp sizes 1528823808,80621568
+    |G| = 1769804660736000  [G:N] = 216  maxclasses = 8 (suppl: 
+4)  fails: supp-supp sizes 1528823808,80621568
+    |G| = 1769804660736000  [G:N] = 216  maxclasses = 8 (suppl: 
+4)  fails: supp-supp sizes 1528823808,80621568
+    |G| = 1769804660736000  [G:N] = 216  maxclasses = 8 (suppl: 
+4)  fails: supp-supp sizes 1528823808,80621568
+    |G| = 1769804660736000  [G:N] = 216  maxclasses = 10 (suppl: 
+4)  fails: supp-supp sizes 1528823808,80621568
+    |G| = 2359739547648000  [G:N] = 288  maxclasses = 14 (suppl: 
+4)  fails: supp-supp sizes 2038431744,107495424
+    |G| = 2654706991104000  [G:N] = 324  maxclasses = 9 (suppl: 
+4)  fails: supp-supp sizes 2293235712,120932352
+    |G| = 2654706991104000  [G:N] = 324  maxclasses = 9 (suppl: 
+4)  fails: supp-supp sizes 2293235712,120932352
+    |G| = 2654706991104000  [G:N] = 324  maxclasses = 9 (suppl: 
+4)  fails: supp-supp sizes 2293235712,120932352
+    |G| = 2654706991104000  [G:N] = 324  maxclasses = 9 (suppl: 
+4)  fails: supp-supp sizes 2293235712,120932352
+    |G| = 2654706991104000  [G:N] = 324  maxclasses = 11 (suppl: 
+4)  fails: supp-supp sizes 2293235712,120932352
+    |G| = 2654706991104000  [G:N] = 324  maxclasses = 9 (suppl: 
+4)  fails: supp-supp sizes 2293235712,120932352
+    |G| = 2654706991104000  [G:N] = 324  maxclasses = 7 (suppl: 
+4)  fails: supp-supp sizes 2293235712,120932352
+    |G| = 2654706991104000  [G:N] = 324  maxclasses = 7 (suppl: 
+4)  fails: supp-supp sizes 286654464000,286654464000
+    |G| = 2654706991104000  [G:N] = 324  maxclasses = 7 (suppl: 
+4)  fails: supp-supp sizes 2293235712,120932352
+    |G| = 2654706991104000  [G:N] = 324  maxclasses = 9 (suppl: 
+4)  fails: supp-supp sizes 286654464000,286654464000
+    |G| = 2654706991104000  [G:N] = 324  maxclasses = 9 (suppl: 
+4)  fails: supp-supp sizes 2293235712,120932352
+    |G| = 3146319396864000  [G:N] = 384  maxclasses = 16 (suppl: 
+5)  fails: supp-supp sizes 17915904000,2717908992
+    |G| = 3539609321472000  [G:N] = 432  maxclasses = 10 (suppl: 
+4)  fails: supp-supp sizes 3057647616,161243136
+    |G| = 3539609321472000  [G:N] = 432  maxclasses = 10 (suppl: 
+4)  fails: supp-supp sizes 3057647616,161243136
+    |G| = 3539609321472000  [G:N] = 432  maxclasses = 10 (suppl: 
+4)  fails: supp-supp sizes 3057647616,161243136
+    |G| = 3539609321472000  [G:N] = 432  maxclasses = 12 (suppl: 
+4)  fails: supp-supp sizes 3057647616,161243136
+    |G| = 3539609321472000  [G:N] = 432  maxclasses = 10 (suppl: 
+4)  fails: supp-supp sizes 3057647616,161243136
+    |G| = 3539609321472000  [G:N] = 432  maxclasses = 10 (suppl: 
+4)  fails: supp-supp sizes 3057647616,161243136
+    |G| = 3539609321472000  [G:N] = 432  maxclasses = 10 (suppl: 
+4)  fails: supp-supp sizes 3057647616,161243136
+    |G| = 3539609321472000  [G:N] = 432  maxclasses = 10 (suppl: 
+4)  fails: supp-supp sizes 3057647616,161243136
+    |G| = 5309413982208000  [G:N] = 648  maxclasses = 8 (suppl: 
+4)  fails: supp-supp sizes 4586471424,241864704
+    |G| = 5309413982208000  [G:N] = 648  maxclasses = 8 (suppl: 
+4)  fails: supp-supp sizes 573308928000,573308928000
+    |G| = 5309413982208000  [G:N] = 648  maxclasses = 8 (suppl: 
+4)  fails: supp-supp sizes 573308928000,573308928000
+    |G| = 5309413982208000  [G:N] = 648  maxclasses = 8 (suppl: 
+4)  fails: supp-supp sizes 4586471424,241864704
+    |G| = 5309413982208000  [G:N] = 648  maxclasses = 8 (suppl: 
+4)  fails: supp-supp sizes 4586471424,241864704
+    |G| = 5309413982208000  [G:N] = 648  maxclasses = 8 (suppl: 
+4)  fails: supp-supp sizes 4586471424,241864704
+    |G| = 5309413982208000  [G:N] = 648  maxclasses = 13 (suppl: 
+4)  fails: supp-supp sizes 4586471424,241864704
+    |G| = 5309413982208000  [G:N] = 648  maxclasses = 8 (suppl: 
+4)  fails: supp-supp sizes 4586471424,241864704
+    |G| = 5309413982208000  [G:N] = 648  maxclasses = 8 (suppl: 
+4)  fails: supp-supp sizes 4586471424,241864704
+    |G| = 5309413982208000  [G:N] = 648  maxclasses = 8 (suppl: 
+4)  fails: supp-supp sizes 4586471424,241864704
+    |G| = 5309413982208000  [G:N] = 648  maxclasses = 8 (suppl: 
+4)  fails: supp-supp sizes 4586471424,241864704
+    |G| = 5309413982208000  [G:N] = 648  maxclasses = 8 (suppl: 
+4)  fails: supp-supp sizes 4586471424,241864704
+    |G| = 5309413982208000  [G:N] = 648  maxclasses = 8 (suppl: 
+4)  fails: supp-supp sizes 4586471424,241864704
+    |G| = 5309413982208000  [G:N] = 648  maxclasses = 10 (suppl: 
+4)  fails: supp-supp sizes 4586471424,241864704
+    |G| = 5309413982208000  [G:N] = 648  maxclasses = 8 (suppl: 
+4)  fails: supp-supp sizes 4586471424,241864704
+    |G| = 5309413982208000  [G:N] = 648  maxclasses = 8 (suppl: 
+4)  fails: supp-supp sizes 4586471424,241864704
+    |G| = 5309413982208000  [G:N] = 648  maxclasses = 10 (suppl: 
+4)  fails: supp-supp sizes 4586471424,241864704
+    |G| = 5309413982208000  [G:N] = 648  maxclasses = 8 (suppl: 
+4)  fails: supp-supp sizes 4586471424,241864704
+    |G| = 5309413982208000  [G:N] = 648  maxclasses = 8 (suppl: 
+4)  fails: supp-supp sizes 4586471424,241864704
+    |G| = 5309413982208000  [G:N] = 648  maxclasses = 8 (suppl: 
+4)  fails: supp-supp sizes 4586471424,241864704
+    |G| = 5309413982208000  [G:N] = 648  maxclasses = 8 (suppl: 
+4)  fails: supp-supp sizes 573308928000,573308928000
+    |G| = 5309413982208000  [G:N] = 648  maxclasses = 8 (suppl: 
+4)  fails: supp-supp sizes 4586471424,241864704
+    |G| = 5309413982208000  [G:N] = 648  maxclasses = 8 (suppl: 
+4)  fails: supp-supp sizes 4586471424,241864704
+    |G| = 5309413982208000  [G:N] = 648  maxclasses = 8 (suppl: 
+4)  fails: supp-supp sizes 4586471424,241864704
+    |G| = 5309413982208000  [G:N] = 648  maxclasses = 10 (suppl: 
+4)  fails: supp-supp sizes 4586471424,241864704
+    |G| = 7079218642944000  [G:N] = 864  maxclasses = 14 (suppl: 
+4)  fails: supp-supp sizes 6115295232,322486272
+    |G| = 10618827964416000  [G:N] = 1296  maxclasses = 10 (suppl: 
+4)  fails: supp-supp sizes 9172942848,483729408
+    |G| = 10618827964416000  [G:N] = 1296  maxclasses = 10 (suppl: 
+4)  fails: supp-supp sizes 9172942848,483729408
+    |G| = 10618827964416000  [G:N] = 1296  maxclasses = 10 (suppl: 
+4)  fails: supp-supp sizes 9172942848,483729408
+    |G| = 10618827964416000  [G:N] = 1296  maxclasses = 10 (suppl: 
+4)  fails: supp-supp sizes 9172942848,483729408
+    |G| = 10618827964416000  [G:N] = 1296  maxclasses = 10 (suppl: 
+4)  fails: supp-supp sizes 9172942848,483729408
+    |G| = 10618827964416000  [G:N] = 1296  maxclasses = 10 (suppl: 
+4)  fails: supp-supp sizes 9172942848,483729408
+    |G| = 10618827964416000  [G:N] = 1296  maxclasses = 10 (suppl: 
+4)  fails: supp-supp sizes 1146617856000,1146617856000
+    |G| = 10618827964416000  [G:N] = 1296  maxclasses = 11 (suppl: 
+4)  fails: supp-supp sizes 9172942848,483729408
+    |G| = 10618827964416000  [G:N] = 1296  maxclasses = 10 (suppl: 
+4)  fails: supp-supp sizes 9172942848,483729408
+    |G| = 10618827964416000  [G:N] = 1296  maxclasses = 10 (suppl: 
+4)  fails: supp-supp sizes 9172942848,483729408
+    |G| = 10618827964416000  [G:N] = 1296  maxclasses = 10 (suppl: 
+4)  fails: supp-supp sizes 9172942848,483729408
+    |G| = 10618827964416000  [G:N] = 1296  maxclasses = 10 (suppl: 
+4)  fails: supp-supp sizes 9172942848,483729408
+    |G| = 10618827964416000  [G:N] = 1296  maxclasses = 10 (suppl: 
+4)  fails: supp-supp sizes 9172942848,483729408
+    |G| = 10618827964416000  [G:N] = 1296  maxclasses = 10 (suppl: 
+4)  fails: supp-supp sizes 9172942848,483729408
+    |G| = 10618827964416000  [G:N] = 1296  maxclasses = 10 (suppl: 
+4)  fails: supp-supp sizes 9172942848,483729408
+    |G| = 10618827964416000  [G:N] = 1296  maxclasses = 10 (suppl: 
+4)  fails: supp-supp sizes 9172942848,483729408
+    |G| = 10618827964416000  [G:N] = 1296  maxclasses = 10 (suppl: 
+4)  fails: supp-supp sizes 9172942848,483729408
+    |G| = 10618827964416000  [G:N] = 1296  maxclasses = 10 (suppl: 
+4)  fails: supp-supp sizes 9172942848,483729408
+    |G| = 10618827964416000  [G:N] = 1296  maxclasses = 10 (suppl: 
+4)  fails: supp-supp sizes 9172942848,483729408
+    |G| = 10618827964416000  [G:N] = 1296  maxclasses = 10 (suppl: 
+4)  fails: supp-supp sizes 9172942848,483729408
+    |G| = 10618827964416000  [G:N] = 1296  maxclasses = 12 (suppl: 
+4)  fails: supp-supp sizes 9172942848,483729408
+    |G| = 10618827964416000  [G:N] = 1296  maxclasses = 10 (suppl: 
+4)  fails: supp-supp sizes 9172942848,483729408
+    |G| = 10618827964416000  [G:N] = 1296  maxclasses = 10 (suppl: 
+4)  fails: supp-supp sizes 9172942848,483729408
+    |G| = 21237655928832000  [G:N] = 2592  maxclasses = 10 (suppl: 
+4)  fails: supp-supp sizes 18345885696,967458816
+    |G| = 21237655928832000  [G:N] = 2592  maxclasses = 10 (suppl: 
+4)  fails: supp-supp sizes 18345885696,967458816
+    |G| = 21237655928832000  [G:N] = 2592  maxclasses = 14 (suppl: 
+4)  fails: supp-supp sizes 18345885696,967458816
+    |G| = 21237655928832000  [G:N] = 2592  maxclasses = 10 (suppl: 
+4)  fails: supp-supp sizes 18345885696,967458816
+    |G| = 21237655928832000  [G:N] = 2592  maxclasses = 10 (suppl: 
+4)  fails: supp-supp sizes 18345885696,967458816
+    |G| = 21237655928832000  [G:N] = 2592  maxclasses = 14 (suppl: 
+4)  fails: supp-supp sizes 18345885696,967458816
+    |G| = 21237655928832000  [G:N] = 2592  maxclasses = 14 (suppl: 
+4)  fails: supp-supp sizes 18345885696,967458816
+    |G| = 21237655928832000  [G:N] = 2592  maxclasses = 12 (suppl: 
+4)  fails: supp-supp sizes 18345885696,967458816
+    |G| = 21237655928832000  [G:N] = 2592  maxclasses = 12 (suppl: 
+4)  fails: supp-supp sizes 18345885696,967458816
+    |G| = 21237655928832000  [G:N] = 2592  maxclasses = 12 (suppl: 
+4)  fails: supp-supp sizes 18345885696,967458816
+    |G| = 42475311857664000  [G:N] = 5184  maxclasses = 12 (suppl: 
+4)  fails: supp-supp sizes 36691771392,1934917632
+    |G| = 42475311857664000  [G:N] = 5184  maxclasses = 12 (suppl: 
+4)  fails: supp-supp sizes 36691771392,1934917632
+    |G| = 42475311857664000  [G:N] = 5184  maxclasses = 12 (suppl: 
+4)  fails: supp-supp sizes 36691771392,1934917632
+    |G| = 42475311857664000  [G:N] = 5184  maxclasses = 12 (suppl: 
+4)  fails: supp-supp sizes 36691771392,1934917632
+    |G| = 42475311857664000  [G:N] = 5184  maxclasses = 14 (suppl: 
+4)  fails: supp-supp sizes 36691771392,1934917632
+    |G| = 42475311857664000  [G:N] = 5184  maxclasses = 12 (suppl: 
+4)  fails: supp-supp sizes 36691771392,1934917632
+    |G| = 42475311857664000  [G:N] = 5184  maxclasses = 12 (suppl: 
+4)  fails: supp-supp sizes 36691771392,1934917632
+    |G| = 84950623715328000  [G:N] = 10368  maxclasses = 16 (suppl: 
+4)  fails: supp-supp sizes 73383542784,3869835264
+=== socle L3_4^3 DONE: 254 transitive-top candidates tested
+=== socle U35^3:  |S|^k = 2000376000000000,  |W/N| = 1296
+    |G| = 6001128000000000  [G:N] = 3  maxclasses = 12 (suppl: 
+11)  fails: supp-supp sizes 378000,378000
+    |G| = 12002256000000000  [G:N] = 6  maxclasses = 10 (suppl: 
+8)  fails: supp-supp sizes 756000,756000
+    |G| = 12002256000000000  [G:N] = 6  maxclasses = 11 (suppl: 
+9)  fails: supp-supp sizes 756000,96018048000
+    |G| = 12002256000000000  [G:N] = 6  maxclasses = 8 (suppl: 
+6)  fails: supp-supp sizes 756000,96018048000
+    |G| = 18003384000000000  [G:N] = 9  maxclasses = 6 (suppl: 
+5)  fails: supp-supp sizes 9000000000,124416000
+    |G| = 18003384000000000  [G:N] = 9  maxclasses = 12 (suppl: 
+8)  fails: supp-supp sizes 1134000,1134000
+    |G| = 24004512000000000  [G:N] = 12  maxclasses = 10 (suppl: 
+6)  fails: supp-supp sizes 1512000,192036096000
+    |G| = 24004512000000000  [G:N] = 12  maxclasses = 7 (suppl: 
+5)  fails: supp-supp sizes 192036096000,4478976000
+    |G| = 36006768000000000  [G:N] = 18  maxclasses = 9 (suppl: 
+6)  fails: supp-supp sizes 2268000,18000000000
+    |G| = 36006768000000000  [G:N] = 18  maxclasses = 13 (suppl: 
+8)  fails: supp-supp sizes 2268000,2268000
+    |G| = 36006768000000000  [G:N] = 18  maxclasses = 9 (suppl: 
+6)  fails: supp-supp sizes 2268000,18000000000
+    |G| = 36006768000000000  [G:N] = 18  maxclasses = 7 (suppl: 
+5)  fails: supp-supp sizes 18000000000,248832000
+    |G| = 48009024000000000  [G:N] = 24  maxclasses = 8 (suppl: 
+5)  fails: supp-supp sizes 384072192000,8957952000
+    |G| = 48009024000000000  [G:N] = 24  maxclasses = 8 (suppl: 
+5)  fails: supp-supp sizes 384072192000,8957952000
+    |G| = 48009024000000000  [G:N] = 24  maxclasses = 8 (suppl: 
+5)  fails: supp-supp sizes 384072192000,8957952000
+    |G| = 54010152000000000  [G:N] = 27  maxclasses = 9 (suppl: 
+5)  fails: supp-supp sizes 27000000000,373248000
+    |G| = 54010152000000000  [G:N] = 27  maxclasses = 9 (suppl: 
+5)  fails: supp-supp sizes 27000000000,373248000
+    |G| = 72013536000000000  [G:N] = 36  maxclasses = 11 (suppl: 
+6)  fails: supp-supp sizes 4536000,36000000000
+    |G| = 96018048000000000  [G:N] = 48  maxclasses = 10 (suppl: 
+5)  fails: supp-supp sizes 768144384000,17915904000
+    |G| = 108020304000000000  [G:N] = 54  maxclasses = 10 (suppl: 
+5)  fails: supp-supp sizes 54000000000,746496000

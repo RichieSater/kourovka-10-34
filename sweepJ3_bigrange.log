@@ -1,0 +1,418 @@
+### PSL(2,101): |S| = 515100 = [ [ 2, 2 ], [ 3, 1 ], [ 5, 2 ], [ 17, 1 ], 
+  [ 101, 1 ] ], |Out| = 2, maximal classes [ 5050, 102, 100, 60, 60 ]
+    X/Inn = 1 (x=1): ALL k >= 2 EXCLUDED via (|U|,|V|,p,d) = [ 60, 60, 101, 1 
+ ]
+    X/Inn = C2 (x=2): ALL k >= 2 EXCLUDED via (|U|,|V|,p,d) = 
+[ 102, 100, 101, 1 ]
+    ==> PSL(2,101)^k EXCLUDED FOR ALL k >= 2 AND ALL X.
+### PSL(2,103): |S| = 546312 = [ [ 2, 3 ], [ 3, 1 ], [ 13, 1 ], [ 17, 1 ], 
+  [ 103, 1 ] ], |Out| = 2, maximal classes [ 5253, 104, 102, 24, 24 ]
+    X/Inn = 1 (x=1): ALL k >= 2 EXCLUDED via (|U|,|V|,p,d) = [ 24, 24, 103, 1 
+ ]
+    X/Inn = C2 (x=2): ALL k >= 2 EXCLUDED via (|U|,|V|,p,d) = 
+[ 104, 102, 103, 1 ]
+    ==> PSL(2,103)^k EXCLUDED FOR ALL k >= 2 AND ALL X.
+### HJ: |S| = 604800 = [ [ 2, 7 ], [ 3, 3 ], [ 5, 2 ], [ 7, 1 ] ], |Out| = 
+2, maximal classes [ 6048, 2160, 1920, 1152, 720, 600, 336, 300, 60 ]
+    X/Inn = 1 (x=1): ALL k >= 2 EXCLUDED via (|U|,|V|,p,d) = [ 300, 60, 7, 1 ]
+    X/Inn = C2 (x=2): ALL k >= 2 EXCLUDED via (|U|,|V|,p,d) = [ 300, 60, 7, 1 
+ ]
+    ==> HJ^k EXCLUDED FOR ALL k >= 2 AND ALL X.
+### PSL(2,107): |S| = 612468 = [ [ 2, 2 ], [ 3, 3 ], [ 53, 1 ], [ 107, 1 ] 
+ ], |Out| = 2, maximal classes [ 5671, 108, 106, 12 ]
+    X/Inn = 1 (x=1): ALL k >= 2 EXCLUDED via (|U|,|V|,p,d) = 
+[ 106, 12, 107, 1 ]
+    X/Inn = C2 (x=2): ALL k >= 2 EXCLUDED via (|U|,|V|,p,d) = 
+[ 106, 12, 107, 1 ]
+    ==> PSL(2,107)^k EXCLUDED FOR ALL k >= 2 AND ALL X.
+### PSL(2,109): |S| = 647460 = [ [ 2, 2 ], [ 3, 3 ], [ 5, 1 ], [ 11, 1 ], 
+  [ 109, 1 ] ], |Out| = 2, maximal classes [ 5886, 110, 108, 60, 60 ]
+    X/Inn = 1 (x=1): ALL k >= 2 EXCLUDED via (|U|,|V|,p,d) = [ 60, 60, 109, 1 
+ ]
+    X/Inn = C2 (x=2): ALL k >= 2 EXCLUDED via (|U|,|V|,p,d) = 
+[ 110, 108, 109, 1 ]
+    ==> PSL(2,109)^k EXCLUDED FOR ALL k >= 2 AND ALL X.
+### PSL(2,113): |S| = 721392 = [ [ 2, 4 ], [ 3, 1 ], [ 7, 1 ], [ 19, 1 ], 
+  [ 113, 1 ] ], |Out| = 2, maximal classes [ 6328, 114, 112, 24, 24 ]
+    X/Inn = 1 (x=1): ALL k >= 2 EXCLUDED via (|U|,|V|,p,d) = [ 24, 24, 113, 1 
+ ]
+    X/Inn = C2 (x=2): ALL k >= 2 EXCLUDED via (|U|,|V|,p,d) = 
+[ 114, 112, 113, 1 ]
+    ==> PSL(2,113)^k EXCLUDED FOR ALL k >= 2 AND ALL X.
+### PSL(2,121): |S| = 885720 = [ [ 2, 3 ], [ 3, 1 ], [ 5, 1 ], [ 11, 2 ], 
+  [ 61, 1 ] ], |Out| = 4, maximal classes [ 7260, 1320, 1320, 122, 120 ]
+    X/Inn = 1 (x=1): ALL k >= 2 EXCLUDED via (|U|,|V|,p,d) = 
+[ 122, 120, 11, 2 ]
+    X/Inn = C2 (x=2): ALL k >= 2 EXCLUDED via (|U|,|V|,p,d) = 
+[ 122, 120, 11, 2 ]
+    X/Inn = C2 (x=2): ALL k >= 2 EXCLUDED via (|U|,|V|,p,d) = 
+[ 122, 120, 11, 2 ]
+    X/Inn = C2 (x=2): ALL k >= 2 EXCLUDED via (|U|,|V|,p,d) = 
+[ 122, 120, 11, 2 ]
+    X/Inn = C2 x C2 (x=4): ALL k >= 2 EXCLUDED via (|U|,|V|,p,d) = 
+[ 122, 120, 11, 2 ]
+    ==> PSL(2,121)^k EXCLUDED FOR ALL k >= 2 AND ALL X.
+### PSL(2,125): |S| = 976500 = [ [ 2, 2 ], [ 3, 2 ], [ 5, 3 ], [ 7, 1 ], 
+  [ 31, 1 ] ], |Out| = 6, maximal classes [ 7750, 126, 124, 60 ]
+    X/Inn = 1 (x=1): ALL k >= 2 EXCLUDED via (|U|,|V|,p,d) = [ 124, 60, 7, 1 ]
+    X/Inn = C2 (x=2): ALL k >= 2 EXCLUDED via (|U|,|V|,p,d) = [ 124, 60, 7, 1 
+ ]
+    X/Inn = C3 (x=3): ALL k >= 2 EXCLUDED via (|U|,|V|,p,d) = [ 124, 60, 7, 1 
+ ]
+    X/Inn = C6 (x=6): ALL k >= 2 EXCLUDED via (|U|,|V|,p,d) = [ 124, 60, 7, 1 
+ ]
+    ==> PSL(2,125)^k EXCLUDED FOR ALL k >= 2 AND ALL X.
+### O(5,4): |S| = 979200 = [ [ 2, 8 ], [ 3, 2 ], [ 5, 2 ], [ 17, 1 ] 
+ ], |Out| = 4, maximal classes [ 11520, 11520, 8160, 8160, 7200, 7200, 720 ]
+    X/Inn = 1 (x=1): ALL k >= 2 EXCLUDED via (|U|,|V|,p,d) = 
+[ 7200, 720, 17, 1 ]
+    X/Inn = C2 (x=2): ALL k >= 2 EXCLUDED via (|U|,|V|,p,d) = 
+[ 7200, 720, 17, 1 ]
+    X/Inn = C4 (x=4): NOT all-k excluded; stable classes 
+[ 720 ]; k<=30 excluded: [  ]
+    ==> O(5,4) SURVIVES for X with x in [ 4 ]
+### PSL(2,127): |S| = 1024128 = [ [ 2, 7 ], [ 3, 2 ], [ 7, 1 ], [ 127, 1 ] 
+ ], |Out| = 2, maximal classes [ 8001, 128, 126, 24, 24 ]
+    X/Inn = 1 (x=1): ALL k >= 2 EXCLUDED via (|U|,|V|,p,d) = [ 24, 24, 127, 1 
+ ]
+    X/Inn = C2 (x=2): ALL k >= 2 EXCLUDED via (|U|,|V|,p,d) = 
+[ 128, 126, 127, 1 ]
+    ==> PSL(2,127)^k EXCLUDED FOR ALL k >= 2 AND ALL X.
+### PSL(2,131): |S| = 1123980 = [ [ 2, 2 ], [ 3, 1 ], [ 5, 1 ], [ 11, 1 ], 
+  [ 13, 1 ], [ 131, 1 ] ], |Out| = 2, maximal classes 
+[ 8515, 132, 130, 60, 60 ]
+    X/Inn = 1 (x=1): ALL k >= 2 EXCLUDED via (|U|,|V|,p,d) = [ 60, 60, 131, 1 
+ ]
+    X/Inn = C2 (x=2): ALL k >= 2 EXCLUDED via (|U|,|V|,p,d) = 
+[ 132, 130, 131, 1 ]
+    ==> PSL(2,131)^k EXCLUDED FOR ALL k >= 2 AND ALL X.
+### PSL(2,137): |S| = 1285608 = [ [ 2, 3 ], [ 3, 1 ], [ 17, 1 ], [ 23, 1 ], 
+  [ 137, 1 ] ], |Out| = 2, maximal classes [ 9316, 138, 136, 24, 24 ]
+    X/Inn = 1 (x=1): ALL k >= 2 EXCLUDED via (|U|,|V|,p,d) = [ 24, 24, 137, 1 
+ ]
+    X/Inn = C2 (x=2): ALL k >= 2 EXCLUDED via (|U|,|V|,p,d) = 
+[ 138, 136, 137, 1 ]
+    ==> PSL(2,137)^k EXCLUDED FOR ALL k >= 2 AND ALL X.
+### PSL(2,139): |S| = 1342740 = [ [ 2, 2 ], [ 3, 1 ], [ 5, 1 ], [ 7, 1 ], 
+  [ 23, 1 ], [ 139, 1 ] ], |Out| = 2, maximal classes 
+[ 9591, 140, 138, 60, 60 ]
+    X/Inn = 1 (x=1): ALL k >= 2 EXCLUDED via (|U|,|V|,p,d) = [ 60, 60, 139, 1 
+ ]
+    X/Inn = C2 (x=2): ALL k >= 2 EXCLUDED via (|U|,|V|,p,d) = 
+[ 140, 138, 139, 1 ]
+    ==> PSL(2,139)^k EXCLUDED FOR ALL k >= 2 AND ALL X.
+### O(7,2): |S| = 1451520 = [ [ 2, 9 ], [ 3, 4 ], [ 5, 1 ], [ 7, 1 ] 
+ ], |Out| = 1, maximal classes [ 51840, 40320, 23040, 12096, 10752, 4608, 
+  4320, 1512 ]
+    X/Inn = 1 (x=1): ALL k >= 2 EXCLUDED via (|U|,|V|,p,d) = 
+[ 4320, 1512, 2, 1 ]
+    ==> O(7,2)^k EXCLUDED FOR ALL k >= 2 AND ALL X.
+### PSL(2,149): |S| = 1653900 = [ [ 2, 2 ], [ 3, 1 ], [ 5, 2 ], [ 37, 1 ], 
+  [ 149, 1 ] ], |Out| = 2, maximal classes [ 11026, 150, 148, 60, 60 ]
+    X/Inn = 1 (x=1): ALL k >= 2 EXCLUDED via (|U|,|V|,p,d) = [ 60, 60, 149, 1 
+ ]
+    X/Inn = C2 (x=2): ALL k >= 2 EXCLUDED via (|U|,|V|,p,d) = 
+[ 150, 148, 149, 1 ]
+    ==> PSL(2,149)^k EXCLUDED FOR ALL k >= 2 AND ALL X.
+### PSL(2,151): |S| = 1721400 = [ [ 2, 3 ], [ 3, 1 ], [ 5, 2 ], [ 19, 1 ], 
+  [ 151, 1 ] ], |Out| = 2, maximal classes [ 11325, 152, 150, 60, 60, 24, 24 ]
+    X/Inn = 1 (x=1): ALL k >= 2 EXCLUDED via (|U|,|V|,p,d) = [ 24, 24, 151, 1 
+ ]
+    X/Inn = C2 (x=2): ALL k >= 2 EXCLUDED via (|U|,|V|,p,d) = 
+[ 152, 150, 151, 1 ]
+    ==> PSL(2,151)^k EXCLUDED FOR ALL k >= 2 AND ALL X.
+### A10: |S| = 1814400 = [ [ 2, 7 ], [ 3, 4 ], [ 5, 2 ], [ 7, 1 ] ], |Out| = 
+2, maximal classes [ 8640, 15120, 40320, 181440, 1920, 14400, 720 ]
+    X/Inn = 1 (x=1): ALL k >= 2 EXCLUDED via (|U|,|V|,p,d) = 
+[ 14400, 720, 7, 1 ]
+    X/Inn = C2 (x=2): ALL k >= 2 EXCLUDED via (|U|,|V|,p,d) = 
+[ 14400, 720, 7, 1 ]
+    ==> A10^k EXCLUDED FOR ALL k >= 2 AND ALL X.
+### PSL(3,7): |S| = 1876896 = [ [ 2, 5 ], [ 3, 2 ], [ 7, 3 ], [ 19, 1 ] 
+ ], |Out| = 6, maximal classes [ 32928, 32928, 336, 336, 336, 72, 72, 57 ]
+    X/Inn = 1 (x=1): ALL k >= 2 EXCLUDED via (|U|,|V|,p,d) = [ 72, 57, 7, 3 ]
+    X/Inn = C2 (x=2): ALL k >= 2 EXCLUDED via (|U|,|V|,p,d) = [ 72, 57, 7, 3 ]
+    X/Inn = C3 (x=3): ALL k >= 2 EXCLUDED via (|U|,|V|,p,d) = [ 72, 57, 7, 3 ]
+    X/Inn = S3 (x=6): ALL k >= 2 EXCLUDED via (|U|,|V|,p,d) = [ 72, 57, 7, 3 ]
+    ==> PSL(3,7)^k EXCLUDED FOR ALL k >= 2 AND ALL X.
+### PSL(2,157): |S| = 1934868 = [ [ 2, 2 ], [ 3, 1 ], [ 13, 1 ], [ 79, 1 ], 
+  [ 157, 1 ] ], |Out| = 2, maximal classes [ 12246, 158, 156, 12 ]
+    X/Inn = 1 (x=1): ALL k >= 2 EXCLUDED via (|U|,|V|,p,d) = 
+[ 156, 12, 157, 1 ]
+    X/Inn = C2 (x=2): ALL k >= 2 EXCLUDED via (|U|,|V|,p,d) = 
+[ 156, 12, 157, 1 ]
+    ==> PSL(2,157)^k EXCLUDED FOR ALL k >= 2 AND ALL X.
+### PSL(2,128): |S| = 2097024 = [ [ 2, 7 ], [ 3, 1 ], [ 43, 1 ], [ 127, 1 ] 
+ ], |Out| = 7, maximal classes [ 16256, 258, 254 ]
+    X/Inn = 1 (x=1): ALL k >= 2 EXCLUDED via (|U|,|V|,p,d) = [ 258, 254, 2, 5 
+ ]
+    X/Inn = C7 (x=7): ALL k >= 2 EXCLUDED via (|U|,|V|,p,d) = 
+[ 258, 254, 2, 5 ]
+    ==> PSL(2,128)^k EXCLUDED FOR ALL k >= 2 AND ALL X.
+### PSL(2,163): |S| = 2165292 = [ [ 2, 2 ], [ 3, 4 ], [ 41, 1 ], [ 163, 1 ] 
+ ], |Out| = 2, maximal classes [ 13203, 164, 162, 12 ]
+    X/Inn = 1 (x=1): ALL k >= 2 EXCLUDED via (|U|,|V|,p,d) = 
+[ 162, 12, 163, 1 ]
+    X/Inn = C2 (x=2): ALL k >= 2 EXCLUDED via (|U|,|V|,p,d) = 
+[ 162, 12, 163, 1 ]
+    ==> PSL(2,163)^k EXCLUDED FOR ALL k >= 2 AND ALL X.
+### PSL(2,167): |S| = 2328648 = [ [ 2, 3 ], [ 3, 1 ], [ 7, 1 ], [ 83, 1 ], 
+  [ 167, 1 ] ], |Out| = 2, maximal classes [ 13861, 168, 166, 24, 24 ]
+    X/Inn = 1 (x=1): ALL k >= 2 EXCLUDED via (|U|,|V|,p,d) = [ 24, 24, 167, 1 
+ ]
+    X/Inn = C2 (x=2): ALL k >= 2 EXCLUDED via (|U|,|V|,p,d) = 
+[ 168, 166, 167, 1 ]
+    ==> PSL(2,167)^k EXCLUDED FOR ALL k >= 2 AND ALL X.
+### PSL(2,169): |S| = 2413320 = [ [ 2, 3 ], [ 3, 1 ], [ 5, 1 ], [ 7, 1 ], 
+  [ 13, 2 ], [ 17, 1 ] ], |Out| = 4, maximal classes 
+[ 14196, 2184, 2184, 170, 168, 60, 60 ]
+    X/Inn = 1 (x=1): ALL k >= 2 EXCLUDED via (|U|,|V|,p,d) = [ 60, 60, 17, 1 ]
+    X/Inn = C2 (x=2): ALL k >= 2 EXCLUDED via (|U|,|V|,p,d) = 
+[ 170, 168, 13, 2 ]
+    X/Inn = C2 (x=2): ALL k >= 2 EXCLUDED via (|U|,|V|,p,d) = [ 60, 60, 17, 1 
+ ]
+    X/Inn = C2 (x=2): ALL k >= 2 EXCLUDED via (|U|,|V|,p,d) = 
+[ 170, 168, 13, 2 ]
+    X/Inn = C2 x C2 (x=4): ALL k >= 2 EXCLUDED via (|U|,|V|,p,d) = 
+[ 170, 168, 13, 2 ]
+    ==> PSL(2,169)^k EXCLUDED FOR ALL k >= 2 AND ALL X.
+### PSL(2,173): |S| = 2588772 = [ [ 2, 2 ], [ 3, 1 ], [ 29, 1 ], [ 43, 1 ], 
+  [ 173, 1 ] ], |Out| = 2, maximal classes [ 14878, 174, 172, 12 ]
+    X/Inn = 1 (x=1): ALL k >= 2 EXCLUDED via (|U|,|V|,p,d) = 
+[ 172, 12, 173, 1 ]
+    X/Inn = C2 (x=2): ALL k >= 2 EXCLUDED via (|U|,|V|,p,d) = 
+[ 172, 12, 173, 1 ]
+    ==> PSL(2,173)^k EXCLUDED FOR ALL k >= 2 AND ALL X.
+### PSL(2,179): |S| = 2867580 = [ [ 2, 2 ], [ 3, 2 ], [ 5, 1 ], [ 89, 1 ], 
+  [ 179, 1 ] ], |Out| = 2, maximal classes [ 15931, 180, 178, 60, 60 ]
+    X/Inn = 1 (x=1): ALL k >= 2 EXCLUDED via (|U|,|V|,p,d) = [ 60, 60, 179, 1 
+ ]
+    X/Inn = C2 (x=2): ALL k >= 2 EXCLUDED via (|U|,|V|,p,d) = 
+[ 180, 178, 179, 1 ]
+    ==> PSL(2,179)^k EXCLUDED FOR ALL k >= 2 AND ALL X.
+### PSL(2,181): |S| = 2964780 = [ [ 2, 2 ], [ 3, 2 ], [ 5, 1 ], [ 7, 1 ], 
+  [ 13, 1 ], [ 181, 1 ] ], |Out| = 2, maximal classes 
+[ 16290, 182, 180, 60, 60 ]
+    X/Inn = 1 (x=1): ALL k >= 2 EXCLUDED via (|U|,|V|,p,d) = [ 60, 60, 181, 1 
+ ]
+    X/Inn = C2 (x=2): ALL k >= 2 EXCLUDED via (|U|,|V|,p,d) = 
+[ 182, 180, 181, 1 ]
+    ==> PSL(2,181)^k EXCLUDED FOR ALL k >= 2 AND ALL X.
+### PSU(4,3): |S| = 3265920 = [ [ 2, 7 ], [ 3, 6 ], [ 5, 1 ], [ 7, 1 ] 
+ ], |Out| = 8, maximal classes [ 29160, 25920, 25920, 20160, 20160, 11664, 
+  6048, 5760, 5760, 2520, 2520, 2520, 2520, 1152, 720, 720 ]
+    X/Inn = 1 (x=1): ALL k >= 2 EXCLUDED via (|U|,|V|,p,d) = [ 720, 720, 7, 1 
+ ]
+    X/Inn = C2 (x=2): ALL k >= 2 EXCLUDED via (|U|,|V|,p,d) = 
+[ 720, 720, 7, 1 ]
+    X/Inn = C2 (x=2): ALL k >= 2 EXCLUDED via (|U|,|V|,p,d) = 
+[ 2520, 1152, 3, 2 ]
+    X/Inn = C2 (x=2): ALL k >= 2 EXCLUDED via (|U|,|V|,p,d) = 
+[ 720, 720, 7, 1 ]
+    X/Inn = C4 (x=4): ALL k >= 2 EXCLUDED via (|U|,|V|,p,d) = 
+[ 6048, 1152, 5, 1 ]
+    X/Inn = C2 x C2 (x=4): ALL k >= 2 EXCLUDED via (|U|,|V|,p,d) = 
+[ 5760, 1152, 7, 1 ]
+    X/Inn = C2 x C2 (x=4): ALL k >= 2 EXCLUDED via (|U|,|V|,p,d) = 
+[ 720, 720, 7, 1 ]
+    X/Inn = D8 (x=8): ALL k >= 2 EXCLUDED via (|U|,|V|,p,d) = 
+[ 6048, 1152, 5, 1 ]
+    ==> PSU(4,3)^k EXCLUDED FOR ALL k >= 2 AND ALL X.
+### PSL(2,191): |S| = 3483840 = [ [ 2, 6 ], [ 3, 1 ], [ 5, 1 ], [ 19, 1 ], 
+  [ 191, 1 ] ], |Out| = 2, maximal classes [ 18145, 192, 190, 60, 60, 24, 24 ]
+    X/Inn = 1 (x=1): ALL k >= 2 EXCLUDED via (|U|,|V|,p,d) = [ 24, 24, 191, 1 
+ ]
+    X/Inn = C2 (x=2): ALL k >= 2 EXCLUDED via (|U|,|V|,p,d) = 
+[ 192, 190, 191, 1 ]
+    ==> PSL(2,191)^k EXCLUDED FOR ALL k >= 2 AND ALL X.
+### PSL(2,193): |S| = 3594432 = [ [ 2, 6 ], [ 3, 1 ], [ 97, 1 ], [ 193, 1 ] 
+ ], |Out| = 2, maximal classes [ 18528, 194, 192, 24, 24 ]
+    X/Inn = 1 (x=1): ALL k >= 2 EXCLUDED via (|U|,|V|,p,d) = [ 24, 24, 193, 1 
+ ]
+    X/Inn = C2 (x=2): ALL k >= 2 EXCLUDED via (|U|,|V|,p,d) = 
+[ 194, 192, 193, 1 ]
+    ==> PSL(2,193)^k EXCLUDED FOR ALL k >= 2 AND ALL X.
+### PSL(2,197): |S| = 3822588 = [ [ 2, 2 ], [ 3, 2 ], [ 7, 2 ], [ 11, 1 ], 
+  [ 197, 1 ] ], |Out| = 2, maximal classes [ 19306, 198, 196, 12 ]
+    X/Inn = 1 (x=1): ALL k >= 2 EXCLUDED via (|U|,|V|,p,d) = 
+[ 196, 12, 197, 1 ]
+    X/Inn = C2 (x=2): ALL k >= 2 EXCLUDED via (|U|,|V|,p,d) = 
+[ 196, 12, 197, 1 ]
+    ==> PSL(2,197)^k EXCLUDED FOR ALL k >= 2 AND ALL X.
+### PSL(2,199): |S| = 3940200 = [ [ 2, 3 ], [ 3, 2 ], [ 5, 2 ], [ 11, 1 ], 
+  [ 199, 1 ] ], |Out| = 2, maximal classes [ 19701, 200, 198, 60, 60, 24, 24 ]
+    X/Inn = 1 (x=1): ALL k >= 2 EXCLUDED via (|U|,|V|,p,d) = [ 24, 24, 199, 1 
+ ]
+    X/Inn = C2 (x=2): ALL k >= 2 EXCLUDED via (|U|,|V|,p,d) = 
+[ 200, 198, 199, 1 ]
+    ==> PSL(2,199)^k EXCLUDED FOR ALL k >= 2 AND ALL X.
+### G(2,3): |S| = 4245696 = [ [ 2, 6 ], [ 3, 6 ], [ 7, 1 ], [ 13, 1 ] 
+ ], |Out| = 2, maximal classes [ 12096, 12096, 11664, 11664, 11232, 11232, 
+  1512, 1344, 1092, 576 ]
+    X/Inn = 1 (x=1): ALL k >= 2 EXCLUDED via (|U|,|V|,p,d) = 
+[ 1092, 576, 3, 3 ]
+    X/Inn = C2 (x=2): ALL k >= 2 EXCLUDED via (|U|,|V|,p,d) = 
+[ 1092, 576, 3, 3 ]
+    ==> G(2,3)^k EXCLUDED FOR ALL k >= 2 AND ALL X.
+### O(5,5): |S| = 4680000 = [ [ 2, 6 ], [ 3, 2 ], [ 5, 4 ], [ 13, 1 ] 
+ ], |Out| = 2, maximal classes [ 30000, 30000, 15600, 14400, 960, 720, 480, 
+  360 ]
+    X/Inn = 1 (x=1): ALL k >= 2 EXCLUDED via (|U|,|V|,p,d) = 
+[ 480, 360, 13, 1 ]
+    X/Inn = C2 (x=2): ALL k >= 2 EXCLUDED via (|U|,|V|,p,d) = 
+[ 480, 360, 13, 1 ]
+    ==> O(5,5)^k EXCLUDED FOR ALL k >= 2 AND ALL X.
+### PSL(2,211): |S| = 4696860 = [ [ 2, 2 ], [ 3, 1 ], [ 5, 1 ], [ 7, 1 ], 
+  [ 53, 1 ], [ 211, 1 ] ], |Out| = 2, maximal classes 
+[ 22155, 212, 210, 60, 60 ]
+    X/Inn = 1 (x=1): ALL k >= 2 EXCLUDED via (|U|,|V|,p,d) = [ 60, 60, 211, 1 
+ ]
+    X/Inn = C2 (x=2): ALL k >= 2 EXCLUDED via (|U|,|V|,p,d) = 
+[ 212, 210, 211, 1 ]
+    ==> PSL(2,211)^k EXCLUDED FOR ALL k >= 2 AND ALL X.
+### PSU(3,8): |S| = 5515776 = [ [ 2, 9 ], [ 3, 4 ], [ 7, 1 ], [ 19, 1 ] 
+ ], |Out| = 18, maximal classes [ 10752, 1512, 216, 216, 216, 162, 57 ]
+    X/Inn = 1 (x=1): ALL k >= 2 EXCLUDED via (|U|,|V|,p,d) = [ 162, 57, 7, 1 ]
+    X/Inn = C2 (x=2): ALL k >= 2 EXCLUDED via (|U|,|V|,p,d) = [ 162, 57, 7, 1 
+ ]
+    X/Inn = C3 (x=3): ALL k >= 2 EXCLUDED via (|U|,|V|,p,d) = [ 162, 57, 7, 1 
+ ]
+    X/Inn = C3 (x=3): ALL k >= 2 EXCLUDED via (|U|,|V|,p,d) = [ 162, 57, 7, 1 
+ ]
+    X/Inn = C3 (x=3): ALL k >= 2 EXCLUDED via (|U|,|V|,p,d) = [ 162, 57, 7, 1 
+ ]
+    X/Inn = C6 (x=6): ALL k >= 2 EXCLUDED via (|U|,|V|,p,d) = [ 162, 57, 7, 1 
+ ]
+    X/Inn = S3 (x=6): ALL k >= 2 EXCLUDED via (|U|,|V|,p,d) = [ 162, 57, 7, 1 
+ ]
+    X/Inn = C3 x C3 (x=9): ALL k >= 2 EXCLUDED via (|U|,|V|,p,d) = 
+[ 162, 57, 7, 1 ]
+    X/Inn = C3 x S3 (x=18): ALL k >= 2 EXCLUDED via (|U|,|V|,p,d) = 
+[ 162, 57, 7, 1 ]
+    ==> PSU(3,8)^k EXCLUDED FOR ALL k >= 2 AND ALL X.
+### PSL(2,223): |S| = 5544672 = [ [ 2, 5 ], [ 3, 1 ], [ 7, 1 ], [ 37, 1 ], 
+  [ 223, 1 ] ], |Out| = 2, maximal classes [ 24753, 224, 222, 24, 24 ]
+    X/Inn = 1 (x=1): ALL k >= 2 EXCLUDED via (|U|,|V|,p,d) = [ 24, 24, 223, 1 
+ ]
+    X/Inn = C2 (x=2): ALL k >= 2 EXCLUDED via (|U|,|V|,p,d) = 
+[ 224, 222, 223, 1 ]
+    ==> PSL(2,223)^k EXCLUDED FOR ALL k >= 2 AND ALL X.
+### PSU(3,7): |S| = 5663616 = [ [ 2, 7 ], [ 3, 1 ], [ 7, 3 ], [ 43, 1 ] 
+ ], |Out| = 2, maximal classes [ 16464, 2688, 384, 336, 129 ]
+    X/Inn = 1 (x=1): ALL k >= 2 EXCLUDED via (|U|,|V|,p,d) = [ 336, 129, 7, 2 
+ ]
+    X/Inn = C2 (x=2): ALL k >= 2 EXCLUDED via (|U|,|V|,p,d) = 
+[ 336, 129, 7, 2 ]
+    ==> PSU(3,7)^k EXCLUDED FOR ALL k >= 2 AND ALL X.
+### PSL(2,227): |S| = 5848428 = [ [ 2, 2 ], [ 3, 1 ], [ 19, 1 ], [ 113, 1 ], 
+  [ 227, 1 ] ], |Out| = 2, maximal classes [ 25651, 228, 226, 12 ]
+    X/Inn = 1 (x=1): ALL k >= 2 EXCLUDED via (|U|,|V|,p,d) = 
+[ 226, 12, 227, 1 ]
+    X/Inn = C2 (x=2): ALL k >= 2 EXCLUDED via (|U|,|V|,p,d) = 
+[ 226, 12, 227, 1 ]
+    ==> PSL(2,227)^k EXCLUDED FOR ALL k >= 2 AND ALL X.
+### PSL(2,229): |S| = 6004380 = [ [ 2, 2 ], [ 3, 1 ], [ 5, 1 ], [ 19, 1 ], 
+  [ 23, 1 ], [ 229, 1 ] ], |Out| = 2, maximal classes 
+[ 26106, 230, 228, 60, 60 ]
+    X/Inn = 1 (x=1): ALL k >= 2 EXCLUDED via (|U|,|V|,p,d) = [ 60, 60, 229, 1 
+ ]
+    X/Inn = C2 (x=2): ALL k >= 2 EXCLUDED via (|U|,|V|,p,d) = 
+[ 230, 228, 229, 1 ]
+    ==> PSL(2,229)^k EXCLUDED FOR ALL k >= 2 AND ALL X.
+### PSL(4,3): |S| = 6065280 = [ [ 2, 7 ], [ 3, 6 ], [ 5, 1 ], [ 13, 1 ] 
+ ], |Out| = 4, maximal classes [ 151632, 151632, 51840, 51840, 46656, 2880, 
+  720, 576 ]
+    X/Inn = 1 (x=1): ALL k >= 2 EXCLUDED via (|U|,|V|,p,d) = 
+[ 720, 576, 13, 1 ]
+    X/Inn = C2 (x=2): ALL k >= 2 EXCLUDED via (|U|,|V|,p,d) = 
+[ 720, 576, 13, 1 ]
+    X/Inn = C2 (x=2): ALL k >= 2 EXCLUDED via (|U|,|V|,p,d) = 
+[ 720, 576, 13, 1 ]
+    X/Inn = C2 (x=2): ALL k >= 2 EXCLUDED via (|U|,|V|,p,d) = 
+[ 720, 576, 13, 1 ]
+    X/Inn = C2 x C2 (x=4): ALL k >= 2 EXCLUDED via (|U|,|V|,p,d) = 
+[ 720, 576, 13, 1 ]
+    ==> PSL(4,3)^k EXCLUDED FOR ALL k >= 2 AND ALL X.
+### PSL(2,233): |S| = 6324552 = [ [ 2, 3 ], [ 3, 2 ], [ 13, 1 ], [ 29, 1 ], 
+  [ 233, 1 ] ], |Out| = 2, maximal classes [ 27028, 234, 232, 24, 24 ]
+    X/Inn = 1 (x=1): ALL k >= 2 EXCLUDED via (|U|,|V|,p,d) = [ 24, 24, 233, 1 
+ ]
+    X/Inn = C2 (x=2): ALL k >= 2 EXCLUDED via (|U|,|V|,p,d) = 
+[ 234, 232, 233, 1 ]
+    ==> PSL(2,233)^k EXCLUDED FOR ALL k >= 2 AND ALL X.
+### PSL(2,239): |S| = 6825840 = [ [ 2, 4 ], [ 3, 1 ], [ 5, 1 ], [ 7, 1 ], 
+  [ 17, 1 ], [ 239, 1 ] ], |Out| = 2, maximal classes 
+[ 28441, 240, 238, 60, 60, 24, 24 ]
+    X/Inn = 1 (x=1): ALL k >= 2 EXCLUDED via (|U|,|V|,p,d) = [ 24, 24, 239, 1 
+ ]
+    X/Inn = C2 (x=2): ALL k >= 2 EXCLUDED via (|U|,|V|,p,d) = 
+[ 240, 238, 239, 1 ]
+    ==> PSL(2,239)^k EXCLUDED FOR ALL k >= 2 AND ALL X.
+### PSL(2,241): |S| = 6998640 = [ [ 2, 4 ], [ 3, 1 ], [ 5, 1 ], [ 11, 2 ], 
+  [ 241, 1 ] ], |Out| = 2, maximal classes [ 28920, 242, 240, 60, 60, 24, 24 ]
+    X/Inn = 1 (x=1): ALL k >= 2 EXCLUDED via (|U|,|V|,p,d) = [ 24, 24, 241, 1 
+ ]
+    X/Inn = C2 (x=2): ALL k >= 2 EXCLUDED via (|U|,|V|,p,d) = 
+[ 242, 240, 241, 1 ]
+    ==> PSL(2,241)^k EXCLUDED FOR ALL k >= 2 AND ALL X.
+### PSL(2,243): |S| = 7174332 = [ [ 2, 2 ], [ 3, 5 ], [ 11, 2 ], [ 61, 1 ] 
+ ], |Out| = 10, maximal classes [ 29403, 244, 242, 12 ]
+    X/Inn = 1 (x=1): ALL k >= 2 EXCLUDED via (|U|,|V|,p,d) = [ 242, 12, 61, 1 
+ ]
+    X/Inn = C2 (x=2): ALL k >= 2 EXCLUDED via (|U|,|V|,p,d) = 
+[ 242, 12, 61, 1 ]
+    X/Inn = C5 (x=5): ALL k >= 2 EXCLUDED via (|U|,|V|,p,d) = 
+[ 242, 12, 61, 1 ]
+    X/Inn = C10 (x=10): ALL k >= 2 EXCLUDED via (|U|,|V|,p,d) = 
+[ 242, 12, 61, 1 ]
+    ==> PSL(2,243)^k EXCLUDED FOR ALL k >= 2 AND ALL X.
+### PSL(2,251): |S| = 7906500 = [ [ 2, 2 ], [ 3, 2 ], [ 5, 3 ], [ 7, 1 ], 
+  [ 251, 1 ] ], |Out| = 2, maximal classes [ 31375, 252, 250, 60, 60 ]
+    X/Inn = 1 (x=1): ALL k >= 2 EXCLUDED via (|U|,|V|,p,d) = [ 60, 60, 251, 1 
+ ]
+    X/Inn = C2 (x=2): ALL k >= 2 EXCLUDED via (|U|,|V|,p,d) = 
+[ 252, 250, 251, 1 ]
+    ==> PSL(2,251)^k EXCLUDED FOR ALL k >= 2 AND ALL X.
+### PSL(2,257): |S| = 8487168 = [ [ 2, 8 ], [ 3, 1 ], [ 43, 1 ], [ 257, 1 ] 
+ ], |Out| = 2, maximal classes [ 32896, 258, 256, 24, 24 ]
+    X/Inn = 1 (x=1): ALL k >= 2 EXCLUDED via (|U|,|V|,p,d) = [ 24, 24, 257, 1 
+ ]
+    X/Inn = C2 (x=2): ALL k >= 2 EXCLUDED via (|U|,|V|,p,d) = 
+[ 258, 256, 257, 1 ]
+    ==> PSL(2,257)^k EXCLUDED FOR ALL k >= 2 AND ALL X.
+### PSL(2,263): |S| = 9095592 = [ [ 2, 3 ], [ 3, 1 ], [ 11, 1 ], [ 131, 1 ], 
+  [ 263, 1 ] ], |Out| = 2, maximal classes [ 34453, 264, 262, 24, 24 ]
+    X/Inn = 1 (x=1): ALL k >= 2 EXCLUDED via (|U|,|V|,p,d) = [ 24, 24, 263, 1 
+ ]
+    X/Inn = C2 (x=2): ALL k >= 2 EXCLUDED via (|U|,|V|,p,d) = 
+[ 264, 262, 263, 1 ]
+    ==> PSL(2,263)^k EXCLUDED FOR ALL k >= 2 AND ALL X.
+### PSL(2,269): |S| = 9732420 = [ [ 2, 2 ], [ 3, 3 ], [ 5, 1 ], [ 67, 1 ], 
+  [ 269, 1 ] ], |Out| = 2, maximal classes [ 36046, 270, 268, 60, 60 ]
+    X/Inn = 1 (x=1): ALL k >= 2 EXCLUDED via (|U|,|V|,p,d) = [ 60, 60, 269, 1 
+ ]
+    X/Inn = C2 (x=2): ALL k >= 2 EXCLUDED via (|U|,|V|,p,d) = 
+[ 270, 268, 269, 1 ]
+    ==> PSL(2,269)^k EXCLUDED FOR ALL k >= 2 AND ALL X.
+### PSL(2,271): |S| = 9951120 = [ [ 2, 4 ], [ 3, 3 ], [ 5, 1 ], [ 17, 1 ], 
+  [ 271, 1 ] ], |Out| = 2, maximal classes [ 36585, 272, 270, 60, 60, 24, 24 ]
+    X/Inn = 1 (x=1): ALL k >= 2 EXCLUDED via (|U|,|V|,p,d) = [ 24, 24, 271, 1 
+ ]
+    X/Inn = C2 (x=2): ALL k >= 2 EXCLUDED via (|U|,|V|,p,d) = 
+[ 272, 270, 271, 1 ]
+    ==> PSL(2,271)^k EXCLUDED FOR ALL k >= 2 AND ALL X.
+### PSL(5,2): |S| = 9999360 = [ [ 2, 10 ], [ 3, 2 ], [ 5, 1 ], [ 7, 1 ], 
+  [ 31, 1 ] ], |Out| = 2, maximal classes [ 322560, 322560, 64512, 64512, 155 
+ ]
+    X/Inn = 1 (x=1): ALL k >= 2 EXCLUDED via (|U|,|V|,p,d) = 
+[ 64512, 64512, 31, 1 ]
+    X/Inn = C2 (x=2): NOT all-k excluded; stable classes 
+[ 155 ]; k<=30 excluded: [  ]
+    ==> PSL(5,2) SURVIVES for X with x in [ 2 ]
+### M23: |S| = 10200960 = [ [ 2, 7 ], [ 3, 2 ], [ 5, 1 ], [ 7, 1 ], 
+  [ 11, 1 ], [ 23, 1 ] ], |Out| = 1, maximal classes 
+[ 443520, 40320, 40320, 20160, 7920, 5760, 253 ]
+    X/Inn = 1 (x=1): ALL k >= 2 EXCLUDED via (|U|,|V|,p,d) = 
+[ 5760, 253, 7, 1 ]
+    ==> M23^k EXCLUDED FOR ALL k >= 2 AND ALL X.
+SWEEP J3 DONE.

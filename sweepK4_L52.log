@@ -1,0 +1,9 @@
+  == pair (P14flag 21504, P23flag 9216) for L5_2, x = 2
+      P14flag: 2 intermediate subgroups
+      P14flag: certified (self-norm, X-stable, saturating, P_X-maximal)
+      P23flag: 2 intermediate subgroups
+      P23flag: certified (self-norm, X-stable, saturating, P_X-maximal)
+      divisibility: p = 5, d = 1 > v_p(x) = 0  ==> ALL k >= 2 EXCLUDED
+      divisibility: p = 31, d = 1 > v_p(x) = 0  ==> ALL k >= 2 EXCLUDED
+L5_2: ALL k >= 2 EXCLUDED FOR ALL X (novelty pair certified).
+SWEEP K4 DONE.

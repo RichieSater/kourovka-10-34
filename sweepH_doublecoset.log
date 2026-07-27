@@ -1,0 +1,213 @@
+A5: |S| = 60, |Out| = 2, stable classes: [ 6, 12, 10 ]
+    pair (6,12): 2 double cosets, maxDC = 36 = |S|/5/3
+    pair (6,10): 2 double cosets, maxDC = 30 = |S|/2
+    pair (12,10): 1 double cosets, maxDC = 60 = |S|/1
+    k=2: not excluded
+    k=3: not excluded
+    k=4: not excluded
+    k=5: not excluded
+    k=6: not excluded
+    k=7: not excluded
+    k=8: not excluded
+L3_2: |S| = 168, |Out| = 2, stable classes: [ 21 ]
+    k=2: not excluded
+    k=3: not excluded
+    k=4: not excluded
+    k=5: not excluded
+    k=6: not excluded
+    k=7: not excluded
+    k=8: not excluded
+A6: |S| = 360, |Out| = 4, stable classes: [ 36 ]
+    k=2: not excluded
+    k=3: not excluded
+    k=4: not excluded
+    k=5: not excluded
+    k=6: not excluded
+    k=7: not excluded
+    k=8: not excluded
+L2_8: |S| = 504, |Out| = 3, stable classes: [ 56, 18, 14 ]
+    pair (56,18): 1 double cosets, maxDC = 504 = |S|/1
+    pair (56,14): 2 double cosets, maxDC = 392 = |S|/9/7
+    pair (18,14): 4 double cosets, maxDC = 126 = |S|/4
+    k=2: not excluded
+    k=3: not excluded
+    k=4: not excluded
+    k=5: not excluded
+    k=6: not excluded
+    k=7: not excluded
+    k=8: not excluded
+L2_11: |S| = 660, |Out| = 2, stable classes: [ 55, 12 ]
+    pair (55,12): 1 double cosets, maxDC = 660 = |S|/1
+    k=2: not excluded
+    k=3: not excluded
+    k=4: not excluded
+    k=5: not excluded
+    k=6: not excluded
+    k=7: not excluded
+    k=8: not excluded
+A7: |S| = 2520, |Out| = 2, stable classes: [ 72, 120, 360 ]
+    pair (72,120): 3 double cosets, maxDC = 1440 = |S|/7/4
+    pair (72,360): 2 double cosets, maxDC = 1440 = |S|/7/4
+    pair (120,360): 2 double cosets, maxDC = 1800 = |S|/7/5
+    k=2: not excluded
+    k=3: not excluded
+    k=4: not excluded
+    k=5: not excluded
+    k=6: not excluded
+    k=7: not excluded
+    k=8: not excluded
+L2_16: |S| = 4080, |Out| = 4, stable classes: [ 240, 60, 34, 30 ]
+    pair (240,60): 2 double cosets, maxDC = 2880 = |S|/17/12
+    pair (240,34): 1 double cosets, maxDC = 4080 = |S|/1
+    pair (240,30): 2 double cosets, maxDC = 3600 = |S|/17/15
+    pair (60,34): 4 double cosets, maxDC = 1020 = |S|/4
+    pair (60,30): 5 double cosets, maxDC = 1800 = |S|/34/15
+    pair (34,30): 8 double cosets, maxDC = 510 = |S|/8
+    k=2: EXCLUDED via stable pair [ 34, 30 ]
+    k=3: EXCLUDED via stable pair [ 34, 30 ]
+    k=4: not excluded
+    k=5: not excluded
+    k=6: not excluded
+    k=7: not excluded
+    k=8: not excluded
+U3_3: |S| = 6048, |Out| = 2, stable classes: [ 216, 168, 96, 96 ]
+    pair (216,168): 1 double cosets, maxDC = 6048 = |S|/1
+    pair (216,96): 2 double cosets, maxDC = 3456 = |S|/7/4
+    pair (216,96): 2 double cosets, maxDC = 5184 = |S|/7/6
+    pair (168,96): 4 double cosets, maxDC = 2688 = |S|/9/4
+    pair (168,96): 2 double cosets, maxDC = 4032 = |S|/3/2
+    pair (96,96): 3 double cosets, maxDC = 4608 = |S|/21/16
+    k=2: not excluded
+    k=3: not excluded
+    k=4: not excluded
+    k=5: not excluded
+    k=6: not excluded
+    k=7: not excluded
+    k=8: not excluded
+M11: |S| = 7920, |Out| = 1, stable classes: [ 720, 660, 144, 120, 48 ]
+    pair (720,660): 1 double cosets, maxDC = 7920 = |S|/1
+    pair (720,144): 2 double cosets, maxDC = 6480 = |S|/11/9
+    pair (720,120): 2 double cosets, maxDC = 4320 = |S|/11/6
+    pair (720,48): 2 double cosets, maxDC = 5760 = |S|/11/8
+    pair (660,144): 1 double cosets, maxDC = 7920 = |S|/1
+    pair (660,120): 2 double cosets, maxDC = 6600 = |S|/6/5
+    pair (660,48): 2 double cosets, maxDC = 5280 = |S|/3/2
+    pair (144,120): 3 double cosets, maxDC = 4320 = |S|/11/6
+    pair (144,48): 4 double cosets, maxDC = 3456 = |S|/55/24
+    pair (120,48): 5 double cosets, maxDC = 2880 = |S|/11/4
+    k=2: EXCLUDED via stable pair [ 120, 48 ]
+    k=3: EXCLUDED via stable pair [ 120, 48 ]
+    k=4: EXCLUDED via stable pair [ 120, 48 ]
+    k=5: EXCLUDED via stable pair [ 120, 48 ]
+    k=6: not excluded
+    k=7: not excluded
+    k=8: not excluded
+A8: |S| = 20160, |Out| = 2, stable classes: [ 360, 720, 2520, 576 ]
+    pair (360,720): 3 double cosets, maxDC = 10800 = |S|/28/15
+    pair (360,2520): 2 double cosets, maxDC = 12600 = |S|/8/5
+    pair (360,576): 2 double cosets, maxDC = 17280 = |S|/7/6
+    pair (720,2520): 2 double cosets, maxDC = 15120 = |S|/4/3
+    pair (720,576): 2 double cosets, maxDC = 11520 = |S|/7/4
+    pair (2520,576): 1 double cosets, maxDC = 20160 = |S|/1
+    k=2: not excluded
+    k=3: not excluded
+    k=4: not excluded
+    k=5: not excluded
+    k=6: not excluded
+    k=7: not excluded
+    k=8: not excluded
+L3_4: |S| = 20160, |Out| = 12, stable classes: [ 72 ]
+    k=2: not excluded
+    k=3: not excluded
+    k=4: not excluded
+    k=5: not excluded
+    k=6: not excluded
+    k=7: not excluded
+    k=8: not excluded
+Sp43: |S| = 25920, |Out| = 2, stable classes: [ 960, 720, 648, 648, 576 ]
+    pair (960,720): 2 double cosets, maxDC = 14400 = |S|/9/5
+    pair (960,648): 1 double cosets, maxDC = 25920 = |S|/1
+    pair (960,648): 1 double cosets, maxDC = 25920 = |S|/1
+    pair (960,576): 2 double cosets, maxDC = 23040 = |S|/9/8
+    pair (720,648): 2 double cosets, maxDC = 19440 = |S|/4/3
+    pair (720,648): 1 double cosets, maxDC = 25920 = |S|/1
+    pair (720,576): 2 double cosets, maxDC = 17280 = |S|/3/2
+    pair (648,648): 2 double cosets, maxDC = 23328 = |S|/10/9
+    pair (648,576): 2 double cosets, maxDC = 15552 = |S|/5/3
+    pair (648,576): 2 double cosets, maxDC = 20736 = |S|/5/4
+    k=2: not excluded
+    k=3: not excluded
+    k=4: not excluded
+    k=5: not excluded
+    k=6: not excluded
+    k=7: not excluded
+    k=8: not excluded
+L2_32: |S| = 32736, |Out| = 5, stable classes: [ 992, 66, 62 ]
+    pair (992,66): 1 double cosets, maxDC = 32736 = |S|/1
+    pair (992,62): 2 double cosets, maxDC = 30752 = |S|/33/31
+    pair (66,62): 16 double cosets, maxDC = 2046 = |S|/16
+    k=2: EXCLUDED via stable pair [ 66, 62 ]
+    k=3: EXCLUDED via stable pair [ 66, 62 ]
+    k=4: EXCLUDED via stable pair [ 66, 62 ]
+    k=5: EXCLUDED via stable pair [ 66, 62 ]
+    k=6: EXCLUDED via stable pair [ 66, 62 ]
+    k=7: not excluded
+    k=8: not excluded
+U3_5: |S| = 126000, |Out| = 6, stable classes: [ 1000, 240 ]
+    pair (1000,240): 2 double cosets, maxDC = 120000 = |S|/21/20
+    k=2: not excluded
+    k=3: not excluded
+    k=4: not excluded
+    k=5: not excluded
+    k=6: not excluded
+    k=7: not excluded
+    k=8: not excluded
+A9: |S| = 181440, |Out| = 2, stable classes: [ 1440, 2160, 5040, 20160, 648, 
+  216 ]
+    pair (1440,2160): 4 double cosets, maxDC = 86400 = |S|/21/10
+    pair (1440,5040): 3 double cosets, maxDC = 100800 = |S|/9/5
+    pair (1440,20160): 2 double cosets, maxDC = 100800 = |S|/9/5
+    pair (1440,648): 3 double cosets, maxDC = 116640 = |S|/14/9
+    pair (1440,216): 2 double cosets, maxDC = 103680 = |S|/7/4
+    pair (2160,5040): 3 double cosets, maxDC = 90720 = |S|/2
+    pair (2160,20160): 2 double cosets, maxDC = 120960 = |S|/3/2
+    pair (2160,648): 3 double cosets, maxDC = 116640 = |S|/14/9
+    pair (2160,216): 2 double cosets, maxDC = 155520 = |S|/7/6
+    pair (5040,20160): 2 double cosets, maxDC = 141120 = |S|/9/7
+    pair (5040,648): 2 double cosets, maxDC = 136080 = |S|/4/3
+    pair (5040,216): 1 double cosets, maxDC = 181440 = |S|/1
+    pair (20160,648): 1 double cosets, maxDC = 181440 = |S|/1
+    pair (20160,216): 1 double cosets, maxDC = 181440 = |S|/1
+    pair (648,216): 5 double cosets, maxDC = 69984 = |S|/70/27
+    k=2: not excluded
+    k=3: not excluded
+    k=4: not excluded
+    k=5: not excluded
+    k=6: not excluded
+    k=7: not excluded
+    k=8: not excluded
+M22: |S| = 443520, |Out| = 2, stable classes: [ 20160, 5760, 1920, 1344, 720, 
+  660 ]
+    pair (20160,5760): 2 double cosets, maxDC = 322560 = |S|/11/8
+    pair (20160,1920): 2 double cosets, maxDC = 403200 = |S|/11/10
+    pair (20160,1344): 2 double cosets, maxDC = 282240 = |S|/11/7
+    pair (20160,720): 2 double cosets, maxDC = 241920 = |S|/11/6
+    pair (20160,660): 2 double cosets, maxDC = 221760 = |S|/2
+    pair (5760,1920): 3 double cosets, maxDC = 230400 = |S|/77/40
+    pair (5760,1344): 3 double cosets, maxDC = 322560 = |S|/11/8
+    pair (5760,720): 3 double cosets, maxDC = 259200 = |S|/77/45
+    pair (5760,660): 3 double cosets, maxDC = 316800 = |S|/7/5
+    pair (1920,1344): 4 double cosets, maxDC = 215040 = |S|/33/16
+    pair (1920,720): 4 double cosets, maxDC = 230400 = |S|/77/40
+    pair (1920,660): 4 double cosets, maxDC = 126720 = |S|/7/2
+    pair (1344,720): 4 double cosets, maxDC = 241920 = |S|/11/6
+    pair (1344,660): 4 double cosets, maxDC = 221760 = |S|/2
+    pair (720,660): 4 double cosets, maxDC = 237600 = |S|/28/15
+    k=2: EXCLUDED via stable pair [ 1920, 660 ]
+    k=3: not excluded
+    k=4: not excluded
+    k=5: not excluded
+    k=6: not excluded
+    k=7: not excluded
+    k=8: not excluded
+SWEEP H DONE.

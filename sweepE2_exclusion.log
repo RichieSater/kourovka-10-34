@@ -1,0 +1,484 @@
+A5: |S| = 60, |Out| = 2, maximal class sizes = [ 6, 12, 10 ], Aut-stable = 
+[ 6, 12, 10 ]
+    k=4: not excluded by this criterion
+    k=5: not excluded by this criterion
+    k=6: not excluded by this criterion
+PSL(3,2): |S| = 168, |Out| = 2, maximal class sizes = 
+[ 24, 24, 21 ], Aut-stable = [ 21 ]
+    k=4: not excluded by this criterion
+    k=5: not excluded by this criterion
+    k=6: not excluded by this criterion
+A6: |S| = 360, |Out| = 4, maximal class sizes = [ 24, 60, 24, 36, 60 
+ ], Aut-stable = [ 36 ]
+    k=4: not excluded by this criterion
+    k=5: not excluded by this criterion
+    k=6: not excluded by this criterion
+PSL(2,8): |S| = 504, |Out| = 3, maximal class sizes = 
+[ 56, 18, 14 ], Aut-stable = [ 56, 18, 14 ]
+    k=4: not excluded by this criterion
+    k=5: not excluded by this criterion
+    k=6: not excluded by this criterion
+PSL(2,11): |S| = 660, |Out| = 2, maximal class sizes = [ 60, 60, 55, 12 
+ ], Aut-stable = [ 55, 12 ]
+    k=4: not excluded by this criterion
+    k=5: not excluded by this criterion
+    k=6: not excluded by this criterion
+PSL(2,13): |S| = 1092, |Out| = 2, maximal class sizes = [ 78, 14, 12, 12 
+ ], Aut-stable = [ 78, 14, 12, 12 ]
+    k=4: EXCLUDED via stable pair [ 12, 12 ]
+    k=5: EXCLUDED via stable pair [ 12, 12 ]
+    k=6: EXCLUDED via stable pair [ 12, 12 ]
+PSL(2,17): |S| = 2448, |Out| = 2, maximal class sizes = [ 136, 24, 24, 18, 16 
+ ], Aut-stable = [ 136, 18, 16 ]
+    k=4: EXCLUDED via stable pair [ 18, 16 ]
+    k=5: EXCLUDED via stable pair [ 18, 16 ]
+    k=6: EXCLUDED via stable pair [ 18, 16 ]
+A7: |S| = 2520, |Out| = 2, maximal class sizes = [ 72, 120, 360, 168, 168 
+ ], Aut-stable = [ 72, 120, 360 ]
+    k=4: not excluded by this criterion
+    k=5: not excluded by this criterion
+    k=6: not excluded by this criterion
+PSL(2,19): |S| = 3420, |Out| = 2, maximal class sizes = [ 171, 60, 60, 20, 18 
+ ], Aut-stable = [ 171, 20, 18 ]
+    k=4: EXCLUDED via stable pair [ 20, 18 ]
+    k=5: EXCLUDED via stable pair [ 20, 18 ]
+    k=6: EXCLUDED via stable pair [ 20, 18 ]
+PSL(2,16): |S| = 4080, |Out| = 4, maximal class sizes = [ 240, 60, 34, 30 
+ ], Aut-stable = [ 240, 60, 34, 30 ]
+    k=4: not excluded by this criterion
+    k=5: not excluded by this criterion
+    k=6: not excluded by this criterion
+PSL(3,3): |S| = 5616, |Out| = 2, maximal class sizes = [ 432, 432, 39, 24 
+ ], Aut-stable = [ 39, 24 ]
+    k=4: EXCLUDED via stable pair [ 39, 24 ]
+    k=5: EXCLUDED via stable pair [ 39, 24 ]
+    k=6: EXCLUDED via stable pair [ 39, 24 ]
+PSU(3,3): |S| = 6048, |Out| = 2, maximal class sizes = [ 216, 168, 96, 96 
+ ], Aut-stable = [ 216, 168, 96, 96 ]
+    k=4: not excluded by this criterion
+    k=5: not excluded by this criterion
+    k=6: not excluded by this criterion
+PSL(2,23): |S| = 6072, |Out| = 2, maximal class sizes = [ 253, 24, 24, 24, 22 
+ ], Aut-stable = [ 253, 24, 22 ]
+    k=4: EXCLUDED via stable pair [ 24, 22 ]
+    k=5: EXCLUDED via stable pair [ 24, 22 ]
+    k=6: EXCLUDED via stable pair [ 24, 22 ]
+PSL(2,25): |S| = 7800, |Out| = 4, maximal class sizes = 
+[ 300, 120, 120, 26, 24 ], Aut-stable = [ 300, 26, 24 ]
+    k=4: EXCLUDED via stable pair [ 26, 24 ]
+    k=5: EXCLUDED via stable pair [ 26, 24 ]
+    k=6: EXCLUDED via stable pair [ 26, 24 ]
+M11: |S| = 7920, |Out| = 1, maximal class sizes = [ 720, 660, 144, 120, 48 
+ ], Aut-stable = [ 720, 660, 144, 120, 48 ]
+    k=4: not excluded by this criterion
+    k=5: not excluded by this criterion
+    k=6: not excluded by this criterion
+PSL(2,27): |S| = 9828, |Out| = 6, maximal class sizes = [ 351, 28, 26, 12 
+ ], Aut-stable = [ 351, 28, 26, 12 ]
+    k=4: EXCLUDED via stable pair [ 26, 12 ]
+    k=5: EXCLUDED via stable pair [ 26, 12 ]
+    k=6: EXCLUDED via stable pair [ 26, 12 ]
+PSL(2,29): |S| = 12180, |Out| = 2, maximal class sizes = 
+[ 406, 60, 60, 30, 28 ], Aut-stable = [ 406, 30, 28 ]
+    k=4: EXCLUDED via stable pair [ 30, 28 ]
+    k=5: EXCLUDED via stable pair [ 30, 28 ]
+    k=6: EXCLUDED via stable pair [ 30, 28 ]
+PSL(2,31): |S| = 14880, |Out| = 2, maximal class sizes = 
+[ 465, 60, 60, 32, 30, 24, 24 ], Aut-stable = [ 465, 32, 30 ]
+    k=4: EXCLUDED via stable pair [ 32, 30 ]
+    k=5: EXCLUDED via stable pair [ 32, 30 ]
+    k=6: EXCLUDED via stable pair [ 32, 30 ]
+A8: |S| = 20160, |Out| = 2, maximal class sizes = 
+[ 360, 720, 2520, 576, 1344, 1344 ], Aut-stable = [ 360, 720, 2520, 576 ]
+    k=4: not excluded by this criterion
+    k=5: not excluded by this criterion
+    k=6: not excluded by this criterion
+PSL(3,4): |S| = 20160, |Out| = 12, maximal class sizes = 
+[ 960, 960, 360, 360, 360, 168, 168, 168, 72 ], Aut-stable = [ 72 ]
+    k=4: not excluded by this criterion
+    k=5: not excluded by this criterion
+    k=6: not excluded by this criterion
+PSL(2,37): |S| = 25308, |Out| = 2, maximal class sizes = [ 666, 38, 36, 12 
+ ], Aut-stable = [ 666, 38, 36, 12 ]
+    k=4: EXCLUDED via stable pair [ 36, 12 ]
+    k=5: EXCLUDED via stable pair [ 36, 12 ]
+    k=6: EXCLUDED via stable pair [ 36, 12 ]
+O(5,3): |S| = 25920, |Out| = 2, maximal class sizes = 
+[ 960, 720, 648, 648, 576 ], Aut-stable = [ 960, 720, 648, 648, 576 ]
+    k=4: not excluded by this criterion
+    k=5: not excluded by this criterion
+    k=6: not excluded by this criterion
+Sz(8): |S| = 29120, |Out| = 3, maximal class sizes = [ 448, 52, 20, 14 
+ ], Aut-stable = [ 448, 52, 20, 14 ]
+    k=4: EXCLUDED via stable pair [ 20, 14 ]
+    k=5: EXCLUDED via stable pair [ 20, 14 ]
+    k=6: EXCLUDED via stable pair [ 20, 14 ]
+PSL(2,32): |S| = 32736, |Out| = 5, maximal class sizes = 
+[ 992, 66, 62 ], Aut-stable = [ 992, 66, 62 ]
+    k=4: not excluded by this criterion
+    k=5: not excluded by this criterion
+    k=6: not excluded by this criterion
+PSL(2,41): |S| = 34440, |Out| = 2, maximal class sizes = 
+[ 820, 60, 60, 42, 40, 24, 24 ], Aut-stable = [ 820, 42, 40 ]
+    k=4: EXCLUDED via stable pair [ 42, 40 ]
+    k=5: EXCLUDED via stable pair [ 42, 40 ]
+    k=6: EXCLUDED via stable pair [ 42, 40 ]
+PSL(2,43): |S| = 39732, |Out| = 2, maximal class sizes = [ 903, 44, 42, 12 
+ ], Aut-stable = [ 903, 44, 42, 12 ]
+    k=4: EXCLUDED via stable pair [ 42, 12 ]
+    k=5: EXCLUDED via stable pair [ 42, 12 ]
+    k=6: EXCLUDED via stable pair [ 42, 12 ]
+PSL(2,47): |S| = 51888, |Out| = 2, maximal class sizes = 
+[ 1081, 48, 46, 24, 24 ], Aut-stable = [ 1081, 48, 46 ]
+    k=4: EXCLUDED via stable pair [ 48, 46 ]
+    k=5: EXCLUDED via stable pair [ 48, 46 ]
+    k=6: EXCLUDED via stable pair [ 48, 46 ]
+PSL(2,49): |S| = 58800, |Out| = 4, maximal class sizes = 
+[ 1176, 336, 336, 60, 60, 50, 48 ], Aut-stable = [ 1176, 50, 48 ]
+    k=4: EXCLUDED via stable pair [ 50, 48 ]
+    k=5: EXCLUDED via stable pair [ 50, 48 ]
+    k=6: EXCLUDED via stable pair [ 50, 48 ]
+PSU(3,4): |S| = 62400, |Out| = 4, maximal class sizes = [ 960, 300, 150, 39 
+ ], Aut-stable = [ 960, 300, 150, 39 ]
+    k=4: EXCLUDED via stable pair [ 150, 39 ]
+    k=5: EXCLUDED via stable pair [ 150, 39 ]
+    k=6: not excluded by this criterion
+PSL(2,53): |S| = 74412, |Out| = 2, maximal class sizes = [ 1378, 54, 52, 12 
+ ], Aut-stable = [ 1378, 54, 52, 12 ]
+    k=4: EXCLUDED via stable pair [ 52, 12 ]
+    k=5: EXCLUDED via stable pair [ 52, 12 ]
+    k=6: EXCLUDED via stable pair [ 52, 12 ]
+M12: |S| = 95040, |Out| = 2, maximal class sizes = 
+[ 7920, 7920, 1440, 1440, 660, 432, 432, 240, 192, 192, 72 ], Aut-stable = 
+[ 660, 240, 192, 192, 72 ]
+    k=4: EXCLUDED via stable pair [ 192, 72 ]
+    k=5: EXCLUDED via stable pair [ 192, 72 ]
+    k=6: EXCLUDED via stable pair [ 192, 72 ]
+PSL(2,59): |S| = 102660, |Out| = 2, maximal class sizes = 
+[ 1711, 60, 60, 60, 58 ], Aut-stable = [ 1711, 60, 58 ]
+    k=4: EXCLUDED via stable pair [ 60, 58 ]
+    k=5: EXCLUDED via stable pair [ 60, 58 ]
+    k=6: EXCLUDED via stable pair [ 60, 58 ]
+PSL(2,61): |S| = 113460, |Out| = 2, maximal class sizes = 
+[ 1830, 62, 60, 60, 60 ], Aut-stable = [ 1830, 62, 60 ]
+    k=4: EXCLUDED via stable pair [ 62, 60 ]
+    k=5: EXCLUDED via stable pair [ 62, 60 ]
+    k=6: EXCLUDED via stable pair [ 62, 60 ]
+PSU(3,5): |S| = 126000, |Out| = 6, maximal class sizes = 
+[ 2520, 2520, 2520, 1000, 720, 720, 720, 240 ], Aut-stable = [ 1000, 240 ]
+    k=4: not excluded by this criterion
+    k=5: not excluded by this criterion
+    k=6: not excluded by this criterion
+PSL(2,67): |S| = 150348, |Out| = 2, maximal class sizes = [ 2211, 68, 66, 12 
+ ], Aut-stable = [ 2211, 68, 66, 12 ]
+    k=4: EXCLUDED via stable pair [ 66, 12 ]
+    k=5: EXCLUDED via stable pair [ 66, 12 ]
+    k=6: EXCLUDED via stable pair [ 66, 12 ]
+J1: |S| = 175560, |Out| = 1, maximal class sizes = 
+[ 660, 168, 120, 114, 110, 60, 42 ], Aut-stable = 
+[ 660, 168, 120, 114, 110, 60, 42 ]
+    k=4: EXCLUDED via stable pair [ 60, 42 ]
+    k=5: EXCLUDED via stable pair [ 60, 42 ]
+    k=6: EXCLUDED via stable pair [ 60, 42 ]
+PSL(2,71): |S| = 178920, |Out| = 2, maximal class sizes = 
+[ 2485, 72, 70, 60, 60, 24, 24 ], Aut-stable = [ 2485, 72, 70 ]
+    k=4: EXCLUDED via stable pair [ 72, 70 ]
+    k=5: EXCLUDED via stable pair [ 72, 70 ]
+    k=6: EXCLUDED via stable pair [ 72, 70 ]
+A9: |S| = 181440, |Out| = 2, maximal class sizes = 
+[ 1440, 2160, 5040, 20160, 648, 216, 1512, 1512 ], Aut-stable = 
+[ 1440, 2160, 5040, 20160, 648, 216 ]
+    k=4: not excluded by this criterion
+    k=5: not excluded by this criterion
+    k=6: not excluded by this criterion
+PSL(2,73): |S| = 194472, |Out| = 2, maximal class sizes = 
+[ 2628, 74, 72, 24, 24 ], Aut-stable = [ 2628, 74, 72 ]
+    k=4: EXCLUDED via stable pair [ 74, 72 ]
+    k=5: EXCLUDED via stable pair [ 74, 72 ]
+    k=6: EXCLUDED via stable pair [ 74, 72 ]
+PSL(2,79): |S| = 246480, |Out| = 2, maximal class sizes = 
+[ 3081, 80, 78, 60, 60, 24, 24 ], Aut-stable = [ 3081, 80, 78 ]
+    k=4: EXCLUDED via stable pair [ 80, 78 ]
+    k=5: EXCLUDED via stable pair [ 80, 78 ]
+    k=6: EXCLUDED via stable pair [ 80, 78 ]
+PSL(2,64): |S| = 262080, |Out| = 6, maximal class sizes = 
+[ 4032, 504, 130, 126, 60 ], Aut-stable = [ 4032, 504, 130, 126, 60 ]
+    k=4: EXCLUDED via stable pair [ 126, 60 ]
+    k=5: EXCLUDED via stable pair [ 126, 60 ]
+    k=6: EXCLUDED via stable pair [ 126, 60 ]
+PSL(2,81): |S| = 265680, |Out| = 8, maximal class sizes = 
+[ 3240, 720, 720, 82, 80 ], Aut-stable = [ 3240, 82, 80 ]
+    k=4: EXCLUDED via stable pair [ 82, 80 ]
+    k=5: EXCLUDED via stable pair [ 82, 80 ]
+    k=6: EXCLUDED via stable pair [ 82, 80 ]
+PSL(2,83): |S| = 285852, |Out| = 2, maximal class sizes = [ 3403, 84, 82, 12 
+ ], Aut-stable = [ 3403, 84, 82, 12 ]
+    k=4: EXCLUDED via stable pair [ 82, 12 ]
+    k=5: EXCLUDED via stable pair [ 82, 12 ]
+    k=6: EXCLUDED via stable pair [ 82, 12 ]
+PSL(2,89): |S| = 352440, |Out| = 2, maximal class sizes = 
+[ 3916, 90, 88, 60, 60, 24, 24 ], Aut-stable = [ 3916, 90, 88 ]
+    k=4: EXCLUDED via stable pair [ 90, 88 ]
+    k=5: EXCLUDED via stable pair [ 90, 88 ]
+    k=6: EXCLUDED via stable pair [ 90, 88 ]
+PSL(3,5): |S| = 372000, |Out| = 2, maximal class sizes = 
+[ 12000, 12000, 120, 96, 93 ], Aut-stable = [ 120, 96, 93 ]
+    k=4: EXCLUDED via stable pair [ 96, 93 ]
+    k=5: EXCLUDED via stable pair [ 96, 93 ]
+    k=6: EXCLUDED via stable pair [ 96, 93 ]
+M22: |S| = 443520, |Out| = 2, maximal class sizes = 
+[ 20160, 5760, 2520, 2520, 1920, 1344, 720, 660 ], Aut-stable = 
+[ 20160, 5760, 1920, 1344, 720, 660 ]
+    k=4: not excluded by this criterion
+    k=5: not excluded by this criterion
+    k=6: not excluded by this criterion
+PSL(2,97): |S| = 456288, |Out| = 2, maximal class sizes = 
+[ 4656, 98, 96, 24, 24 ], Aut-stable = [ 4656, 98, 96 ]
+    k=4: EXCLUDED via stable pair [ 98, 96 ]
+    k=5: EXCLUDED via stable pair [ 98, 96 ]
+    k=6: EXCLUDED via stable pair [ 98, 96 ]
+PSL(2,101): |S| = 515100, |Out| = 2, maximal class sizes = 
+[ 5050, 102, 100, 60, 60 ], Aut-stable = [ 5050, 102, 100 ]
+    k=2: EXCLUDED via stable pair [ 102, 100 ]
+    k=3: EXCLUDED via stable pair [ 102, 100 ]
+    k=4: EXCLUDED via stable pair [ 102, 100 ]
+    k=5: EXCLUDED via stable pair [ 102, 100 ]
+    k=6: EXCLUDED via stable pair [ 102, 100 ]
+PSL(2,103): |S| = 546312, |Out| = 2, maximal class sizes = 
+[ 5253, 104, 102, 24, 24 ], Aut-stable = [ 5253, 104, 102 ]
+    k=2: EXCLUDED via stable pair [ 104, 102 ]
+    k=3: EXCLUDED via stable pair [ 104, 102 ]
+    k=4: EXCLUDED via stable pair [ 104, 102 ]
+    k=5: EXCLUDED via stable pair [ 104, 102 ]
+    k=6: EXCLUDED via stable pair [ 104, 102 ]
+HJ: |S| = 604800, |Out| = 2, maximal class sizes = 
+[ 6048, 2160, 1920, 1152, 720, 600, 336, 300, 60 ], Aut-stable = 
+[ 6048, 2160, 1920, 1152, 720, 600, 336, 300, 60 ]
+    k=2: EXCLUDED via stable pair [ 300, 60 ]
+    k=3: EXCLUDED via stable pair [ 300, 60 ]
+    k=4: EXCLUDED via stable pair [ 300, 60 ]
+    k=5: EXCLUDED via stable pair [ 300, 60 ]
+    k=6: EXCLUDED via stable pair [ 300, 60 ]
+PSL(2,107): |S| = 612468, |Out| = 2, maximal class sizes = 
+[ 5671, 108, 106, 12 ], Aut-stable = [ 5671, 108, 106, 12 ]
+    k=2: EXCLUDED via stable pair [ 106, 12 ]
+    k=3: EXCLUDED via stable pair [ 106, 12 ]
+    k=4: EXCLUDED via stable pair [ 106, 12 ]
+    k=5: EXCLUDED via stable pair [ 106, 12 ]
+    k=6: EXCLUDED via stable pair [ 106, 12 ]
+PSL(2,109): |S| = 647460, |Out| = 2, maximal class sizes = 
+[ 5886, 110, 108, 60, 60 ], Aut-stable = [ 5886, 110, 108 ]
+    k=2: EXCLUDED via stable pair [ 110, 108 ]
+    k=3: EXCLUDED via stable pair [ 110, 108 ]
+    k=4: EXCLUDED via stable pair [ 110, 108 ]
+    k=5: EXCLUDED via stable pair [ 110, 108 ]
+    k=6: EXCLUDED via stable pair [ 110, 108 ]
+PSL(2,113): |S| = 721392, |Out| = 2, maximal class sizes = 
+[ 6328, 114, 112, 24, 24 ], Aut-stable = [ 6328, 114, 112 ]
+    k=2: EXCLUDED via stable pair [ 114, 112 ]
+    k=3: EXCLUDED via stable pair [ 114, 112 ]
+    k=4: EXCLUDED via stable pair [ 114, 112 ]
+    k=5: EXCLUDED via stable pair [ 114, 112 ]
+    k=6: EXCLUDED via stable pair [ 114, 112 ]
+PSL(2,121): |S| = 885720, |Out| = 4, maximal class sizes = 
+[ 7260, 1320, 1320, 122, 120 ], Aut-stable = [ 7260, 122, 120 ]
+    k=2: EXCLUDED via stable pair [ 122, 120 ]
+    k=3: EXCLUDED via stable pair [ 122, 120 ]
+    k=4: EXCLUDED via stable pair [ 122, 120 ]
+    k=5: EXCLUDED via stable pair [ 122, 120 ]
+    k=6: EXCLUDED via stable pair [ 122, 120 ]
+PSL(2,125): |S| = 976500, |Out| = 6, maximal class sizes = 
+[ 7750, 126, 124, 60 ], Aut-stable = [ 7750, 126, 124, 60 ]
+    k=2: EXCLUDED via stable pair [ 124, 60 ]
+    k=3: EXCLUDED via stable pair [ 124, 60 ]
+    k=4: EXCLUDED via stable pair [ 124, 60 ]
+    k=5: EXCLUDED via stable pair [ 124, 60 ]
+    k=6: EXCLUDED via stable pair [ 124, 60 ]
+O(5,4): |S| = 979200, |Out| = 4, maximal class sizes = 
+[ 11520, 11520, 8160, 8160, 7200, 7200, 720 ], Aut-stable = [ 720 ]
+    k=2: not excluded by this criterion
+    k=3: not excluded by this criterion
+    k=4: not excluded by this criterion
+    k=5: not excluded by this criterion
+    k=6: not excluded by this criterion
+PSL(2,127): |S| = 1024128, |Out| = 2, maximal class sizes = 
+[ 8001, 128, 126, 24, 24 ], Aut-stable = [ 8001, 128, 126 ]
+    k=2: EXCLUDED via stable pair [ 128, 126 ]
+    k=3: EXCLUDED via stable pair [ 128, 126 ]
+    k=4: EXCLUDED via stable pair [ 128, 126 ]
+    k=5: EXCLUDED via stable pair [ 128, 126 ]
+    k=6: EXCLUDED via stable pair [ 128, 126 ]
+PSL(2,131): |S| = 1123980, |Out| = 2, maximal class sizes = 
+[ 8515, 132, 130, 60, 60 ], Aut-stable = [ 8515, 132, 130 ]
+    k=2: EXCLUDED via stable pair [ 132, 130 ]
+    k=3: EXCLUDED via stable pair [ 132, 130 ]
+    k=4: EXCLUDED via stable pair [ 132, 130 ]
+    k=5: EXCLUDED via stable pair [ 132, 130 ]
+    k=6: EXCLUDED via stable pair [ 132, 130 ]
+PSL(2,137): |S| = 1285608, |Out| = 2, maximal class sizes = 
+[ 9316, 138, 136, 24, 24 ], Aut-stable = [ 9316, 138, 136 ]
+    k=2: EXCLUDED via stable pair [ 138, 136 ]
+    k=3: EXCLUDED via stable pair [ 138, 136 ]
+    k=4: EXCLUDED via stable pair [ 138, 136 ]
+    k=5: EXCLUDED via stable pair [ 138, 136 ]
+    k=6: EXCLUDED via stable pair [ 138, 136 ]
+PSL(2,139): |S| = 1342740, |Out| = 2, maximal class sizes = 
+[ 9591, 140, 138, 60, 60 ], Aut-stable = [ 9591, 140, 138 ]
+    k=2: EXCLUDED via stable pair [ 140, 138 ]
+    k=3: EXCLUDED via stable pair [ 140, 138 ]
+    k=4: EXCLUDED via stable pair [ 140, 138 ]
+    k=5: EXCLUDED via stable pair [ 140, 138 ]
+    k=6: EXCLUDED via stable pair [ 140, 138 ]
+O(7,2): |S| = 1451520, |Out| = 1, maximal class sizes = 
+[ 51840, 40320, 23040, 12096, 10752, 4608, 4320, 1512 ], Aut-stable = 
+[ 51840, 40320, 23040, 12096, 10752, 4608, 4320, 1512 ]
+    k=2: not excluded by this criterion
+    k=3: not excluded by this criterion
+    k=4: not excluded by this criterion
+    k=5: not excluded by this criterion
+    k=6: not excluded by this criterion
+PSL(2,149): |S| = 1653900, |Out| = 2, maximal class sizes = 
+[ 11026, 150, 148, 60, 60 ], Aut-stable = [ 11026, 150, 148 ]
+    k=2: EXCLUDED via stable pair [ 150, 148 ]
+    k=3: EXCLUDED via stable pair [ 150, 148 ]
+    k=4: EXCLUDED via stable pair [ 150, 148 ]
+    k=5: EXCLUDED via stable pair [ 150, 148 ]
+    k=6: EXCLUDED via stable pair [ 150, 148 ]
+PSL(2,151): |S| = 1721400, |Out| = 2, maximal class sizes = 
+[ 11325, 152, 150, 60, 60, 24, 24 ], Aut-stable = [ 11325, 152, 150 ]
+    k=2: EXCLUDED via stable pair [ 152, 150 ]
+    k=3: EXCLUDED via stable pair [ 152, 150 ]
+    k=4: EXCLUDED via stable pair [ 152, 150 ]
+    k=5: EXCLUDED via stable pair [ 152, 150 ]
+    k=6: EXCLUDED via stable pair [ 152, 150 ]
+A10: |S| = 1814400, |Out| = 2, maximal class sizes = 
+[ 8640, 15120, 40320, 181440, 1920, 14400, 720 ], Aut-stable = 
+[ 8640, 15120, 40320, 181440, 1920, 14400, 720 ]
+    k=2: not excluded by this criterion
+    k=3: not excluded by this criterion
+    k=4: not excluded by this criterion
+    k=5: not excluded by this criterion
+    k=6: not excluded by this criterion
+PSL(3,7): |S| = 1876896, |Out| = 6, maximal class sizes = 
+[ 32928, 32928, 336, 336, 336, 72, 72, 57 ], Aut-stable = [ 72, 72, 57 ]
+    k=2: EXCLUDED via stable pair [ 72, 57 ]
+    k=3: EXCLUDED via stable pair [ 72, 57 ]
+    k=4: EXCLUDED via stable pair [ 72, 57 ]
+    k=5: EXCLUDED via stable pair [ 72, 57 ]
+    k=6: EXCLUDED via stable pair [ 72, 57 ]
+PSL(2,157): |S| = 1934868, |Out| = 2, maximal class sizes = 
+[ 12246, 158, 156, 12 ], Aut-stable = [ 12246, 158, 156, 12 ]
+    k=2: EXCLUDED via stable pair [ 156, 12 ]
+    k=3: EXCLUDED via stable pair [ 156, 12 ]
+    k=4: EXCLUDED via stable pair [ 156, 12 ]
+    k=5: EXCLUDED via stable pair [ 156, 12 ]
+    k=6: EXCLUDED via stable pair [ 156, 12 ]
+PSL(2,128): |S| = 2097024, |Out| = 7, maximal class sizes = [ 16256, 258, 254 
+ ], Aut-stable = [ 16256, 258, 254 ]
+    k=2: EXCLUDED via stable pair [ 258, 254 ]
+    k=3: EXCLUDED via stable pair [ 258, 254 ]
+    k=4: EXCLUDED via stable pair [ 258, 254 ]
+    k=5: EXCLUDED via stable pair [ 258, 254 ]
+    k=6: EXCLUDED via stable pair [ 258, 254 ]
+PSL(2,163): |S| = 2165292, |Out| = 2, maximal class sizes = 
+[ 13203, 164, 162, 12 ], Aut-stable = [ 13203, 164, 162, 12 ]
+    k=2: EXCLUDED via stable pair [ 162, 12 ]
+    k=3: EXCLUDED via stable pair [ 162, 12 ]
+    k=4: EXCLUDED via stable pair [ 162, 12 ]
+    k=5: EXCLUDED via stable pair [ 162, 12 ]
+    k=6: EXCLUDED via stable pair [ 162, 12 ]
+PSL(2,167): |S| = 2328648, |Out| = 2, maximal class sizes = 
+[ 13861, 168, 166, 24, 24 ], Aut-stable = [ 13861, 168, 166 ]
+    k=2: EXCLUDED via stable pair [ 168, 166 ]
+    k=3: EXCLUDED via stable pair [ 168, 166 ]
+    k=4: EXCLUDED via stable pair [ 168, 166 ]
+    k=5: EXCLUDED via stable pair [ 168, 166 ]
+    k=6: EXCLUDED via stable pair [ 168, 166 ]
+PSL(2,169): |S| = 2413320, |Out| = 4, maximal class sizes = 
+[ 14196, 2184, 2184, 170, 168, 60, 60 ], Aut-stable = [ 14196, 170, 168 ]
+    k=2: EXCLUDED via stable pair [ 170, 168 ]
+    k=3: EXCLUDED via stable pair [ 170, 168 ]
+    k=4: EXCLUDED via stable pair [ 170, 168 ]
+    k=5: EXCLUDED via stable pair [ 170, 168 ]
+    k=6: EXCLUDED via stable pair [ 170, 168 ]
+PSL(2,173): |S| = 2588772, |Out| = 2, maximal class sizes = 
+[ 14878, 174, 172, 12 ], Aut-stable = [ 14878, 174, 172, 12 ]
+    k=2: EXCLUDED via stable pair [ 172, 12 ]
+    k=3: EXCLUDED via stable pair [ 172, 12 ]
+    k=4: EXCLUDED via stable pair [ 172, 12 ]
+    k=5: EXCLUDED via stable pair [ 172, 12 ]
+    k=6: EXCLUDED via stable pair [ 172, 12 ]
+PSL(2,179): |S| = 2867580, |Out| = 2, maximal class sizes = 
+[ 15931, 180, 178, 60, 60 ], Aut-stable = [ 15931, 180, 178 ]
+    k=2: EXCLUDED via stable pair [ 180, 178 ]
+    k=3: EXCLUDED via stable pair [ 180, 178 ]
+    k=4: EXCLUDED via stable pair [ 180, 178 ]
+    k=5: EXCLUDED via stable pair [ 180, 178 ]
+    k=6: EXCLUDED via stable pair [ 180, 178 ]
+PSL(2,181): |S| = 2964780, |Out| = 2, maximal class sizes = 
+[ 16290, 182, 180, 60, 60 ], Aut-stable = [ 16290, 182, 180 ]
+    k=2: EXCLUDED via stable pair [ 182, 180 ]
+    k=3: EXCLUDED via stable pair [ 182, 180 ]
+    k=4: EXCLUDED via stable pair [ 182, 180 ]
+    k=5: EXCLUDED via stable pair [ 182, 180 ]
+    k=6: EXCLUDED via stable pair [ 182, 180 ]
+PSU(4,3): |S| = 3265920, |Out| = 8, maximal class sizes = 
+[ 29160, 25920, 25920, 20160, 20160, 11664, 6048, 5760, 5760, 2520, 2520, 
+  2520, 2520, 1152, 720, 720 ], Aut-stable = [ 29160, 11664, 6048, 1152 ]
+    k=2: not excluded by this criterion
+    k=3: not excluded by this criterion
+    k=4: not excluded by this criterion
+    k=5: not excluded by this criterion
+    k=6: not excluded by this criterion
+PSL(2,191): |S| = 3483840, |Out| = 2, maximal class sizes = 
+[ 18145, 192, 190, 60, 60, 24, 24 ], Aut-stable = [ 18145, 192, 190 ]
+    k=2: EXCLUDED via stable pair [ 192, 190 ]
+    k=3: EXCLUDED via stable pair [ 192, 190 ]
+    k=4: EXCLUDED via stable pair [ 192, 190 ]
+    k=5: EXCLUDED via stable pair [ 192, 190 ]
+    k=6: EXCLUDED via stable pair [ 192, 190 ]
+PSL(2,193): |S| = 3594432, |Out| = 2, maximal class sizes = 
+[ 18528, 194, 192, 24, 24 ], Aut-stable = [ 18528, 194, 192 ]
+    k=2: EXCLUDED via stable pair [ 194, 192 ]
+    k=3: EXCLUDED via stable pair [ 194, 192 ]
+    k=4: EXCLUDED via stable pair [ 194, 192 ]
+    k=5: EXCLUDED via stable pair [ 194, 192 ]
+    k=6: EXCLUDED via stable pair [ 194, 192 ]
+PSL(2,197): |S| = 3822588, |Out| = 2, maximal class sizes = 
+[ 19306, 198, 196, 12 ], Aut-stable = [ 19306, 198, 196, 12 ]
+    k=2: EXCLUDED via stable pair [ 196, 12 ]
+    k=3: EXCLUDED via stable pair [ 196, 12 ]
+    k=4: EXCLUDED via stable pair [ 196, 12 ]
+    k=5: EXCLUDED via stable pair [ 196, 12 ]
+    k=6: EXCLUDED via stable pair [ 196, 12 ]
+PSL(2,199): |S| = 3940200, |Out| = 2, maximal class sizes = 
+[ 19701, 200, 198, 60, 60, 24, 24 ], Aut-stable = [ 19701, 200, 198 ]
+    k=2: EXCLUDED via stable pair [ 200, 198 ]
+    k=3: EXCLUDED via stable pair [ 200, 198 ]
+    k=4: EXCLUDED via stable pair [ 200, 198 ]
+    k=5: EXCLUDED via stable pair [ 200, 198 ]
+    k=6: EXCLUDED via stable pair [ 200, 198 ]
+G(2,3): |S| = 4245696, |Out| = 2, maximal class sizes = 
+[ 12096, 12096, 11664, 11664, 11232, 11232, 1512, 1344, 1092, 576 
+ ], Aut-stable = [ 1512, 1344, 1092, 576 ]
+    k=2: EXCLUDED via stable pair [ 1092, 576 ]
+    k=3: EXCLUDED via stable pair [ 1092, 576 ]
+    k=4: EXCLUDED via stable pair [ 1092, 576 ]
+    k=5: EXCLUDED via stable pair [ 1092, 576 ]
+    k=6: EXCLUDED via stable pair [ 1092, 576 ]
+O(5,5): |S| = 4680000, |Out| = 2, maximal class sizes = 
+[ 30000, 30000, 15600, 14400, 960, 720, 480, 360 ], Aut-stable = 
+[ 30000, 30000, 15600, 14400, 960, 720, 480, 360 ]
+    k=2: EXCLUDED via stable pair [ 480, 360 ]
+    k=3: EXCLUDED via stable pair [ 480, 360 ]
+    k=4: EXCLUDED via stable pair [ 480, 360 ]
+    k=5: EXCLUDED via stable pair [ 480, 360 ]
+    k=6: EXCLUDED via stable pair [ 480, 360 ]
+PSL(2,211): |S| = 4696860, |Out| = 2, maximal class sizes = 
+[ 22155, 212, 210, 60, 60 ], Aut-stable = [ 22155, 212, 210 ]
+    k=2: EXCLUDED via stable pair [ 212, 210 ]
+    k=3: EXCLUDED via stable pair [ 212, 210 ]
+    k=4: EXCLUDED via stable pair [ 212, 210 ]
+    k=5: EXCLUDED via stable pair [ 212, 210 ]
+    k=6: EXCLUDED via stable pair [ 212, 210 ]
+SWEEP E2 DONE.

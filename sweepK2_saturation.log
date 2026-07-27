@@ -1,0 +1,17 @@
+### L3_2: 5 self-normalizing classes, sizes [ 6, 8, 21, 24, 24 ]
+    ALL self-normalizing classes normally saturate: OK
+### A6: 9 self-normalizing classes, sizes [ 6, 6, 8, 10, 24, 24, 36, 60, 60 ]
+    !!! saturation FAILS: V of size 6 in W of size 36, closure 18
+    !!! saturation FAILS: V of size 6 in W of size 36, closure 18
+### L2_11: 6 self-normalizing classes, sizes [ 10, 12, 12, 55, 60, 60 ]
+    ALL self-normalizing classes normally saturate: OK
+### L3_4: 34 self-normalizing classes, sizes [ 6, 10, 12, 21, 24, 24, 24, 24, 
+  24, 24, 48, 48, 48, 60, 60, 60, 60, 60, 60, 60, 72, 96, 96, 160, 160, 168, 
+  168, 168, 192, 360, 360, 360, 960, 960 ]
+    !!! saturation FAILS: V of size 6 in W of size 36, closure 18
+    !!! saturation FAILS: V of size 6 in W of size 36, closure 18
+    !!! saturation FAILS: V of size 6 in W of size 36, closure 18
+    !!! saturation FAILS: V of size 6 in W of size 72, closure 18
+    !!! saturation FAILS: V of size 12 in W of size 96, closure 48
+    !!! saturation FAILS: V of size 12 in W of size 96, closure 48
+SWEEP K2 DONE.

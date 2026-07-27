@@ -1,0 +1,15 @@
+### M23: |S| = 10200960 = [ [ 2, 7 ], [ 3, 2 ], [ 5, 1 ], [ 7, 1 ], 
+  [ 11, 1 ], [ 23, 1 ] ], |Out| = 1, maximal classes 
+[ 443520, 40320, 40320, 20160, 7920, 5760, 253 ]
+    X/Inn = 1 (x=1): ALL k >= 2 EXCLUDED via (|U|,|V|,p,d) = 
+[ 5760, 253, 7, 1 ]
+    ==> M23^k EXCLUDED FOR ALL k >= 2 AND ALL X.
+### L5_2: |S| = 9999360 = [ [ 2, 10 ], [ 3, 2 ], [ 5, 1 ], [ 7, 1 ], 
+  [ 31, 1 ] ], |Out| = 2, maximal classes [ 322560, 322560, 64512, 64512, 155 
+ ]
+    X/Inn = 1 (x=1): ALL k >= 2 EXCLUDED via (|U|,|V|,p,d) = 
+[ 64512, 64512, 31, 1 ]
+    X/Inn = C2 (x=2): NOT all-k excluded; stable classes 
+[ 155 ]; k<=30 excluded: [  ]
+    ==> L5_2 SURVIVES for X with x in [ 2 ]
+SWEEP J6 DONE.

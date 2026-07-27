@@ -1,0 +1,4 @@
+canonical groups in [5e5, 1.05e7]: 51
+matched J3 entries: 51
+J3 survivors (closed by K3/K4): ['O(5,4)', 'PSL(5,2)']
+COVERAGE (big range) OK.
