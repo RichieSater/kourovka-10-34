@@ -18,7 +18,7 @@ exhaustive attack and can say precisely what you attacked and how it held.
 Clone the artifact and work from the frozen tag:
 
     git clone https://github.com/RichieSater/kourovka-10-34
-    cd kourovka-10-34 && git checkout v1.0.0
+    cd kourovka-10-34 && git checkout v1.0.1
 
 Read `paper/kourovka1034.tex` (or the PDF) as the primary object of attack.
 The Markdown notes are context, not authority: where notes and paper
