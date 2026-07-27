@@ -1,0 +1,27 @@
+{
+  "upload_type": "software",
+  "publication_date": "2026-07-27",
+  "title": "Kourovka 10.34: proofs, GAP scripts and machine certificates",
+  "creators": [
+    {
+      "name": "Sater, Richie",
+      "affiliation": "Independent Researcher",
+      "orcid": "[redacted-orcid]"
+    }
+  ],
+  "description": "<p>Paper, GAP scripts, log certificates, coverage cross-checks, and arithmetic receipts supporting a negative solution to Kourovka Notebook Problem 10.34.</p>",
+  "access_right": "open",
+  "license": "other-open",
+  "keywords": [
+    "finite groups",
+    "maximal subgroups",
+    "factorizations",
+    "soluble groups",
+    "simple groups",
+    "Kourovka Notebook",
+    "GAP"
+  ],
+  "version": "1.0.2",
+  "language": "eng",
+  "notes": "<p>Code files are released under the MIT License. The paper and working notes are copyright Richie Sater; all rights reserved pending journal submission.</p>"
+}
