@@ -9,8 +9,7 @@ backing its machine-verified claims, and arithmetic receipts for the
 uniform family proofs. Every machine claim in the paper cites a specific
 log file committed here; every log line is independently re-checkable.
 
-- **Paper:** [`paper/kourovka1034.tex`](paper/kourovka1034.tex) /
-  [`paper/kourovka1034.pdf`](paper/kourovka1034.pdf)
+- **Paper:** [`paper/kourovka1034.tex`](paper/kourovka1034.tex)
   (compile with `tectonic kourovka1034.tex` or `pdflatex`)
 - **Working notes:** `THEOREM.md` (machinery and criterion),
   `FAMILY-PROOFS.md` (family theorems), `STATUS.md` (certificate ledger),
@@ -73,7 +72,7 @@ depends on it.
 ## Layout
 
 ```
-paper/                  LaTeX source + PDF of the paper
+paper/                  LaTeX source of the paper
 *.g                     GAP scripts (sweeps, receipts, helpers)
 *.log                   committed certificates, one per script
 verify_coverage*.py     coverage cross-checks against GAP's canonical
