@@ -1,0 +1,4 @@
+checked 1272 prime powers 13 <= q <= 10000
+failures of the claimed obstruction: [  ]
+PSL(2,q) ARITHMETIC RECEIPTS OK for all 13 <= q <= 10000.
+SWEEP L DONE.
