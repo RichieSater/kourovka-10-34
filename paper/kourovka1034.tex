@@ -531,8 +531,11 @@ two are
 instances of the uniform constructions of Theorem~\ref{thm:graph} below.
 \item \emph{Consistency checks.} Independently of the criterion, property
 $\mathrm{P}$ was tested exhaustively (all admissible $G$, transitive
-tops) for: all socles $S^2$ with $|S|<5\times10^5$; $S^3$ in the same
-range; $S^4$ for small $S$; all non-soluble groups of order $\leq2000$;
+tops) for: all socles $S^2$ with $|S|<5\times10^5$; $S^3$ for the
+smallest socles and for the eleven socles in that range surviving a
+$k=3$ prefilter (complete except over $\PSU(3,5)^3$, where $20$ of $34$
+candidate tops have been checked at the time of writing);
+$S^4$ for small $S$; all non-soluble groups of order $\leq2000$;
 all perfect groups of order $\leq2\times10^6$. No group with property
 $\mathrm{P}$ and non-abelian socle was found, and every observed failing
 pair was of supplement--supplement or top--top type, consistent with
@@ -594,9 +597,11 @@ $S=\PSL(2,q)$, $q=p^f\geq4$, is excluded.
 \end{theorem}
 
 \begin{proof}
-For $q\leq271$ (in particular every exceptional case of Dickson's
-subgroup theorem) this is machine-certified
-(Proposition~\ref{prop:base}). Assume $q\geq13$. Recall
+For $q\leq271$, $q\neq256$ (in particular every exceptional case of
+Dickson's subgroup theorem) this is machine-certified
+(Proposition~\ref{prop:base}); $q=256$ exceeds the machine base
+($|\PSL(2,256)|=16776960>1.05\times10^7$) and is covered by Case~B
+below, which is independent of the base. Assume $q\geq13$. Recall
 $|S|=q(q^2-1)/e$ with $e=\gcd(2,q-1)$, and
 $\Out(S)=C_e\times C_f$, so $x\mid ef$: that is, $x\mid2f$ for $q$ odd
 and $x\mid f$ for $q$ even.
