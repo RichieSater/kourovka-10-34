@@ -10,7 +10,7 @@
 # are supplements of N (do not contain N): by the top-supplement lemma,
 # every failure must come from a (supp,supp) or (top,top) pair.
 
-Read("/Users/richiesater/dev/math/kourovka-10.34/property.g");
+Read("property.g");
 
 # Aut(S) as a permutation group containing the given copy of S when the
 # natural-degree normalizer realizes the full automorphism group; otherwise
@@ -103,26 +103,3 @@ RunCase("L2_17", PSL(2,17), 18, 2);
 RunCase("A7",    AlternatingGroup(7),  7, 2);
 RunCase("L2_19", PSL(2,19), 20, 2);
 RunCase("L2_16", PSL(2,16), 17, 2);
-RunCase("L3_3",  PSL(3,3),  fail, 2);   # graph automorphism: generic Aut rep
-RunCase("U3_3",  PSU(3,3),  28, 2);
-RunCase("L2_23", PSL(2,23), 24, 2);
-RunCase("L2_25", PSL(2,25), 26, 2);
-RunCase("M11",   MathieuGroup(11), 11, 2);
-RunCase("L2_27", PSL(2,27), 28, 2);
-RunCase("L2_29", PSL(2,29), 30, 2);
-RunCase("L2_31", PSL(2,31), 32, 2);
-RunCase("A8",    AlternatingGroup(8),  8, 2);
-RunCase("L3_4",  PSL(3,4),  fail, 2);   # graph automorphisms: generic Aut rep
-
-# --- k = 3 ---
-RunCase("A5",    AlternatingGroup(5),  5, 3);
-RunCase("L2_7",  PSL(2,7),   8, 3);
-RunCase("A6",    PSL(2,9),  10, 3);
-RunCase("L2_8",  PSL(2,8),   9, 3);
-RunCase("L2_11", PSL(2,11), 12, 3);
-
-# --- k = 4 ---
-RunCase("A5",    AlternatingGroup(5),  5, 4);
-
-Print("SWEEP C DONE.\n");
-QUIT;

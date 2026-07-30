@@ -3,7 +3,7 @@
 # the missing files perf27.grp and perf33.grp (all that exist, per
 # https://github.com/hulpke/extraperfect) are now installed in gap/grp.
 # Re-run all library orders >= 1370880 up to the library maximum.
-Read("/Users/richiesater/dev/math/kourovka-10.34/property.g");
+Read("property.g");
 
 sizes := Filtered(ShallowCopy(SizesPerfectGroups()), n -> n >= 1370880);
 Sort(sizes);

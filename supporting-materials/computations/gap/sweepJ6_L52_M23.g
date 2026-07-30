@@ -10,7 +10,7 @@
 # the running sweep; those cases are also covered by the sweep L receipts
 # and the classical dihedral/Borel argument.
 
-Read("/Users/richiesater/dev/math/kourovka-10.34/sweepJ_lib.g");
+Read("sweepJ_lib.g");
 
 res := CALL_WITH_CATCH(function()
   DivCriterion("M23", MathieuGroup(23));

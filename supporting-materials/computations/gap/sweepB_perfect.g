@@ -1,7 +1,7 @@
 # Sweep B: all groups in GAP's perfect groups library (orders <= 2,000,000;
 # the library omits a few orders 61440*2^a, 86016, ... where too many exist —
 # those omissions are reported at the end).
-Read("/Users/richiesater/dev/math/kourovka-10.34/property.g");
+Read("property.g");
 
 sizes := ShallowCopy(SizesPerfectGroups());
 Sort(sizes);

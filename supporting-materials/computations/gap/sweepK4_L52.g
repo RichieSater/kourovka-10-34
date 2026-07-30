@@ -10,7 +10,7 @@
 # Certification (self-normalizing, X-stable, saturating, P_X-maximal,
 # divisibility) is mechanical via sweepK_lib.g.
 
-Read("/Users/richiesater/dev/math/kourovka-10.34/sweepK_lib.g");
+Read("sweepK_lib.g");
 
 res := CALL_WITH_CATCH(function()
   local vecs, dom, act, gens, dualperm, S, A, e, p1, h1, V1,

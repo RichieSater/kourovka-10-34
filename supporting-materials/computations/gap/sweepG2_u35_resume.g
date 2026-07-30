@@ -4,7 +4,7 @@
 # enumeration (deterministic for a fixed GAP version and construction
 # path), prints |G| for the skipped candidates so the two logs can be
 # cross-checked line by line, and tests candidates 21-34.
-Read("/Users/richiesater/dev/math/kourovka-10.34/property.g");
+Read("property.g");
 
 SKIP := 20;
 

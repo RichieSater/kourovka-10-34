@@ -1,4 +1,4 @@
-Read("/Users/richiesater/dev/math/kourovka-10.34/property.g");
+Read("property.g");
 
 # Expected: A5 fails (A4 vs S3 pair), S4 has the property (soluble, allowed),
 # A5 wr C2 fails, SL(2,5) ?

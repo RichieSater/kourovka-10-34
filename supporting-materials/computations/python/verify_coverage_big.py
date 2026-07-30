@@ -12,17 +12,23 @@
 #   - is one of the two documented survivors, O(5,4) and PSL(5,2), whose
 #     all-X novelty closures are certified in sweeps K3 and K4 (their
 #     final "ALL k >= 2 EXCLUDED FOR ALL X" lines are re-checked here).
-import re, sys
+import re
+import sys
+from pathlib import Path
+
+COMPUTATIONS = Path(__file__).resolve().parents[1]
+CERTIFICATES = COMPUTATIONS / "certificates"
+DATA = COMPUTATIONS / "data"
 
 canon = {}
-for line in open("simple_groups_5e5_to_1.05e7.txt"):
+for line in (DATA / "simple_groups_5e5_to_1.05e7.txt").read_text().splitlines():
     order, name = line.split()
     order = int(order)
     assert order not in canon, f"order collision at {order}"
     canon[order] = name
 assert len(canon) == 51, len(canon)
 
-log = open("sweepJ3_bigrange.log").read()
+log = (CERTIFICATES / "sweepJ3_bigrange.log").read_text()
 # J3 entries: capture name and order; entries may wrap lines.
 entries = {}
 for m in re.finditer(r"^### ([^:]+): \|S\| = (\d+)", log, re.M):
@@ -44,8 +50,8 @@ for order, name in sorted(canon.items()):
     problems.append(f"NO all-X certificate in J3 for {j3name} (order {order})")
 
 if survivors_seen:
-    k3 = open("sweepK3_bigsurvivors.log").read()
-    k4 = open("sweepK4_L52.log").read()
+    k3 = (CERTIFICATES / "sweepK3_bigsurvivors.log").read_text()
+    k4 = (CERTIFICATES / "sweepK4_L52.log").read_text()
     if "O(5,4)" in survivors_seen and \
        "O(5,4): ALL k >= 2 EXCLUDED FOR ALL X (novelty pair certified)." not in k3:
         problems.append("O(5,4) survivor not closed in sweep K3")
