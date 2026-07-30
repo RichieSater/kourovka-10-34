@@ -17,9 +17,12 @@ is independently re-checkable.
 
 ## Repository layout
 
-The repository root is intentionally kept upload-friendly:
+The repository root is intentionally kept upload-friendly. The hidden
+`.zenodo.json` file must remain at the root so Zenodo can read the release
+metadata:
 
 ```text
+.zenodo.json                  Zenodo release metadata
 kourovka1034.pdf             Current compiled paper
 supporting-materials/
 ├── README.md                This guide
@@ -32,13 +35,11 @@ supporting-materials/
 │   ├── FAMILY-PROOFS.md     Uniform family proofs
 │   ├── STATUS.md            Certificate ledger
 │   └── HITLIST.md           Work log
-├── computations/
+└── computations/
 │   ├── gap/                 GAP scripts and shared libraries
 │   ├── python/              Coverage and arithmetic checks
 │   ├── certificates/        Committed machine-generated logs
 │   └── data/                Canonical simple-group lists
-└── metadata/
-    └── zenodo.json          Archive metadata
 ```
 
 All commands below assume the current directory is
