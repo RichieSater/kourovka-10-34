@@ -4,7 +4,7 @@
 # Inn <= X <= Aut(S):  all-k exclusion witness, or survivor status.
 # Survivors get the sweep-K novelty treatment in a later pass.
 
-Read("/Users/richiesater/dev/math/kourovka-10.34/sweepJ_lib.g");
+Read("sweepJ_lib.g");
 
 it := SimpleGroupsIterator(500000, 10500000);
 for S0 in it do

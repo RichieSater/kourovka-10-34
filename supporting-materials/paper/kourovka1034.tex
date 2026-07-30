@@ -5,6 +5,9 @@
 \usepackage{xcolor}
 \usepackage[colorlinks=true,linkcolor=blue!50!black,citecolor=blue!50!black]{hyperref}
 
+% Suppress end-of-proof tombstones in the upload copy.
+\renewcommand{\qedsymbol}{}
+
 \newtheorem{theorem}{Theorem}[section]
 \newtheorem{lemma}[theorem]{Lemma}
 \newtheorem{proposition}[theorem]{Proposition}
@@ -1200,7 +1203,8 @@ machine-verified claims of \S\ref{sec:machine}, together with the
 arithmetic receipts for the family proofs of \S\ref{sec:families}, are
 hosted at
 \texttt{https://github.com/RichieSater/kourovka-10-34} \cite{Repo}; its
-\texttt{README} documents how to re-run every sweep and receipt.
+\path{supporting-materials/README.md} documents how to re-run every sweep
+and receipt.
 
 \begin{thebibliography}{99}
 

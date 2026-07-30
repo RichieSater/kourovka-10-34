@@ -10,7 +10,7 @@
 # After this sweep, every non-abelian simple S with |S| < 500000 has a
 # machine certificate excluding socle S^k for all k >= 2 and all X.
 
-Read("/Users/richiesater/dev/math/kourovka-10.34/sweepJ_lib.g");
+Read("sweepJ_lib.g");
 
 RunDiv("Sz8",   SuzukiGroup(IsPermGroup, 8), 65);
 RunDiv("L2_41", PSL(2,41), 42);

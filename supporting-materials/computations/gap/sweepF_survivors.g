@@ -13,7 +13,7 @@
 # As in sweep C we record, for each failing pair, whether it is a
 # (supplement, supplement), (top, top) or mixed pair relative to N.
 
-Read("/Users/richiesater/dev/math/kourovka-10.34/property.g");
+Read("property.g");
 
 AutPerm := function(S, n)
   local P, a;

@@ -13,10 +13,19 @@
 
 import re
 import sys
+from pathlib import Path
 
-COVERED_LOGS = ['sweepJ_divisibility.log', 'sweepJ2_tail.log', 'sweepJ4_patch.log']
-K_LOG = 'sweepK_novelty.log'
-CANONICAL = 'simple_groups_below_500000.txt'
+COMPUTATIONS = Path(__file__).resolve().parents[1]
+CERTIFICATES = COMPUTATIONS / 'certificates'
+DATA = COMPUTATIONS / 'data'
+
+COVERED_LOGS = [
+    CERTIFICATES / 'sweepJ_divisibility.log',
+    CERTIFICATES / 'sweepJ2_tail.log',
+    CERTIFICATES / 'sweepJ4_patch.log',
+]
+K_LOG = CERTIFICATES / 'sweepK_novelty.log'
+CANONICAL = DATA / 'simple_groups_below_500000.txt'
 
 ALIAS = {
     'A5': 'A5', 'PSL(2,7)': 'L3_2', 'PSL(3,2)': 'L3_2', 'A6': 'A6',
@@ -41,11 +50,11 @@ ALIAS = {
 def main():
     covered = set()
     for f in COVERED_LOGS:
-        txt = open(f).read()
+        txt = f.read_text()
         covered |= set(re.findall(r'==> (\S+)\^k EXCLUDED FOR ALL', txt))
 
     # sweep K: every X-line of each family section must be an all-k exclusion
-    ktxt = open(K_LOG).read()
+    ktxt = K_LOG.read_text()
     kcov = set()
     sections = re.split(r'(?=### )', ktxt)
     for sec in sections:
@@ -58,7 +67,7 @@ def main():
             kcov.add(m.group(1))
 
     total, missing = 0, []
-    for line in open(CANONICAL):
+    for line in CANONICAL.read_text().splitlines():
         parts = line.split(None, 1)
         if len(parts) != 2 or parts[0] == 'TOTAL':
             continue

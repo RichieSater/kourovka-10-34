@@ -3,7 +3,7 @@
 # divides |G|. Non-abelian simple orders <= 2000: 60 (A5), 168 (L2(7)),
 # 360 (A6, = 6*60), 504 (L2(8)), 660 (L2(11)), 1092 (L2(13)).
 # So it suffices to scan orders divisible by 60, 168, 504, 660 or 1092.
-Read("/Users/richiesater/dev/math/kourovka-10.34/property.g");
+Read("property.g");
 LoadPackage("smallgrp");
 
 orders := Filtered([60..2000], n -> n mod 60 = 0 or n mod 168 = 0

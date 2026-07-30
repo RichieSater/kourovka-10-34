@@ -1,7 +1,9 @@
 # Towards a negative solution of Kourovka 10.34
 
 Working draft of the theorem and proof architecture. Machine certificates
-live in the sweep logs of this directory; STATUS.md tracks their coverage.
+live in `../computations/certificates/`, with their GAP and Python sources
+in the sibling `gap/` and `python/` directories; STATUS.md tracks their
+coverage.
 
 ## Statement aimed at
 
@@ -189,7 +191,8 @@ as a black box.
 For every non-abelian simple S with |S| < 500000 and every X: Theorem D
 applies. Certificate inventory (cross-checked against GAP's
 SimpleGroupsIterator canonical list of all 47 such groups by
-`verify_coverage.py`; receipt in `verify_coverage.log`):
+`../computations/python/verify_coverage.py`; receipt in
+`../computations/certificates/verify_coverage.log`):
 - 43 socles certified by maximal-class pairs (sweeps J, J2, and J4 — the
   latter added Sz(8), whose original run silently errored on a
   matrix-vs-permutation-group mismatch, and the sixteen L2(q),

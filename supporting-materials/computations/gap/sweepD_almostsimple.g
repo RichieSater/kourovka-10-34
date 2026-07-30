@@ -1,7 +1,7 @@
 # Sweep D: machine verification of the Tikhonenko-Tyutyanov theorem (negative
 # answer for almost simple groups) for all almost simple groups with socle of
 # order <= 20160: every group S <= G <= Aut(S) must FAIL the property.
-Read("/Users/richiesater/dev/math/kourovka-10.34/property.g");
+Read("property.g");
 
 CheckAS := function(name, S, n)
   local a, P, hom, Q, reps, T, G, t;
