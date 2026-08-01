@@ -10,8 +10,6 @@ evidence and the corresponding profile gate verifies it.
 
 ## Journal-submission blockers
 
-- **`SRC-REDUCTION-STRUCTURE`** — The finite characteristically-simple decomposition and automorphism-wreath embedding used by the non-formal submission proof have exact published pinpoints
-  - Next evidence: paper proof and source ledger
 - **`SRC-BOUNDARY-ISOMORPHISMS`** — Every exceptional isomorphism, simplicity exclusion, and low-parameter boundary in the classification and exception manifests has an exact published source
   - Next evidence: classification and exception manifests
 - **`SRC-ORDER-FORMULAS`** — Every simple-group, subgroup, and Levi order formula used in the family proof has an exact source pinpoint and matching parameter assumptions

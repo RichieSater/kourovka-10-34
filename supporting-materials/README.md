@@ -236,7 +236,7 @@ dichotomy, the ambient intersection dichotomy, and the final coatom conclusion.
 ## Citing this repository
 
 Citation metadata lives in [`CITATION.cff`](../CITATION.cff) at the
-repository root. Cite the versioned release (currently `v1.0.4`), not
+repository root. Cite the versioned release (currently `v1.0.5`), not
 the mutable default branch; a versioned Zenodo DOI will be added to
 `CITATION.cff` and the paper once the release is archived.
 

@@ -169,7 +169,7 @@
         "audit/SOURCE-LEDGER.md"
       ],
       "essential": true,
-      "status": "UNRESOLVED"
+      "status": "CITED-PASS"
     },
     {
       "id": "RED-COORD-BOUND",

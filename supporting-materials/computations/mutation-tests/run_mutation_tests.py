@@ -28,6 +28,7 @@ def snapshot(dst: Path) -> None:
     shutil.copytree(ROOT/'audit',dst/'audit')
     for name in ['README.md','verify-quick.sh','verify-full.sh','submission-gate.sh']:
         shutil.copy2(ROOT/name,dst/name)
+    shutil.copy2(ROOT/'.gitignore',dst/'.gitignore')
     (dst/'paper').mkdir()
     shutil.copy2(ROOT/'paper/kourovka1034.tex',dst/'paper/kourovka1034.tex')
     shutil.copytree(ROOT/'formal',dst/'formal',ignore=shutil.ignore_patterns('.lake'))
@@ -150,6 +151,9 @@ def main() -> int:
         def hide_proof_logs(r):
             p=r/'_repo/.gitignore'; p.write_text(p.read_text()+'\n*.log\n')
         case('hide proof logs in gitignore','audit',hide_proof_logs)
+        def hide_nested_audit_data(r):
+            p=r/'.gitignore'; p.write_text(p.read_text()+'\naudit/\n')
+        case('hide proof data in nested gitignore','audit',hide_nested_audit_data)
         def break_writer_gate_guide(r):
             p=r/'audit/WRITER-GATE-README.md'
             text=p.read_text()

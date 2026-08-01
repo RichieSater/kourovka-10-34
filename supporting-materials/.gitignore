@@ -1,8 +1,20 @@
 # Kept for tools that treat supporting-materials as their working root.
-# The repository-root .gitignore is authoritative and deliberately does not
-# ignore audit reports, clean-room logs, or computation certificates.
+# The repository-root .gitignore is authoritative.  Keep this file deliberately
+# narrow: audit reports, CSV/JSON manifests, clean-room logs, formal sources,
+# environment locks, and computation certificates are release evidence and
+# MUST remain visible to Git.
 .DS_Store
-paper/*.pdf
+
+# The release PDF is built at repository root.  Only the duplicate paper-tree
+# build and TeX auxiliaries are disposable.
+paper/kourovka1034.pdf
 paper/*.aux
+paper/*.log
 paper/*.out
-paper/kourovka1034.log
+paper/*.toc
+paper/*.synctex.gz
+paper/*.fls
+paper/*.fdb_latexmk
+
+# Never add broad rules such as *.log, *.json, *.csv, audit/, formal/,
+# computations/environment/, or computations/certificates/ here.

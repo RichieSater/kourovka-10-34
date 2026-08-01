@@ -15,7 +15,6 @@ The complete, granular standards for both burdens of proof live in
 - A single open required row means failure. There is no weighted score.
 - Do not change `YES` to `NO`, weaken a closure condition, delete an exception,
   or relabel `UNRESOLVED` merely to obtain a pass.
-- A manuscript edit is incomplete until the manuscript/manifest checker and
 - A manuscript edit must also pass the occurrence-level universal-claim audit;
   use the review-template workflow in `WRITER-GATE-README.md`, not a blind
   overwrite.

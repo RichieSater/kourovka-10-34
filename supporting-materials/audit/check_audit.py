@@ -52,6 +52,11 @@ def validate_operational_docs() -> None:
         repo / '.gitignore': [
             'supporting-materials/formal/.lake/', '__pycache__/',
         ],
+        ROOT / '.gitignore': [
+            'paper/kourovka1034.pdf',
+            'audit reports',
+            'computations/certificates/',
+        ],
     }
     for path, tokens in required.items():
         if not path.is_file():
@@ -70,8 +75,12 @@ def validate_operational_docs() -> None:
         'supporting-materials/audit/DEPENDENCY-DAG.json',
         'supporting-materials/audit/adversarial-reports/report-1.md',
         'supporting-materials/audit/cleanroom-logs/example.log',
+        'supporting-materials/audit/source-pdfs/example.pdf',
         'supporting-materials/computations/certificates/example.log',
+        'supporting-materials/computations/environment/example.lock',
+        'supporting-materials/computations/independent/example.py',
         'supporting-materials/formal/FORMAL-COVERAGE.json',
+        'supporting-materials/formal/Kourovka1034/Example.lean',
     ]
     is_worktree = subprocess.run(
         ['git', '-C', str(repo), 'rev-parse', '--is-inside-work-tree'],

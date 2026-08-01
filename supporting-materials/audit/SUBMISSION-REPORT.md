@@ -8,8 +8,8 @@ requirement makes the selected gate fail.
 
 | Profile | Outcome | Obligations | Granular requirements |
 |---|---:|---:|---:|
-| Journal submission | **FAIL** | 27/33 | 179/208 |
-| 99% conditional confidence | **FAIL** | 33/43 | 194/237 |
+| Journal submission | **FAIL** | 28/33 | 180/208 |
+| 99% conditional confidence | **FAIL** | 34/43 | 195/237 |
 | Sole-author/PhD defense | **FAIL** | 9/11 | 14/34 |
 
 These are ledger results. They do not claim that `verify-quick.sh` or
@@ -18,7 +18,6 @@ an execution receipt.
 
 ## Open journal-submission obligations
 
-- `SRC-REDUCTION-STRUCTURE` — The finite characteristically-simple decomposition and automorphism-wreath embedding used by the non-formal submission proof have exact published pinpoints
 - `SRC-BOUNDARY-ISOMORPHISMS` — Every exceptional isomorphism, simplicity exclusion, and low-parameter boundary in the classification and exception manifests has an exact published source
 - `SRC-ORDER-FORMULAS` — Every simple-group, subgroup, and Levi order formula used in the family proof has an exact source pinpoint and matching parameter assumptions
 - `SRC-ZSIGMONDY` — The exact primitive-prime-divisor theorem, including every exception used by the manuscript, is pinned and its hypotheses match every invocation
