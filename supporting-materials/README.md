@@ -23,22 +23,27 @@ metadata:
 
 ```text
 .zenodo.json                  Zenodo release metadata
+CITATION.cff                 Citation metadata for the release
 kourovka1034.pdf             Current compiled paper
 supporting-materials/
 ├── README.md                This guide
 ├── LICENSE                  License for the code
+├── verify-quick.sh          One-command quick verification suite
+├── verify-full.sh           Full (expensive) GAP reproduction
 ├── paper/
 │   ├── kourovka1034.tex     LaTeX source
 │   └── submission/          Abstract and audit materials
 ├── notes/
 │   ├── THEOREM.md           Machinery and exclusion criterion
 │   ├── FAMILY-PROOFS.md     Uniform family proofs
+│   ├── LITERATURE-AUDIT.md  Claim-by-claim source table
 │   ├── STATUS.md            Certificate ledger
 │   └── HITLIST.md           Work log
 └── computations/
 │   ├── gap/                 GAP scripts and shared libraries
 │   ├── python/              Coverage and arithmetic checks
 │   ├── certificates/        Committed machine-generated logs
+│   │   └── SHA256SUMS       SHA-256 checksums of every log
 │   └── data/                Canonical simple-group lists
 ```
 
@@ -76,15 +81,23 @@ The generated auxiliary files remain ignored inside `paper/`.
 
 ## Quick verification
 
-These checks take seconds and do not require GAP:
+One command runs every fast check (seconds, no GAP required):
+
+```sh
+sh verify-quick.sh
+```
+
+It runs the three Python receipts and then validates the SHA-256
+checksums of every committed certificate log:
 
 ```sh
 python3 computations/python/verify_coverage.py
 python3 computations/python/verify_coverage_big.py
 python3 computations/python/sweepN_item5_arith.py
+shasum -a 256 -c computations/certificates/SHA256SUMS   # (run inside certificates/)
 ```
 
-They respectively verify:
+The receipts respectively verify:
 
 - all 47 non-abelian simple groups with `|S| < 500000`;
 - all 51 simple groups with `500000 ≤ |S| ≤ 1.05×10^7`; and
@@ -92,12 +105,20 @@ They respectively verify:
   exceptions.
 
 Expected final lines are `COVERAGE COMPLETE: ...`,
-`COVERAGE (big range) OK.`, and `SWEEP N DONE.`
+`COVERAGE (big range) OK.`, `SWEEP N DONE.`, and
+`QUICK VERIFICATION SUITE: ALL CHECKS PASSED.`
 
 ## Full GAP reproduction
 
-Run GAP scripts from their directory so their relative `Read(...)` calls
-resolve correctly:
+The full, expensive suite (hours to days) regenerates every committed
+certificate and writes `.regen` copies for diffing:
+
+```sh
+sh verify-full.sh
+```
+
+Alternatively, run GAP scripts individually from their directory so
+their relative `Read(...)` calls resolve correctly:
 
 ```sh
 cd computations/gap
@@ -129,8 +150,22 @@ Scripts are in [`computations/gap/`](computations/gap/) and
 Certificate blocks from sweeps J/J3 list `|S|`, `|Out|`, maximal-class
 orders, and an obstruction tuple `(|U|,|V|,p,d)`. Exploratory scripts
 (`probe*.g`, `sweepE*`, and `sweepH*`) are retained for provenance but are
-not required by the paper. `sweepG_k3.log` includes a still-running
-redundant consistency case for `U3(5)^3`; no paper claim depends on it.
+not required by the paper.
+
+**Quarantined consistency case.** The exhaustive `k = 3` consistency
+sweep over the socle `U3(5)^3` (sweep G) tested 20 of the 34 candidate
+top groups; the logs (`sweepG_k3.log`, `sweepG2_u35_resume.log`) record
+exactly which. These exhaustive consistency sweeps are redundant
+confirmations of the paper's criterion — `PSU(3,5)` is excluded for all
+`k` at once by its sweep-J certificate — so no paper claim depends on
+the untested 14 tops, and the paper states the partial count explicitly.
+
+## Citing this repository
+
+Citation metadata lives in [`CITATION.cff`](../CITATION.cff) at the
+repository root. Cite the versioned release (currently `v1.0.4`), not
+the mutable default branch; a versioned Zenodo DOI will be added to
+`CITATION.cff` and the paper once the release is archived.
 
 ## License
 

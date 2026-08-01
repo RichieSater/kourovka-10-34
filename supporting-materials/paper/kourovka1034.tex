@@ -5,8 +5,12 @@
 \usepackage{xcolor}
 \usepackage[colorlinks=true,linkcolor=blue!50!black,citecolor=blue!50!black]{hyperref}
 
-% Suppress end-of-proof tombstones in the upload copy.
-\renewcommand{\qedsymbol}{}
+% Referee version: set to true to print line numbers (journal referee copy).
+% Leave false for the arXiv/archival copy.
+\newif\ifreferee
+\refereefalse
+\usepackage{lineno}
+\ifreferee\linenumbers\fi
 
 \newtheorem{theorem}{Theorem}[section]
 \newtheorem{lemma}[theorem]{Lemma}
@@ -45,7 +49,10 @@ that are the product of every pair of non-conjugate maximal subgroups are
 soluble}
 
 \author{Richie Sater}
-\address{Independent Researcher}
+\address{Independent Researcher, United States}
+\email{richiesater@gmail.com}
+% ORCID: register at https://orcid.org and insert the iD here before
+% journal submission, e.g. \urladdr{https://orcid.org/0000-0000-0000-0000}
 
 \date{July 27, 2026}
 
@@ -59,15 +66,16 @@ groups, simple groups, Kourovka Notebook Problem 10.34}
 We prove that every finite group which coincides with the product of any
 two of its non-conjugate maximal subgroups is soluble, answering Problem
 10.34 of the Kourovka Notebook (V.~S.~Monakhov, 1986) in the negative.
-The proof combines a reduction to groups with a unique minimal normal
-subgroup $S^k$, a divisibility criterion that excludes a simple group $S$
-for \emph{all} $k\geq 1$ at once from a single pair of automorphism-stable
-conjugacy classes of subgroups of $S$, a uniform construction of such
-pairs for every infinite family of finite simple groups (with Zsigmondy
-primes as the arithmetic obstruction), and machine-generated certificates,
-produced in GAP, covering the sporadic groups and all small cases,
-including every non-abelian simple group of order at most
-$1.05\times 10^{7}$.
+The almost simple case was settled by Tikhonenko and Tyutyanov (2010);
+the obstacle to the general case was the socle $S^k$ with $k\geq2$, which
+no counting bound can control. We remove it with a divisibility
+criterion: a single pair of automorphism-stable conjugacy classes of
+subgroups of the simple group $S$, subject to a valuation inequality,
+excludes the socle $S^k$ for \emph{all} $k\geq1$ and every admissible
+embedding at once. Such pairs are constructed uniformly for every
+infinite family of finite simple groups, with Zsigmondy primes as the
+arithmetic obstruction; the sporadic groups and all remaining small cases
+are settled by independently re-checkable certificates produced in GAP.
 \end{abstract}
 
 \maketitle
@@ -156,16 +164,54 @@ a single logged line naming the two class orders, the prime, and the
 valuations, so each is independently re-checkable by hand or machine. The
 scripts and logs, together with an arithmetic verification of the family
 proofs of \S\ref{sec:families} over large parameter ranges ($7892$
-instances), are publicly available in the GitHub repository
-\cite{Repo}. \S\ref{sec:machine} specifies exactly what is claimed from
-the machine and how it is certified.
+instances), are archived in a versioned release \cite{Repo}.
+\S\ref{sec:machine} specifies exactly what is claimed from
+the machine and how it is certified. Generative AI was used in the
+research and preparation of this paper; a full declaration, specifying
+what was AI-assisted and how it was checked, appears before the
+bibliography.
 
-\subsection*{Acknowledgements}
-This work was carried out in collaboration with Anthropic's Claude
-(2026 Claude~5-family models), which assisted with both the mathematics
-and the software. All machine claims are backed by committed logs as
-described in \S\ref{sec:machine}, and the author takes full
-responsibility for the correctness of every statement in this paper.
+\subsection*{Proof and verification roadmap}
+The proof has four independent layers; each row of
+Table~\ref{tab:roadmap} states where the claim is proved and how it is
+verified.
+
+\begin{table}[htbp]
+\small
+\begin{tabular}{@{}p{0.30\textwidth}p{0.22\textwidth}p{0.38\textwidth}@{}}
+\toprule
+Claim & Where & Verification \\
+\midrule
+Minimal counterexample has unique minimal normal subgroup $S^k$,
+embeds in $X\wr S_k$ &
+Prop.~\ref{prop:min}, Conv.~\ref{conv:X} &
+Structural proof (elementary) \\[2pt]
+Normalizers $B_V=N_G(V^k)$ of stable classes are maximal,
+non-conjugate, of exact order $t|V|^k$ &
+Lemmas~\ref{lem:A}--\ref{lem:C}, \ref{lem:P} &
+Structural proof; parabolic input from \cite{Carter} \\[2pt]
+Divisibility criterion: one stable pair with
+$d>\vp{p}(x)$ excludes $S^k$ for all $k\geq1$ &
+Thms.~\ref{thm:D}, \ref{thm:Dprime} &
+Structural proof (valuation of $x^kk!$) \\[2pt]
+Stable pairs exist for every infinite family &
+\S\ref{sec:families}, Thms.~\ref{thm:psl2}--\ref{thm:graph} &
+Structural proofs; valuation inequalities re-checked mechanically over
+$7892$ parameter instances (receipts in \cite{Repo}) \\[2pt]
+Sporadic groups, Tits group, and all $S$ with
+$|S|\leq1.05\times10^7$ are excluded &
+Props.~\ref{prop:base}, \ref{prop:sporadic} &
+GAP certificates, one logged line per exclusion; scripts, logs and
+coverage cross-checks in \cite{Repo} \\
+\bottomrule
+\end{tabular}
+\caption{Proof and verification roadmap.}\label{tab:roadmap}
+\end{table}
+
+Every machine-backed claim in \S\ref{sec:machine} names its script and
+committed log file; the repository README maps each paper claim to its
+certificate and gives a single command re-running the quick
+verification suite.
 
 \section{Reduction to socle analysis}\label{sec:reduction}
 
@@ -497,7 +543,11 @@ excluded (in the sense of Convention~\ref{conv:excluded}).
 
 The proof of Proposition~\ref{prop:base} is a finite computation in
 GAP~4.16.0 \cite{GAP}, organized as follows; every claim is backed by a
-committed log file, and the group inventory is cross-checked against
+committed log file (each sweep named below corresponds to a script
+\texttt{sweep$\langle$name$\rangle$.g} and a certificate
+\texttt{sweep$\langle$name$\rangle$.log} in \cite{Repo}, whose README
+maps every paper claim to its scripts and certificates), and the group
+inventory is cross-checked against
 GAP's \texttt{SimpleGroupsIterator} in two installments, so that no
 group in range is skipped: the $47$ groups with $|S|<5\times10^5$
 (receipt \texttt{verify\_coverage.log}) and the $51$ groups with
@@ -550,13 +600,16 @@ instances of the uniform constructions of Theorem~\ref{thm:graph} below.
 $\mathrm{P}$ was tested exhaustively (all admissible $G$, transitive
 tops) for: all socles $S^2$ with $|S|<5\times10^5$; $S^3$ for the
 smallest socles and for the eleven socles in that range surviving a
-$k=3$ prefilter (complete except over $\PSU(3,5)^3$, where $20$ of $34$
-candidate tops have been checked at the time of writing);
+$k=3$ prefilter ($20$ of the $34$ candidate tops over $\PSU(3,5)^3$
+were tested, the rest of the eleven completely);
 $S^4$ for small $S$; all non-soluble groups of order $\leq2000$;
 all perfect groups of order $\leq2\times10^6$. No group with property
 $\mathrm{P}$ and non-abelian socle was found, and every observed failing
 pair was of supplement--supplement or top--top type, consistent with
-the theory above.
+the theory above. These consistency checks are redundant confirmations:
+no claim in this paper depends on them, since $\PSU(3,5)$ (like every
+socle in range) is excluded for all $k$ at once by the certified pairs
+of item~(1).
 \end{enumerate}
 
 \begin{proposition}\label{prop:sporadic}
@@ -571,7 +624,8 @@ under Proposition~\ref{prop:base}. The remaining $20$ ($M_{24}$, $J_3$,
 $J_4$, $HS$, $McL$, $Co_1$, $Co_2$, $Co_3$, $Suz$, $He$, $Ru$, $O'N$,
 $\mathrm{Fi}_{22}$, $\mathrm{Fi}_{23}$, $\mathrm{Fi}_{24}'$, $HN$,
 $Ly$, $Th$, $B$, $M$) and the Tits group are handled by a dedicated
-computation (sweep~M): stable maximal classes and pair searches use the
+computation (sweep~M; script \texttt{sweepM\_sporadic.g}, certificate
+\texttt{sweepM\_sporadic.log}): stable maximal classes and pair searches use the
 \textsc{Atlas} maximal-subgroup data via the GAP character table
 library \cite{CTblLib,ATLAS}. Since $|\Out(S)|\leq2$ for all these
 groups, stability is either automatic ($\Out=1$, or a unique class of
@@ -1201,10 +1255,33 @@ arbitrary non-soluble group to this configuration.
 All code, GAP scripts, and log certificates required to reproduce the
 machine-verified claims of \S\ref{sec:machine}, together with the
 arithmetic receipts for the family proofs of \S\ref{sec:families}, are
-hosted at
-\texttt{https://github.com/RichieSater/kourovka-10-34} \cite{Repo}; its
-\path{supporting-materials/README.md} documents how to re-run every sweep
-and receipt.
+archived in the versioned release \cite{Repo}. The release includes
+SHA-256 checksums of every certificate log, a \path{CITATION.cff}
+file, a single command running the quick verification suite
+(coverage cross-checks and family-proof receipts, no GAP required),
+and separate documented commands for the full GAP reproduction.
+% TODO before journal submission: after minting the Zenodo DOI for the
+% release, replace the GitHub URL in \bibitem{Repo} with the versioned
+% DOI (10.5281/zenodo.XXXXXXX) and cite it here as well.
+
+\subsection*{Funding}
+This research received no external funding.
+
+\subsection*{Competing interests}
+The author declares no competing interests.
+
+\subsection*{Declaration of generative AI and AI-assisted technologies
+in the research and writing process}
+During this project the author used Anthropic's Claude (2026
+Claude~5-family models) for mathematical exploration, generation and
+criticism of candidate arguments, drafting and debugging the GAP and
+Python code, literature-search assistance, and manuscript organization
+and editing. The author reviewed the mathematical arguments, executed
+or validated the computational certificates against the committed logs,
+checked the cited references, and edited the final manuscript. All
+machine-verified claims are backed by the committed, independently
+re-checkable certificates described in \S\ref{sec:machine}. The author
+takes full responsibility for the content of this article.
 
 \begin{thebibliography}{99}
 
@@ -1223,7 +1300,7 @@ J.~H.~Conway, R.~T.~Curtis, S.~P.~Norton, R.~A.~Parker, R.~A.~Wilson,
 
 \bibitem{CTblLib}
 T.~Breuer, \emph{The GAP Character Table Library}, GAP package,
-\texttt{https://www.math.rwth-aachen.de/\~{}Thomas.Breuer/ctbllib}.
+\path{https://www.math.rwth-aachen.de/~Thomas.Breuer/ctbllib}.
 
 \bibitem{Dickson}
 L.~E.~Dickson, \emph{Linear Groups with an Exposition of the Galois
@@ -1273,8 +1350,9 @@ J.~Nagura, On the interval containing at least one prime number,
 
 \bibitem{Repo}
 R.~Sater, \emph{Kourovka 10.34: proofs, GAP scripts and machine
-certificates}, GitHub repository,
-\texttt{https://github.com/RichieSater/kourovka-10-34}, 2026.
+certificates}, version 1.0.4, 2026,
+\path{https://github.com/RichieSater/kourovka-10-34/releases/tag/v1.0.4}.
+% TODO: replace with the versioned Zenodo DOI once minted.
 
 \bibitem{Steinberg}
 R.~Steinberg, Automorphisms of finite linear groups,

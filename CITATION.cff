@@ -1,0 +1,40 @@
+cff-version: 1.2.0
+message: >-
+  If you use this software or cite this work, please cite it using the
+  metadata below. A versioned DOI will be added when the release is
+  archived on Zenodo.
+type: software
+title: "Kourovka 10.34: proofs, GAP scripts and machine certificates"
+authors:
+  - family-names: Sater
+    given-names: Richie
+    affiliation: Independent Researcher
+version: 1.0.4
+date-released: 2026-08-01
+repository-code: https://github.com/RichieSater/kourovka-10-34
+url: https://github.com/RichieSater/kourovka-10-34
+license: MIT
+keywords:
+  - finite groups
+  - maximal subgroups
+  - factorizations
+  - soluble groups
+  - simple groups
+  - Kourovka Notebook
+  - GAP
+abstract: >-
+  Paper, GAP scripts, log certificates, coverage cross-checks, and
+  arithmetic receipts supporting a negative solution to Kourovka
+  Notebook Problem 10.34: every finite group that is the product of
+  every pair of its non-conjugate maximal subgroups is soluble.
+preferred-citation:
+  type: article
+  title: >-
+    Finite groups that are the product of every pair of non-conjugate
+    maximal subgroups are soluble
+  authors:
+    - family-names: Sater
+      given-names: Richie
+      affiliation: Independent Researcher
+  year: 2026
+  notes: Preprint; resolves Kourovka Notebook Problem 10.34.
