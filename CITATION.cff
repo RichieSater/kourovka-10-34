@@ -1,9 +1,16 @@
 cff-version: 1.2.0
 message: >-
   If you use this software or cite this work, please cite it using the
-  metadata below. A versioned DOI will be added when the release is
-  archived on Zenodo.
+  metadata below.
 type: software
+doi: 10.5281/zenodo.21746829
+identifiers:
+  - type: doi
+    value: 10.5281/zenodo.21746829
+    description: Version DOI for v1.0.5
+  - type: doi
+    value: 10.5281/zenodo.21709124
+    description: Concept DOI for all versions
 title: "Kourovka 10.34: proofs, GAP scripts and machine certificates"
 authors:
   - family-names: Sater
