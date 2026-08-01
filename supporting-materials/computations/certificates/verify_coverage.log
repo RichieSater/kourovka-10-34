@@ -2,3 +2,4 @@ canonical groups checked: 47
 all-k certified (J/J2/J4): 43
 novelty-certified (K): ['A6', 'L2_11', 'L3_2', 'L3_4']
 COVERAGE COMPLETE: every simple S, |S| < 500000, is certified excluded as a socle S^k for all k >= 2 and all X.
+FINITE COVERAGE BELOW 500000|PASS

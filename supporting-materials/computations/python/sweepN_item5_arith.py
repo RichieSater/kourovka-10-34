@@ -15,6 +15,7 @@
 # Then d = v_r(|S|) - 0 - 0 >= 1 > 0 = v_r(x): Theorem D/D' fires.
 # T == 1 must occur exactly at the Zsygmondy exceptions listed in the proofs.
 from math import gcd, isqrt
+import sys
 
 def primes(bound):
     sieve = bytearray([1]) * (bound + 1)
@@ -93,13 +94,13 @@ def check(tag, p, f, e, S, subs, x):
         fails.append(tag)
 
 def check_direct(tag, r, S, subs, x, need_d_gt):
-    # explicit substitute prime: verify v_r(S) - sum v_r(subs) > need floor
+    # Explicit substitute prime: verify both the actual outer-order valuation
+    # and the independently declared minimum gap.  The latter makes the q=8
+    # branch assert d>1 rather than merely d>v_r(x) for the current x.
     global checked
     checked += 1
     d = vp(S, r) - sum(vp(V, r) for V in subs)
-    if not d > vp(x, r) and d >= 1:
-        fails.append(tag)
-    if d <= vp(x, r):
+    if d <= max(vp(x, r), need_d_gt):
         fails.append(tag)
 
 QB = 200      # generic prime-power bound
@@ -222,8 +223,13 @@ print(f"FAILURES: {len(fails)}")
 for t in fails:
     print("  FAIL", t)
 unexpected = [t for t in exceptions if t not in expected_A]
+missing_expected = sorted(expected_A - set(exceptions))
 print(f"Zsygmondy exceptions hit: {len(exceptions)}; unexpected: {len(unexpected)}")
 for t in unexpected:
     print("  UNEXPECTED EXCEPTION", t)
 print("expected-exception tags encountered:", sorted(t for t in exceptions if t in expected_A))
-print("SWEEP N DONE." if not fails and not unexpected else "SWEEP N HAS PROBLEMS.")
+for t in missing_expected:
+    print("  MISSING EXPECTED EXCEPTION", t)
+ok = not fails and not unexpected and not missing_expected and len(exceptions) == len(set(exceptions))
+print("SWEEP N DONE.|PASS" if ok else "SWEEP N HAS PROBLEMS.|HARD-FAIL")
+sys.exit(0 if ok else 1)

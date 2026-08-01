@@ -10,79 +10,7 @@
 # (a)-(c) are exactly the hypotheses of Lemmas A-C / Theorem D in THEOREM.md;
 # (b)+(c) come from one IntermediateSubgroups sweep per candidate.
 
-Vp := function(n, p)
-  local v; v := 0; while n mod p = 0 do n := n/p; v := v+1; od; return v;
-end;
-
-TowerTerminal := function(S, W)
-  local U, Un;
-  U := W;
-  Un := Normalizer(S, U);
-  while Size(Un) > Size(U) and Size(Un) < Size(S) do
-    U := Un; Un := Normalizer(S, U);
-  od;
-  if Size(Un) = Size(S) then return S; fi;   # tower hit a normal subgroup: impossible in simple S unless U=S
-  return U;
-end;
-
-IsXStableClass := function(S, Xgens, V)
-  local a;
-  for a in Xgens do
-    if not IsConjugate(S, V^a, V) then return false; fi;
-  od;
-  return true;
-end;
-
-CertifyClass := function(S, Xgens, V, name)
-  local ints, W, U, ok;
-  if Normalizer(S, V) <> V then
-    Print("      ", name, ": NOT self-normalizing -- FAIL\n"); return false;
-  fi;
-  if not IsXStableClass(S, Xgens, V) then
-    Print("      ", name, ": NOT X-stable -- FAIL\n"); return false;
-  fi;
-  ok := true;
-  ints := IntermediateSubgroups(S, V).subgroups;
-  Print("      ", name, ": ", Length(ints), " intermediate subgroups\n");
-  for W in ints do
-    if Size(NormalClosure(W, V)) <> Size(W) then
-      Print("      ", name, ": saturation FAILS in overgroup of size ",
-            Size(W), "\n");
-      ok := false;
-    fi;
-    U := TowerTerminal(S, W);
-    if Size(U) < Size(S) and IsXStableClass(S, Xgens, U) then
-      Print("      ", name, ": P_X-maximality FAILS: X-stable ",
-            "self-normalizing class above it, size ", Size(U), "\n");
-      ok := false;
-    fi;
-  od;
-  if ok then Print("      ", name, ": certified (self-norm, X-stable, ",
-                   "saturating, P_X-maximal)\n"); fi;
-  return ok;
-end;
-
-CertifyPair := function(label, S, Xgens, x, V, W, nameV, nameW)
-  local okV, okW, p, d, good;
-  Print("  == pair (", nameV, " ", Size(V), ", ", nameW, " ", Size(W),
-        ") for ", label, ", x = ", x, "\n");
-  okV := CertifyClass(S, Xgens, V, nameV);
-  okW := CertifyClass(S, Xgens, W, nameW);
-  if IsConjugate(S, V, W) then
-    Print("      classes coincide -- FAIL\n"); return false;
-  fi;
-  good := false;
-  for p in PrimeDivisors(Size(S)) do
-    d := Vp(Size(S), p) - Vp(Size(V), p) - Vp(Size(W), p);
-    if d > Vp(x, p) then
-      Print("      divisibility: p = ", p, ", d = ", d, " > v_p(x) = ",
-            Vp(x, p), "  ==> ALL k >= 2 EXCLUDED\n");
-      good := true;
-    fi;
-  od;
-  if not good then Print("      NO divisibility obstruction -- FAIL\n"); fi;
-  return okV and okW and good;
-end;
+Read("sweepK_lib.g");
 
 # ---------- O(5,4) = PSp(4,4), X = full Aut (x = 4) ----------
 # Survivor because the graph automorphism fuses the two parabolic classes;
@@ -91,48 +19,58 @@ end;
 # are the two parabolics, fused by X, hence X-unstable) and the subfield
 # subgroup Sp(4,2) (= centralizer of the field involution; maximal in S).
 CertO54 := function()
-  local S, P, hom, Q, Xgens, B, cands, a, C, sub;
-  # the graph automorphism does not act on the 85-point representation
-  # (it swaps points and totally isotropic lines), so build Aut generically
-  P := Image(IsomorphismPermGroup(AutomorphismGroup(PSp(4,4))));
-  P := Image(SmallerDegreePermutationRepresentation(P));
-  S := PerfectResiduum(P);
-  if Size(P) <> 4*Size(S) then Error("AutPerm O54 failed"); fi;
+  local f4, Sm, Tm2, conv, Tm, isoS, S0, T0, A, I, isoA, TI,
+        S, P, hom, Xgens, B, sub;
+  # Construct the subfield subgroup from first principles rather than finding
+  # a coset element.  Embed the standard Sp(4,2) matrices entrywise in
+  # Sp(4,4), transport them through the same two explicit isomorphisms as the
+  # socle, and then let the full abstract automorphism group supply the graph
+  # and field actions.  No random search, arbitrary coset representative, or
+  # representation-dependent element hash lies on this path.
+  f4 := GF(4);
+  Sm := Sp(4,f4);
+  Tm2 := Sp(4,GF(2));
+  conv := m -> ImmutableMatrix(f4,
+    List(m,row -> List(row,z -> IntFFE(z)*One(f4))));
+  Tm := Group(List(GeneratorsOfGroup(Tm2),conv));
+  AssertProof(Size(Sm)=979200 and Size(Tm)=720 and IsSubgroup(Sm,Tm),
+              "standard GF(2)-subfield embedding in Sp(4,4) failed");
+  isoS := IsomorphismPermGroup(Sm);
+  S0 := Image(isoS);
+  T0 := Image(isoS,Tm);
+  AssertProof(Size(Normalizer(S0,T0))=720,
+              "GF(2)-subfield subgroup is not self-normalizing");
+
+  A := AutomorphismGroup(S0);
+  I := InnerAutomorphismsAutomorphismGroup(A);
+  isoA := IsomorphismPermGroup(A);
+  P := Image(isoA);
+  S := Image(isoA,I);
+  TI := Group(List(GeneratorsOfGroup(T0),
+                   t -> InnerAutomorphism(S0,t)));
+  AssertProof(IsSubgroup(I,TI) and Size(TI)=720,
+              "inner-automorphism transport of Sp(4,2) failed");
+  sub := Image(isoA,TI);
+  AssertProof(Size(P)=4*Size(S),"AutPerm O54 failed");
+  AssertProof(IsSimpleGroup(S) and IsNormal(P,S) and Size(Centralizer(P,S))=1,
+              "O(5,4) automorphism representation failed validation");
+  AssertProof(S=PerfectResiduum(P),"O(5,4) residual is not the transported socle");
   hom := NaturalHomomorphismByNormalSubgroup(P, S);
   Xgens := List(GeneratorsOfGroup(Image(hom)),
                 q -> PreImagesRepresentative(hom, q));
   # Borel
   B := Normalizer(S, SylowSubgroup(S, 2));
-  # subfield Sp(4,2) = centralizer of a field-type involution in the coset
-  # over the order-2 element of P/S.  First try the odd-power trick to make
-  # the coset representative an involution; fall back to random search.
-  a := First(Image(hom), q -> Order(q) = 2);
-  C := PreImagesRepresentative(hom, a);
-  C := C^(Order(C) / 2^Vp(Order(C), 2));   # odd-part power: 2-element, same coset
-  sub := fail;
-  if Order(C) = 2 then
-    sub := Centralizer(S, C);
-    if Size(sub) <> 720 then sub := fail; fi;
-  fi;
-  if sub = fail then
-    for a in [1..5000] do
-      C := PreImagesRepresentative(hom, First(Image(hom), q -> Order(q)=2))
-           * Random(S);
-      if Order(C) = 2 then
-        sub := Centralizer(S, C);
-        if Size(sub) = 720 then break; fi;
-        sub := fail;
-      fi;
-    od;
-  fi;
-  if sub = fail then Error("no subfield Sp(4,2) found"); fi;
+  AssertProof(Size(B)=2304 and Size(sub)=720 and IsSubgroup(S,sub),
+              "O(5,4) constructed witness orders are wrong");
+  Print("SOCLE|group=O(5,4)|",GroupFingerprint(S),"|P=",Size(P),
+        "|out=4|faithful=true|simple=true\n");
+  Print("WITNESS|group=O(5,4)|construction=GF2-subfield-matrices",
+        "|subfield=",Size(sub),"|normalizer=",Size(Normalizer(S,sub)),
+        "|result=PASS\n");
   return CertifyPair("O(5,4)", S, Xgens, 4, B, sub, "Borel", "Sp(4,2)");
 end;
 
-if CertO54() then
-  Print("O(5,4): ALL k >= 2 EXCLUDED FOR ALL X (novelty pair certified).\n");
-else
-  Print("O(5,4): certification INCOMPLETE -- needs attention.\n");
-fi;
-Print("SWEEP K3 (current survivor list) DONE.\n");
-QUIT;
+AssertProof(CertO54(),"O(5,4) certification returned false");
+Print("O(5,4): ALL k >= 2 EXCLUDED FOR ALL X (novelty pair certified).\n");
+Print("SWEEP K3 (current survivor list) DONE.|PASS\n");
+QUIT_GAP(0);

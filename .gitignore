@@ -1,0 +1,43 @@
+# OS/editor debris
+.DS_Store
+**/.DS_Store
+*~
+*.swp
+*.swo
+.vscode/
+.idea/
+
+# Python caches and local environments (never proof receipts)
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.venv/
+venv/
+.env
+.env.*
+
+# Lean build cache; the toolchain, lake manifest, sources, and coverage JSON
+# remain tracked proof inputs.
+supporting-materials/formal/.lake/
+
+# LaTeX/Tectonic transient products.  The release PDF at repository root is
+# deliberately tracked.
+supporting-materials/paper/*.aux
+supporting-materials/paper/*.log
+supporting-materials/paper/*.out
+supporting-materials/paper/*.toc
+supporting-materials/paper/*.synctex.gz
+supporting-materials/paper/*.fls
+supporting-materials/paper/*.fdb_latexmk
+supporting-materials/paper/kourovka1034.pdf
+
+# Local regeneration scratch.  Committed certificates under
+# computations/certificates/*.log are intentionally NOT ignored.
+*.regen
+*.new
+*.tmp
+
+# Never add broad rules such as *.log, *.json, *.csv, audit/, formal/, or
+# computations/certificates/: those would hide proof evidence from the gate.

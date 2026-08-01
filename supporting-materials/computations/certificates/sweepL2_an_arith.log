@@ -1,2 +1,4 @@
+ENV|gap=4.16.0|ctbllib=1.3.11|atlasrep=2.1.11|csetgrp_sha256=3e7a00ef8730f6c058213db2f13c076565603ea2467e04aeea756e4afcb76b9f|rng_seed=1034
 failures: [  ]
 A_n ARITHMETIC RECEIPTS OK for 12 <= n <= 10000.
+SWEEP L2 DONE.|PASS

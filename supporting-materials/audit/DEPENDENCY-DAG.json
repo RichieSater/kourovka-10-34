@@ -1,0 +1,674 @@
+{
+  "schema_version": 2,
+  "root": "MAIN",
+  "allowed_evidence_classes": [
+    "FORMAL",
+    "CITED",
+    "COMPUTED",
+    "REDUNDANT"
+  ],
+  "logical_obligation_ids": [
+    "RED-QUOT",
+    "RED-MIN",
+    "SRC-REDUCTION-STRUCTURE",
+    "RED-COORD-BOUND",
+    "RED-COORD",
+    "SUP-EXIST",
+    "SUP-MAX",
+    "SUP-NONCONJ",
+    "PAR-NOVELTY",
+    "DIV-GROUP",
+    "DIV-ARITH",
+    "K1-TT",
+    "COMP-K2",
+    "COMP-FINITE-BASE",
+    "COMP-SPORADIC",
+    "COMP-INDEPENDENT",
+    "COMP-ENV",
+    "CFSG-INVENTORY",
+    "CFSG-BOUNDARIES",
+    "SRC-BOUNDARY-ISOMORPHISMS",
+    "ARITH-SYMBOLIC",
+    "ARITH-UNIVERSAL",
+    "SRC-ORDER-FORMULAS",
+    "SRC-ZSIGMONDY",
+    "SRC-CFSG-PINPOINT",
+    "SRC-TWISTED-BN",
+    "SRC-2E6-LEVI",
+    "SRC-AUTOMORPHISMS",
+    "SRC-MAXIMALITY",
+    "SRC-SPORADIC-MAX"
+  ],
+  "nodes": [
+    {
+      "id": "MAIN",
+      "manuscript_ref": "Theorem 1.1 (thm:main)",
+      "statement": "Every finite group with property P is soluble.",
+      "hypotheses": [
+        "G is finite",
+        "G=AB for every pair of non-conjugate maximal subgroups A,B"
+      ],
+      "dependencies": [
+        "RED-MIN",
+        "K1-TT",
+        "RED-COORD",
+        "COVERAGE-KGE2"
+      ],
+      "evidence_class": "FORMAL",
+      "obligation_id": null,
+      "source_or_certificate": [
+        "paper/kourovka1034.tex, proof of Theorem 1.1"
+      ],
+      "essential": true,
+      "status": "UNRESOLVED"
+    },
+    {
+      "id": "COVERAGE-KGE2",
+      "manuscript_ref": "Proposition 7.1 (prop:coverage) and proof of Theorem 1.1",
+      "statement": "Every nonabelian finite simple socle S is excluded for every k>=2 and every coordinate closure X.",
+      "hypotheses": [
+        "S is nonabelian finite simple",
+        "Inn(S) <= X <= Aut(S)",
+        "k>=2"
+      ],
+      "dependencies": [
+        "CFSG-INVENTORY",
+        "CFSG-BOUNDARIES",
+        "FAMILY-COVERAGE",
+        "COMP-FINITE-BASE",
+        "COMP-SPORADIC",
+        "DIV-GROUP",
+        "DIV-ARITH"
+      ],
+      "evidence_class": "FORMAL",
+      "obligation_id": null,
+      "source_or_certificate": [
+        "paper/kourovka1034.tex, Proposition 7.1",
+        "audit/CLASSIFICATION-MANIFEST.json",
+        "audit/EXCEPTION-MANIFEST.json"
+      ],
+      "essential": true,
+      "status": "UNRESOLVED"
+    },
+    {
+      "id": "FAMILY-COVERAGE",
+      "manuscript_ref": "Theorems 6.1--6.6",
+      "statement": "The infinite-family witnesses satisfy the structural and valuation hypotheses of the divisibility criterion.",
+      "hypotheses": [
+        "S lies in a listed infinite CFSG family",
+        "X is an admissible coordinate closure"
+      ],
+      "dependencies": [
+        "PAR-NOVELTY",
+        "ARITH-UNIVERSAL",
+        "ARITH-SYMBOLIC",
+        "SRC-ORDER-FORMULAS",
+        "SRC-ZSIGMONDY",
+        "SRC-TWISTED-BN",
+        "SRC-2E6-LEVI",
+        "SRC-AUTOMORPHISMS",
+        "SRC-MAXIMALITY",
+        "SRC-BOUNDARY-ISOMORPHISMS"
+      ],
+      "evidence_class": "FORMAL",
+      "obligation_id": null,
+      "source_or_certificate": [
+        "paper/kourovka1034.tex, Theorems 6.1--6.6",
+        "computations/independent/family_arithmetic_symbolic.py"
+      ],
+      "essential": true,
+      "status": "UNRESOLVED"
+    },
+    {
+      "id": "RED-QUOT",
+      "manuscript_ref": "Lemma 2.2 (lem:quot)",
+      "statement": "Property P passes to quotients.",
+      "hypotheses": [
+        "G is a group with property P",
+        "K is normal in G"
+      ],
+      "dependencies": [],
+      "evidence_class": "FORMAL",
+      "obligation_id": "RED-QUOT",
+      "source_or_certificate": [
+        "formal/Kourovka1034/Property.lean"
+      ],
+      "essential": true,
+      "status": "FORMAL-PASS"
+    },
+    {
+      "id": "RED-MIN",
+      "manuscript_ref": "Proposition 2.3 (prop:min), minimal-order core",
+      "statement": "A least-order nonsoluble Property-P group has the stated unique-minimal-normal core.",
+      "hypotheses": [
+        "G is finite, nonsoluble, has property P, and has least order among such groups"
+      ],
+      "dependencies": [
+        "RED-QUOT"
+      ],
+      "evidence_class": "FORMAL",
+      "obligation_id": "RED-MIN",
+      "source_or_certificate": [
+        "formal/Kourovka1034/Reduction.lean"
+      ],
+      "essential": true,
+      "status": "FORMAL-PASS"
+    },
+    {
+      "id": "SRC-REDUCTION-STRUCTURE",
+      "manuscript_ref": "Proposition 2.3 (prop:min), direct-power/wreath paragraph",
+      "statement": "The standard finite characteristically-simple decomposition and automorphism-wreath theorem apply exactly as used.",
+      "hypotheses": [
+        "N is a finite nonabelian minimal normal subgroup of G",
+        "C_G(N)=1"
+      ],
+      "dependencies": [],
+      "evidence_class": "CITED",
+      "obligation_id": "SRC-REDUCTION-STRUCTURE",
+      "source_or_certificate": [
+        "audit/SOURCE-LEDGER.md"
+      ],
+      "essential": true,
+      "status": "UNRESOLVED"
+    },
+    {
+      "id": "RED-COORD-BOUND",
+      "manuscript_ref": "Convention 2.4 (conv:X)",
+      "statement": "Transporter normalization and the quotient-order bound hold for an exact transitive wreath realization with the stated base kernel.",
+      "hypotheses": [
+        "rho:G -> Aut(S) wr Sym(k) is the exact faithful realization",
+        "rho^{-1}(Inn(S)^k)=N",
+        "the top action is transitive"
+      ],
+      "dependencies": [
+        "SRC-REDUCTION-STRUCTURE"
+      ],
+      "evidence_class": "FORMAL",
+      "obligation_id": "RED-COORD-BOUND",
+      "source_or_certificate": [
+        "formal/Kourovka1034/CoordinateReduction.lean"
+      ],
+      "essential": true,
+      "status": "FORMAL-PASS"
+    },
+    {
+      "id": "RED-COORD",
+      "manuscript_ref": "Proposition 2.3 and Convention 2.4",
+      "statement": "N is S^k, G has the faithful transitive wreath realization, normalization into X wr S_k is valid, and t divides x^k k!.",
+      "hypotheses": [
+        "G is the least-order nonsoluble Property-P group",
+        "N is its unique minimal normal subgroup"
+      ],
+      "dependencies": [
+        "RED-MIN",
+        "SRC-REDUCTION-STRUCTURE",
+        "RED-COORD-BOUND"
+      ],
+      "evidence_class": "FORMAL",
+      "obligation_id": "RED-COORD",
+      "source_or_certificate": [
+        "paper/kourovka1034.tex, Proposition 2.3 and Convention 2.4"
+      ],
+      "essential": true,
+      "status": "UNRESOLVED"
+    },
+    {
+      "id": "SUP-EXIST",
+      "manuscript_ref": "Lemma 3.2 (lem:A)",
+      "statement": "B_V=N_G(V^k) has the claimed intersection, supplement, and exact order.",
+      "hypotheses": [
+        "normalized coordinate-action hypotheses",
+        "[V] is in Pos_X(S)"
+      ],
+      "dependencies": [
+        "RED-COORD"
+      ],
+      "evidence_class": "FORMAL",
+      "obligation_id": "SUP-EXIST",
+      "source_or_certificate": [
+        "formal/Kourovka1034/ProductSupplements.lean"
+      ],
+      "essential": true,
+      "status": "FORMAL-PASS"
+    },
+    {
+      "id": "SUP-MAX",
+      "manuscript_ref": "Lemma 3.3 (lem:B)",
+      "statement": "Poset maximality and normal saturation make B_V maximal in G.",
+      "hypotheses": [
+        "hypotheses of Lemma 3.2",
+        "[V] is poset-maximal",
+        "V normally saturates every overgroup"
+      ],
+      "dependencies": [
+        "SUP-EXIST"
+      ],
+      "evidence_class": "FORMAL",
+      "obligation_id": "SUP-MAX",
+      "source_or_certificate": [
+        "formal/Kourovka1034/Maximality.lean"
+      ],
+      "essential": true,
+      "status": "FORMAL-PASS"
+    },
+    {
+      "id": "SUP-NONCONJ",
+      "manuscript_ref": "Lemma 3.4 (lem:C)",
+      "statement": "Distinct X-stable S-classes yield non-conjugate B_V and B_W.",
+      "hypotheses": [
+        "normalized coordinate-action hypotheses",
+        "[V] and [W] are distinct X-stable self-normalizing classes"
+      ],
+      "dependencies": [
+        "SUP-EXIST"
+      ],
+      "evidence_class": "FORMAL",
+      "obligation_id": "SUP-NONCONJ",
+      "source_or_certificate": [
+        "formal/Kourovka1034/ProductSupplements.lean"
+      ],
+      "essential": true,
+      "status": "FORMAL-PASS"
+    },
+    {
+      "id": "PAR-NOVELTY",
+      "manuscript_ref": "Lemma 3.5 (lem:P)",
+      "statement": "The stated parabolic novelty hypotheses imply poset maximality and normal saturation.",
+      "hypotheses": [
+        "S has the stated split BN-pair",
+        "Q_J is X-stable",
+        "every proper intermediate parabolic type is not X-stable"
+      ],
+      "dependencies": [
+        "SRC-TWISTED-BN"
+      ],
+      "evidence_class": "CITED",
+      "obligation_id": "PAR-NOVELTY",
+      "source_or_certificate": [
+        "paper/kourovka1034.tex, Lemma 3.5",
+        "audit/SOURCE-LEDGER.md#CARTER-BN"
+      ],
+      "essential": true,
+      "status": "CITED-PASS"
+    },
+    {
+      "id": "DIV-GROUP",
+      "manuscript_ref": "Theorem 4.1 (thm:D), group-order step",
+      "statement": "Property P and the two product supplements force p^(dk) to divide t.",
+      "hypotheses": [
+        "B_V and B_W are maximal and nonconjugate",
+        "their exact orders have the stated form"
+      ],
+      "dependencies": [
+        "SUP-EXIST",
+        "SUP-MAX",
+        "SUP-NONCONJ"
+      ],
+      "evidence_class": "FORMAL",
+      "obligation_id": "DIV-GROUP",
+      "source_or_certificate": [
+        "formal/Kourovka1034/ProductSupplements.lean"
+      ],
+      "essential": true,
+      "status": "FORMAL-PASS"
+    },
+    {
+      "id": "DIV-ARITH",
+      "manuscript_ref": "Theorem 4.1 (thm:D), valuation step",
+      "statement": "For every k>=2, p^(dk)|t contradicts t|x^k k! when d>v_p(x).",
+      "hypotheses": [
+        "p is prime",
+        "k>=2",
+        "d>v_p(x)",
+        "t divides x^k*k!",
+        "p^(d*k) divides t"
+      ],
+      "dependencies": [
+        "RED-COORD-BOUND",
+        "DIV-GROUP"
+      ],
+      "evidence_class": "FORMAL",
+      "obligation_id": "DIV-ARITH",
+      "source_or_certificate": [
+        "formal/Kourovka1034/Divisibility.lean"
+      ],
+      "essential": true,
+      "status": "FORMAL-PASS"
+    },
+    {
+      "id": "K1-TT",
+      "manuscript_ref": "Theorem 4.2 (thm:Dprime) and proof of Theorem 1.1",
+      "statement": "The k=1 almost-simple branch is excluded by the published Tikhonenko--Tyutyanov theorem.",
+      "hypotheses": [
+        "S <= G <= Aut(S) with S nonabelian simple",
+        "G has property P"
+      ],
+      "dependencies": [],
+      "evidence_class": "CITED",
+      "obligation_id": "K1-TT",
+      "source_or_certificate": [
+        "audit/SOURCE-LEDGER.md#TT-2010"
+      ],
+      "essential": true,
+      "status": "CITED-PASS"
+    },
+    {
+      "id": "COMP-K2",
+      "manuscript_ref": "Proposition 5.1, novelty certificates",
+      "statement": "Every machine-selected nonmaximal class normally saturates every actual overgroup embedding.",
+      "hypotheses": [
+        "S,X,V are the exact certificate records"
+      ],
+      "dependencies": [
+        "COMP-ENV"
+      ],
+      "evidence_class": "COMPUTED",
+      "obligation_id": "COMP-K2",
+      "source_or_certificate": [
+        "computations/certificates/sweepK2_saturation.log"
+      ],
+      "essential": true,
+      "status": "COMPUTED-PASS"
+    },
+    {
+      "id": "COMP-FINITE-BASE",
+      "manuscript_ref": "Proposition 5.1 (prop:base)",
+      "statement": "Every machine-routed finite-base (S,X) case has an exact obstruction witness.",
+      "hypotheses": [
+        "S is a nonabelian simple group in the stated finite inventory",
+        "X is an admissible coordinate closure"
+      ],
+      "dependencies": [
+        "COMP-ENV",
+        "COMP-K2",
+        "COMP-INDEPENDENT"
+      ],
+      "evidence_class": "COMPUTED",
+      "obligation_id": "COMP-FINITE-BASE",
+      "source_or_certificate": [
+        "computations/certificates/verify_coverage.log",
+        "computations/certificates/verify_coverage_big.log"
+      ],
+      "essential": true,
+      "status": "COMPUTED-PASS"
+    },
+    {
+      "id": "COMP-SPORADIC",
+      "manuscript_ref": "Proposition 5.2 (prop:sporadic)",
+      "statement": "Every sporadic simple group and the Tits group has an exact class-level obstruction witness.",
+      "hypotheses": [
+        "S is sporadic simple or the Tits group",
+        "X is an admissible coordinate closure"
+      ],
+      "dependencies": [
+        "COMP-ENV",
+        "COMP-INDEPENDENT",
+        "SRC-SPORADIC-MAX"
+      ],
+      "evidence_class": "COMPUTED",
+      "obligation_id": "COMP-SPORADIC",
+      "source_or_certificate": [
+        "computations/certificates/sweepM_sporadic.log",
+        "audit/SPORADIC-SOURCE-MAP.csv"
+      ],
+      "essential": true,
+      "status": "COMPUTED-PASS"
+    },
+    {
+      "id": "COMP-INDEPENDENT",
+      "manuscript_ref": "Propositions 5.1--5.2, independent receipt checks",
+      "statement": "Independent parsers recompute finite identities, links, and valuations rather than trusting primary conclusions.",
+      "hypotheses": [
+        "primary GAP receipts satisfy their schemas"
+      ],
+      "dependencies": [],
+      "evidence_class": "COMPUTED",
+      "obligation_id": "COMP-INDEPENDENT",
+      "source_or_certificate": [
+        "computations/independent/verify_finite_witnesses.py"
+      ],
+      "essential": true,
+      "status": "COMPUTED-PASS"
+    },
+    {
+      "id": "COMP-ENV",
+      "manuscript_ref": "Section 5, computational environment",
+      "statement": "The exact GAP/package environment and regression-fixed ContainedConjugates implementation are pinned.",
+      "hypotheses": [
+        "proof-essential GAP computations are invoked"
+      ],
+      "dependencies": [],
+      "evidence_class": "COMPUTED",
+      "obligation_id": "COMP-ENV",
+      "source_or_certificate": [
+        "computations/environment/environment.lock.json",
+        "computations/gap/proof_common.g",
+        "computations/environment/check-environment.sh"
+      ],
+      "essential": true,
+      "status": "COMPUTED-PASS"
+    },
+    {
+      "id": "CFSG-INVENTORY",
+      "manuscript_ref": "Proposition 7.1 (prop:coverage)",
+      "statement": "The classification manifest contains every CFSG family exactly once or by an explicit route.",
+      "hypotheses": [
+        "CFSG and the cited inventory theorem are accepted"
+      ],
+      "dependencies": [
+        "SRC-CFSG-PINPOINT"
+      ],
+      "evidence_class": "COMPUTED",
+      "obligation_id": "CFSG-INVENTORY",
+      "source_or_certificate": [
+        "audit/CLASSIFICATION-MANIFEST.json"
+      ],
+      "essential": true,
+      "status": "COMPUTED-PASS"
+    },
+    {
+      "id": "CFSG-BOUNDARIES",
+      "manuscript_ref": "Proposition 7.1 and Theorems 6.1--6.6",
+      "statement": "Every low parameter, exception, and exceptional-isomorphism boundary has exactly one route.",
+      "hypotheses": [
+        "classification and family parameter conventions are those in the cited sources"
+      ],
+      "dependencies": [
+        "SRC-BOUNDARY-ISOMORPHISMS",
+        "SRC-ZSIGMONDY"
+      ],
+      "evidence_class": "COMPUTED",
+      "obligation_id": "CFSG-BOUNDARIES",
+      "source_or_certificate": [
+        "audit/EXCEPTION-MANIFEST.json"
+      ],
+      "essential": true,
+      "status": "COMPUTED-PASS"
+    },
+    {
+      "id": "SRC-BOUNDARY-ISOMORPHISMS",
+      "manuscript_ref": "Proposition 7.1 and exception parentheticals",
+      "statement": "Every exceptional isomorphism, nonsimple boundary, and low-parameter identification is exactly sourced.",
+      "hypotheses": [
+        "published classification sources are accepted"
+      ],
+      "dependencies": [],
+      "evidence_class": "CITED",
+      "obligation_id": "SRC-BOUNDARY-ISOMORPHISMS",
+      "source_or_certificate": [
+        "audit/SOURCE-LEDGER.md"
+      ],
+      "essential": true,
+      "status": "UNRESOLVED"
+    },
+    {
+      "id": "ARITH-SYMBOLIC",
+      "manuscript_ref": "Theorems 6.1--6.6, independent symbolic checks",
+      "statement": "The encoded primitive-exponent and valuation inequalities pass an independent symbolic checker.",
+      "hypotheses": [
+        "the encoded group/Levi formulas and branch manifest match the paper"
+      ],
+      "dependencies": [
+        "SRC-ORDER-FORMULAS",
+        "SRC-ZSIGMONDY"
+      ],
+      "evidence_class": "COMPUTED",
+      "obligation_id": "ARITH-SYMBOLIC",
+      "source_or_certificate": [
+        "computations/independent/family_arithmetic_symbolic.py"
+      ],
+      "essential": true,
+      "status": "COMPUTED-PASS"
+    },
+    {
+      "id": "ARITH-UNIVERSAL",
+      "manuscript_ref": "Theorems 6.1--6.6",
+      "statement": "Every infinite-family formula, branch, valuation argument, and exception route is captured by an exact universal formal or symbolic theorem.",
+      "hypotheses": [
+        "published group and Levi formulas",
+        "the exact primitive-divisor theorem"
+      ],
+      "dependencies": [
+        "SRC-ORDER-FORMULAS",
+        "SRC-ZSIGMONDY",
+        "SRC-BOUNDARY-ISOMORPHISMS",
+        "ARITH-SYMBOLIC"
+      ],
+      "evidence_class": "FORMAL",
+      "obligation_id": "ARITH-UNIVERSAL",
+      "source_or_certificate": [
+        "paper/kourovka1034.tex, Theorems 6.1--6.6"
+      ],
+      "essential": true,
+      "status": "UNRESOLVED"
+    },
+    {
+      "id": "SRC-ORDER-FORMULAS",
+      "manuscript_ref": "Theorems 6.1--6.6",
+      "statement": "Every simple-group, subgroup, parabolic, and Levi order formula used by the family arithmetic has an exact source.",
+      "hypotheses": [
+        "standard notation is reconciled with the manuscript"
+      ],
+      "dependencies": [],
+      "evidence_class": "CITED",
+      "obligation_id": "SRC-ORDER-FORMULAS",
+      "source_or_certificate": [
+        "audit/SOURCE-LEDGER.md"
+      ],
+      "essential": true,
+      "status": "UNRESOLVED"
+    },
+    {
+      "id": "SRC-ZSIGMONDY",
+      "manuscript_ref": "Theorems 6.1--6.6",
+      "statement": "The exact primitive-prime-divisor theorem and all exceptions used are pinned.",
+      "hypotheses": [
+        "the theorem variables are matched to p and exponent f used in the paper"
+      ],
+      "dependencies": [],
+      "evidence_class": "CITED",
+      "obligation_id": "SRC-ZSIGMONDY",
+      "source_or_certificate": [
+        "audit/SOURCE-LEDGER.md"
+      ],
+      "essential": true,
+      "status": "UNRESOLVED"
+    },
+    {
+      "id": "SRC-CFSG-PINPOINT",
+      "manuscript_ref": "Proposition 7.1 (prop:coverage)",
+      "statement": "The complete CFSG family inventory is tied to an exact theorem/table/page.",
+      "hypotheses": [
+        "CFSG is accepted"
+      ],
+      "dependencies": [],
+      "evidence_class": "CITED",
+      "obligation_id": "SRC-CFSG-PINPOINT",
+      "source_or_certificate": [
+        "audit/SOURCE-LEDGER.md#GLS1-CFSG"
+      ],
+      "essential": true,
+      "status": "CITED-PASS"
+    },
+    {
+      "id": "SRC-TWISTED-BN",
+      "manuscript_ref": "Lemma 3.5 and Theorem 6.5",
+      "statement": "Twisted groups used have the asserted BN-pairs, parabolic containment, and self-normalization properties.",
+      "hypotheses": [
+        "the cited Lie-type constructions are accepted"
+      ],
+      "dependencies": [],
+      "evidence_class": "CITED",
+      "obligation_id": "SRC-TWISTED-BN",
+      "source_or_certificate": [
+        "audit/SOURCE-LEDGER.md#CARTER-BN"
+      ],
+      "essential": true,
+      "status": "CITED-PASS"
+    },
+    {
+      "id": "SRC-2E6-LEVI",
+      "manuscript_ref": "Theorem 6.5",
+      "statement": "The four stated ^2E6 maximal-parabolic Levi derived types and exponent bounds are exact.",
+      "hypotheses": [
+        "the cited Levi classification is accepted"
+      ],
+      "dependencies": [],
+      "evidence_class": "CITED",
+      "obligation_id": "SRC-2E6-LEVI",
+      "source_or_certificate": [
+        "audit/SOURCE-LEDGER.md#2E6-LEVI"
+      ],
+      "essential": true,
+      "status": "CITED-PASS"
+    },
+    {
+      "id": "SRC-AUTOMORPHISMS",
+      "manuscript_ref": "Theorems 6.1--6.6",
+      "statement": "Every automorphism-stability, diagram, graph, triality, and graph-field action used is exactly sourced.",
+      "hypotheses": [
+        "the cited automorphism classifications are accepted"
+      ],
+      "dependencies": [],
+      "evidence_class": "CITED",
+      "obligation_id": "SRC-AUTOMORPHISMS",
+      "source_or_certificate": [
+        "audit/LIE-SOURCE-MAP.csv"
+      ],
+      "essential": true,
+      "status": "CITED-PASS"
+    },
+    {
+      "id": "SRC-MAXIMALITY",
+      "manuscript_ref": "Theorems 6.1--6.6",
+      "statement": "Every selected uniform-family subgroup is maximal for the exact stated parameter range or routed through Lemma 3.5.",
+      "hypotheses": [
+        "the cited maximal-subgroup classifications are accepted"
+      ],
+      "dependencies": [],
+      "evidence_class": "CITED",
+      "obligation_id": "SRC-MAXIMALITY",
+      "source_or_certificate": [
+        "audit/MAXIMALITY-SOURCE-MAP.csv"
+      ],
+      "essential": true,
+      "status": "CITED-PASS"
+    },
+    {
+      "id": "SRC-SPORADIC-MAX",
+      "manuscript_ref": "Proposition 5.2",
+      "statement": "Every selected Atlas/CTblLib sporadic class is tied to an exact published maximality source.",
+      "hypotheses": [
+        "the cited Atlas and sporadic-classification sources are accepted"
+      ],
+      "dependencies": [],
+      "evidence_class": "CITED",
+      "obligation_id": "SRC-SPORADIC-MAX",
+      "source_or_certificate": [
+        "audit/SPORADIC-SOURCE-MAP.csv"
+      ],
+      "essential": true,
+      "status": "CITED-PASS"
+    }
+  ]
+}

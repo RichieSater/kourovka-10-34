@@ -1,0 +1,55 @@
+{
+  "schema_version": 1,
+  "generated_utc": "2026-08-01T12:00:00Z",
+  "host_reference_run": {
+    "os": "macOS 26.5.1 build 25F80",
+    "kernel": "Darwin 25.5.0 arm64",
+    "architecture": "arm64",
+    "locale_policy": "certificate programs set fixed formatting and do not emit locale-sensitive dates"
+  },
+  "container_base": {
+    "image": "debian:bookworm-slim",
+    "oci_index_digest": "sha256:7b140f374b289a7c2befc338f42ebe6441b7ea838a042bbd5acbfca6ec875818",
+    "linux_amd64_manifest": "sha256:63a496b5d3b99214b39f5ed70eb71a61e590a77979c79cbee4faf991f8c0783e",
+    "linux_arm64_manifest": "sha256:9b67294679b30e5d6ab257b40594feeb4a4b81f7fcf4131f4decf0d6a212a9b0"
+  },
+  "gap": {
+    "release": "4.16.0",
+    "release_tag_commit": "1facc20e0f0b4047350ce9646fd15c115589db9d",
+    "source_url": "https://github.com/gap-system/gap/releases/download/v4.16.0/gap-4.16.0.tar.gz",
+    "source_sha256": "aaa296b32a5d7bf25fd80f241d23ec1f58b74e991ae730fafe40e54eb3af6e7e",
+    "contained_conjugates_fix_commit": "b12f8342d641075d58fcbe62cc00dd433d7b8e18",
+    "patched_lib_csetgrp_gi_sha256": "3e7a00ef8730f6c058213db2f13c076565603ea2467e04aeea756e4afcb76b9f",
+    "unpatched_v4_16_0_lib_csetgrp_gi_sha256": "3c4ff5a2e288e06d90a864542aeca32e1efab1e1153b84b72a0b8560baa077ec",
+    "proof_rng_seed": 1034
+  },
+  "gap_packages": {
+    "CTblLib": {
+      "version": "1.3.11",
+      "archive_sha256": "f201e9da571c681a7bbfb1e4683bdb2c80a23b005099ed0453521f59cb443434",
+      "archive_url": "https://www.math.rwth-aachen.de/~Thomas.Breuer/ctbllib/ctbllib-1.3.11.tar.gz"
+    },
+    "AtlasRep": {
+      "version": "2.1.11",
+      "archive_sha256": "1ccb65af694d53f60ba41f85b2293e505c42a2fecf90b36747c1d841a5ce0b47",
+      "archive_url": "https://www.math.rwth-aachen.de/~Thomas.Breuer/atlasrep/atlasrep-2.1.11.tar.gz"
+    }
+  },
+  "python": {
+    "reference_version": "3.9.6",
+    "minimum": "3.9",
+    "dependencies": "standard library only"
+  },
+  "lean": {
+    "version": "4.32.2",
+    "compiler_commit": "f3b06c705e6c85f5314019d5d3baab0fec5b580c",
+    "toolchain": "leanprover/lean4:v4.32.2",
+    "mathlib_commit": "905b95818eb32af7874a58b427f50c1711a5e96c"
+  },
+  "elan": {
+    "version": "4.2.3",
+    "release": "https://github.com/leanprover/elan/releases/tag/v4.2.3",
+    "linux_amd64_archive_sha256": "df0b2b3a439961ffcbb3985214365ffe40f49bc871df04dff268c7d8e21ca8b2",
+    "linux_arm64_archive_sha256": "cb69af0803b04157bc30201c29c12fca882bb3ad8b43476b8d2d3064810bc3ac"
+  }
+}

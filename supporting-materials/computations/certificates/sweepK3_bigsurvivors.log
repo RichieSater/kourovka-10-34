@@ -1,3 +1,6 @@
+ENV|gap=4.16.0|ctbllib=1.3.11|atlasrep=2.1.11|csetgrp_sha256=3e7a00ef8730f6c058213db2f13c076565603ea2467e04aeea756e4afcb76b9f|rng_seed=1034
+SOCLE|group=O(5,4)|order=979200|order_factors_sha256=22bbe5cf735651aa0c160daf526d7fb5527eb6ee4eeff4b8528a5046b83a741c|P=3916800|out=4|faithful=true|simple=true
+WITNESS|group=O(5,4)|construction=GF2-subfield-matrices|subfield=720|normalizer=720|result=PASS
   == pair (Borel 2304, Sp(4,2) 720) for O(5,4), x = 4
       Borel: 2 intermediate subgroups
       Borel: certified (self-norm, X-stable, saturating, P_X-maximal)
@@ -5,5 +8,6 @@
       Sp(4,2): certified (self-norm, X-stable, saturating, P_X-maximal)
       divisibility: p = 5, d = 1 > v_p(x) = 0  ==> ALL k >= 2 EXCLUDED
       divisibility: p = 17, d = 1 > v_p(x) = 0  ==> ALL k >= 2 EXCLUDED
+CERT|kind=constructed-novelty|group=O(5,4)|s=979200|x=4|uclass=Borel|u=2304|ufp=class=0,order=2304,index=425,normalizer=2304,class_sha256=f8dfd7a51b9f7d35e8bbba86f4add2f804cff9913b32dfa7527085cb23c59fcb|vclass=Sp(4,2)|v=720|vfp=class=0,order=720,index=1360,normalizer=720,class_sha256=8ca8cb01857a6ea1de42b910944c603baf565ce618a456d4e55267eeb5b55e39|p=5|d=1|vpx=0|result=PASS
 O(5,4): ALL k >= 2 EXCLUDED FOR ALL X (novelty pair certified).
-SWEEP K3 (current survivor list) DONE.
+SWEEP K3 (current survivor list) DONE.|PASS

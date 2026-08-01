@@ -18,7 +18,7 @@ exhaustive attack and can say precisely what you attacked and how it held.
 Clone the artifact and work from the frozen tag:
 
     git clone https://github.com/RichieSater/kourovka-10-34
-    cd kourovka-10-34 && git checkout v1.0.2
+    cd kourovka-10-34 && git checkout <the release tag under review>
 
 Read `paper/kourovka1034.tex` (or the PDF) as the primary object of attack.
 The Markdown notes are context, not authority: where notes and paper
@@ -107,17 +107,16 @@ hammer:
 
 ## Attack surface C: the machine claims (do not take a single log on faith)
 
-15. Re-run all three Python receipts and confirm output matches committed
-    logs: verify_coverage.py, verify_coverage_big.py, sweepN_item5_arith.py.
-16. Re-run at least: sanity.g, sweepK2_saturation.g, sweepM_sporadic.g, and
-    ONE full J-sweep group of your choosing (pick something awkward, e.g.
-    Sz(8) or U4(3), and confirm the certificate line reproduces bit-for-bit
-    reasoning: the class orders, the prime, the valuations).
-17. Audit `property.g` and `_common.g` line by line: is property P
-    implemented correctly (non-conjugate maximal pairs, conjugation lemma
-    reduction)? Is X-stability computed correctly (it must test stability
-    under the actual X, not merely under Aut(S))? A bug here poisons every
-    certificate.
+15. Run `sh verify-quick.sh`, then `sh verify-full.sh`, and require every
+    regenerated proof-essential GAP/Python receipt to be byte-identical.
+16. Independently inspect `sweepK2_saturation.g`, `sweepM_sporadic.g`, and
+    one awkward full J case (e.g. Sz(8), U4(3), or PSU(3,8)).  Confirm its
+    exact `XCASE` action fingerprints, class identities, primes, and
+    valuations rather than checking orders alone.
+17. Audit `proof_common.g`, `sweepJ_lib.g`, and `sweepK_lib.g` line by line.
+    In particular, verify the full quotient-class enumeration, canonical
+    action fingerprints, exact X-stability tests, hard failures, and absence
+    of random/soft-skip paths.
 18. Cross-check sweepN_item5_arith.py against the PAPER (not the notes):
     does each check block implement exactly the pair and exponent the
     paper's theorem uses? A receipt that verifies a different pair than
@@ -131,12 +130,21 @@ hammer:
 
 ## Attack surface D: citations and priority
 
-20. Verify each bibliography entry's bibliographic data and, more
-    importantly, that the cited result actually SAYS what the paper uses
-    it for (Carter 8.3.2/8.4.3/8.4.4/8.1.5; GLS3 2.5.12; BHRD tables 8.3,
-    8.5, 8.14; Kleidman 1988; Suzuki 1962; LPS 1987; Nagura 1952).
+20. Verify every row of `audit/SOURCE-LEDGER.md`,
+    `LIE-SOURCE-MAP.csv`, `MAXIMALITY-SOURCE-MAP.csv`, and
+    `SPORADIC-SOURCE-MAP.csv` against the cited page/table/theorem itself;
+    do not infer source correctness from the topology checkers.
 21. Search for prior solutions or partial results on Kourovka 10.34
     beyond Tikhonenko-Tyutyanov 2010.
+
+## Attack surface E: the binary assurance claim
+
+22. Run both `submission-gate.sh` profiles.  Treat any open ledger row as a
+    failure, and confirm that formal coverage closes only the exact claims
+    listed in `formal/FORMAL-COVERAGE.json`.
+23. Inspect every deliberate mutation and add at least one new mutation that
+    should fail.  Check that the primary and independent paths do not merely
+    parse the same generated conclusion.
 
 ## Report format
 

@@ -1,5 +1,12 @@
 # Literature audit — claim-by-claim source table
 
+> **Historical working note (non-normative).** This file preserves the
+> development history and may contain stale counts, citations, or claims. The
+> normative paper, binary obligation ledger, source maps, and current blockers
+> are in `../paper/kourovka1034.tex` and `../audit/`. Do not use this note as a
+> proof or release certificate.
+
+
 Purpose: every external assertion in the manuscript (maximality of a
 subgroup, automorphism behavior, order formula, number-theoretic input)
 is listed here with the exact published result that authorizes it, its

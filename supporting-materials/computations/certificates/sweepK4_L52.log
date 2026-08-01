@@ -1,3 +1,5 @@
+ENV|gap=4.16.0|ctbllib=1.3.11|atlasrep=2.1.11|csetgrp_sha256=3e7a00ef8730f6c058213db2f13c076565603ea2467e04aeea756e4afcb76b9f|rng_seed=1034
+SOCLE|group=L5_2|order=9999360|order_factors_sha256=b9f17aa26dda4db67de57fefdbc67eaa949f1d6f4331beaecd1b6009427ec692|P=19998720|out=2|faithful=true|simple=true
   == pair (P14flag 21504, P23flag 9216) for L5_2, x = 2
       P14flag: 2 intermediate subgroups
       P14flag: certified (self-norm, X-stable, saturating, P_X-maximal)
@@ -5,5 +7,6 @@
       P23flag: certified (self-norm, X-stable, saturating, P_X-maximal)
       divisibility: p = 5, d = 1 > v_p(x) = 0  ==> ALL k >= 2 EXCLUDED
       divisibility: p = 31, d = 1 > v_p(x) = 0  ==> ALL k >= 2 EXCLUDED
+CERT|kind=constructed-novelty|group=L5_2|s=9999360|x=2|uclass=P14flag|u=21504|ufp=class=0,order=21504,index=465,normalizer=21504,class_sha256=1ad2180adde9ef48f00534ddc44b2e2332834f73d15c288e4ce96946f369bae8|vclass=P23flag|v=9216|vfp=class=0,order=9216,index=1085,normalizer=9216,class_sha256=6ff61febf4f6c5106cfa6dab3636f8523bb32bcc508e3612de05a4354fc75886|p=5|d=1|vpx=0|result=PASS
 L5_2: ALL k >= 2 EXCLUDED FOR ALL X (novelty pair certified).
-SWEEP K4 DONE.
+SWEEP K4 DONE.|PASS

@@ -1,34 +1,38 @@
-### A11: |S| = 19958400 = [ [ 2, 7 ], [ 3, 4 ], [ 5, 2 ], [ 7, 1 ], [ 11, 1 ] 
- ], |Out| = 2, maximal classes [ 43200, 60480, 120960, 362880, 1814400, 7920, 
-  7920 ]
-    X/Inn = 1 (x=1): ALL k >= 2 EXCLUDED via (|U|,|V|,p,d) = 
-[ 7920, 7920, 7, 1 ]
-    X/Inn = C2 (x=2): ALL k >= 2 EXCLUDED via (|U|,|V|,p,d) = 
-[ 362880, 1814400, 11, 1 ]
+ENV|gap=4.16.0|ctbllib=1.3.11|atlasrep=2.1.11|csetgrp_sha256=3e7a00ef8730f6c058213db2f13c076565603ea2467e04aeea756e4afcb76b9f|rng_seed=1034
+### A11: |S| = 19958400 = [ [ 2, 7 ], [ 3, 4 ], [ 5, 2 ], [ 7, 1 ], [ 11, 1 ] ], |Out| = 2, maximal classes [ 43200, 60480, 120960, 362880, 1814400, 7920, 7920 ]
+SOCLE|group=A11|order=19958400|order_factors_sha256=b5548773f1ad8e1281c983f93864f6211f3bfada14fb8480fb9a7d473f227bf0|P=39916800|out=2|faithful=true|simple=true
+XCASE|group=A11|out=2|xclass=1|xclass_sha256=cad88ff08abbd87eb9d21db4398415c73a3e9595503fb309941c404e8971e360|x=1|xstructure=1|xconjugates=1|result=EXCLUDED
+    X/Inn = 1 (x=1, conjugates=1): ALL k >= 2 EXCLUDED via (|U|,|V|,p,d) = [ 43200, 7920, 7, 1 ]
+CERT|kind=maximal|group=A11|s=19958400|out=2|xclass=1|x=1|xclass_sha256=cad88ff08abbd87eb9d21db4398415c73a3e9595503fb309941c404e8971e360|xstructure=1|xconjugates=1|uclass=1|u=43200|ufp=class=1,order=43200,index=462,normalizer=43200,class_sha256=07312adc09f12e0aada357c737fa6a457d67be51a0bbfd886833bed4376a86c3|vclass=6|v=7920|vfp=class=6,order=7920,index=2520,normalizer=7920,class_sha256=d241941e30b89cd0926f5bcf76e6d84bc7073ea01100f0c1641cc817fb47a37d|p=7|d=1|vpx=0|result=PASS
+XCASE|group=A11|out=2|xclass=2|xclass_sha256=42db4a0df8f64adf73a2cb00d0975c09e0080227e5ffcfc0f653288197563111|x=2|xstructure=C2|xconjugates=1|result=EXCLUDED
+    X/Inn = C2 (x=2, conjugates=1): ALL k >= 2 EXCLUDED via (|U|,|V|,p,d) = [ 43200, 60480, 11, 1 ]
+CERT|kind=maximal|group=A11|s=19958400|out=2|xclass=2|x=2|xclass_sha256=42db4a0df8f64adf73a2cb00d0975c09e0080227e5ffcfc0f653288197563111|xstructure=C2|xconjugates=1|uclass=1|u=43200|ufp=class=1,order=43200,index=462,normalizer=43200,class_sha256=07312adc09f12e0aada357c737fa6a457d67be51a0bbfd886833bed4376a86c3|vclass=2|v=60480|vfp=class=2,order=60480,index=330,normalizer=60480,class_sha256=aaa12bf26625e70c7ae103df63b8ada63670c1e91f72543d8d612a644bbd05c8|p=11|d=1|vpx=0|result=PASS
     ==> A11^k EXCLUDED FOR ALL k >= 2 AND ALL X.
-### A12: |S| = 239500800 = [ [ 2, 9 ], [ 3, 5 ], [ 5, 2 ], [ 7, 1 ], 
-  [ 11, 1 ] ], |Out| = 2, maximal classes [ 302400, 483840, 1088640, 3628800, 
-  19958400, 23040, 15552, 41472, 518400, 95040, 95040 ]
-    X/Inn = 1 (x=1): ALL k >= 2 EXCLUDED via (|U|,|V|,p,d) = 
-[ 95040, 95040, 7, 1 ]
-    X/Inn = C2 (x=2): ALL k >= 2 EXCLUDED via (|U|,|V|,p,d) = 
-[ 41472, 518400, 11, 1 ]
+### A12: |S| = 239500800 = [ [ 2, 9 ], [ 3, 5 ], [ 5, 2 ], [ 7, 1 ], [ 11, 1 ] ], |Out| = 2, maximal classes [ 302400, 483840, 1088640, 3628800, 19958400, 23040, 15552, 41472, 518400, 95040, 95040 ]
+SOCLE|group=A12|order=239500800|order_factors_sha256=ec56a81df5c3f054e1792c290bf8047d3709454622ff86adbba9df605ab67d4a|P=479001600|out=2|faithful=true|simple=true
+XCASE|group=A12|out=2|xclass=1|xclass_sha256=0941b6261a8ed34e5865d9baa562859242169c31bdb9043a47ff32cad43c6315|x=1|xstructure=1|xconjugates=1|result=EXCLUDED
+    X/Inn = 1 (x=1, conjugates=1): ALL k >= 2 EXCLUDED via (|U|,|V|,p,d) = [ 483840, 15552, 5, 1 ]
+CERT|kind=maximal|group=A12|s=239500800|out=2|xclass=1|x=1|xclass_sha256=0941b6261a8ed34e5865d9baa562859242169c31bdb9043a47ff32cad43c6315|xstructure=1|xconjugates=1|uclass=2|u=483840|ufp=class=2,order=483840,index=495,normalizer=483840,class_sha256=e6f33e395e5c1da4418d60d5022638c2438f05360065128f7f0ea3b4ed4fcf61|vclass=7|v=15552|vfp=class=7,order=15552,index=15400,normalizer=15552,class_sha256=8ec60368d03bed2687ee7ab2a84a79cbb341e87c1f5133af27028eb107892352|p=5|d=1|vpx=0|result=PASS
+XCASE|group=A12|out=2|xclass=2|xclass_sha256=4ffebe0eee8caf09984bd680d1d4bdbab4e507626e30de840a665fedb946f0d0|x=2|xstructure=C2|xconjugates=1|result=EXCLUDED
+    X/Inn = C2 (x=2, conjugates=1): ALL k >= 2 EXCLUDED via (|U|,|V|,p,d) = [ 483840, 15552, 5, 1 ]
+CERT|kind=maximal|group=A12|s=239500800|out=2|xclass=2|x=2|xclass_sha256=4ffebe0eee8caf09984bd680d1d4bdbab4e507626e30de840a665fedb946f0d0|xstructure=C2|xconjugates=1|uclass=2|u=483840|ufp=class=2,order=483840,index=495,normalizer=483840,class_sha256=e6f33e395e5c1da4418d60d5022638c2438f05360065128f7f0ea3b4ed4fcf61|vclass=7|v=15552|vfp=class=7,order=15552,index=15400,normalizer=15552,class_sha256=8ec60368d03bed2687ee7ab2a84a79cbb341e87c1f5133af27028eb107892352|p=5|d=1|vpx=0|result=PASS
     ==> A12^k EXCLUDED FOR ALL k >= 2 AND ALL X.
-### A13: |S| = 3113510400 = [ [ 2, 9 ], [ 3, 5 ], [ 5, 2 ], [ 7, 1 ], 
-  [ 11, 1 ], [ 13, 1 ] ], |Out| = 2, maximal classes 
-[ 1814400, 2419200, 4354560, 10886400, 39916800, 239500800, 78, 5616, 5616 ]
-    X/Inn = 1 (x=1): ALL k >= 2 EXCLUDED via (|U|,|V|,p,d) = 
-[ 5616, 5616, 11, 1 ]
-    X/Inn = C2 (x=2): ALL k >= 2 EXCLUDED via (|U|,|V|,p,d) = 
-[ 39916800, 239500800, 13, 1 ]
+### A13: |S| = 3113510400 = [ [ 2, 9 ], [ 3, 5 ], [ 5, 2 ], [ 7, 1 ], [ 11, 1 ], [ 13, 1 ] ], |Out| = 2, maximal classes [ 1814400, 2419200, 4354560, 10886400, 39916800, 239500800, 78, 5616, 5616 ]
+SOCLE|group=A13|order=3113510400|order_factors_sha256=4a23eac85ba10716c1f4e05459d072325cc6ac0dd7e07ba0b6b31d3251358bcb|P=6227020800|out=2|faithful=true|simple=true
+XCASE|group=A13|out=2|xclass=1|xclass_sha256=8ac089c667a139c4963ed32cd715173f845f4a3fcded15bfa3f6495260ed966a|x=1|xstructure=1|xconjugates=1|result=EXCLUDED
+    X/Inn = 1 (x=1, conjugates=1): ALL k >= 2 EXCLUDED via (|U|,|V|,p,d) = [ 1814400, 78, 2, 1 ]
+CERT|kind=maximal|group=A13|s=3113510400|out=2|xclass=1|x=1|xclass_sha256=8ac089c667a139c4963ed32cd715173f845f4a3fcded15bfa3f6495260ed966a|xstructure=1|xconjugates=1|uclass=1|u=1814400|ufp=class=1,order=1814400,index=1716,normalizer=1814400,class_sha256=478fc9339adbfd577a8490e2eaea7b1c909bde4938a58cb5baeeed421e218cc2|vclass=7|v=78|vfp=class=7,order=78,index=39916800,normalizer=78,class_sha256=d25506d23ba994cc8210a163f275aa00e5219b1c58e7c85a27c1bd8a19c7a471|p=2|d=1|vpx=0|result=PASS
+XCASE|group=A13|out=2|xclass=2|xclass_sha256=7961d282c2e1bf19dfa21cb5db3c5673a8c8850529a7a4f814a2642d8c888278|x=2|xstructure=C2|xconjugates=1|result=EXCLUDED
+    X/Inn = C2 (x=2, conjugates=1): ALL k >= 2 EXCLUDED via (|U|,|V|,p,d) = [ 2419200, 78, 3, 1 ]
+CERT|kind=maximal|group=A13|s=3113510400|out=2|xclass=2|x=2|xclass_sha256=7961d282c2e1bf19dfa21cb5db3c5673a8c8850529a7a4f814a2642d8c888278|xstructure=C2|xconjugates=1|uclass=2|u=2419200|ufp=class=2,order=2419200,index=1287,normalizer=2419200,class_sha256=19301666376f003b530413d0080bf6f36535e1bfe45ab1054263aa80f5d32da6|vclass=7|v=78|vfp=class=7,order=78,index=39916800,normalizer=78,class_sha256=d25506d23ba994cc8210a163f275aa00e5219b1c58e7c85a27c1bd8a19c7a471|p=3|d=1|vpx=0|result=PASS
     ==> A13^k EXCLUDED FOR ALL k >= 2 AND ALL X.
-### A14: |S| = 43589145600 = [ [ 2, 10 ], [ 3, 5 ], [ 5, 2 ], [ 7, 2 ], 
-  [ 11, 1 ], [ 13, 1 ] ], |Out| = 2, maximal classes 
-[ 14515200, 21772800, 43545600, 119750400, 479001600, 3113510400, 322560, 
-  25401600, 1092 ]
-    X/Inn = 1 (x=1): ALL k >= 2 EXCLUDED via (|U|,|V|,p,d) = 
-[ 25401600, 1092, 11, 1 ]
-    X/Inn = C2 (x=2): ALL k >= 2 EXCLUDED via (|U|,|V|,p,d) = 
-[ 25401600, 1092, 11, 1 ]
+### A14: |S| = 43589145600 = [ [ 2, 10 ], [ 3, 5 ], [ 5, 2 ], [ 7, 2 ], [ 11, 1 ], [ 13, 1 ] ], |Out| = 2, maximal classes [ 14515200, 21772800, 43545600, 119750400, 479001600, 3113510400, 322560, 25401600, 1092 ]
+SOCLE|group=A14|order=43589145600|order_factors_sha256=37f2113306411525fbcdd8e50db5cb83f4ccf9549c6af34599c0a471dd76678d|P=87178291200|out=2|faithful=true|simple=true
+XCASE|group=A14|out=2|xclass=1|xclass_sha256=8ac089c667a139c4963ed32cd715173f845f4a3fcded15bfa3f6495260ed966a|x=1|xstructure=1|xconjugates=1|result=EXCLUDED
+    X/Inn = 1 (x=1, conjugates=1): ALL k >= 2 EXCLUDED via (|U|,|V|,p,d) = [ 322560, 1092, 3, 2 ]
+CERT|kind=maximal|group=A14|s=43589145600|out=2|xclass=1|x=1|xclass_sha256=8ac089c667a139c4963ed32cd715173f845f4a3fcded15bfa3f6495260ed966a|xstructure=1|xconjugates=1|uclass=7|u=322560|ufp=class=7,order=322560,index=135135,normalizer=322560,class_sha256=408492f8ad652a172028db1e3d21b9eed68be8c9966c50ff807aee364f63aea3|vclass=9|v=1092|vfp=class=9,order=1092,index=39916800,normalizer=1092,class_sha256=bd3162519e212c5bc8a84a8cac11980927801831dfcdb991cfed6551feeda3aa|p=3|d=2|vpx=0|result=PASS
+XCASE|group=A14|out=2|xclass=2|xclass_sha256=8ebeaa147168578f0a28569293b52ef8375d7a75e85b60c942ad848a1f9b31c3|x=2|xstructure=C2|xconjugates=1|result=EXCLUDED
+    X/Inn = C2 (x=2, conjugates=1): ALL k >= 2 EXCLUDED via (|U|,|V|,p,d) = [ 322560, 1092, 3, 2 ]
+CERT|kind=maximal|group=A14|s=43589145600|out=2|xclass=2|x=2|xclass_sha256=8ebeaa147168578f0a28569293b52ef8375d7a75e85b60c942ad848a1f9b31c3|xstructure=C2|xconjugates=1|uclass=7|u=322560|ufp=class=7,order=322560,index=135135,normalizer=322560,class_sha256=408492f8ad652a172028db1e3d21b9eed68be8c9966c50ff807aee364f63aea3|vclass=9|v=1092|vfp=class=9,order=1092,index=39916800,normalizer=1092,class_sha256=bd3162519e212c5bc8a84a8cac11980927801831dfcdb991cfed6551feeda3aa|p=3|d=2|vpx=0|result=PASS
     ==> A14^k EXCLUDED FOR ALL k >= 2 AND ALL X.
-SWEEP J5 DONE.
+SWEEP J5 DONE.|PASS

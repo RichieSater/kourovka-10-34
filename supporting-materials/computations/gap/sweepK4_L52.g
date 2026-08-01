@@ -12,41 +12,43 @@
 
 Read("sweepK_lib.g");
 
-res := CALL_WITH_CATCH(function()
-  local vecs, dom, act, gens, dualperm, S, A, e, p1, h1, V1,
-        pts2, pts3, P2s, P3s, V2, sub2, sub3;
-  vecs := Filtered(Elements(GF(2)^5), v -> not IsZero(v));
-  dom := Concatenation(List(vecs, v -> [1, v]), List(vecs, w -> [2, w]));
-  act := function(x, g)
-    if x[1] = 1 then return [1, x[2]*g];
-    else return [2, x[2]*TransposedMat(g^-1)]; fi;
-  end;
-  gens := List(GeneratorsOfGroup(GL(5,2)), g -> Permutation(g, dom, act));
-  dualperm := PermListList(dom, List(dom, x -> [3 - x[1], x[2]]));
-  S := Group(gens);
-  if Size(S) <> 9999360 then Error("L5(2) construction wrong"); fi;
-  e := IdentityMat(5, GF(2));
-  # V1: stabilizer of incident flag  point <e1>  <  hyperplane normal e2
-  V1 := Stabilizer(S, [Position(dom, [1, e[1]]), Position(dom, [2, e[2]])],
-                   OnTuples);
-  if Size(V1) <> 9999360/465 then Error("V1 wrong size"); fi;
-  # V2: stabilizer of flag  <e1,e2>  <  <e1,e2,e3>, via point-set stabilizers
-  sub2 := Filtered(vecs, v -> v[4] = 0*Z(2) and v[5] = 0*Z(2)
-                              and v[3] = 0*Z(2));
-  sub3 := Filtered(vecs, v -> v[4] = 0*Z(2) and v[5] = 0*Z(2));
-  pts2 := Set(List(sub2, v -> Position(dom, [1, v])));
-  pts3 := Set(List(sub3, v -> Position(dom, [1, v])));
-  P2s := Stabilizer(S, pts2, OnSets);
-  P3s := Stabilizer(S, pts3, OnSets);
-  V2 := Intersection(P2s, P3s);
-  if Size(V2) <> 9999360/1085 then Error("V2 wrong size"); fi;
-  if CertifyPair("L5_2", S, [dualperm], 2, V1, V2, "P14flag", "P23flag") then
-    Print("L5_2: ALL k >= 2 EXCLUDED FOR ALL X (novelty pair certified).\n");
-  else
-    Print("L5_2: certification INCOMPLETE -- needs attention.\n");
-  fi;
-  return true;
-end, []);
-if res[1] <> true then Print("L5_2 K4: ERROR\n"); fi;
-Print("SWEEP K4 DONE.\n");
-QUIT;
+vecs := Filtered(Elements(GF(2)^5), v -> not IsZero(v));
+dom := Concatenation(List(vecs, v -> [1, v]), List(vecs, w -> [2, w]));
+act := function(x, g)
+  if x[1] = 1 then return [1, x[2]*g];
+  else return [2, x[2]*TransposedMat(g^-1)]; fi;
+end;
+gens := List(GeneratorsOfGroup(GL(5,2)), g -> Permutation(g, dom, act));
+dualperm := PermListList(dom, List(dom, x -> [3 - x[1], x[2]]));
+S := Group(gens);
+AssertProof(Size(S)=9999360 and IsSimpleGroup(S),"L5(2) construction wrong");
+P := ClosureGroup(S,dualperm);
+AssertProof(Size(P)=2*Size(S) and IsNormal(P,S)
+            and Size(Centralizer(P,S))=1 and PerfectResiduum(P)=S,
+            "L5(2).2 duality representation is not faithful/exact");
+hom := NaturalHomomorphismByNormalSubgroup(P,S);
+AssertProof(KernelOfMultiplicativeGeneralMapping(hom)=S
+            and Size(Image(hom))=2,
+            "L5(2).2 quotient is not the intended outer group");
+Print("SOCLE|group=L5_2|",GroupFingerprint(S),"|P=",Size(P),
+      "|out=2|faithful=true|simple=true\n");
+e := IdentityMat(5, GF(2));
+# V1: stabilizer of incident flag  point <e1>  <  hyperplane normal e2
+V1 := Stabilizer(S, [Position(dom, [1, e[1]]), Position(dom, [2, e[2]])],
+                 OnTuples);
+AssertProof(Size(V1)=9999360/465,"V1 wrong size");
+# V2: stabilizer of flag  <e1,e2>  <  <e1,e2,e3>, via point-set stabilizers
+sub2 := Filtered(vecs, v -> v[4] = 0*Z(2) and v[5] = 0*Z(2)
+                            and v[3] = 0*Z(2));
+sub3 := Filtered(vecs, v -> v[4] = 0*Z(2) and v[5] = 0*Z(2));
+pts2 := Set(List(sub2, v -> Position(dom, [1, v])));
+pts3 := Set(List(sub3, v -> Position(dom, [1, v])));
+P2s := Stabilizer(S, pts2, OnSets);
+P3s := Stabilizer(S, pts3, OnSets);
+V2 := Intersection(P2s, P3s);
+AssertProof(Size(V2)=9999360/1085,"V2 wrong size");
+AssertProof(CertifyPair("L5_2",S,[dualperm],2,V1,V2,"P14flag","P23flag"),
+            "L5_2 certification returned false");
+Print("L5_2: ALL k >= 2 EXCLUDED FOR ALL X (novelty pair certified).\n");
+Print("SWEEP K4 DONE.|PASS\n");
+QUIT_GAP(0);

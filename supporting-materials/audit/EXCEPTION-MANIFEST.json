@@ -1,0 +1,31 @@
+{
+  "schema_version": 1,
+  "zsigmondy_exception_tags_expected_from_sweepN": [
+    "2A:PSU(4,2)",
+    "A:D4(2)",
+    "A:L3(4)",
+    "A:L6(2)",
+    "B:D4tri(2)",
+    "B:L6(2)",
+    "B:S4(8)odd"
+  ],
+  "exceptions": [
+    {"id":"Z-PSU4-2","kind":"Zsigmondy","parameters":"PSU(4,2)","tags":["2A:PSU(4,2)"],"destination":"COMP-FINITE-BASE","resolution":"exact finite GAP certificate"},
+    {"id":"Z-PSL3-4","kind":"Zsigmondy","parameters":"PSL(3,4), both graph branches","tags":["A:L3(4)"],"destination":"COMP-FINITE-BASE","resolution":"all twelve coordinate closures in exact finite certificates"},
+    {"id":"Z-PSL6-2","kind":"Zsigmondy","parameters":"PSL(6,2), trivial and nontrivial graph branches","tags":["A:L6(2)","B:L6(2)"],"destination":"ARITH-SUBSTITUTE-PRIMES","resolution":"substitute prime 31 in the manuscript and independent symbolic checker"},
+    {"id":"Z-D4-2","kind":"Zsigmondy","parameters":"Omega^+(8,2), ordinary and triality branches","tags":["A:D4(2)","B:D4tri(2)"],"destination":"ARITH-SUBSTITUTE-PRIMES","resolution":"substitute prime 5 in the manuscript and independent symbolic checker"},
+    {"id":"Z-SP4-8","kind":"Zsigmondy","parameters":"Sp(4,8), odd graph-field branch","tags":["B:S4(8)odd"],"destination":"ARITH-SUBSTITUTE-PRIMES","resolution":"substitute prime 3 with d=2>v_3(6)=1"},
+    {"id":"SIMP-PSL2-2-3","kind":"simplicity","parameters":"PSL(2,2), PSL(2,3)","tags":[],"destination":"CFSG-BOUNDARIES","resolution":"excluded as non-simple"},
+    {"id":"SIMP-PSU3-2","kind":"simplicity","parameters":"PSU(3,2)","tags":[],"destination":"CFSG-BOUNDARIES","resolution":"excluded as non-simple"},
+    {"id":"SIMP-SP4-2","kind":"simplicity/isomorphism","parameters":"Sp(4,2)","tags":[],"destination":"COMP-FINITE-BASE","resolution":"derived subgroup A6 routed to alternating/base case"},
+    {"id":"SIMP-G2-2","kind":"simplicity/isomorphism","parameters":"G2(2)","tags":[],"destination":"COMP-FINITE-BASE","resolution":"derived subgroup PSU(3,3) routed to unitary/base case"},
+    {"id":"SIMP-REE3","kind":"simplicity/isomorphism","parameters":"^2G2(3)","tags":[],"destination":"THM-PSL2","resolution":"derived subgroup PSL(2,8)"},
+    {"id":"SIMP-2F4-2","kind":"simplicity/isomorphism","parameters":"^2F4(2)","tags":[],"destination":"PROP-SPORADIC","resolution":"derived subgroup is the Tits group"},
+    {"id":"ISO-BC-EVEN","kind":"exceptional isomorphism","parameters":"B_n(2^f)","tags":[],"destination":"THM-NOGRAPH","resolution":"routed to C_n(2^f)"},
+    {"id":"ISO-2D-LOWRANK","kind":"low-rank identification","parameters":"^2D_2 and ^2D_3","tags":[],"destination":"CFSG-BOUNDARIES","resolution":"routed to PSL(2,q^2) and PSU(4,q) respectively"},
+    {"id":"MAX-AN-LE14","kind":"small maximality exceptions","parameters":"A_n, 5<=n<=14","tags":[],"destination":"COMP-FINITE-BASE","resolution":"finite exact certificates (J/J5)"},
+    {"id":"MAX-PSL2-LE11","kind":"Dickson small cases","parameters":"PSL(2,q), q<=11 and simple","tags":[],"destination":"COMP-FINITE-BASE","resolution":"finite exact certificates"},
+    {"id":"MAX-PSL3-LE4","kind":"small maximality exceptions","parameters":"PSL(3,q), q<=4 and simple","tags":[],"destination":"COMP-FINITE-BASE","resolution":"finite exact certificates"},
+    {"id":"MAX-PSU3-SMALL","kind":"small maximality exceptions","parameters":"PSU(3,q), q in {3,4,5,7}","tags":[],"destination":"COMP-FINITE-BASE","resolution":"finite exact certificates"}
+  ]
+}

@@ -1,4 +1,6 @@
 canonical groups in [5e5, 1.05e7]: 51
-matched J3 entries: 51
-J3 survivors (closed by K3/K4): ['O(5,4)', 'PSL(5,2)']
+routed uniformly to PSL(2,q) theorem: 38
+matched non-PSL2 J3/J6 entries: 13
+J3 survivors (closed by K3/K4): ['L5_2', 'O(5,4)']
 COVERAGE (big range) OK.
+FINITE COVERAGE 500000 TO 10500000|PASS

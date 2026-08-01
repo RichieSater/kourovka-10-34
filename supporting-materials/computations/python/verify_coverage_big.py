@@ -6,17 +6,24 @@
 # with pairwise distinct orders in this window (no B_n/C_n or A_8/L3(4)
 # order coincidences occur here; asserted below).
 #
-# Each canonical group must be matched, BY ORDER, to a sweep J3 entry
+# Each non-PSL(2,q) canonical group must be matched, BY ORDER, to a sweep J3 entry
 # ("### NAME: |S| = ORDER = ...") that either
 #   - carries the line "==> NAME^k EXCLUDED FOR ALL k >= 2 AND ALL X", or
-#   - is one of the two documented survivors, O(5,4) and PSL(5,2), whose
+#   - is one of the two documented survivors, O(5,4) and L5_2 (GAP's
+#     StructureDescription label for PSL(5,2)), whose
 #     all-X novelty closures are certified in sweeps K3 and K4 (their
 #     final "ALL k >= 2 EXCLUDED FOR ALL X" lines are re-checked here).
+# The 38 PSL(2,q) rows are deliberately routed to the uniform theorem and its
+# independent arithmetic receipt; they are not redundantly re-enumerated by
+# GAP's expensive maximal-subgroup routine.
 import re
+import os
 import sys
 from pathlib import Path
 
-COMPUTATIONS = Path(__file__).resolve().parents[1]
+ROOT = Path(os.environ.get("KOUROVKA_SUPPORTING_ROOT",
+                           Path(__file__).resolve().parents[2])).resolve()
+COMPUTATIONS = ROOT / "computations"
 CERTIFICATES = COMPUTATIONS / "certificates"
 DATA = COMPUTATIONS / "data"
 
@@ -28,16 +35,33 @@ for line in (DATA / "simple_groups_5e5_to_1.05e7.txt").read_text().splitlines():
     canon[order] = name
 assert len(canon) == 51, len(canon)
 
-log = (CERTIFICATES / "sweepJ3_bigrange.log").read_text()
+j3_log = (CERTIFICATES / "sweepJ3_bigrange.log").read_text()
+j6_log = (CERTIFICATES / "sweepJ6_L52_M23.log").read_text()
+log = j3_log + "\n" + j6_log
 # J3 entries: capture name and order; entries may wrap lines.
 entries = {}
 for m in re.finditer(r"^### ([^:]+): \|S\| = (\d+)", log, re.M):
     entries[int(m.group(2))] = m.group(1)
 
 problems = []
-survivors_expected = {"O(5,4)", "PSL(5,2)"}
+survivors_expected = {"O(5,4)", "L5_2"}
 survivors_seen = set()
+psl2_routed = set()
+expected_machine_orders = {order for order,name in canon.items()
+                           if not name.startswith("L2(")}
+if set(entries) != expected_machine_orders:
+    problems.append("J3/J6 machine-entry order set differs from the 13 non-PSL2 inventory rows")
+if len(re.findall(r"^### ", j3_log, re.M)) != 11:
+    problems.append("J3 must contain exactly the 11 non-PSL2/non-J6 entries")
+if len(re.findall(r"^### ", j6_log, re.M)) != 2:
+    problems.append("J6 must contain exactly the M23 and PSL(5,2) entries")
+family_log = (CERTIFICATES / "sweepL_psl2_arith.log").read_text()
+if "SWEEP L DONE.|PASS" not in family_log:
+    problems.append("uniform PSL(2,q) arithmetic route lacks terminal PASS")
 for order, name in sorted(canon.items()):
+    if name.startswith("L2("):
+        psl2_routed.add(name)
+        continue
     if order not in entries:
         problems.append(f"MISSING from sweep J3: {name} (order {order})")
         continue
@@ -55,14 +79,17 @@ if survivors_seen:
     if "O(5,4)" in survivors_seen and \
        "O(5,4): ALL k >= 2 EXCLUDED FOR ALL X (novelty pair certified)." not in k3:
         problems.append("O(5,4) survivor not closed in sweep K3")
-    if "PSL(5,2)" in survivors_seen and \
+    if "L5_2" in survivors_seen and \
        "L5_2: ALL k >= 2 EXCLUDED FOR ALL X (novelty pair certified)." not in k4:
         problems.append("PSL(5,2) survivor not closed in sweep K4")
 
 print(f"canonical groups in [5e5, 1.05e7]: {len(canon)}")
-print(f"matched J3 entries: {sum(1 for o in canon if o in entries)}")
+print(f"routed uniformly to PSL(2,q) theorem: {len(psl2_routed)}")
+print(f"matched non-PSL2 J3/J6 entries: {sum(1 for o in expected_machine_orders if o in entries)}")
 print(f"J3 survivors (closed by K3/K4): {sorted(survivors_seen)}")
 for p in problems:
     print("PROBLEM:", p)
 print("COVERAGE (big range) OK." if not problems else "COVERAGE HAS GAPS.")
+if not problems:
+    print("FINITE COVERAGE 500000 TO 10500000|PASS")
 sys.exit(1 if problems else 0)

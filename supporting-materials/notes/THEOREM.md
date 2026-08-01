@@ -1,5 +1,12 @@
 # Towards a negative solution of Kourovka 10.34
 
+> **Historical working note (non-normative).** This file preserves the
+> development history and may contain stale counts, citations, or claims. The
+> normative paper, binary obligation ledger, source maps, and current blockers
+> are in `../paper/kourovka1034.tex` and `../audit/`. Do not use this note as a
+> proof or release certificate.
+
+
 Working draft of the theorem and proof architecture. Machine certificates
 live in `../computations/certificates/`, with their GAP and Python sources
 in the sibling `gap/` and `python/` directories; STATUS.md tracks their

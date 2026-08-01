@@ -12,6 +12,8 @@
 #           v_r(q+1) > v_r(f).
 # Report any q where the claimed obstruction fails to hold.
 
+Read("proof_common.g");
+
 Vp := function(n, p)
   local v; v := 0; while n mod p = 0 do n := n/p; v := v+1; od; return v;
 end;
@@ -38,8 +40,7 @@ for q in [13..10000] do
 od;
 Print("checked ", checked, " prime powers 13 <= q <= 10000\n");
 Print("failures of the claimed obstruction: ", bad, "\n");
-if bad = [] then
-  Print("PSL(2,q) ARITHMETIC RECEIPTS OK for all 13 <= q <= 10000.\n");
-fi;
-Print("SWEEP L DONE.\n");
-QUIT;
+AssertProof(bad=[],"PSL(2,q) arithmetic receipt has a failure");
+Print("PSL(2,q) ARITHMETIC RECEIPTS OK for all 13 <= q <= 10000.\n");
+Print("SWEEP L DONE.|PASS\n");
+QUIT_GAP(0);

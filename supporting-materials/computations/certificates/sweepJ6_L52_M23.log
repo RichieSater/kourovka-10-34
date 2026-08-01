@@ -1,15 +1,16 @@
-### M23: |S| = 10200960 = [ [ 2, 7 ], [ 3, 2 ], [ 5, 1 ], [ 7, 1 ], 
-  [ 11, 1 ], [ 23, 1 ] ], |Out| = 1, maximal classes 
-[ 443520, 40320, 40320, 20160, 7920, 5760, 253 ]
-    X/Inn = 1 (x=1): ALL k >= 2 EXCLUDED via (|U|,|V|,p,d) = 
-[ 5760, 253, 7, 1 ]
+ENV|gap=4.16.0|ctbllib=1.3.11|atlasrep=2.1.11|csetgrp_sha256=3e7a00ef8730f6c058213db2f13c076565603ea2467e04aeea756e4afcb76b9f|rng_seed=1034
+### M23: |S| = 10200960 = [ [ 2, 7 ], [ 3, 2 ], [ 5, 1 ], [ 7, 1 ], [ 11, 1 ], [ 23, 1 ] ], |Out| = 1, maximal classes [ 443520, 40320, 40320, 20160, 7920, 5760, 253 ]
+SOCLE|group=M23|order=10200960|order_factors_sha256=557ed3672057aa409a5d0294aa5ad6f91b6bddb574a4e581405fbba89525f6a5|P=10200960|out=1|faithful=true|simple=true
+XCASE|group=M23|out=1|xclass=1|xclass_sha256=ee6e28627e82366a598b668fbdc64639bacfcb470e94a13f16047756836680b8|x=1|xstructure=1|xconjugates=1|result=EXCLUDED
+    X/Inn = 1 (x=1, conjugates=1): ALL k >= 2 EXCLUDED via (|U|,|V|,p,d) = [ 20160, 253, 2, 1 ]
+CERT|kind=maximal|group=M23|s=10200960|out=1|xclass=1|x=1|xclass_sha256=ee6e28627e82366a598b668fbdc64639bacfcb470e94a13f16047756836680b8|xstructure=1|xconjugates=1|uclass=4|u=20160|ufp=class=4,order=20160,index=506,normalizer=20160,class_sha256=2803ddd6f12bd59f5f433fcc36d55220c83366db8cd5da0077f54e346b9ee387|vclass=7|v=253|vfp=class=7,order=253,index=40320,normalizer=253,class_sha256=ca9c3f9c31b9b04c58eae1f16554249676e63b3f18c82e7c1c4db284d29ed49c|p=2|d=1|vpx=0|result=PASS
     ==> M23^k EXCLUDED FOR ALL k >= 2 AND ALL X.
-### L5_2: |S| = 9999360 = [ [ 2, 10 ], [ 3, 2 ], [ 5, 1 ], [ 7, 1 ], 
-  [ 31, 1 ] ], |Out| = 2, maximal classes [ 322560, 322560, 64512, 64512, 155 
- ]
-    X/Inn = 1 (x=1): ALL k >= 2 EXCLUDED via (|U|,|V|,p,d) = 
-[ 64512, 64512, 31, 1 ]
-    X/Inn = C2 (x=2): NOT all-k excluded; stable classes 
-[ 155 ]; k<=30 excluded: [  ]
+### L5_2: |S| = 9999360 = [ [ 2, 10 ], [ 3, 2 ], [ 5, 1 ], [ 7, 1 ], [ 31, 1 ] ], |Out| = 2, maximal classes [ 322560, 322560, 64512, 64512, 155 ]
+SOCLE|group=L5_2|order=9999360|order_factors_sha256=b9f17aa26dda4db67de57fefdbc67eaa949f1d6f4331beaecd1b6009427ec692|P=19998720|out=2|faithful=true|simple=true
+XCASE|group=L5_2|out=2|xclass=1|xclass_sha256=36fa9e5acd29184a6ed8806a937bccd63da21db937f60cba6f60a5e0c018f0b9|x=1|xstructure=1|xconjugates=1|result=EXCLUDED
+    X/Inn = 1 (x=1, conjugates=1): ALL k >= 2 EXCLUDED via (|U|,|V|,p,d) = [ 64512, 64512, 5, 1 ]
+CERT|kind=maximal|group=L5_2|s=9999360|out=2|xclass=1|x=1|xclass_sha256=36fa9e5acd29184a6ed8806a937bccd63da21db937f60cba6f60a5e0c018f0b9|xstructure=1|xconjugates=1|uclass=3|u=64512|ufp=class=3,order=64512,index=155,normalizer=64512,class_sha256=0a1f269e099323902d6a61064e4b5d4daab5a5394caba02cec56eeb1d04297dc|vclass=4|v=64512|vfp=class=4,order=64512,index=155,normalizer=64512,class_sha256=48e13e9761288858002e52ebb97a826ee942da0382fad57432cb4dcf9d525b76|p=5|d=1|vpx=0|result=PASS
+XCASE|group=L5_2|out=2|xclass=2|xclass_sha256=a71dddda9298e5d0743e43272c4381c19af3daa78d31b5350621051af7416822|x=2|xstructure=C2|xconjugates=1|result=SURVIVES
+    X/Inn = C2 (x=2, conjugates=1): NOT all-k excluded; stable classes [ [ 5, 155 ] ]; k<=30 excluded: [  ]
     ==> L5_2 SURVIVES for X with x in [ 2 ]
-SWEEP J6 DONE.
+SWEEP J6 DONE.|PASS

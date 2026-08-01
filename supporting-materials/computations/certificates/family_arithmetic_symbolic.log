@@ -1,0 +1,4 @@
+unbounded affine branches proved: 12
+fixed-rank exponent branches checked: 13
+substitute-prime exact valuations: PSL(6,2), Omega+(8,2), Sp(4,8): PASS
+INDEPENDENT SYMBOLIC FAMILY ARITHMETIC|PASS

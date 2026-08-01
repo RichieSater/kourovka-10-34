@@ -1,5 +1,12 @@
 # Family proofs — completed cases (HITLIST items 1, 2, 4, 5)
 
+> **Historical working note (non-normative).** This file preserves the
+> development history and may contain stale counts, citations, or claims. The
+> normative paper, binary obligation ledger, source maps, and current blockers
+> are in `../paper/kourovka1034.tex` and `../audit/`. Do not use this note as a
+> proof or release certificate.
+
+
 Referee-grade write-ups. Framework, notation and Theorems D/D′ are in
 THEOREM.md; machine certificates in the sweep logs. Throughout: S is
 simple, X is any group with Inn(S) ≤ X ≤ Aut(S), x = |X/Inn(S)|, and

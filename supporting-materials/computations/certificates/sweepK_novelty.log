@@ -1,48 +1,72 @@
+ENV|gap=4.16.0|ctbllib=1.3.11|atlasrep=2.1.11|csetgrp_sha256=3e7a00ef8730f6c058213db2f13c076565603ea2467e04aeea756e4afcb76b9f|rng_seed=1034
+REGRESSION|ContainedConjugates|PASS|cases=2
 ### L3_2: |S| = 168, |Out| = 2
-    self-normalizing proper classes: 5 with sizes [ 6, 8, 21, 24 ]
-    X/Inn (x=1): P_X classes [ 21, 24, 24 ]
+SOCLE|group=L3_2|order=168|order_factors_sha256=931619b75b83d3b023f58d4a49691fdd70987db703d20ad1773c570e63d13a9a|P=336|out=2|faithful=true|simple=true
+    self-normalizing proper classes: 5 with ids/sizes [ [ 7, 6 ], [ 9, 8 ], [ 12, 21 ], [ 13, 24 ], [ 14, 24 ] ]
+    X/Inn (class=1, x=1, conjugates=1): P_X classes [ [ 12, 21 ], [ 13, 24 ], [ 14, 24 ] ]
         ALL k >= 2 EXCLUDED via (|V|,|W|,p,d) = [ 24, 24, 7, 1 ]
-    X/Inn (x=2): P_X classes [ 6, 8, 21 ]
+CERT|kind=novelty|group=L3_2|s=168|out=2|xclass=1|x=1|xclass_sha256=d987d0405e27a79a75f006750307dcc81feeff74d9dc7e017cd448ba460e7d19|xstructure=1|xconjugates=1|uclass=13|u=24|ufp=class=13,order=24,index=7,normalizer=24,class_sha256=9bf64a25232cce9476889e3ef6741d2e5279763b031e4764525f28087806cd48|vclass=14|v=24|vfp=class=14,order=24,index=7,normalizer=24,class_sha256=1ea0e57ee74df662f2c21d937ac808f7259a2502db857865f54d0fe07ac5cb5c|p=7|d=1|vpx=0|result=PASS
+    X/Inn (class=2, x=2, conjugates=1): P_X classes [ [ 7, 6 ], [ 9, 8 ], [ 12, 21 ] ]
         ALL k >= 2 EXCLUDED via (|V|,|W|,p,d) = [ 6, 21, 2, 2 ]
+CERT|kind=novelty|group=L3_2|s=168|out=2|xclass=2|x=2|xclass_sha256=58a21afb8a79b47edb4da1b7407e5854e95e3dd2d802c15bcfc3d288a1407fbf|xstructure=C2|xconjugates=1|uclass=7|u=6|ufp=class=7,order=6,index=28,normalizer=6,class_sha256=a8ff0075c963b378271820551c067ce1fc76354f6990f0262956220b3504651a|vclass=12|v=21|vfp=class=12,order=21,index=8,normalizer=21,class_sha256=10ff9ba8d0a6c959520645ae4b0774630787a267371459cf878ce7c0401818dc|p=2|d=2|vpx=1|result=PASS
 ### A6: |S| = 360, |Out| = 4
-    self-normalizing proper classes: 9 with sizes [ 6, 8, 10, 24, 36, 60 ]
-    X/Inn (x=1): P_X classes [ 24, 24, 36, 60, 60 ]
-        ALL k >= 2 EXCLUDED via (|V|,|W|,p,d) = [ 24, 36, 5, 1 ]
-    X/Inn (x=2): P_X classes [ 8, 10, 36 ]
-        ALL k >= 2 EXCLUDED via (|V|,|W|,p,d) = [ 8, 36, 5, 1 ]
-    X/Inn (x=2): P_X classes [ 24, 24, 36, 60, 60 ]
-        ALL k >= 2 EXCLUDED via (|V|,|W|,p,d) = [ 24, 36, 5, 1 ]
-    X/Inn (x=2): P_X classes [ 8, 10, 36 ]
-        ALL k >= 2 EXCLUDED via (|V|,|W|,p,d) = [ 8, 36, 5, 1 ]
-    X/Inn (x=4): P_X classes [ 8, 10, 36 ]
-        ALL k >= 2 EXCLUDED via (|V|,|W|,p,d) = [ 8, 36, 5, 1 ]
+SOCLE|group=A6|order=360|order_factors_sha256=e93573d3b887d54aef829f8c50a39dc727800eb4990933649eee3ffda839831e|P=1440|out=4|faithful=true|simple=true
+    self-normalizing proper classes: 9 with ids/sizes [ [ 9, 6 ], [ 10, 6 ], [ 11, 8 ], [ 13, 10 ], [ 17, 24 ], [ 18, 24 ], [ 19, 36 ], [ 20, 60 ], [ 21, 60 ] ]
+    X/Inn (class=1, x=1, conjugates=1): P_X classes [ [ 17, 24 ], [ 18, 24 ], [ 19, 36 ], [ 20, 60 ], [ 21, 60 ] ]
+        ALL k >= 2 EXCLUDED via (|V|,|W|,p,d) = [ 24, 24, 5, 1 ]
+CERT|kind=novelty|group=A6|s=360|out=4|xclass=1|x=1|xclass_sha256=941e5ad8e89f43acd7083b6548ed2f466f7cbf23c2c0f199966f6352744e4d8d|xstructure=1|xconjugates=1|uclass=17|u=24|ufp=class=17,order=24,index=15,normalizer=24,class_sha256=12e0e8efe0ff703818e97e72680063bfb50b58769061ac00bd72fde81d1f4737|vclass=18|v=24|vfp=class=18,order=24,index=15,normalizer=24,class_sha256=8cfd5f2cd77b5d8a63e07148f90ea50cb1062c8110017b991560fac981e2ec42|p=5|d=1|vpx=0|result=PASS
+    X/Inn (class=2, x=2, conjugates=1): P_X classes [ [ 17, 24 ], [ 18, 24 ], [ 19, 36 ], [ 20, 60 ], [ 21, 60 ] ]
+        ALL k >= 2 EXCLUDED via (|V|,|W|,p,d) = [ 24, 24, 5, 1 ]
+CERT|kind=novelty|group=A6|s=360|out=4|xclass=2|x=2|xclass_sha256=a715950d6746d4d1d250a51555d2a04b31ce48ce4716d5e04d15c52d0af3a337|xstructure=C2|xconjugates=1|uclass=17|u=24|ufp=class=17,order=24,index=15,normalizer=24,class_sha256=12e0e8efe0ff703818e97e72680063bfb50b58769061ac00bd72fde81d1f4737|vclass=18|v=24|vfp=class=18,order=24,index=15,normalizer=24,class_sha256=8cfd5f2cd77b5d8a63e07148f90ea50cb1062c8110017b991560fac981e2ec42|p=5|d=1|vpx=0|result=PASS
+    X/Inn (class=3, x=2, conjugates=1): P_X classes [ [ 11, 8 ], [ 13, 10 ], [ 19, 36 ] ]
+        ALL k >= 2 EXCLUDED via (|V|,|W|,p,d) = [ 8, 10, 3, 2 ]
+CERT|kind=novelty|group=A6|s=360|out=4|xclass=3|x=2|xclass_sha256=6623e05515638697bbd819f5f536f58f20ea92e3198c41913643213c3b5c0362|xstructure=C2|xconjugates=1|uclass=11|u=8|ufp=class=11,order=8,index=45,normalizer=8,class_sha256=554a39d9008b5d88974bb89b2e4a6cf9e1e4196c064ac357f1639d90b0db61ca|vclass=13|v=10|vfp=class=13,order=10,index=36,normalizer=10,class_sha256=e71b9c535404946fa0675b82957fdd4a74e66ff8b3d6eecc3cb75a70457c3e76|p=3|d=2|vpx=0|result=PASS
+    X/Inn (class=4, x=2, conjugates=1): P_X classes [ [ 11, 8 ], [ 13, 10 ], [ 19, 36 ] ]
+        ALL k >= 2 EXCLUDED via (|V|,|W|,p,d) = [ 8, 10, 3, 2 ]
+CERT|kind=novelty|group=A6|s=360|out=4|xclass=4|x=2|xclass_sha256=414eb204c2ab2018b0a4b6ef508ea3858a4c9f5a103916d6065edbe11fabc297|xstructure=C2|xconjugates=1|uclass=11|u=8|ufp=class=11,order=8,index=45,normalizer=8,class_sha256=554a39d9008b5d88974bb89b2e4a6cf9e1e4196c064ac357f1639d90b0db61ca|vclass=13|v=10|vfp=class=13,order=10,index=36,normalizer=10,class_sha256=e71b9c535404946fa0675b82957fdd4a74e66ff8b3d6eecc3cb75a70457c3e76|p=3|d=2|vpx=0|result=PASS
+    X/Inn (class=5, x=4, conjugates=1): P_X classes [ [ 11, 8 ], [ 13, 10 ], [ 19, 36 ] ]
+        ALL k >= 2 EXCLUDED via (|V|,|W|,p,d) = [ 8, 10, 3, 2 ]
+CERT|kind=novelty|group=A6|s=360|out=4|xclass=5|x=4|xclass_sha256=69d32c526e89391da86f02a5bad387f69a8e3a9360136f3cb9b6dbd137fdfa1a|xstructure=C2 x C2|xconjugates=1|uclass=11|u=8|ufp=class=11,order=8,index=45,normalizer=8,class_sha256=554a39d9008b5d88974bb89b2e4a6cf9e1e4196c064ac357f1639d90b0db61ca|vclass=13|v=10|vfp=class=13,order=10,index=36,normalizer=10,class_sha256=e71b9c535404946fa0675b82957fdd4a74e66ff8b3d6eecc3cb75a70457c3e76|p=3|d=2|vpx=0|result=PASS
 ### L2_11: |S| = 660, |Out| = 2
-    self-normalizing proper classes: 6 with sizes [ 10, 12, 55, 60 ]
-    X/Inn (x=1): P_X classes [ 12, 55, 60, 60 ]
-        ALL k >= 2 EXCLUDED via (|V|,|W|,p,d) = [ 60, 60, 11, 1 ]
-    X/Inn (x=2): P_X classes [ 10, 12, 12, 55 ]
-        ALL k >= 2 EXCLUDED via (|V|,|W|,p,d) = [ 12, 12, 11, 1 ]
+SOCLE|group=L2_11|order=660|order_factors_sha256=d9bfd17b285b36cfe27ac6a346fb449bc5b83eced82adfff86fe3dfb0c1878b4|P=1320|out=2|faithful=true|simple=true
+    self-normalizing proper classes: 6 with ids/sizes [ [ 9, 10 ], [ 11, 12 ], [ 12, 12 ], [ 13, 55 ], [ 14, 60 ], [ 15, 60 ] ]
+    X/Inn (class=1, x=1, conjugates=1): P_X classes [ [ 12, 12 ], [ 13, 55 ], [ 14, 60 ], [ 15, 60 ] ]
+        ALL k >= 2 EXCLUDED via (|V|,|W|,p,d) = [ 12, 60, 11, 1 ]
+CERT|kind=novelty|group=L2_11|s=660|out=2|xclass=1|x=1|xclass_sha256=3e7e4231c2e2f61fcbdb11940cf87308f15cf7f98965678e4402c9ea6e77918c|xstructure=1|xconjugates=1|uclass=12|u=12|ufp=class=12,order=12,index=55,normalizer=12,class_sha256=04e0ca738ade770f020f7910eee8afa7636172e8f3f1606fc382e3a20778deaa|vclass=14|v=60|vfp=class=14,order=60,index=11,normalizer=60,class_sha256=5f41e09c93886665264c634a6255982c203201919769f8539c905beac64e8c4f|p=11|d=1|vpx=0|result=PASS
+    X/Inn (class=2, x=2, conjugates=1): P_X classes [ [ 9, 10 ], [ 11, 12 ], [ 12, 12 ], [ 13, 55 ] ]
+        ALL k >= 2 EXCLUDED via (|V|,|W|,p,d) = [ 10, 55, 3, 1 ]
+CERT|kind=novelty|group=L2_11|s=660|out=2|xclass=2|x=2|xclass_sha256=2f0318a2593e57a981ccde6be2bd73ca01cc535544cf9f6c0e32a7c534fa7881|xstructure=C2|xconjugates=1|uclass=9|u=10|ufp=class=9,order=10,index=66,normalizer=10,class_sha256=71661e7afc0e3d22ee91a3f05d306d244cc72677607b9d1cec2ba1bbb87287a0|vclass=13|v=55|vfp=class=13,order=55,index=12,normalizer=55,class_sha256=ca94d6ea410c6581ed96c2b16cb8fca16f82fa49761aca96b7a128066c94cc1c|p=3|d=1|vpx=0|result=PASS
 ### L3_4: |S| = 20160, |Out| = 12
-    self-normalizing proper classes: 34 with sizes 
-[ 6, 10, 12, 21, 24, 48, 60, 72, 96, 160, 168, 192, 360, 960 ]
-    X/Inn (x=1): P_X classes [ 72, 168, 168, 168, 360, 360, 360, 960, 960 ]
-        ALL k >= 2 EXCLUDED via (|V|,|W|,p,d) = [ 960, 960, 7, 1 ]
-    X/Inn (x=2): P_X classes [ 60, 72, 168, 192, 360 ]
-        ALL k >= 2 EXCLUDED via (|V|,|W|,p,d) = [ 192, 360, 7, 1 ]
-    X/Inn (x=2): P_X classes [ 72, 168, 360, 960, 960 ]
-        ALL k >= 2 EXCLUDED via (|V|,|W|,p,d) = [ 960, 960, 7, 1 ]
-    X/Inn (x=2): P_X classes [ 60, 72, 168, 168, 168, 192, 360, 360, 360 ]
-        ALL k >= 2 EXCLUDED via (|V|,|W|,p,d) = [ 360, 360, 7, 1 ]
-    X/Inn (x=3): P_X classes [ 21, 72, 960, 960 ]
-        ALL k >= 2 EXCLUDED via (|V|,|W|,p,d) = [ 960, 960, 7, 1 ]
-    X/Inn (x=4): P_X classes [ 60, 72, 168, 192, 360 ]
-        ALL k >= 2 EXCLUDED via (|V|,|W|,p,d) = [ 192, 360, 7, 1 ]
-    X/Inn (x=6): P_X classes [ 21, 60, 72, 192 ]
-        ALL k >= 2 EXCLUDED via (|V|,|W|,p,d) = [ 72, 192, 7, 1 ]
-    X/Inn (x=6): P_X classes [ 21, 72, 960, 960 ]
-        ALL k >= 2 EXCLUDED via (|V|,|W|,p,d) = [ 960, 960, 7, 1 ]
-    X/Inn (x=6): P_X classes [ 21, 60, 72, 192 ]
-        ALL k >= 2 EXCLUDED via (|V|,|W|,p,d) = [ 72, 192, 7, 1 ]
-    X/Inn (x=12): P_X classes [ 21, 60, 72, 192 ]
-        ALL k >= 2 EXCLUDED via (|V|,|W|,p,d) = [ 72, 192, 7, 1 ]
-SWEEP K DONE.
+SOCLE|group=L3_4|order=20160|order_factors_sha256=518c8c77d2b6639ca582bd0a5f9bf533c079bac3a48890186dd18a4ce0378803|P=241920|out=12|faithful=true|simple=true
+    self-normalizing proper classes: 34 with ids/sizes [ [ 15, 6 ], [ 27, 10 ], [ 34, 12 ], [ 51, 21 ], [ 52, 24 ], [ 53, 24 ], [ 54, 24 ], [ 55, 24 ], [ 56, 24 ], [ 57, 24 ], [ 68, 48 ], [ 69, 48 ], [ 70, 48 ], [ 71, 60 ], [ 72, 60 ], [ 73, 60 ], [ 74, 60 ], [ 75, 60 ], [ 76, 60 ], [ 77, 60 ], [ 79, 72 ], [ 82, 96 ], [ 83, 96 ], [ 84, 160 ], [ 85, 160 ], [ 86, 168 ], [ 87, 168 ], [ 88, 168 ], [ 89, 192 ], [ 90, 360 ], [ 91, 360 ], [ 92, 360 ], [ 93, 960 ], [ 94, 960 ] ]
+    X/Inn (class=1, x=1, conjugates=1): P_X classes [ [ 79, 72 ], [ 86, 168 ], [ 87, 168 ], [ 88, 168 ], [ 90, 360 ], [ 91, 360 ], [ 92, 360 ], [ 93, 960 ], [ 94, 960 ] ]
+        ALL k >= 2 EXCLUDED via (|V|,|W|,p,d) = [ 72, 168, 5, 1 ]
+CERT|kind=novelty|group=L3_4|s=20160|out=12|xclass=1|x=1|xclass_sha256=614306394ce5b3ddd4549dbaf4e9cc26c4b770d8c33c9c320d2eebeb66519fba|xstructure=1|xconjugates=1|uclass=79|u=72|ufp=class=79,order=72,index=280,normalizer=72,class_sha256=7caca35333bd7e1e2cc59eb14d142f5082f0a16d98302c92d006a51e061c0edd|vclass=86|v=168|vfp=class=86,order=168,index=120,normalizer=168,class_sha256=c967585fe5831efa4615e57888930dc95085b4d01bbe2d05a080f18ed4698be1|p=5|d=1|vpx=0|result=PASS
+    X/Inn (class=2, x=2, conjugates=1): P_X classes [ [ 72, 60 ], [ 79, 72 ], [ 86, 168 ], [ 87, 168 ], [ 88, 168 ], [ 89, 192 ], [ 90, 360 ], [ 91, 360 ], [ 92, 360 ] ]
+        ALL k >= 2 EXCLUDED via (|V|,|W|,p,d) = [ 72, 168, 5, 1 ]
+CERT|kind=novelty|group=L3_4|s=20160|out=12|xclass=2|x=2|xclass_sha256=ba4a2202ab1d52f380e10628032992641fe9ab0cda23893f923e390a7ab84049|xstructure=C2|xconjugates=1|uclass=79|u=72|ufp=class=79,order=72,index=280,normalizer=72,class_sha256=7caca35333bd7e1e2cc59eb14d142f5082f0a16d98302c92d006a51e061c0edd|vclass=86|v=168|vfp=class=86,order=168,index=120,normalizer=168,class_sha256=c967585fe5831efa4615e57888930dc95085b4d01bbe2d05a080f18ed4698be1|p=5|d=1|vpx=0|result=PASS
+    X/Inn (class=3, x=2, conjugates=3): P_X classes [ [ 79, 72 ], [ 86, 168 ], [ 91, 360 ], [ 93, 960 ], [ 94, 960 ] ]
+        ALL k >= 2 EXCLUDED via (|V|,|W|,p,d) = [ 72, 168, 5, 1 ]
+CERT|kind=novelty|group=L3_4|s=20160|out=12|xclass=3|x=2|xclass_sha256=86cafb97f46e5dd5afb1f248b4e99d233e42722eef4668ccdf82cab49efb676b|xstructure=C2|xconjugates=3|uclass=79|u=72|ufp=class=79,order=72,index=280,normalizer=72,class_sha256=7caca35333bd7e1e2cc59eb14d142f5082f0a16d98302c92d006a51e061c0edd|vclass=86|v=168|vfp=class=86,order=168,index=120,normalizer=168,class_sha256=c967585fe5831efa4615e57888930dc95085b4d01bbe2d05a080f18ed4698be1|p=5|d=1|vpx=0|result=PASS
+    X/Inn (class=4, x=2, conjugates=3): P_X classes [ [ 72, 60 ], [ 79, 72 ], [ 86, 168 ], [ 89, 192 ], [ 91, 360 ] ]
+        ALL k >= 2 EXCLUDED via (|V|,|W|,p,d) = [ 72, 168, 5, 1 ]
+CERT|kind=novelty|group=L3_4|s=20160|out=12|xclass=4|x=2|xclass_sha256=8ee15071c9e1a481e73e5ca932fbd598e0789ae6140232288f7a408e75da0aa5|xstructure=C2|xconjugates=3|uclass=79|u=72|ufp=class=79,order=72,index=280,normalizer=72,class_sha256=7caca35333bd7e1e2cc59eb14d142f5082f0a16d98302c92d006a51e061c0edd|vclass=86|v=168|vfp=class=86,order=168,index=120,normalizer=168,class_sha256=c967585fe5831efa4615e57888930dc95085b4d01bbe2d05a080f18ed4698be1|p=5|d=1|vpx=0|result=PASS
+    X/Inn (class=5, x=3, conjugates=1): P_X classes [ [ 51, 21 ], [ 79, 72 ], [ 93, 960 ], [ 94, 960 ] ]
+        ALL k >= 2 EXCLUDED via (|V|,|W|,p,d) = [ 21, 72, 2, 3 ]
+CERT|kind=novelty|group=L3_4|s=20160|out=12|xclass=5|x=3|xclass_sha256=e2b4fb4c7595f21ec55c3a2807e150376985fb203ba9c21cc39ab4a371e83e1d|xstructure=C3|xconjugates=1|uclass=51|u=21|ufp=class=51,order=21,index=960,normalizer=21,class_sha256=fe9ff99a7d58ff1c3a0dec5509863e2d347d3d17b412ae30ef6cd354e53157f3|vclass=79|v=72|vfp=class=79,order=72,index=280,normalizer=72,class_sha256=7caca35333bd7e1e2cc59eb14d142f5082f0a16d98302c92d006a51e061c0edd|p=2|d=3|vpx=0|result=PASS
+    X/Inn (class=6, x=4, conjugates=3): P_X classes [ [ 72, 60 ], [ 79, 72 ], [ 86, 168 ], [ 89, 192 ], [ 91, 360 ] ]
+        ALL k >= 2 EXCLUDED via (|V|,|W|,p,d) = [ 72, 168, 5, 1 ]
+CERT|kind=novelty|group=L3_4|s=20160|out=12|xclass=6|x=4|xclass_sha256=e1868b3f63948d3db64273d975c97b3e3306d27848e4830fd8cf2fda3290165f|xstructure=C2 x C2|xconjugates=3|uclass=79|u=72|ufp=class=79,order=72,index=280,normalizer=72,class_sha256=7caca35333bd7e1e2cc59eb14d142f5082f0a16d98302c92d006a51e061c0edd|vclass=86|v=168|vfp=class=86,order=168,index=120,normalizer=168,class_sha256=c967585fe5831efa4615e57888930dc95085b4d01bbe2d05a080f18ed4698be1|p=5|d=1|vpx=0|result=PASS
+    X/Inn (class=7, x=6, conjugates=1): P_X classes [ [ 51, 21 ], [ 72, 60 ], [ 79, 72 ], [ 89, 192 ] ]
+        ALL k >= 2 EXCLUDED via (|V|,|W|,p,d) = [ 21, 72, 2, 3 ]
+CERT|kind=novelty|group=L3_4|s=20160|out=12|xclass=7|x=6|xclass_sha256=e3771c7fe68d2d22b48c4c6784a8106f6011359197454bf554437d9d2cd3b5ec|xstructure=C6|xconjugates=1|uclass=51|u=21|ufp=class=51,order=21,index=960,normalizer=21,class_sha256=fe9ff99a7d58ff1c3a0dec5509863e2d347d3d17b412ae30ef6cd354e53157f3|vclass=79|v=72|vfp=class=79,order=72,index=280,normalizer=72,class_sha256=7caca35333bd7e1e2cc59eb14d142f5082f0a16d98302c92d006a51e061c0edd|p=2|d=3|vpx=1|result=PASS
+    X/Inn (class=8, x=6, conjugates=1): P_X classes [ [ 51, 21 ], [ 79, 72 ], [ 93, 960 ], [ 94, 960 ] ]
+        ALL k >= 2 EXCLUDED via (|V|,|W|,p,d) = [ 21, 72, 2, 3 ]
+CERT|kind=novelty|group=L3_4|s=20160|out=12|xclass=8|x=6|xclass_sha256=0db3f55da80bd899c7ae77a4208abd4cfce41171d5222afa7f1ed332823a7e88|xstructure=S3|xconjugates=1|uclass=51|u=21|ufp=class=51,order=21,index=960,normalizer=21,class_sha256=fe9ff99a7d58ff1c3a0dec5509863e2d347d3d17b412ae30ef6cd354e53157f3|vclass=79|v=72|vfp=class=79,order=72,index=280,normalizer=72,class_sha256=7caca35333bd7e1e2cc59eb14d142f5082f0a16d98302c92d006a51e061c0edd|p=2|d=3|vpx=1|result=PASS
+    X/Inn (class=9, x=6, conjugates=1): P_X classes [ [ 51, 21 ], [ 72, 60 ], [ 79, 72 ], [ 89, 192 ] ]
+        ALL k >= 2 EXCLUDED via (|V|,|W|,p,d) = [ 21, 72, 2, 3 ]
+CERT|kind=novelty|group=L3_4|s=20160|out=12|xclass=9|x=6|xclass_sha256=af44d248afc4aedec3edba493a2dcd6c70961f6b8add7115b6a9fbc5436b7573|xstructure=S3|xconjugates=1|uclass=51|u=21|ufp=class=51,order=21,index=960,normalizer=21,class_sha256=fe9ff99a7d58ff1c3a0dec5509863e2d347d3d17b412ae30ef6cd354e53157f3|vclass=79|v=72|vfp=class=79,order=72,index=280,normalizer=72,class_sha256=7caca35333bd7e1e2cc59eb14d142f5082f0a16d98302c92d006a51e061c0edd|p=2|d=3|vpx=1|result=PASS
+    X/Inn (class=10, x=12, conjugates=1): P_X classes [ [ 51, 21 ], [ 72, 60 ], [ 79, 72 ], [ 89, 192 ] ]
+        ALL k >= 2 EXCLUDED via (|V|,|W|,p,d) = [ 21, 72, 2, 3 ]
+CERT|kind=novelty|group=L3_4|s=20160|out=12|xclass=10|x=12|xclass_sha256=b99de581dfb9ba4c33f4a160f66bba89fbfc56947876c2eb1d3dff133d6c4e38|xstructure=D12|xconjugates=1|uclass=51|u=21|ufp=class=51,order=21,index=960,normalizer=21,class_sha256=fe9ff99a7d58ff1c3a0dec5509863e2d347d3d17b412ae30ef6cd354e53157f3|vclass=79|v=72|vfp=class=79,order=72,index=280,normalizer=72,class_sha256=7caca35333bd7e1e2cc59eb14d142f5082f0a16d98302c92d006a51e061c0edd|p=2|d=3|vpx=2|result=PASS
+SWEEP K DONE.|PASS

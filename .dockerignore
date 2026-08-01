@@ -1,0 +1,11 @@
+.git
+.DS_Store
+kourovka1034.pdf
+supporting-materials/formal/.lake
+supporting-materials/paper/*.aux
+supporting-materials/paper/*.log
+supporting-materials/paper/*.out
+supporting-materials/paper/*.pdf
+**/__pycache__
+*.regen
+*.tmp

@@ -1,0 +1,43 @@
+group,position,identifier,order,source_document,source_pinpoint,published_structure,status
+M24,8,L2(23),6072,Wilson2017,"Section 4 table, p. 66",L2(23),CITED-PASS
+M24,9,L3(2),168,Wilson2017,"Section 4 table, p. 66",L2(7)=L3(2),CITED-PASS
+J3,8,2^1+4b:a5,1920,Wilson2017,"Section 4 table, p. 66",2^(1+4):A5,CITED-PASS
+J3,9,2^2+4.3xs3,1152,Wilson2017,"Section 4 table, p. 66",2^(2+4):(3 x S3),CITED-PASS
+J4,12,43:14,602,Wilson2017,"Section 4 table, p. 67",43:14,CITED-PASS
+J4,13,37:12,444,Wilson2017,"Section 4 table, p. 67",37:12,CITED-PASS
+HS,11,2xa6.2^2,2880,Wilson2017,"Section 4 table, p. 66",2 x A6.2^2,CITED-PASS
+HS,12,5:4xa5,1200,Wilson2017,"Section 4 table, p. 66",5:4 x A5,CITED-PASS
+McL,11,M11,7920,Wilson2017,"Section 4 table, p. 66",M11,CITED-PASS
+McL,12,5^(1+2):3:8,3000,Wilson2017,"Section 4 table, p. 66",5^(1+2):3:8,CITED-PASS
+Co1,21,7^2:(3x2A4),3528,Wilson2017,"Section 4 table, p. 68",7^2:(3 x 2A4),CITED-PASS
+Co1,22,5^2:2A5,3000,Wilson2017,"Section 4 table, p. 68",5^2:2A5,CITED-PASS
+Co2,10,3^1+4:2^1+4.s5,933120,Wilson2017,"Section 4 table, p. 66",3^(1+4):2^(1+4).S5,CITED-PASS
+Co2,11,5^(1+2):4S4,12000,Wilson2017,"Section 4 table, p. 66",5^(1+2):4S4,CITED-PASS
+Co3,13,"s3xpsl(2,8).3",9072,Wilson2017,"Section 4 table, p. 67",S3 x PSL2(8):3,CITED-PASS
+Co3,14,a4xs5,1440,Wilson2017,"Section 4 table, p. 67",A4 x S5,CITED-PASS
+Suz,16,L2(25),7800,Wilson2017,"Section 4 table, p. 68",L2(25),CITED-PASS
+Suz,17,A7,2520,Wilson2017,"Section 4 table, p. 68",A7,CITED-PASS
+He,10,"7:3xpsl(3,2)",3528,Wilson2017,"Section 4 table, p. 66",7:3 x L3(2),CITED-PASS
+He,11,5^2:4A4,1200,Wilson2017,"Section 4 table, p. 66",5^2:4A4,CITED-PASS
+Ru,14,A6.2^2,1440,Wilson2017,"Section 4 table, p. 68",A6.2^2,CITED-PASS
+Ru,15,5:4xa5,1200,Wilson2017,"Section 4 table, p. 68",5:4 x A5,CITED-PASS
+ON,4,4_2.L3(4).2_1,161280,Wilson2017,"Section 4 table, p. 66",4_2.L3(4).2_1,CITED-PASS
+ON,9,4^3.L3(2),10752,Wilson2017,"Section 4 table, p. 66",4^3.L3(2),CITED-PASS
+Fi22,11,3^(1+6):2^(3+4):3^2:2,5038848,Wilson2017,"Section 4 table, p. 67",3^(1+6):2^(3+4):3^2:2,CITED-PASS
+Fi22,14,M12,95040,Wilson2017,"Section 4 table, p. 67",M12,CITED-PASS
+Fi23,13,S4(4).4,3916800,Wilson2017,"Section 4 table, p. 67",S4(4):4,CITED-PASS
+Fi23,14,L2(23),6072,Wilson2017,"Section 4 table, p. 67",L2(23),CITED-PASS
+Fi24',20,7:6xA7,105840,Wilson2017,"Section 4 table, p. 68",7:6 x A7,CITED-PASS
+Fi24',25,29:14,406,Wilson2017,"Section 4 table, p. 68",29:14,CITED-PASS
+HN,13,3^4:2(A4xA4).4,93312,Wilson2017,"Section 4 table, p. 67",3^4:2(A4 x A4).4,CITED-PASS
+HN,14,3^(1+4):4A5,58320,Wilson2017,"Section 4 table, p. 67",3^(1+4):4A5,CITED-PASS
+Ly,8,67:22,1474,Wilson2017,"Section 4 table, p. 66",67:22,CITED-PASS
+Ly,9,37:18,666,Wilson2017,"Section 4 table, p. 66",37:18,CITED-PASS
+Th,15,31:15,465,Wilson2017,"Section 4 table, p. 68",31:15,CITED-PASS
+Th,16,A5.2,120,Wilson2017,"Section 4 table, p. 68",S5=A5.2,CITED-PASS
+B,29,L2(11).2,1320,Wilson2017,"Section 4 table, p. 67",L2(11):2,CITED-PASS
+B,30,47:23,1081,Wilson2017,"Section 4 table, p. 67",47:23,CITED-PASS
+M,45,59:29,1711,DietrichLeePisaniPopiel2026,"Theorem 1.1 and Table 1, pp. 862--863",59:29,CITED-PASS
+M,46,41:40,1640,DietrichLeePisaniPopiel2026,"Theorem 1.2 and Table 1, p. 863",41:40,CITED-PASS
+2F4(2)',5,2^2.2^8:s3,6144,Wilson1984+Tchakerian1986,"Wilson, Tits-group part, pp. 553--563; Tchakerian, pp. 85--93",2^2.[2^8]:S3,CITED-PASS
+2F4(2)',8,5^2:4A4,1200,Wilson1984+Tchakerian1986,"Wilson, Tits-group part, pp. 553--563; Tchakerian, pp. 85--93",5^2:4A4,CITED-PASS

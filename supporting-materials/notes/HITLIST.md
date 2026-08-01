@@ -1,5 +1,12 @@
 # HIT LIST — road to "no counterexample exists" (Kourovka 10.34)
 
+> **Historical working note (non-normative).** This file preserves the
+> development history and may contain stale counts, citations, or claims. The
+> normative paper, binary obligation ledger, source maps, and current blockers
+> are in `../paper/kourovka1034.tex` and `../audit/`. Do not use this note as a
+> proof or release certificate.
+
+
 **Goal.** Prove: every finite group equal to the product of any two of its
 non-conjugate maximal subgroups is soluble. Standing instruction from
 Richie (2026-07-26): treat items 1–6 below as the work queue for this and

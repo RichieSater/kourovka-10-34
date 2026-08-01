@@ -30,5 +30,5 @@ RunDiv("L2_83", PSL(2,83), 84);
 RunDiv("L2_89", PSL(2,89), 90);
 RunDiv("L2_97", PSL(2,97), 98);
 
-Print("SWEEP J4 DONE.\n");
-QUIT;
+Print("SWEEP J4 DONE.|PASS\n");
+QUIT_GAP(0);

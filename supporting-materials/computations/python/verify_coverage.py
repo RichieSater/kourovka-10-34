@@ -12,10 +12,13 @@
 # Exits nonzero and names the gap if any group is uncovered.
 
 import re
+import os
 import sys
 from pathlib import Path
 
-COMPUTATIONS = Path(__file__).resolve().parents[1]
+ROOT = Path(os.environ.get("KOUROVKA_SUPPORTING_ROOT",
+                           Path(__file__).resolve().parents[2])).resolve()
+COMPUTATIONS = ROOT / "computations"
 CERTIFICATES = COMPUTATIONS / 'certificates'
 DATA = COMPUTATIONS / 'data'
 
@@ -79,6 +82,10 @@ def main():
         elif key not in covered and key not in kcov:
             missing.append((size, name, key))
 
+    if total != 47:
+        print(f'GAPS: canonical inventory has {total} rows, expected exactly 47')
+        sys.exit(1)
+
     print(f'canonical groups checked: {total}')
     print(f'all-k certified (J/J2/J4): {len(covered)}')
     print(f'novelty-certified (K): {sorted(kcov)}')
@@ -87,6 +94,7 @@ def main():
         sys.exit(1)
     print('COVERAGE COMPLETE: every simple S, |S| < 500000, is certified '
           'excluded as a socle S^k for all k >= 2 and all X.')
+    print('FINITE COVERAGE BELOW 500000|PASS')
 
 
 if __name__ == '__main__':

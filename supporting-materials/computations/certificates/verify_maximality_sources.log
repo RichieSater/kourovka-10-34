@@ -1,0 +1,13 @@
+exact maximality source rows: 10
+routed maximality/simplicity exceptions: MAX-AN-LE14,MAX-PSL2-LE11,MAX-PSL3-LE4,MAX-PSU3-SMALL,SIMP-PSU3-2,SIMP-REE3,SIMP-SP4-2
+SOURCE|claim=MAX-PARABOLIC|source=Carter1972|pinpoint=Theorems 8.3.2--8.3.3, p. 112|status=PASS
+SOURCE|claim=MAX-RANK1-BOREL|source=Hiss2011|pinpoint=Example 1.16 and Section 1.3.5, pp. 10--11|status=PASS
+SOURCE|claim=MAX-PSL2|source=BHRD|pinpoint=Tables 8.1--8.2, p. 376; Table 8.7, p. 380|status=PASS
+SOURCE|claim=MAX-AN|source=LPS1987|pinpoint=Theorem 1 and Tables I--II, pp. 366--368|status=PASS
+SOURCE|claim=MAX-PSU3|source=BHRD|pinpoint=Table 8.5, p. 379|status=PASS
+SOURCE|claim=MAX-SZ|source=BHRD|pinpoint=Theorem 7.3.5, p. 367; Table 8.16, p. 384|status=PASS
+SOURCE|claim=MAX-REE|source=Kleidman1988|pinpoint=Theorem C, pp. 33--34|status=PASS
+SOURCE|claim=MAX-PSL3|source=BHRD|pinpoint=Table 8.3, p. 378|status=PASS
+SOURCE|claim=MAX-SP4|source=BHRD|pinpoint=Table 8.14, p. 384|status=PASS
+SOURCE|claim=MAX-G2|source=Kleidman1988|pinpoint=Theorem A, p. 33|status=PASS
+MAXIMALITY SOURCE TOPOLOGY VERIFICATION|PASS

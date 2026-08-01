@@ -1,43 +1,107 @@
-M24 (|S| = 244823040, out = 
-1): ALL k >= 1 EXCLUDED, ALL X, via (|U|,|V|,p,d) = [ 6072, 168, 5, 1 ]
-J3 (|S| = 50232960, out = 2): ALL k >= 1 EXCLUDED, ALL X, via (|U|,|V|,p,d) = 
-[ 1920, 1152, 19, 1 ]
-J4 (|S| = 86775571046077562880, out = 
-1): ALL k >= 1 EXCLUDED, ALL X, via (|U|,|V|,p,d) = [ 602, 444, 31, 1 ]
-HS (|S| = 44352000, out = 2): ALL k >= 1 EXCLUDED, ALL X, via (|U|,|V|,p,d) = 
-[ 2880, 1200, 11, 1 ]
-McL (|S| = 898128000, out = 
-2): ALL k >= 1 EXCLUDED, ALL X, via (|U|,|V|,p,d) = [ 7920, 3000, 7, 1 ]
-Co1 (|S| = 4157776806543360000, out = 
-1): ALL k >= 1 EXCLUDED, ALL X, via (|U|,|V|,p,d) = [ 3528, 3000, 23, 1 ]
-Co2 (|S| = 42305421312000, out = 
-1): ALL k >= 1 EXCLUDED, ALL X, via (|U|,|V|,p,d) = [ 933120, 12000, 23, 1 ]
-Co3 (|S| = 495766656000, out = 
-1): ALL k >= 1 EXCLUDED, ALL X, via (|U|,|V|,p,d) = [ 9072, 1440, 23, 1 ]
-Suz (|S| = 448345497600, out = 
-2): ALL k >= 1 EXCLUDED, ALL X, via (|U|,|V|,p,d) = [ 7800, 2520, 11, 1 ]
-He (|S| = 4030387200, out = 
-2): ALL k >= 1 EXCLUDED, ALL X, via (|U|,|V|,p,d) = [ 3528, 1200, 17, 1 ]
-Ru (|S| = 145926144000, out = 
-1): ALL k >= 1 EXCLUDED, ALL X, via (|U|,|V|,p,d) = [ 1440, 1200, 29, 1 ]
-ON (|S| = 460815505920, out = 
-2): ALL k >= 1 EXCLUDED, ALL X, via (|U|,|V|,p,d) = [ 161280, 10752, 31, 1 ]
-Fi22 (|S| = 64561751654400, out = 
-2): ALL k >= 1 EXCLUDED, ALL X, via (|U|,|V|,p,d) = [ 5038848, 95040, 13, 1 ]
-Fi23 (|S| = 4089470473293004800, out = 
-1): ALL k >= 1 EXCLUDED, ALL X, via (|U|,|V|,p,d) = [ 3916800, 6072, 13, 1 ]
-Fi24' (|S| = 1255205709190661721292800, out = 
-2): ALL k >= 1 EXCLUDED, ALL X, via (|U|,|V|,p,d) = [ 105840, 406, 23, 1 ]
-HN (|S| = 273030912000000, out = 
-2): ALL k >= 1 EXCLUDED, ALL X, via (|U|,|V|,p,d) = [ 93312, 58320, 19, 1 ]
-Ly (|S| = 51765179004000000, out = 
-1): ALL k >= 1 EXCLUDED, ALL X, via (|U|,|V|,p,d) = [ 1474, 666, 31, 1 ]
-Th (|S| = 90745943887872000, out = 
-1): ALL k >= 1 EXCLUDED, ALL X, via (|U|,|V|,p,d) = [ 465, 120, 19, 1 ]
-B (|S| = 4154781481226426191177580544000000, out = 
-1): ALL k >= 1 EXCLUDED, ALL X, via (|U|,|V|,p,d) = [ 1320, 1081, 31, 1 ]
-M (|S| = 808017424794512875886459904961710757005754368000000000, out = 
-1): ALL k >= 1 EXCLUDED, ALL X, via (|U|,|V|,p,d) = [ 1711, 1640, 71, 1 ]
-2F4(2)' (|S| = 17971200, out = 
-2): ALL k >= 1 EXCLUDED, ALL X, via (|U|,|V|,p,d) = [ 6144, 1200, 13, 1 ]
-SWEEP M DONE.
+ENV|gap=4.16.0|ctbllib=1.3.11|atlasrep=2.1.11|csetgrp_sha256=3e7a00ef8730f6c058213db2f13c076565603ea2467e04aeea756e4afcb76b9f|rng_seed=1034
+SPORADIC|group=M24|table=M24|s=244823040|out=1|maxes=9|maxes_sha256=bcec74bfe5003b513bc33bb23cf514c7861fef8ed734194036f068414ffd20c1|selection=max-class-positions-then-prime
+MAXCLASS|group=M24|position=8|identifier=L2(23)|order=6072|multiplicity=1|stability=Out=1
+MAXCLASS|group=M24|position=9|identifier=L3(2)|order=168|multiplicity=1|stability=Out=1
+M24 (|S| = 244823040, out = 1): ALL k >= 1 EXCLUDED, ALL X, via (|U|,|V|,p,d) = [ 6072, 168, 5, 1 ]
+CERT|kind=sporadic|group=M24|s=244823040|out=1|x=1|uclass=8|uid=L2(23)|u=6072|ustability=Out=1|vclass=9|vid=L3(2)|v=168|vstability=Out=1|p=5|d=1|vpx=0|result=PASS
+SPORADIC|group=J3|table=J3|s=50232960|out=2|maxes=9|maxes_sha256=37328172fff7bb8b634dc655687aaf820d0d37206f6849eb34401538c4074920|selection=max-class-positions-then-prime
+MAXCLASS|group=J3|position=8|identifier=2^1+4b:a5|order=1920|multiplicity=1|stability=unique-order-in-complete-Maxes
+MAXCLASS|group=J3|position=9|identifier=2^2+4.3xs3|order=1152|multiplicity=1|stability=unique-order-in-complete-Maxes
+J3 (|S| = 50232960, out = 2): ALL k >= 1 EXCLUDED, ALL X, via (|U|,|V|,p,d) = [ 1920, 1152, 19, 1 ]
+CERT|kind=sporadic|group=J3|s=50232960|out=2|x=2|uclass=8|uid=2^1+4b:a5|u=1920|ustability=unique-order-in-complete-Maxes|vclass=9|vid=2^2+4.3xs3|v=1152|vstability=unique-order-in-complete-Maxes|p=19|d=1|vpx=0|result=PASS
+SPORADIC|group=J4|table=J4|s=86775571046077562880|out=1|maxes=13|maxes_sha256=2eae8db209aa0d7616435e0c21a9b83e1a12ee96878767dcae545fb450bf6ad1|selection=max-class-positions-then-prime
+MAXCLASS|group=J4|position=12|identifier=43:14|order=602|multiplicity=1|stability=Out=1
+MAXCLASS|group=J4|position=13|identifier=37:12|order=444|multiplicity=1|stability=Out=1
+J4 (|S| = 86775571046077562880, out = 1): ALL k >= 1 EXCLUDED, ALL X, via (|U|,|V|,p,d) = [ 602, 444, 31, 1 ]
+CERT|kind=sporadic|group=J4|s=86775571046077562880|out=1|x=1|uclass=12|uid=43:14|u=602|ustability=Out=1|vclass=13|vid=37:12|v=444|vstability=Out=1|p=31|d=1|vpx=0|result=PASS
+SPORADIC|group=HS|table=HS|s=44352000|out=2|maxes=12|maxes_sha256=185f678b217c159889fe5c7491a343d58dab91cbd903aa32e46e116189bdde33|selection=max-class-positions-then-prime
+MAXCLASS|group=HS|position=11|identifier=2xa6.2^2|order=2880|multiplicity=1|stability=unique-order-in-complete-Maxes
+MAXCLASS|group=HS|position=12|identifier=5:4xa5|order=1200|multiplicity=1|stability=unique-order-in-complete-Maxes
+HS (|S| = 44352000, out = 2): ALL k >= 1 EXCLUDED, ALL X, via (|U|,|V|,p,d) = [ 2880, 1200, 11, 1 ]
+CERT|kind=sporadic|group=HS|s=44352000|out=2|x=2|uclass=11|uid=2xa6.2^2|u=2880|ustability=unique-order-in-complete-Maxes|vclass=12|vid=5:4xa5|v=1200|vstability=unique-order-in-complete-Maxes|p=11|d=1|vpx=0|result=PASS
+SPORADIC|group=McL|table=McL|s=898128000|out=2|maxes=12|maxes_sha256=4b1989d019a36863315fbf71be8de6ff2ff9a4cc42fae98af88d4447bb6f7214|selection=max-class-positions-then-prime
+MAXCLASS|group=McL|position=11|identifier=M11|order=7920|multiplicity=1|stability=unique-order-in-complete-Maxes
+MAXCLASS|group=McL|position=12|identifier=5^(1+2):3:8|order=3000|multiplicity=1|stability=unique-order-in-complete-Maxes
+McL (|S| = 898128000, out = 2): ALL k >= 1 EXCLUDED, ALL X, via (|U|,|V|,p,d) = [ 7920, 3000, 7, 1 ]
+CERT|kind=sporadic|group=McL|s=898128000|out=2|x=2|uclass=11|uid=M11|u=7920|ustability=unique-order-in-complete-Maxes|vclass=12|vid=5^(1+2):3:8|v=3000|vstability=unique-order-in-complete-Maxes|p=7|d=1|vpx=0|result=PASS
+SPORADIC|group=Co1|table=Co1|s=4157776806543360000|out=1|maxes=22|maxes_sha256=a0cfe45937ee6b205f05bb87be39c849f9ce005574519ae40298dcfc425abe3c|selection=max-class-positions-then-prime
+MAXCLASS|group=Co1|position=21|identifier=7^2:(3x2A4)|order=3528|multiplicity=1|stability=Out=1
+MAXCLASS|group=Co1|position=22|identifier=5^2:2A5|order=3000|multiplicity=1|stability=Out=1
+Co1 (|S| = 4157776806543360000, out = 1): ALL k >= 1 EXCLUDED, ALL X, via (|U|,|V|,p,d) = [ 3528, 3000, 23, 1 ]
+CERT|kind=sporadic|group=Co1|s=4157776806543360000|out=1|x=1|uclass=21|uid=7^2:(3x2A4)|u=3528|ustability=Out=1|vclass=22|vid=5^2:2A5|v=3000|vstability=Out=1|p=23|d=1|vpx=0|result=PASS
+SPORADIC|group=Co2|table=Co2|s=42305421312000|out=1|maxes=11|maxes_sha256=a68f1087d5fc041b06af15ce818320760e54459f9bdefa7299be4a4e9d0e6fb5|selection=max-class-positions-then-prime
+MAXCLASS|group=Co2|position=10|identifier=3^1+4:2^1+4.s5|order=933120|multiplicity=1|stability=Out=1
+MAXCLASS|group=Co2|position=11|identifier=5^(1+2):4S4|order=12000|multiplicity=1|stability=Out=1
+Co2 (|S| = 42305421312000, out = 1): ALL k >= 1 EXCLUDED, ALL X, via (|U|,|V|,p,d) = [ 933120, 12000, 23, 1 ]
+CERT|kind=sporadic|group=Co2|s=42305421312000|out=1|x=1|uclass=10|uid=3^1+4:2^1+4.s5|u=933120|ustability=Out=1|vclass=11|vid=5^(1+2):4S4|v=12000|vstability=Out=1|p=23|d=1|vpx=0|result=PASS
+SPORADIC|group=Co3|table=Co3|s=495766656000|out=1|maxes=14|maxes_sha256=de3dfcf1c29ec55e46271b655402deea2e575d549804814bdb9ab31e269c0c00|selection=max-class-positions-then-prime
+MAXCLASS|group=Co3|position=13|identifier=s3xpsl(2,8).3|order=9072|multiplicity=1|stability=Out=1
+MAXCLASS|group=Co3|position=14|identifier=a4xs5|order=1440|multiplicity=1|stability=Out=1
+Co3 (|S| = 495766656000, out = 1): ALL k >= 1 EXCLUDED, ALL X, via (|U|,|V|,p,d) = [ 9072, 1440, 23, 1 ]
+CERT|kind=sporadic|group=Co3|s=495766656000|out=1|x=1|uclass=13|uid=s3xpsl(2,8).3|u=9072|ustability=Out=1|vclass=14|vid=a4xs5|v=1440|vstability=Out=1|p=23|d=1|vpx=0|result=PASS
+SPORADIC|group=Suz|table=Suz|s=448345497600|out=2|maxes=17|maxes_sha256=e54b008acc63ebecf05e213c60998f4655f0dc948dc728a11ac51ccbcfab8233|selection=max-class-positions-then-prime
+MAXCLASS|group=Suz|position=16|identifier=L2(25)|order=7800|multiplicity=1|stability=unique-order-in-complete-Maxes
+MAXCLASS|group=Suz|position=17|identifier=A7|order=2520|multiplicity=1|stability=unique-order-in-complete-Maxes
+Suz (|S| = 448345497600, out = 2): ALL k >= 1 EXCLUDED, ALL X, via (|U|,|V|,p,d) = [ 7800, 2520, 11, 1 ]
+CERT|kind=sporadic|group=Suz|s=448345497600|out=2|x=2|uclass=16|uid=L2(25)|u=7800|ustability=unique-order-in-complete-Maxes|vclass=17|vid=A7|v=2520|vstability=unique-order-in-complete-Maxes|p=11|d=1|vpx=0|result=PASS
+SPORADIC|group=He|table=He|s=4030387200|out=2|maxes=11|maxes_sha256=94eea0ee01e6604cecfd9912851d65cd81e39e992f44c51e731c694b270c62f6|selection=max-class-positions-then-prime
+MAXCLASS|group=He|position=10|identifier=7:3xpsl(3,2)|order=3528|multiplicity=1|stability=unique-order-in-complete-Maxes
+MAXCLASS|group=He|position=11|identifier=5^2:4A4|order=1200|multiplicity=1|stability=unique-order-in-complete-Maxes
+He (|S| = 4030387200, out = 2): ALL k >= 1 EXCLUDED, ALL X, via (|U|,|V|,p,d) = [ 3528, 1200, 17, 1 ]
+CERT|kind=sporadic|group=He|s=4030387200|out=2|x=2|uclass=10|uid=7:3xpsl(3,2)|u=3528|ustability=unique-order-in-complete-Maxes|vclass=11|vid=5^2:4A4|v=1200|vstability=unique-order-in-complete-Maxes|p=17|d=1|vpx=0|result=PASS
+SPORADIC|group=Ru|table=Ru|s=145926144000|out=1|maxes=15|maxes_sha256=53aaea6384a0a7a02c2aef866f9d6c6a133f9379b4492ee9f2970b738c900bc3|selection=max-class-positions-then-prime
+MAXCLASS|group=Ru|position=14|identifier=A6.2^2|order=1440|multiplicity=1|stability=Out=1
+MAXCLASS|group=Ru|position=15|identifier=5:4xa5|order=1200|multiplicity=1|stability=Out=1
+Ru (|S| = 145926144000, out = 1): ALL k >= 1 EXCLUDED, ALL X, via (|U|,|V|,p,d) = [ 1440, 1200, 29, 1 ]
+CERT|kind=sporadic|group=Ru|s=145926144000|out=1|x=1|uclass=14|uid=A6.2^2|u=1440|ustability=Out=1|vclass=15|vid=5:4xa5|v=1200|vstability=Out=1|p=29|d=1|vpx=0|result=PASS
+SPORADIC|group=ON|table=ON|s=460815505920|out=2|maxes=13|maxes_sha256=d1faf329c308da4d59e806f487f319632e74248839ea03ddee511c9557e5a7c3|selection=max-class-positions-then-prime
+MAXCLASS|group=ON|position=4|identifier=4_2.L3(4).2_1|order=161280|multiplicity=1|stability=unique-order-in-complete-Maxes
+MAXCLASS|group=ON|position=9|identifier=4^3.L3(2)|order=10752|multiplicity=1|stability=unique-order-in-complete-Maxes
+ON (|S| = 460815505920, out = 2): ALL k >= 1 EXCLUDED, ALL X, via (|U|,|V|,p,d) = [ 161280, 10752, 31, 1 ]
+CERT|kind=sporadic|group=ON|s=460815505920|out=2|x=2|uclass=4|uid=4_2.L3(4).2_1|u=161280|ustability=unique-order-in-complete-Maxes|vclass=9|vid=4^3.L3(2)|v=10752|vstability=unique-order-in-complete-Maxes|p=31|d=1|vpx=0|result=PASS
+SPORADIC|group=Fi22|table=Fi22|s=64561751654400|out=2|maxes=14|maxes_sha256=11f5001455ec9c9679b1d06668bba33d1e1a144b6e351bd23e7c3602dcd120be|selection=max-class-positions-then-prime
+MAXCLASS|group=Fi22|position=11|identifier=3^(1+6):2^(3+4):3^2:2|order=5038848|multiplicity=1|stability=unique-order-in-complete-Maxes
+MAXCLASS|group=Fi22|position=14|identifier=M12|order=95040|multiplicity=1|stability=unique-order-in-complete-Maxes
+Fi22 (|S| = 64561751654400, out = 2): ALL k >= 1 EXCLUDED, ALL X, via (|U|,|V|,p,d) = [ 5038848, 95040, 13, 1 ]
+CERT|kind=sporadic|group=Fi22|s=64561751654400|out=2|x=2|uclass=11|uid=3^(1+6):2^(3+4):3^2:2|u=5038848|ustability=unique-order-in-complete-Maxes|vclass=14|vid=M12|v=95040|vstability=unique-order-in-complete-Maxes|p=13|d=1|vpx=0|result=PASS
+SPORADIC|group=Fi23|table=Fi23|s=4089470473293004800|out=1|maxes=14|maxes_sha256=84e2c8fb044becc38db5fd22681da7310fe788239de86a3d56e4e2cbb3272e9a|selection=max-class-positions-then-prime
+MAXCLASS|group=Fi23|position=13|identifier=S4(4).4|order=3916800|multiplicity=1|stability=Out=1
+MAXCLASS|group=Fi23|position=14|identifier=L2(23)|order=6072|multiplicity=1|stability=Out=1
+Fi23 (|S| = 4089470473293004800, out = 1): ALL k >= 1 EXCLUDED, ALL X, via (|U|,|V|,p,d) = [ 3916800, 6072, 13, 1 ]
+CERT|kind=sporadic|group=Fi23|s=4089470473293004800|out=1|x=1|uclass=13|uid=S4(4).4|u=3916800|ustability=Out=1|vclass=14|vid=L2(23)|v=6072|vstability=Out=1|p=13|d=1|vpx=0|result=PASS
+SPORADIC|group=Fi24'|table=F3+|s=1255205709190661721292800|out=2|maxes=25|maxes_sha256=a815c64352b33b50478623f394cfc45d60e371519346cde591604df94bae953e|selection=max-class-positions-then-prime
+MAXCLASS|group=Fi24'|position=20|identifier=7:6xA7|order=105840|multiplicity=1|stability=unique-order-in-complete-Maxes
+MAXCLASS|group=Fi24'|position=25|identifier=29:14|order=406|multiplicity=1|stability=unique-order-in-complete-Maxes
+Fi24' (|S| = 1255205709190661721292800, out = 2): ALL k >= 1 EXCLUDED, ALL X, via (|U|,|V|,p,d) = [ 105840, 406, 23, 1 ]
+CERT|kind=sporadic|group=Fi24'|s=1255205709190661721292800|out=2|x=2|uclass=20|uid=7:6xA7|u=105840|ustability=unique-order-in-complete-Maxes|vclass=25|vid=29:14|v=406|vstability=unique-order-in-complete-Maxes|p=23|d=1|vpx=0|result=PASS
+SPORADIC|group=HN|table=HN|s=273030912000000|out=2|maxes=14|maxes_sha256=a3ee84cfc1697001305a6710e4500d4977b2b4ea2358c1e9dcab0b6c253e0ede|selection=max-class-positions-then-prime
+MAXCLASS|group=HN|position=13|identifier=3^4:2(A4xA4).4|order=93312|multiplicity=1|stability=unique-order-in-complete-Maxes
+MAXCLASS|group=HN|position=14|identifier=3^(1+4):4A5|order=58320|multiplicity=1|stability=unique-order-in-complete-Maxes
+HN (|S| = 273030912000000, out = 2): ALL k >= 1 EXCLUDED, ALL X, via (|U|,|V|,p,d) = [ 93312, 58320, 19, 1 ]
+CERT|kind=sporadic|group=HN|s=273030912000000|out=2|x=2|uclass=13|uid=3^4:2(A4xA4).4|u=93312|ustability=unique-order-in-complete-Maxes|vclass=14|vid=3^(1+4):4A5|v=58320|vstability=unique-order-in-complete-Maxes|p=19|d=1|vpx=0|result=PASS
+SPORADIC|group=Ly|table=Ly|s=51765179004000000|out=1|maxes=9|maxes_sha256=fbda86c36441d055bcc614416a50efd0f5e39d62714cbc08cc923439d3d6a734|selection=max-class-positions-then-prime
+MAXCLASS|group=Ly|position=8|identifier=67:22|order=1474|multiplicity=1|stability=Out=1
+MAXCLASS|group=Ly|position=9|identifier=37:18|order=666|multiplicity=1|stability=Out=1
+Ly (|S| = 51765179004000000, out = 1): ALL k >= 1 EXCLUDED, ALL X, via (|U|,|V|,p,d) = [ 1474, 666, 31, 1 ]
+CERT|kind=sporadic|group=Ly|s=51765179004000000|out=1|x=1|uclass=8|uid=67:22|u=1474|ustability=Out=1|vclass=9|vid=37:18|v=666|vstability=Out=1|p=31|d=1|vpx=0|result=PASS
+SPORADIC|group=Th|table=Th|s=90745943887872000|out=1|maxes=16|maxes_sha256=71afc944250969ba73dade171ceb94ce25d22ae441d965591d6b6c5d6a6582ac|selection=max-class-positions-then-prime
+MAXCLASS|group=Th|position=15|identifier=31:15|order=465|multiplicity=1|stability=Out=1
+MAXCLASS|group=Th|position=16|identifier=A5.2|order=120|multiplicity=1|stability=Out=1
+Th (|S| = 90745943887872000, out = 1): ALL k >= 1 EXCLUDED, ALL X, via (|U|,|V|,p,d) = [ 465, 120, 19, 1 ]
+CERT|kind=sporadic|group=Th|s=90745943887872000|out=1|x=1|uclass=15|uid=31:15|u=465|ustability=Out=1|vclass=16|vid=A5.2|v=120|vstability=Out=1|p=19|d=1|vpx=0|result=PASS
+SPORADIC|group=B|table=B|s=4154781481226426191177580544000000|out=1|maxes=30|maxes_sha256=bd835e838ab657115cb866ca016f480361738e2be3030a4393daa5c4962177b4|selection=max-class-positions-then-prime
+MAXCLASS|group=B|position=29|identifier=L2(11).2|order=1320|multiplicity=1|stability=Out=1
+MAXCLASS|group=B|position=30|identifier=47:23|order=1081|multiplicity=1|stability=Out=1
+B (|S| = 4154781481226426191177580544000000, out = 1): ALL k >= 1 EXCLUDED, ALL X, via (|U|,|V|,p,d) = [ 1320, 1081, 31, 1 ]
+CERT|kind=sporadic|group=B|s=4154781481226426191177580544000000|out=1|x=1|uclass=29|uid=L2(11).2|u=1320|ustability=Out=1|vclass=30|vid=47:23|v=1081|vstability=Out=1|p=31|d=1|vpx=0|result=PASS
+SPORADIC|group=M|table=M|s=808017424794512875886459904961710757005754368000000000|out=1|maxes=46|maxes_sha256=d73ded5b51795bb48ea84fc7b1ae87829b25cbb98ac46be6dc2f639520653af5|selection=max-class-positions-then-prime
+MAXCLASS|group=M|position=45|identifier=59:29|order=1711|multiplicity=1|stability=Out=1
+MAXCLASS|group=M|position=46|identifier=41:40|order=1640|multiplicity=1|stability=Out=1
+M (|S| = 808017424794512875886459904961710757005754368000000000, out = 1): ALL k >= 1 EXCLUDED, ALL X, via (|U|,|V|,p,d) = [ 1711, 1640, 71, 1 ]
+CERT|kind=sporadic|group=M|s=808017424794512875886459904961710757005754368000000000|out=1|x=1|uclass=45|uid=59:29|u=1711|ustability=Out=1|vclass=46|vid=41:40|v=1640|vstability=Out=1|p=71|d=1|vpx=0|result=PASS
+SPORADIC|group=2F4(2)'|table=2F4(2)'|s=17971200|out=2|maxes=8|maxes_sha256=8f2de54ab1a55cc42cb7c2e28827fdc876eb2b95858534ed31b9969af83dd308|selection=max-class-positions-then-prime
+MAXCLASS|group=2F4(2)'|position=5|identifier=2^2.2^8:s3|order=6144|multiplicity=1|stability=unique-order-in-complete-Maxes
+MAXCLASS|group=2F4(2)'|position=8|identifier=5^2:4A4|order=1200|multiplicity=1|stability=unique-order-in-complete-Maxes
+2F4(2)' (|S| = 17971200, out = 2): ALL k >= 1 EXCLUDED, ALL X, via (|U|,|V|,p,d) = [ 6144, 1200, 13, 1 ]
+CERT|kind=sporadic|group=2F4(2)'|s=17971200|out=2|x=2|uclass=5|uid=2^2.2^8:s3|u=6144|ustability=unique-order-in-complete-Maxes|vclass=8|vid=5^2:4A4|v=1200|vstability=unique-order-in-complete-Maxes|p=13|d=1|vpx=0|result=PASS
+SWEEP M DONE.|PASS

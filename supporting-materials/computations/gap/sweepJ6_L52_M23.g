@@ -12,30 +12,22 @@
 
 Read("sweepJ_lib.g");
 
-res := CALL_WITH_CATCH(function()
-  DivCriterion("M23", MathieuGroup(23));
-  return true;
-end, []);
-if res[1] <> true then Print("M23: ERROR\n"); fi;
+DivCriterion("M23", MathieuGroup(23));
 
-res := CALL_WITH_CATCH(function()
-  local vecs, dom, act, gens, dualperm, S, A;
-  vecs := Filtered(Elements(GF(2)^5), v -> not IsZero(v));
-  dom := Concatenation(List(vecs, v -> [1, v]), List(vecs, w -> [2, w]));
-  act := function(x, g)
-    if x[1] = 1 then return [1, x[2]*g];
-    else return [2, x[2]*TransposedMat(g^-1)]; fi;
-  end;
-  gens := List(GeneratorsOfGroup(GL(5,2)), g -> Permutation(g, dom, act));
-  dualperm := PermListList(dom, List(dom, x -> [3 - x[1], x[2]]));
-  S := Group(gens);
-  A := Group(Concatenation(gens, [dualperm]));
-  if Size(S) <> 9999360 then Error("L5(2) construction wrong"); fi;
-  if Size(A) <> 2*Size(S) then Error("L5(2).2 construction wrong"); fi;
-  if not IsNormal(A, S) then Error("S not normal in A"); fi;
-  DivCriterion("L5_2", A);
-  return true;
-end, []);
-if res[1] <> true then Print("L5_2: ERROR\n"); fi;
-Print("SWEEP J6 DONE.\n");
-QUIT;
+vecs := Filtered(Elements(GF(2)^5), v -> not IsZero(v));
+dom := Concatenation(List(vecs, v -> [1, v]), List(vecs, w -> [2, w]));
+act := function(x, g)
+  if x[1] = 1 then return [1, x[2]*g];
+  else return [2, x[2]*TransposedMat(g^-1)]; fi;
+end;
+gens := List(GeneratorsOfGroup(GL(5,2)), g -> Permutation(g, dom, act));
+dualperm := PermListList(dom, List(dom, x -> [3 - x[1], x[2]]));
+S := Group(gens);
+A := Group(Concatenation(gens, [dualperm]));
+AssertProof(Size(S)=9999360,"L5(2) construction wrong");
+AssertProof(Size(A)=2*Size(S),"L5(2).2 construction wrong");
+AssertProof(IsNormal(A,S),"S not normal in L5(2).2");
+AssertProof(Size(Centralizer(A,S))=1,"L5(2).2 action on S is not faithful");
+DivCriterion("L5_2", A);
+Print("SWEEP J6 DONE.|PASS\n");
+QUIT_GAP(0);

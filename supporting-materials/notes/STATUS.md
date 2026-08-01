@@ -1,5 +1,12 @@
 # Kourovka 10.34 — status of play
 
+> **Historical working note (non-normative).** This file preserves the
+> development history and may contain stale counts, citations, or claims. The
+> normative paper, binary obligation ledger, source maps, and current blockers
+> are in `../paper/kourovka1034.tex` and `../audit/`. Do not use this note as a
+> proof or release certificate.
+
+
 **Problem (V.S. Monakhov, Kourovka Notebook 10.34, 1986).** Does there exist
 a non-soluble finite group which coincides with the product of any two of its
 non-conjugate maximal subgroups?

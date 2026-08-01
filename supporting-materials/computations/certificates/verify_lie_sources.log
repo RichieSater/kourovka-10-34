@@ -1,0 +1,6 @@
+exact high-risk Lie source rows: 7
+2E6|deleted=(1, 6)|factors=2D4(q)|max_exponent=8|PASS
+2E6|deleted=(2,)|factors=2A5(q)|max_exponent=10|PASS
+2E6|deleted=(3, 5)|factors=A1(q^2)+A2(q)|max_exponent=4|PASS
+2E6|deleted=(4,)|factors=A1(q)+A2(q^2)|max_exponent=6|PASS
+LIE SOURCE AND 2E6 LEVI VERIFICATION|PASS
