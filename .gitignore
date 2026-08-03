@@ -7,6 +7,12 @@
 .vscode/
 .idea/
 
+# Local-only agent instructions must never enter the public release tree.
+AGENTS.md
+CLAUDE.md
+agents.md
+claude.md
+
 # Python caches and local environments (never proof receipts)
 __pycache__/
 *.py[cod]

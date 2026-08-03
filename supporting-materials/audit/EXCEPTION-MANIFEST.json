@@ -36,7 +36,7 @@
         "A:L3(4)"
       ],
       "destination": "COMP-FINITE-BASE",
-      "resolution": "all twelve coordinate closures in exact finite certificates"
+      "resolution": "all ten coordinate closures in exact finite certificates"
     },
     {
       "id": "Z-PSL6-2",
@@ -76,7 +76,7 @@
         "B:S4(8)odd"
       ],
       "destination": "ARITH-SUBSTITUTE-PRIMES",
-      "resolution": "substitute prime 3 with d=2>v_3(6)=1"
+      "resolution": "substitute prime 3 with d=4>v_3(6)=1"
     },
     {
       "id": "ISO-PSU4-2",

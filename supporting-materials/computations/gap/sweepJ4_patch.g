@@ -5,8 +5,8 @@
 #     has no method for it.  Fixed here by constructing the degree-65
 #     permutation representation.
 #   - L2(q), q in {41,43,47,49,53,59,61,64,67,71,73,79,81,83,89,97}: never
-#     added to the sweep J RunDiv list (STATUS.md claimed them closed via the
-#     hand dihedral-pair argument; this sweep supplies machine certificates).
+#     added to the sweep J RunDiv list (the earlier hand dihedral-pair argument
+#     covered them mathematically; this sweep supplies machine certificates).
 # After this sweep, every non-abelian simple S with |S| < 500000 has a
 # machine certificate excluding socle S^k for all k >= 2 and all X.
 

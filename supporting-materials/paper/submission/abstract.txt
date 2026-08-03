@@ -1,14 +1,13 @@
 We prove that every finite group which coincides with the product of any
 two of its non-conjugate maximal subgroups is soluble, answering Problem
 10.34 of the Kourovka Notebook (V. S. Monakhov, 1986) in the negative.
-The proof combines a reduction to groups with a unique minimal normal
-subgroup S^k, a divisibility criterion that excludes a simple group S
-for all k >= 1 at once from a single pair of automorphism-stable
-conjugacy classes of subgroups of S, a uniform construction of such
-pairs for every infinite family of finite simple groups (with Zsigmondy
-primes as the arithmetic obstruction), and machine-generated
-certificates, produced in GAP, covering the sporadic groups and every
-machine-routed small case.  In the upper finite interval, the 38 groups
-PSL(2,q) are instead discharged by the exact uniform theorem, while the
-remaining 13 groups have GAP certificates; together these routes cover every
-non-abelian simple group of order at most 1.05 x 10^7.
+The almost simple case was settled by Tikhonenko and Tyutyanov (2010);
+the obstacle to the general case was the socle S^k with k >= 2, which no
+counting bound can control. We remove it with a divisibility criterion:
+a single pair of automorphism-stable conjugacy classes of subgroups of
+the simple group S, subject to a valuation inequality, excludes the
+socle S^k for all k >= 2 and every admissible embedding at once. Such
+pairs are constructed uniformly for every infinite family of finite
+simple groups, with Zsigmondy primes as the arithmetic obstruction; the
+sporadic groups and all remaining small cases are settled by
+independently re-checkable certificates produced in GAP.

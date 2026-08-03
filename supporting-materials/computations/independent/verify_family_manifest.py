@@ -61,6 +61,10 @@ REQUIRED_DESTINATIONS = {
     "COMP-FINITE-BASE", "ARITH-SUBSTITUTE-PRIMES", "CFSG-BOUNDARIES",
     "THM-PSL2", "THM-NOGRAPH", "PROP-SPORADIC",
 }
+EXPECTED_QUANTITATIVE_RESOLUTIONS = {
+    "Z-PSL3-4": "all ten coordinate closures in exact finite certificates",
+    "Z-SP4-8": "substitute prime 3 with d=4>v_3(6)=1",
+}
 
 def die(msg: str) -> "NoReturn":
     raise SystemExit("HARD-FAIL: " + msg)
@@ -106,6 +110,10 @@ def main() -> int:
         die(f"family/exception cross-link mismatch: unreferenced={sorted(set(ex_ids)-referenced)}, missing={sorted(referenced-set(ex_ids))}")
     if not all(x.get("destination") in REQUIRED_DESTINATIONS and x.get("resolution") for x in records):
         die("an exception has an unknown/empty destination or resolution")
+    by_id = {x["id"]: x for x in records}
+    for exception_id, resolution in EXPECTED_QUANTITATIVE_RESOLUTIONS.items():
+        if by_id[exception_id]["resolution"] != resolution:
+            die(f"{exception_id}: quantitative resolution drift")
 
     expected = exc.get("zsigmondy_exception_tags_expected_from_sweepN", [])
     tagged = [tag for x in records for tag in x.get("tags", [])]

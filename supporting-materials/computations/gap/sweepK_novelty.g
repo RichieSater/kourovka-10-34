@@ -8,7 +8,7 @@
 # ordered by containment up to S-conjugacy.  When X fuses two maximal classes
 # of S, their intersections typically enter P_X as "novelties" (this is the
 # wreath analogue of novelty maximals in almost simple groups).
-# Existence/maximality argument: as for B_U in STATUS.md — uniformity of the
+# Existence/maximality argument: as in the paper's product-supplement lemmas — uniformity of the
 # coordinate pattern is forced by top-transitivity plus X-stability of
 # classes, and the poset-maximality of V blocks all intermediate subgroups.
 #

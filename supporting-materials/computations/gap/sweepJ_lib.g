@@ -6,8 +6,9 @@
 # Then G/N embeds in (X/Inn) wr S_k, so  t | x^k * k!  with x = |X/Inn|.
 #
 # For every X-stable class [U] of maximal subgroups of S, B_U = N_G(U^k)
-# is a maximal subgroup of G with B_U ∩ N = U^k and B_U N = G (existence
-# lemma; see STATUS.md).  Distinct stable classes give non-conjugate B's.
+# is a maximal subgroup of G with B_U ∩ N = U^k and B_U N = G (the
+# existence and maximality lemmas in the paper). Distinct stable classes give
+# non-conjugate B's.
 # If G has property P then G = B_U B_V, forcing
 #     |B_U ∩ B_V| = |B_U||B_V|/|G| = t * (|U||V|/|S|)^k  ∈  Z.
 # With d = v_p(|S|) - v_p(|U|) - v_p(|V|) > 0 this needs p^{dk} | t, while

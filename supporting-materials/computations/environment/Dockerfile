@@ -7,9 +7,12 @@ ARG ATLASREP_SHA=1ccb65af694d53f60ba41f85b2293e505c42a2fecf90b36747c1d841a5ce0b4
 ARG ELAN_VERSION=4.2.3
 ARG ELAN_AMD64_SHA=df0b2b3a439961ffcbb3985214365ffe40f49bc871df04dff268c7d8e21ca8b2
 ARG ELAN_ARM64_SHA=cb69af0803b04157bc30201c29c12fca882bb3ad8b43476b8d2d3064810bc3ac
-ENV DEBIAN_FRONTEND=noninteractive PATH=/root/.elan/bin:/opt/gap-4.16.0/bin:$PATH GAP_BIN=/opt/gap-4.16.0/gap LC_ALL=C.UTF-8 LANG=C.UTF-8
+ARG OCAML_VERSION=4.14.2
+ARG ROCQ_VERSION=9.2.0
+ARG MATHCOMP_VERSION=2.6.0
+ENV DEBIAN_FRONTEND=noninteractive PATH=/root/.opam/rocq/bin:/root/.elan/bin:/opt/gap-4.16.0/bin:$PATH GAP_BIN=/opt/gap-4.16.0/gap LC_ALL=C.UTF-8 LANG=C.UTF-8
 RUN apt-get update && apt-get install -y --no-install-recommends \
-      build-essential ca-certificates curl git libgmp-dev libreadline-dev m4 python3 xz-utils zlib1g-dev \
+      build-essential ca-certificates curl git libgmp-dev libreadline-dev m4 opam pkg-config python3 xz-utils zlib1g-dev \
     && rm -rf /var/lib/apt/lists/*
 RUN curl -LfsS https://github.com/gap-system/gap/releases/download/v4.16.0/gap-4.16.0.tar.gz -o /tmp/gap.tar.gz \
     && echo "$GAP_TAR_SHA  /tmp/gap.tar.gz" | sha256sum -c - \
@@ -26,6 +29,15 @@ RUN curl -LfsS https://github.com/gap-system/gap/releases/download/v4.16.0/gap-4
     && tar -xzf /tmp/ctbllib.tar.gz -C pkg \
     && tar -xzf /tmp/atlasrep.tar.gz -C pkg \
     && rm /tmp/gap.tar.gz /tmp/ctbllib.tar.gz /tmp/atlasrep.tar.gz
+RUN opam init --bare --disable-sandboxing -y \
+    && opam switch create rocq "ocaml-base-compiler.${OCAML_VERSION}" --jobs=2 -y \
+    && opam repository add --switch=rocq rocq-released https://rocq-prover.org/opam/released \
+    && opam install --switch=rocq --jobs=2 -y \
+         "rocq-core.${ROCQ_VERSION}" "rocq-mathcomp-solvable.${MATHCOMP_VERSION}"
+RUN printf '%s\n' '#!/bin/sh' 'exec rocq compile "$@"' > /usr/local/bin/coqc \
+    && chmod 0755 /usr/local/bin/coqc \
+    && coqc --print-version | grep -E '^9[.]2([[:space:]]|$)' \
+    && test -f "$(coqc -where)/user-contrib/mathcomp/solvable/maximal.v"
 RUN arch=$(dpkg --print-architecture) \
     && case "$arch" in \
          amd64) elan_arch=x86_64; elan_sha="$ELAN_AMD64_SHA" ;; \
@@ -38,7 +50,16 @@ RUN arch=$(dpkg --print-architecture) \
     && /tmp/elan-init -y --default-toolchain leanprover/lean4:v4.32.2 \
     && rm /tmp/elan.tar.gz /tmp/elan-init
 WORKDIR /work/supporting-materials
+# The build itself is the check. Do not retain roughly 19 GB of disposable
+# mathlib build/cache products in the distributable runtime image. Copy the
+# formal inputs first so prose or certificate-only changes do not invalidate
+# this expensive kernel-check layer.
+COPY supporting-materials/formal /work/supporting-materials/formal
+COPY supporting-materials/formal-rocq /work/supporting-materials/formal-rocq
+RUN cd formal \
+    && lake exe cache get \
+    && python3 check_formal.py \
+    && rm -rf .lake /root/.cache
 COPY supporting-materials /work/supporting-materials
-COPY AGENTS.md CLAUDE.md .gitignore /work/
-RUN cd formal && lake exe cache get && python3 check_formal.py
+COPY .gitignore .dockerignore /work/
 CMD ["sh", "verify-full.sh"]

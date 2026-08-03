@@ -1,5 +1,9 @@
 .git
 .DS_Store
+AGENTS.md
+CLAUDE.md
+agents.md
+claude.md
 kourovka1034.pdf
 supporting-materials/formal/.lake
 supporting-materials/paper/*.aux

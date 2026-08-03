@@ -7,16 +7,13 @@ doi: 10.5281/zenodo.21709124
 identifiers:
   - type: doi
     value: 10.5281/zenodo.21709124
-    description: Concept DOI for all versions (v1.0.6 version DOI is minted on Zenodo publication)
-  - type: doi
-    value: 10.5281/zenodo.21746829
-    description: Version DOI for v1.0.5
+    description: Concept DOI for all versions
 title: "Kourovka 10.34: proofs, GAP scripts and machine certificates"
 authors:
   - family-names: Sater
     given-names: Richie
     affiliation: Independent Researcher
-version: 1.0.6
+version: 1.0.7
 date-released: 2026-08-03
 repository-code: https://github.com/RichieSater/kourovka-10-34
 url: https://github.com/RichieSater/kourovka-10-34

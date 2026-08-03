@@ -86,6 +86,7 @@ do
 done
 
 echo "== formal arithmetic build (no placeholders/custom axioms) =="
+(cd "$ROOT/formal" && lake exe cache get)
 python3 "$ROOT/formal/check_formal.py"
 echo "== Rocq/MathComp characteristically-simple and explicit-power build =="
 rocq_regen="$CERT_DIR/formal_rocq_charsimple.log.regen"
@@ -99,7 +100,17 @@ fi
 rm -f "$rocq_regen"
 echo "   byte-identical: PASS"
 python3 "$ROOT/audit/static_check.py"
-python3 "$ROOT/computations/mutation-tests/run_mutation_tests.py"
+echo "== mutation suite =="
+mutation_regen="$CERT_DIR/mutation_tests.log.regen"
+python3 "$ROOT/computations/mutation-tests/run_mutation_tests.py" >"$mutation_regen" 2>&1
+check_log "$mutation_regen"
+if ! cmp -s "$CERT_DIR/mutation_tests.log" "$mutation_regen"; then
+  echo "HARD-FAIL: mutation-test receipt drift" >&2
+  diff -u "$CERT_DIR/mutation_tests.log" "$mutation_regen" >&2 || true
+  exit 1
+fi
+rm -f "$mutation_regen"
+echo "   byte-identical: PASS"
 python3 "$ROOT/audit/evidence_hashes.py" --verify
 
 echo "FULL PROOF CERTIFICATE REPRODUCTION: PASS"

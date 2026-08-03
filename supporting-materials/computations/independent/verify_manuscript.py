@@ -52,6 +52,9 @@ required=[
  'reindexing any such nonempty finite coordinate type',
  'explicit trusted interface',
  'OpenAI Codex',
+ 'The only ones above $1.05\\times 10^{7}$ are the four',
+ 'alternating groups $A_{11},A_{12},A_{13},A_{14}$',
+ 'and the three Lie-type groups $\\PSL(6,2)$, $\\Omega^+(8,2)$',
  'twelve branch occurrences',
  'seven distinct Zsigmondy exception records',
 ]

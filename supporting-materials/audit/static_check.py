@@ -1,9 +1,10 @@
 #!/usr/bin/env python3
 """Static fail-closed checks for nondeterminism, soft failure, and prose drift."""
 from __future__ import annotations
-import os,re,sys
+import json,os,re,sys
 from pathlib import Path
 ROOT=Path(os.environ.get('KOUROVKA_SUPPORTING_ROOT',Path(__file__).resolve().parents[1])).resolve()
+REPO=Path(os.environ.get('KOUROVKA_REPO_ROOT',ROOT.parent)).resolve()
 GAP=ROOT/'computations/gap'
 ESSENTIAL=[
 'sweepJ_divisibility.g','sweepJ2_tail.g','sweepJ3_bigrange.g','sweepJ4_patch.g','sweepJ5_smallAn.g','sweepJ6_L52_M23.g',
@@ -91,9 +92,40 @@ for extra in (ROOT/'computations/certificates').glob('*.regen'):
     die(f'stale regeneration file: {extra.name}')
 for extra in (ROOT/'computations/certificates').glob('*.new'):
     die(f'stale incomplete file: {extra.name}')
-lock=(ROOT/'computations/environment/environment.lock.json').read_text()
+lock_path=ROOT/'computations/environment/environment.lock.json'
+lock=lock_path.read_text()
 if 'b12f8342d641075d58fcbe62cc00dd433d7b8e18' not in lock: die('GAP regression fix pin missing')
+env=json.loads(lock)
+docker=(ROOT/'computations/environment/Dockerfile').read_text()
+for token in [
+    env['container_base']['oci_index_digest'].split(':',1)[1],
+    env['gap']['source_sha256'],env['gap']['patched_lib_csetgrp_gi_sha256'],
+    env['gap_packages']['CTblLib']['archive_sha256'],
+    env['gap_packages']['AtlasRep']['archive_sha256'],
+    env['elan']['linux_amd64_archive_sha256'],env['elan']['linux_arm64_archive_sha256'],
+    f"ARG OCAML_VERSION={env['rocq']['ocaml_compiler']}",
+    f"ARG ROCQ_VERSION={env['rocq']['version']}.0",
+    f"ARG MATHCOMP_VERSION={env['mathcomp']['version']}",
+    '"rocq-core.${ROCQ_VERSION}"','"rocq-mathcomp-solvable.${MATHCOMP_VERSION}"',
+    'exec rocq compile "$@"',
+    'COPY .gitignore .dockerignore /work/',
+]:
+    if token not in docker: die('container/environment lock mismatch: '+token)
+if re.search(r'\b(?:AGENTS|CLAUDE)\.md\b',docker):
+    die('container recipe references local agent instructions')
+for ignore_file in [REPO/'.gitignore',REPO/'.dockerignore']:
+    ignore_text=ignore_file.read_text().splitlines()
+    for name in ['AGENTS.md','CLAUDE.md','agents.md','claude.md']:
+        if name not in ignore_text:
+            die(f'{ignore_file.name} does not exclude local agent file {name}')
 full=(ROOT/'verify-full.sh').read_text()
 if 'set -eu' not in full or 'cmp -s' not in full or 'exit 1' not in full:
     die('full reproduction lost fail-closed shell/diff behavior')
+for token in [
+    'mutation_tests.log.regen',
+    'run_mutation_tests.py" >"$mutation_regen"',
+    'cmp -s "$CERT_DIR/mutation_tests.log" "$mutation_regen"',
+]:
+    if token not in full:
+        die('mutation receipt is not regenerated and byte-compared: '+token)
 print(f'STATIC DETERMINISM/SOFT-FAIL CHECK|PASS|gap_drivers={len(ESSENTIAL)}|gap_libraries={len(LIBRARIES)}|python_checkers={len(PYTHON_ESSENTIAL)}')

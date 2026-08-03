@@ -22,17 +22,19 @@ SCRIPTS={
  'arith': ROOT/'computations/python/sweepN_item5_arith.py',
  'universal_arith': ROOT/'computations/independent/family_arithmetic_universal.py',
  'symbolic_arith': ROOT/'computations/independent/family_arithmetic_symbolic.py',
+ 'manuscript': ROOT/'computations/independent/verify_manuscript.py',
 }
 
 def snapshot(dst: Path) -> None:
     # Copy the entire evidence tree rather than only the files used by the
-    # original mutations.  The obligation ledger binds closed rows to GAP
-    # sources, environment locks, independent checkers, and receipts; a
+    # original mutations.  The evidence closure binds GAP sources,
+    # environment locks, independent checkers, and receipts; a
     # mutation baseline that omits any of those artifacts must fail.
     dst.mkdir(parents=True)
     shutil.copytree(ROOT/'computations',dst/'computations',
-                    ignore=shutil.ignore_patterns('__pycache__','*.regen'))
-    shutil.copytree(ROOT/'audit',dst/'audit')
+                    ignore=shutil.ignore_patterns('__pycache__','*.regen','.DS_Store'))
+    shutil.copytree(ROOT/'audit',dst/'audit',
+                    ignore=shutil.ignore_patterns('.DS_Store'))
     for name in ['README.md','verify-quick.sh','verify-full.sh']:
         shutil.copy2(ROOT/name,dst/name)
     shutil.copy2(ROOT/'.gitignore',dst/'.gitignore')
@@ -88,7 +90,7 @@ def main() -> int:
         for checker in [
             'coverage','family','finite','logs','evidence','maximality',
             'order_sources','zsigmondy_sources','boundary_sources','formal','static','rocq','arith',
-            'universal_arith','symbolic_arith',
+            'universal_arith','symbolic_arith','manuscript',
         ]:
             r=run(checker,base)
             if r.returncode:
@@ -102,6 +104,7 @@ def main() -> int:
             base/'formal-rocq/Injected.vo',
             base/'formal-rocq/.Injected.aux',
             base/'formal/Injected.olean',
+            base/'audit/.DS_Store',
         ]
         for artifact in build_products:
             artifact.write_bytes(b'generated-build-product\n')
@@ -111,7 +114,7 @@ def main() -> int:
             raise SystemExit('HARD-FAIL: generated build product entered evidence closure')
         for artifact in build_products:
             artifact.unlink()
-        print('BUILD PRODUCT EVIDENCE EXCLUSION|PASS|artifacts=3')
+        print('NON-EVIDENCE ARTIFACT EXCLUSION|PASS|artifacts=4')
 
         tests=[]
         def case(name, checker, mutate): tests.append((name,checker,mutate))
@@ -128,6 +131,19 @@ def main() -> int:
         def remove_exception(r):
             p=r/'audit/EXCEPTION-MANIFEST.json'; d=json.loads(p.read_text()); d['exceptions'].pop(0); p.write_text(json.dumps(d))
         case('remove routed exception','family',remove_exception)
+        def psl34_resolution_drift(r):
+            p=r/'audit/EXCEPTION-MANIFEST.json'
+            replace_first(p, r'all ten coordinate closures', 'all twelve coordinate closures')
+        case('alter PSL(3,4) coordinate-closure count','family',psl34_resolution_drift)
+        def sp48_resolution_drift(r):
+            p=r/'audit/EXCEPTION-MANIFEST.json'
+            replace_first(p, r'substitute prime 3 with d=4>', 'substitute prime 3 with d=2>')
+        case('alter Sp(4,8) exception valuation','family',sp48_resolution_drift)
+        def manuscript_exception_inventory_drift(r):
+            p=r/'paper/kourovka1034.tex'
+            replace_first(p, r'A_\{11\},A_\{12\},A_\{13\},A_\{14\}',
+                          r'A_{11},A_{12},A_{13}')
+        case('omit above-threshold alternating exception','manuscript',manuscript_exception_inventory_drift)
         def remove_x(r):
             p=r/'computations/certificates/sweepJ_divisibility.log'
             lines=p.read_text().splitlines(); i=next(i for i,x in enumerate(lines) if x.startswith('CERT|')); lines.pop(i); p.write_text('\n'.join(lines)+'\n')
@@ -297,6 +313,14 @@ def main() -> int:
             p=r/'computations/independent/family_arithmetic_symbolic.py'
             replace_first(p, r'assert 2 > vp\(3, 3\) == 1', 'assert 1 > vp(3, 3) == 1')
         case('alter PSL(2,8) substitute-prime gap','symbolic_arith',psl2_8_gap_drift)
+        def remove_mutation_receipt_compare(r):
+            p=r/'verify-full.sh'
+            replace_first(
+                p,
+                r'(?s)echo "== mutation suite ==".*?echo "   byte-identical: PASS"',
+                'python3 "$ROOT/computations/mutation-tests/run_mutation_tests.py"',
+            )
+        case('remove mutation-receipt byte comparison','static',remove_mutation_receipt_compare)
         for index,(name,checker,mutate) in enumerate(tests,1):
             d=Path(t)/f'm{index}'; shutil.copytree(base,d)
             mutate(d); result=run(checker,d)

@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "generated_utc": "2026-08-01T12:00:00Z",
+  "generated_utc": "2026-08-03T17:03:00Z",
   "host_reference_run": {
     "os": "macOS 26.5.1 build 25F80",
     "kernel": "Darwin 25.5.0 arm64",
@@ -51,5 +51,20 @@
     "release": "https://github.com/leanprover/elan/releases/tag/v4.2.3",
     "linux_amd64_archive_sha256": "df0b2b3a439961ffcbb3985214365ffe40f49bc871df04dff268c7d8e21ca8b2",
     "linux_arm64_archive_sha256": "cb69af0803b04157bc30201c29c12fca882bb3ad8b43476b8d2d3064810bc3ac"
+  },
+  "rocq": {
+    "version": "9.2",
+    "opam_switch": "rocq",
+    "ocaml_compiler": "4.14.2",
+    "opam_package": "rocq-core.9.2.0",
+    "container_compile_command": "rocq compile (exposed through /usr/local/bin/coqc for verifier compatibility)",
+    "source_url": "https://github.com/rocq-prover/rocq/releases/download/V9.2.0/rocq-9.2.0.tar.gz",
+    "source_sha256": "a45280ab4fbaac7540b136a6b073b4a6db15739ec1e149bded43fa6f4fc25f20"
+  },
+  "mathcomp": {
+    "version": "2.6.0",
+    "opam_package": "rocq-mathcomp-solvable.2.6.0",
+    "source_url": "https://github.com/math-comp/math-comp/archive/mathcomp-2.6.0.tar.gz",
+    "source_sha256": "b2e8c5c93fdc9bb5ed9b8a06d1c028aa0096a45b1f3ac6c6509d7a6500c72253"
   }
 }

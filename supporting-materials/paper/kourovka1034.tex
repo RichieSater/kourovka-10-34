@@ -53,7 +53,7 @@ soluble}
 \email{richiesater@gmail.com}
 \urladdr{https://orcid.org/0009-0007-9051-8207}
 
-\date{August 1, 2026}
+\date{August 3, 2026}
 
 \subjclass[2020]{Primary 20D40; Secondary 20E28, 20D05}
 \keywords{Factorizations of finite groups, maximal subgroups, soluble
@@ -109,10 +109,10 @@ branch of the main proof. The genuinely new burden is $k\geq2$.
 Tikhonenko and Tyutyanov also record that Zenkov had announced a negative
 answer to the full problem in a 1997 conference abstract \cite{Zenkov1997},
 while explicitly stating that no proof of that announcement was known to
-them.  Searches completed on 1 August 2026 found no published full proof;
+them.  Searches completed on 2 August 2026 found no published full proof;
 accordingly, we claim a proof of the stated theorem, not absolute priority
-for the conclusion.  The search record and its access limitations are in the
-supporting-materials source ledger.
+for the conclusion.  The priority-search record, source ledger, and their
+access limitations are in the supporting materials.
 For comparison only, Theorem~\ref{thm:Dprime} records how the present
 criterion also recovers the almost simple conclusion; neither that theorem
 nor its family-by-family application is a dependency of the Main Theorem.
@@ -146,11 +146,13 @@ simple group $S$. By the classification of finite simple groups
 list of infinite families plus $26$ sporadic groups and the Tits group.
 For the infinite families the pairs are constructed uniformly in
 \S\ref{sec:families}, with Zsigmondy primes of the relevant torus
-exponents as the obstruction primes; the finitely many exceptional
+exponents as the obstruction primes. The finitely many exceptional
 configurations (Zsigmondy exceptions, small-field maximality exceptions,
-the outer automorphisms of $A_6$, and so on) all have order at most
-$1.05\times 10^{7}$ apart from three, $\PSL(6,2)$, $\Omega^+(8,2)$,
-and $\Sp(4,8)$, which are handled in-text with substitute primes. In the interval
+the outer automorphisms of $A_6$, and so on) are routed in the finite
+exception manifest. The only ones above $1.05\times 10^{7}$ are the four
+alternating groups $A_{11},A_{12},A_{13},A_{14}$, settled by exact machine
+certificates, and the three Lie-type groups $\PSL(6,2)$, $\Omega^+(8,2)$,
+and $\Sp(4,8)$, handled in-text with substitute primes. In the interval
 $5\times10^5\leq |S|\leq1.05\times10^{7}$, the $38$ groups
 $\PSL(2,q)$ are deliberately routed to the exact uniform proof of
 Theorem~\ref{thm:psl2}; the other $13$ groups, all smaller groups, and every
@@ -748,7 +750,7 @@ embedding-orbit identifier,
 and normal-closure order. The K certificates are cross-linked to those exact
 fingerprints, and the independent checker rejects any selected class whose K2
 status is not \texttt{SATURATES}. Thus same-order nonconjugate classes are never
-identified by order alone.  Sweep K uses the same exact quotient-class scheme,
+identified by order alone.  Sweep K uses the same quotient-class scheme,
 with the induced action on the complete pinned list of $S$-subgroup classes.
 The soundness of these stability determinations rests on the
 completeness of GAP's pinned subgroup-class enumerations; this is a
@@ -1106,7 +1108,8 @@ A_1(q^2){\times}A_2(q))$ in
 $r\mid\Phi_{12}(q)\mid q^6+1$, which divides
 $|{}^2F_4(q)|=q^{12}(q^6+1)(q^4-1)(q^3+1)(q-1)$. The two Levi derived
 groups are ${}^2B_2(q)\cong\Sz(q)$ and $\SL_2(q)$
-\cite[Thm.~4.5(i)--(ii), p.~166]{Wilson2009}: $p'$-orders divide
+\cite[Thm.~4.5(i)--(ii), p.~166]{Wilson2009}
+\cite[Main Theorem, pp.~52--53]{Malle1991}: $p'$-orders divide
 $(q^2+1)(q-1)^2$ and
 $(q^2-1)(q-1)$, exponents $\leq4f<12f$. (${}^2F_4(2)$ is not simple;
 its derived group, the Tits group, is in the machine base.)
@@ -1444,7 +1447,7 @@ their derived groups $\PSU(3,3)$ and $\PSL(2,8)$ are covered.)
 \item $\PSU(n,q)$: $n=3$: Theorem~\ref{thm:twisted1}; $n\geq4$:
 Theorem~\ref{thm:twisted2}.
 \item ${}^2D_n(q)$ ($n\geq4$), ${}^3D_4(q)$, ${}^2E_6(q)$,
-${}^2F_4(2^f)'$: the first three and ${}^2F_4(2^f)$ ($f$ odd $\geq3$)
+${}^2F_4(2^f)$: the first three and ${}^2F_4(2^f)$ ($f$ odd $\geq3$)
 by Theorem~\ref{thm:twisted2}; the Tits group ${}^2F_4(2)'$ by
 Proposition~\ref{prop:sporadic}. (${}^2D_2$, ${}^2D_3$ are
 $\PSL(2,q^2)$, $\PSU(4,q)$, already listed.)
@@ -1499,9 +1502,9 @@ SHA-256 checksums of every certificate log, a \path{CITATION.cff}
 file, a single command running the quick verification suite
 (coverage cross-checks, independent finite-witness and source-map checks,
 universal and independent symbolic family checks, manuscript/audit lint, and
-hash verification; no GAP
-recomputation required), and separate documented commands for the full GAP,
-Lean, clean-diff, and mutation-test reproduction.
+hash verification; no GAP recomputation required), and separate documented
+commands for full GAP certificate regeneration and byte comparison, Lean and Rocq builds,
+and mutation-test reproduction.
 
 \subsection*{Funding}
 This research received no external funding.
@@ -1515,7 +1518,7 @@ During this project the author used Anthropic's Claude (2026
 Claude~5-family models) and OpenAI Codex for mathematical exploration,
 generation and criticism of candidate arguments, formal-proof development,
 drafting and debugging the GAP and Python code, literature-search assistance,
-assurance-gate construction, and manuscript organization and editing. The
+verification-workflow construction, and manuscript organization and editing. The
 author reviewed the mathematical arguments, executed
 or validated the computational certificates against the committed logs,
 checked the cited references, and edited the final manuscript. All
@@ -1601,6 +1604,10 @@ G.~Hiss, Finite groups of Lie type and their representations, in
 B.~Huppert, \emph{Endliche Gruppen I}, Grundlehren Math.\ Wiss.\ 134,
 Springer, Berlin, 1967.
 
+\bibitem{Jones2007}
+L.~Jones, Variations on a theme of Sierpi\'nski,
+\emph{J.\ Integer Seq.} \textbf{10} (2007), Article 07.4.4, 15 pp.
+
 \bibitem{Kourovka}
 E.~I.~Khukhro, V.~D.~Mazurov (eds.), \emph{The Kourovka Notebook:
 Unsolved Problems in Group Theory}, 21st ed., Sobolev Inst.\ Math.,
@@ -1613,10 +1620,6 @@ with $q$ odd, the Ree groups ${}^2G_2(q)$, and their automorphism
 groups, \emph{J.\ Algebra} \textbf{117} (1988), 30--71;
 DOI 10.1016/0021-8693(88)90239-6.
 
-\bibitem{Jones2007}
-L.~Jones, Variations on a theme of Sierpi\'nski,
-\emph{J.\ Integer Seq.} \textbf{10} (2007), Article 07.4.4, 15 pp.
-
 \bibitem{LPS1987}
 M.~W.~Liebeck, C.~E.~Praeger, J.~Saxl, A classification of the maximal
 subgroups of the finite alternating and symmetric groups,
@@ -1628,15 +1631,15 @@ M.~W.~Liebeck, C.~E.~Praeger, J.~Saxl, \emph{The Maximal Factorizations
 of the Finite Simple Groups and Their Automorphism Groups}, Mem.\ Amer.\
 Math.\ Soc.\ \textbf{86}, no.~432 (1990), 151 pp.
 
-\bibitem{Malle1991}
-G.~Malle, The maximal subgroups of ${}^2F_4(q^2)$,
-\emph{J.\ Algebra} \textbf{139} (1991), 52--69;
-DOI 10.1016/0021-8693(91)90283-E.
-
 \bibitem{LucchiniMorini2002}
 A.~Lucchini, F.~Morini, On the probability of generating finite groups
 with a unique minimal normal subgroup, \emph{Pacific J.\ Math.}
 \textbf{203} (2002), 429--440; DOI 10.2140/pjm.2002.203.429.
+
+\bibitem{Malle1991}
+G.~Malle, The maximal subgroups of ${}^2F_4(q^2)$,
+\emph{J.\ Algebra} \textbf{139} (1991), 52--69;
+DOI 10.1016/0021-8693(91)90283-E.
 
 \bibitem{Mitchell1911}
 H.~H.~Mitchell, Determination of the ordinary and modular ternary
@@ -1662,9 +1665,9 @@ classifications and applications, in \emph{Surveys in Combinatorics
 
 \bibitem{Repo}
 R.~Sater, \emph{Kourovka 10.34: proofs, GAP scripts and machine
-certificates}, version 1.0.6, Zenodo, 2026;
+certificates}, version 1.0.7, Zenodo, 2026;
 concept DOI 10.5281/zenodo.21709124 (resolves to the latest version);
-\path{https://github.com/RichieSater/kourovka-10-34/releases/tag/v1.0.6}.
+\path{https://github.com/RichieSater/kourovka-10-34/releases/tag/v1.0.7}.
 
 \bibitem{Steinberg}
 R.~Steinberg, Automorphisms of finite linear groups,
@@ -1690,25 +1693,25 @@ R.~A.~Wilson, The geometry and maximal subgroups of the simple groups
 of A.~Rudvalis and J.~Tits, \emph{Proc.\ London Math.\ Soc.}
 \textbf{48} (1984), 533--563; DOI 10.1112/plms/s3-48.3.533.
 
-\bibitem{Wilson2017}
-R.~A.~Wilson, Maximal subgroups of sporadic groups, in \emph{Finite
-Simple Groups: Thirty Years of the Atlas and Beyond}, Contemp.\ Math.\
-\textbf{694} (2017), 57--72; DOI 10.1090/conm/694/13974.
-
 \bibitem{Wilson2009}
 R.~A.~Wilson, \emph{The Finite Simple Groups}, Grad.\ Texts in Math.\ 251,
 Springer, London, 2009; DOI 10.1007/978-1-84800-988-2.
 
-\bibitem{ZhangShi2009}
-L.~Zhang, W.~Shi, Noncommuting graph characterization of some simple
-groups with connected prime graphs, \emph{Int.\ Electron.\ J.\ Algebra}
-\textbf{5} (2009), 169--181.
+\bibitem{Wilson2017}
+R.~A.~Wilson, Maximal subgroups of sporadic groups, in \emph{Finite
+Simple Groups: Thirty Years of the Atlas and Beyond}, Contemp.\ Math.\
+\textbf{694} (2017), 57--72; DOI 10.1090/conm/694/13974.
 
 \bibitem{Zenkov1997}
 V.~I.~Zenkov, Factorization of finite groups, in \emph{Abstracts of the
 International Algebra Conference in Memory of D.~K.~Faddeev},
 St.~Petersburg, 1997, p.~202 (in Russian); bibliographic data and the
 announcement are recorded in \cite[p.~212]{TT2010}.
+
+\bibitem{ZhangShi2009}
+L.~Zhang, W.~Shi, Noncommuting graph characterization of some simple
+groups with connected prime graphs, \emph{Int.\ Electron.\ J.\ Algebra}
+\textbf{5} (2009), 169--181.
 
 \bibitem{Zsigmondy}
 K.~Zsigmondy, Zur Theorie der Potenzreste, \emph{Monatsh.\ Math.\

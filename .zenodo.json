@@ -1,6 +1,6 @@
 {
   "upload_type": "software",
-  "publication_date": "2026-08-01",
+  "publication_date": "2026-08-03",
   "title": "Kourovka 10.34: proofs, GAP scripts and machine certificates",
   "creators": [
     {
@@ -20,7 +20,7 @@
     "Kourovka Notebook",
     "GAP"
   ],
-  "version": "1.0.6",
+  "version": "1.0.7",
   "language": "eng",
-  "notes": "<p>Code files are released under the MIT License. The paper and working notes are copyright Richie Sater; all rights reserved pending journal submission.</p>"
+  "notes": "<p>Code files are released under the MIT License. The paper is copyright Richie Sater; all rights reserved pending journal submission.</p>"
 }

@@ -1,5 +1,5 @@
 instances checked: 7892
 FAILURES: 0
-Zsygmondy exceptions hit: 7; unexpected: 0
+Zsigmondy exceptions hit: 7; unexpected: 0
 expected-exception tags encountered: ['2A:PSU(4,2)', 'A:D4(2)', 'A:L3(4)', 'A:L6(2)', 'B:D4tri(2)', 'B:L6(2)', 'B:S4(8)odd']
 SWEEP N DONE.|PASS

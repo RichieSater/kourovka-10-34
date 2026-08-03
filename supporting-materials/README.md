@@ -11,7 +11,7 @@ of the Kourovka Notebook (V. S. Monakhov, 1986) in the negative.
 
 This directory contains the paper source, every GAP script and log
 certificate backing its machine-verified claims, the arithmetic receipts for the uniform family proofs, pinned Lean and Rocq/MathComp projects,
-and a binary obligation ledger. Every proof-essential finite record now carries
+and machine-readable family, exception, and source manifests. Every proof-essential finite record now carries
 an exact subgroup-class identity rather than an order-only label.
 
 ## Repository layout
@@ -98,6 +98,30 @@ The generated auxiliary files remain ignored inside `paper/`.
   checks six exact upstream source SHA-256 pins used by the decomposition and
   explicit-coordinate bridge.
 - **Tectonic** (or a standard LaTeX installation) to build the paper.
+
+## Container reproduction
+
+From the repository root, build the pinned environment and run the full
+certificate reproduction with:
+
+```sh
+docker build -f supporting-materials/computations/environment/Dockerfile \
+  -t kourovka1034:1.0.7 .
+docker run --rm kourovka1034:1.0.7
+```
+
+The image build kernel-checks the Lean project, then removes disposable
+mathlib build products so that they do not add roughly 19 GB to the runtime
+image. The full run fetches the cache for the hash-locked mathlib revision
+afresh before its independent Lean rebuild, so that command requires network
+access.
+
+To run only the quick suite inside the same image:
+
+```sh
+docker run --rm --entrypoint sh kourovka1034:1.0.7 \
+  -c 'sh verify-quick.sh'
+```
 
 ## Quick verification
 
@@ -215,15 +239,14 @@ are proof evidence and must remain visible to Git.
 ## Citing this repository
 
 Citation metadata lives in [`CITATION.cff`](../CITATION.cff) at the
-repository root. Cite the versioned release (currently `v1.0.6`), not
+repository root. Cite the versioned release (currently `v1.0.7`), not
 the mutable default branch. The concept DOI covering all versions is
-[10.5281/zenodo.21709124](https://doi.org/10.5281/zenodo.21709124);
-the v1.0.6 version DOI is minted when the release is archived on
-Zenodo (the archived v1.0.5 version DOI is
-[10.5281/zenodo.21746829](https://doi.org/10.5281/zenodo.21746829)).
+[10.5281/zenodo.21709124](https://doi.org/10.5281/zenodo.21709124).
+Zenodo lists the immutable DOI for each archived release on that record's
+version history.
 
 ## License
 
 Code (`*.g`, `*.py`) is released under the MIT License in
-[`LICENSE`](LICENSE). The paper and notes are © Richie Sater; all rights
+[`LICENSE`](LICENSE). The paper is © Richie Sater; all rights
 reserved pending journal submission.

@@ -1,6 +1,6 @@
 # Source ledger
 
-Search/audit date: **2026-08-01**.  `CLOSED` means the exact fact listed in the
+Search/audit through: **2026-08-02**.  `CLOSED` means the exact fact listed in the
 row is pinned; it does not close broader claims in the same book or database.
 
 | ID | Claim | Exact source and pinpoint | State | Notes |

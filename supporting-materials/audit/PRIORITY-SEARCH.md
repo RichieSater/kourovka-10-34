@@ -1,6 +1,6 @@
 # Priority and prior-proof search
 
-Search date: **2026-08-01**.  This is an absence search, not a proof of
+Search dates: **2026-08-01 and 2026-08-02**.  This is an absence search, not a proof of
 priority.  Its defensible conclusion is limited to: **no published full proof
 was located in the sources searched below**.
 

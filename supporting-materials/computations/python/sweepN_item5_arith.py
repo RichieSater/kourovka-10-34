@@ -10,10 +10,10 @@
 #   e  = the claimed order of p modulo the obstruction prime.
 # T := primitive part of p^e - 1 (strip gcd with p^j - 1 over all proper j | e).
 # Every prime r | T has ord_r(p) = e.  The theorems' claims reduce to:
-#   T > 1 (Zsygmondy prime exists), gcd(T, S) > 1 (r | |S| for some such r),
+#   T > 1 (Zsigmondy prime exists), gcd(T, S) > 1 (r | |S| for some such r),
 #   gcd(T, Vi) = 1 for each superset, gcd(T, x) = 1.
 # Then d = v_r(|S|) - 0 - 0 >= 1 > 0 = v_r(x): Theorem D/D' fires.
-# T == 1 must occur exactly at the Zsygmondy exceptions listed in the proofs.
+# T == 1 must occur exactly at the Zsigmondy exceptions listed in the proofs.
 from math import gcd, isqrt
 import sys
 
@@ -80,7 +80,7 @@ def vp(n, r):
     return v
 
 fails, checked, exceptions = [], 0, []
-expected_A = {"2A:PSU(4,2)"}  # Theorem 4's sole Zsygmondy exception (machine base)
+expected_A = {"2A:PSU(4,2)"}  # Theorem 4's sole Zsigmondy exception (machine base)
 
 def check(tag, p, f, e, S, subs, x):
     global checked
@@ -207,7 +207,7 @@ for q, p, f in prime_powers(QB):
         q0 = 3**(f//2)
         check(f"B:G2({q})even", p, f, 6*f, g2o(q), [q**6*(q-1)**2, g2o(q0)], 2*f)
 
-# ---- explicit substitute primes at the Zsygmondy exceptions ----
+# ---- explicit substitute primes at the Zsigmondy exceptions ----
 # PSL(6,2), r = 31: case A pair (P2,P3) and case B pair (Q_{J1},Q_{J2})
 q = 2
 check_direct("X:L6(2)A", 31, glo(6, 2), [glo(2,2)*glo(4,2), glo(3,2)**2], 2, 0)
@@ -224,7 +224,7 @@ for t in fails:
     print("  FAIL", t)
 unexpected = [t for t in exceptions if t not in expected_A]
 missing_expected = sorted(expected_A - set(exceptions))
-print(f"Zsygmondy exceptions hit: {len(exceptions)}; unexpected: {len(unexpected)}")
+print(f"Zsigmondy exceptions hit: {len(exceptions)}; unexpected: {len(unexpected)}")
 for t in unexpected:
     print("  UNEXPECTED EXCEPTION", t)
 print("expected-exception tags encountered:", sorted(t for t in exceptions if t in expected_A))

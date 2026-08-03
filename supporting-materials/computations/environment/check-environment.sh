@@ -30,6 +30,16 @@ tokens=[
 ]
 missing=[x for x in tokens if x not in docker]
 if missing: raise SystemExit('HARD-FAIL: Docker/lock mismatch: '+repr(missing))
+container_tokens=[
+    f"ARG OCAML_VERSION={d['rocq']['ocaml_compiler']}",
+    f"ARG ROCQ_VERSION={d['rocq']['version']}.0",
+    f"ARG MATHCOMP_VERSION={d['mathcomp']['version']}",
+    '"rocq-core.${ROCQ_VERSION}"',
+    '"rocq-mathcomp-solvable.${MATHCOMP_VERSION}"',
+    'exec rocq compile "$@"',
+]
+missing=[x for x in container_tokens if x not in docker]
+if missing: raise SystemExit('HARD-FAIL: Rocq/MathComp Docker/lock mismatch: '+repr(missing))
 for token in [d['gap']['release'],d['gap_packages']['CTblLib']['version'],
               d['gap_packages']['AtlasRep']['version'],
               d['gap']['patched_lib_csetgrp_gi_sha256'],

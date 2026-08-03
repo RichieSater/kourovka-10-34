@@ -392,22 +392,20 @@ return;
 to continue in this GAP session (which will read in the file).
 
 
- at /private/tmp/claude-501/-Users-richiesater-dev-math/2dca8d17-daf2-460f-a12\
-a-a0b2d843bb43/scratchpad/gap-4.14.0/grp/perf.grp:51 called from
+ at <LOCAL_GAP_ROOT>/grp/perf.grp:51 called from
 PerfGrpLoad( sz[1] 
- ) at /private/tmp/claude-501/-Users-richiesater-dev-math/2dca8d17-daf2-460f-a\
-12a-a0b2d843bb43/scratchpad/gap-4.14.0/grp/perf.grp:466 called from
+ ) at <LOCAL_GAP_ROOT>/grp/perf.grp:466 called from
 PerfectGroup( IsPermGroup, n, i 
- ) at /Users/richiesater/dev/math/kourovka-10.34/sweepB_perfect.g:15 called from
+ ) at <LOCAL_PROJECT_ROOT>/sweepB_perfect.g:15 called from
 CALL_WITH_CATCH( function (  )
       local G, t;
       G := PerfectGroup( IsPermGroup, n, i );
       t := KourovkaTest( G );
       return t = true;
   end, [  ] 
- ) at /Users/richiesater/dev/math/kourovka-10.34/sweepB_perfect.g:18 called from
+ ) at <LOCAL_PROJECT_ROOT>/sweepB_perfect.g:18 called from
 <function "unknown">( <arguments> )
- called from read-eval loop at /Users/richiesater/dev/math/kourovka-10.34/sweepB_perfect.g:31
+ called from read-eval loop at <LOCAL_PROJECT_ROOT>/sweepB_perfect.g:31
 you can 'quit;' to quit to outer loop, or
 you can 'return;' to continue
 [1m[34m[0m[31m

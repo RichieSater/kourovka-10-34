@@ -12,6 +12,7 @@ ROOT=Path(os.environ.get('KOUROVKA_SUPPORTING_ROOT',Path(__file__).resolve().par
 REPO=Path(os.environ.get('KOUROVKA_REPO_ROOT',ROOT.parent)).resolve()
 MANIFEST=ROOT/'audit/EVIDENCE.sha256'
 BUILD_SUFFIXES={'.aux','.glob','.vo','.vos','.vok','.olean','.ilean'}
+NON_EVIDENCE_NAMES={'.DS_Store','.lia.cache'}
 
 def selected() -> list[Path]:
     fixed=[ROOT/'README.md',ROOT/'verify-quick.sh',ROOT/'verify-full.sh',
@@ -27,7 +28,8 @@ def selected() -> list[Path]:
             if (not p.is_file() or '/.lake/' in '/'+rel
                     or p.suffix in BUILD_SUFFIXES
                     or p.name.endswith('.olean.hash')
-                    or p.name == '.lia.cache'
+                    or p.name in NON_EVIDENCE_NAMES
+                    or p.name.endswith(('~','.swp','.swo'))
                     or rel.endswith(('.pyc','.regen','.new'))):
                 continue
             if rel == 'audit/EVIDENCE.sha256':

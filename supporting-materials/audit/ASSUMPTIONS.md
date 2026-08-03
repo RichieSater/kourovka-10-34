@@ -1,6 +1,6 @@
 # External assumptions and assurance boundary
 
-The claimed confidence target is **conditional**, not foundational.  The proof
+The verification boundary is **conditional**, not foundational.  The proof
 package does not re-prove:
 
 1. the classification of finite simple groups (CFSG);
