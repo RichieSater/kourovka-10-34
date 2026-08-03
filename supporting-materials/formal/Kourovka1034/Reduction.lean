@@ -12,8 +12,11 @@ import Mathlib.Order.Preorder.Finite
 This module checks the minimal-order and elementary finite-group part of
 Proposition 2.3: every nontrivial proper quotient is soluble, there is a unique
 minimal normal subgroup, that subgroup and the ambient group are nonsoluble,
-and its centralizer is trivial.  The direct-power description and transitive
-wreath-coordinate realization remain isolated in `RED-COORD`.
+and its centralizer is trivial.  The direct-power description is checked in
+the separate Rocq project, and `AmbientWreath.lean` checks the transitive
+wreath-coordinate realization from an explicit direct-power equivalence.  The
+strengthened Rocq explicit-product theorem and the finite-index reindexing in
+`DirectPower.lean` close the exact `RED-COORD` interface between them.
 -/
 
 namespace Kourovka1034
@@ -36,6 +39,12 @@ theorem unique_witnesses_equal
 /-- A nontrivial normal subgroup minimal by inclusion. -/
 def IsMinimalNormal {G : Type*} [Group G] (N : Subgroup G) : Prop :=
   N.Normal ∧ N ≠ ⊥ ∧ ∀ K : Subgroup G, K.Normal → K ≤ N → K = ⊥ ∨ K = N
+
+/-- A group with no proper nontrivial characteristic subgroup.  Mathlib does
+not currently bundle this standard finite-group notion. -/
+def IsCharacteristicallySimple (H : Type*) [Group H] : Prop :=
+  Nontrivial H ∧
+    ∀ K : Subgroup H, K.Characteristic → K = ⊥ ∨ K = ⊤
 
 theorem proper_quotient_solvable_of_least_counterexample
     {G : Type u} [Group G] [Finite G]
@@ -150,6 +159,30 @@ theorem minimalNormal_unique_of_no_solvable_normal
   have hMsolv : IsSolvable M := solvable_of_solvable_injective hf
   exact hnosolv M hM.2.1 hMsolv
 
+/-- Every minimal normal subgroup is characteristically simple.  This is the
+kernel-checked bridge from the ambient minimality statement to the standard
+finite characteristically-simple direct-power theorem. -/
+theorem minimalNormal_isCharacteristicallySimple
+    {G : Type*} [Group G]
+    {N : Subgroup G} (hN : IsMinimalNormal N) :
+    IsCharacteristicallySimple N := by
+  letI : N.Normal := hN.1
+  refine ⟨not_subsingleton_iff_nontrivial.mp ?_, ?_⟩
+  · intro hsub
+    exact hN.2.1 (Subgroup.eq_bot_of_subsingleton N)
+  · intro K hK
+    letI : K.Characteristic := hK
+    have hmap_normal : (K.map N.subtype).Normal := inferInstance
+    rcases hN.2.2 (K.map N.subtype) hmap_normal
+        (K.map_le_range N.subtype |>.trans_eq N.range_subtype) with hbot | htop
+    · left
+      rw [← Subgroup.map_subtype_inj, Subgroup.map_bot]
+      exact hbot
+    · right
+      rw [← Subgroup.map_subtype_inj]
+      rw [← MonoidHom.range_eq_map, N.range_subtype]
+      exact htop
+
 theorem centralizer_minimalNormal_eq_bot
     {G : Type*} [Group G] [Finite G]
     (hnosolv : ∀ (K : Subgroup G) [K.Normal], K ≠ ⊥ → ¬ IsSolvable K)
@@ -176,6 +209,42 @@ theorem centralizer_minimalNormal_eq_bot
   have : N = ⊥ := le_bot_iff.mp (hNK.trans_eq hKbot)
   exact hN.2.1 this
 
+/-- The kernel of the conjugation action on a normal subgroup is exactly its
+ambient centralizer.  Keeping this identity explicit prevents the later
+wreath realization from silently assuming faithfulness. -/
+theorem conjNormal_ker_eq_centralizer
+    {G : Type*} [Group G]
+    (N : Subgroup G) [N.Normal] :
+    (MulAut.conjNormal : G →* MulAut N).ker =
+      Subgroup.centralizer (N : Set G) := by
+  ext g
+  rw [MonoidHom.mem_ker, Subgroup.mem_centralizer_iff]
+  constructor
+  · intro hg n hn
+    have heq : MulAut.conjNormal g = 1 := hg
+    have ha := congrArg (fun f : MulAut N => f ⟨n, hn⟩) heq
+    have ha' : g * n * g⁻¹ = n := by
+      simpa using congrArg Subtype.val ha
+    have hgn : g * n = n * g := (mul_inv_eq_iff_eq_mul).mp ha'
+    exact hgn.symm
+  · intro hg
+    apply MulEquiv.ext
+    intro n
+    apply Subtype.ext
+    change g * (n : G) * g⁻¹ = (n : G)
+    rw [← hg (n : G) n.property]
+    simp
+
+/-- A self-centralizing normal subgroup gives a faithful conjugation
+homomorphism into its automorphism group. -/
+theorem conjNormal_injective_of_centralizer_eq_bot
+    {G : Type*} [Group G]
+    (N : Subgroup G) [N.Normal]
+    (hcentralizer : Subgroup.centralizer (N : Set G) = ⊥) :
+    Function.Injective (MulAut.conjNormal : G →* MulAut N) := by
+  apply (MonoidHom.ker_eq_bot_iff _).mp
+  rw [conjNormal_ker_eq_centralizer N, hcentralizer]
+
 /-- Exact minimal-counterexample core through uniqueness of the minimal normal
 subgroup.  The direct-power structure and wreath embedding are intentionally
 left to the separate coordinate-reduction theorem. -/
@@ -186,11 +255,13 @@ theorem minimal_counterexample_unique_minimal_normal
       PropertyP H → ¬ IsSolvable H → Nat.card G ≤ Nat.card H) :
     ∃ N : Subgroup G, ∃ hnormal : N.Normal,
       IsMinimalNormal N ∧
+      IsCharacteristicallySimple N ∧
       @IsSolvable (G ⧸ N)
         (@QuotientGroup.Quotient.group G _ N hnormal) ∧
       (∀ (K : Subgroup G) [K.Normal], K ≠ ⊥ → ¬ IsSolvable K) ∧
       ¬ IsSolvable N ∧
       Subgroup.centralizer (N : Set G) = ⊥ ∧
+      Function.Injective (@MulAut.conjNormal G _ N hnormal) ∧
       ∀ M : Subgroup G, IsMinimalNormal M → M = N := by
   have hnsub : ¬ Subsingleton G := by
     intro hsub
@@ -208,7 +279,12 @@ theorem minimal_counterexample_unique_minimal_normal
   have hunique : ∀ M : Subgroup G, IsMinimalNormal M → M = N := by
     intro M hM
     exact minimalNormal_unique_of_no_solvable_normal hquot hnosolv hM hN
-  refine ⟨N, hN.1, hN, hquot N hN.2.1, hnosolv,
-    hnosolv N hN.2.1, ?_, hunique⟩
-  exact centralizer_minimalNormal_eq_bot hnosolv hN hunique
+  have hcentralizer : Subgroup.centralizer (N : Set G) = ⊥ :=
+    centralizer_minimalNormal_eq_bot hnosolv hN hunique
+  have hfaithful :
+      Function.Injective (@MulAut.conjNormal G _ N hN.1) :=
+    conjNormal_injective_of_centralizer_eq_bot N hcentralizer
+  refine ⟨N, hN.1, hN, minimalNormal_isCharacteristicallySimple hN,
+    hquot N hN.2.1, hnosolv,
+    hnosolv N hN.2.1, hcentralizer, hfaithful, hunique⟩
 end Kourovka1034

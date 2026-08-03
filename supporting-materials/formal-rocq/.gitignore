@@ -1,0 +1,8 @@
+# Direct local Rocq compilation products.  The source, toolchain manifest,
+# verification script, and committed certificate remain visible to Git.
+*.vo
+*.vos
+*.vok
+*.glob
+.*.aux
+.lia.cache

@@ -1,8 +1,8 @@
 # Kept for tools that treat supporting-materials as their working root.
 # The repository-root .gitignore is authoritative.  Keep this file deliberately
-# narrow: audit reports, CSV/JSON manifests, clean-room logs, formal sources,
-# environment locks, and computation certificates are release evidence and
-# MUST remain visible to Git.
+# narrow: CSV/JSON manifests, source maps, formal sources, environment locks,
+# and computation certificates are release evidence and MUST remain visible to
+# Git.
 .DS_Store
 
 # The release PDF is built at repository root.  Only the duplicate paper-tree

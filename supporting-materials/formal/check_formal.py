@@ -11,6 +11,15 @@ cov=json.loads((ROOT/'FORMAL-COVERAGE.json').read_text())
 
 def die(msg): raise SystemExit('HARD-FAIL: '+msg)
 
+interface = subprocess.run(
+ ['python3', str(ROOT/'check_formal_interface.py')], cwd=ROOT,
+ text=True, capture_output=True,
+ env={**os.environ, 'KOUROVKA_FORMAL_ROOT': str(ROOT)},
+)
+if interface.returncode:
+ die('formal prover interface failed:\n'+interface.stdout+interface.stderr)
+print(interface.stdout.strip())
+
 def code_only(text: str) -> str:
  """Remove nested Lean comments, line comments, and string contents."""
  out=[]; i=0; depth=0; in_string=False
@@ -85,4 +94,7 @@ if not args.no_build:
  label='FORMAL BUILD/COVERAGE'
 else:
  label='FORMAL SOURCE/COVERAGE'
-print(f"{label}|PASS|closed_claims={len(cov['closed_manuscript_claims'])}|explicit_open={len(cov['explicitly_not_closed'])}")
+print(
+ f"{label}|PASS|closed_claims={len(cov['closed_manuscript_claims'])}|"
+ f"declared_outside_lean={len(cov['explicitly_not_closed'])}"
+)

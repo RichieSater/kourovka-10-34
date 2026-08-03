@@ -9,29 +9,38 @@ import argparse, hashlib, os, sys
 from pathlib import Path
 
 ROOT=Path(os.environ.get('KOUROVKA_SUPPORTING_ROOT',Path(__file__).resolve().parents[1])).resolve()
-REPO=ROOT.parent
+REPO=Path(os.environ.get('KOUROVKA_REPO_ROOT',ROOT.parent)).resolve()
 MANIFEST=ROOT/'audit/EVIDENCE.sha256'
+BUILD_SUFFIXES={'.aux','.glob','.vo','.vos','.vok','.olean','.ilean'}
 
 def selected() -> list[Path]:
     fixed=[ROOT/'README.md',ROOT/'verify-quick.sh',ROOT/'verify-full.sh',
-           ROOT/'submission-gate.sh',ROOT/'paper/kourovka1034.tex',
-           REPO/'AGENTS.md',REPO/'CLAUDE.md',REPO/'.gitignore',
-           REPO/'.dockerignore']
-    trees=['audit','formal','paper/submission','computations/gap','computations/python',
+           ROOT/'paper/kourovka1034.tex',
+           REPO/'.gitignore',REPO/'.dockerignore']
+    trees=['audit','formal','formal-rocq','paper/submission','computations/gap','computations/python',
            'computations/independent','computations/mutation-tests',
            'computations/environment','computations/data','computations/certificates']
     out=set(p for p in fixed if p.is_file())
     for tree in trees:
         for p in (ROOT/tree).rglob('*'):
             rel=p.relative_to(ROOT).as_posix()
-            if not p.is_file() or '/.lake/' in '/'+rel or rel.endswith(('.pyc','.regen','.new')):
+            if (not p.is_file() or '/.lake/' in '/'+rel
+                    or p.suffix in BUILD_SUFFIXES
+                    or p.name.endswith('.olean.hash')
+                    or p.name == '.lia.cache'
+                    or rel.endswith(('.pyc','.regen','.new'))):
                 continue
-            if rel in {'audit/EVIDENCE.sha256','audit/SUBMISSION-REPORT.md'}:
+            if rel == 'audit/EVIDENCE.sha256':
                 continue
             out.add(p)
     return sorted(out,key=lambda p:display_path(p).encode())
 
 def display_path(p:Path)->str:
+    # In mutation snapshots the operational repository root is deliberately a
+    # child directory of the synthetic supporting root.  Preserve the release
+    # manifest's canonical `../ROOT-FILE` spelling in both layouts.
+    if p.parent == REPO:
+        return '../'+p.name
     try: return p.relative_to(ROOT).as_posix()
     except ValueError: return '../'+p.relative_to(REPO).as_posix()
 

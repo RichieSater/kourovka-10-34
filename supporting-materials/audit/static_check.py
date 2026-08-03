@@ -15,9 +15,11 @@ PYTHON_ESSENTIAL=[
 'computations/python/verify_coverage_big.py','computations/independent/family_arithmetic_symbolic.py',
 'computations/independent/verify_family_manifest.py','computations/independent/verify_finite_witnesses.py',
 'computations/independent/verify_lie_sources.py','computations/independent/verify_maximality_sources.py',
+'computations/independent/verify_order_formula_sources.py',
+'computations/independent/verify_zsigmondy_sources.py',
+'computations/independent/verify_boundary_sources.py',
 'computations/independent/verify_logs.py','computations/independent/verify_manuscript.py',
-'audit/check_dependency_dag.py','audit/check_universal_claims.py',
-'audit/update_reports.py']
+'formal/check_formal_interface.py']
 
 def die(m): raise SystemExit('HARD-FAIL: '+m)
 for name in ESSENTIAL+LIBRARIES:
@@ -57,6 +59,34 @@ for token in ['PROOF_RNG_SEED := 1034','Reset(GlobalMersenneTwister,PROOF_RNG_SE
 for f in (ROOT/'formal').glob('Kourovka1034/**/*.lean'):
     text=f.read_text()
     if re.search(r'^\s*(sorry|admit|axiom)\b',text,re.M): die(f'{f}: placeholder/custom axiom')
+for required in [
+    ROOT/'formal/Kourovka1034/DirectPower.lean',
+    ROOT/'formal/Kourovka1034/AmbientWreath.lean',
+    ROOT/'formal/FORMAL-INTERFACE.json',
+    ROOT/'formal/check_formal_interface.py',
+]:
+    if not required.is_file(): die(f'missing formal coordinate source: {required.name}')
+ambient=(ROOT/'formal/Kourovka1034/AmbientWreath.lean').read_text()
+for token in ['ambientWreathHom_injective','ambientWreath_transitive',
+              'ambientWreath_base_iff','ambient_coordinate_realization_and_bound']:
+    if token not in ambient: die('formal ambient-wreath interface missing: '+token)
+direct=(ROOT/'formal/Kourovka1034/DirectPower.lean').read_text()
+for token in ['reindexPower','reindexPowerFin','explicitPowerEquivFin_nonempty',
+              'explicitPowerEquivFin_with_base','Finite.equivFin I']:
+    if token not in direct: die('formal finite-index reindexing missing: '+token)
+rocq_source=(ROOT/'formal-rocq/CharacteristicallySimple.v').read_text()
+if re.search(r'(^|[^A-Za-z])(Admitted|admit|Axiom)([^A-Za-z]|$)',rocq_source,re.I):
+    die('formal-rocq/CharacteristicallySimple.v: placeholder/custom axiom')
+for token in ['internal_bigdprod_isog_power',
+              'nonsolvable_charsimple_explicit_power',
+              '~~ abelian H',
+              'G \\isog setXn (fun _ : {f | f \\in I} => H)']:
+    if token not in rocq_source: die('Rocq explicit-power bridge missing: '+token)
+rocq_verify=(ROOT/'formal-rocq/verify.sh').read_text()
+for token in ['coqc --print-version','maximal.v','Closed under the global context',
+              '70bcd07cc9e1826525def1c65fdaab2236094dd9de82d2fad5f2bbc3e00f5ffe',
+              '41f31d99d6b07f4dcafcdb528cd369fc71f6aed1c5273546e8b6145263517d63']:
+    if token not in rocq_verify: die('Rocq verification pin missing: '+token)
 for extra in (ROOT/'computations/certificates').glob('*.regen'):
     die(f'stale regeneration file: {extra.name}')
 for extra in (ROOT/'computations/certificates').glob('*.new'):

@@ -3,7 +3,7 @@
 
 This validates inventory topology and exception routing only.  It does not
 purport to prove CFSG or the family theorems; those remain separate cited or
-formal obligations in audit/OBLIGATIONS.csv.
+formal coverage manifests.
 """
 from __future__ import annotations
 import json, os, re, sys
@@ -45,11 +45,11 @@ EXPECTED_ROUTES = {
 }
 EXPECTED_EXCEPTIONS = {
     "alternating": {"MAX-AN-LE14"},
-    "psl2": {"SIMP-PSL2-2-3", "MAX-PSL2-LE11"},
+    "psl2": {"SIMP-PSL2-2-3", "MAX-PSL2-LE11", "Z-PSL2-8"},
     "psl_rank_ge3": {"Z-PSL3-4", "Z-PSL6-2", "MAX-PSL3-LE4"},
     "psu3": {"SIMP-PSU3-2", "MAX-PSU3-SMALL"},
-    "psu_rank_ge4": {"Z-PSU4-2"},
-    "symplectic": {"SIMP-SP4-2", "Z-SP4-8"},
+    "psu_rank_ge4": {"Z-PSU4-2", "ISO-PSU4-2"},
+    "symplectic": {"SIMP-SP4-2", "Z-SP6-2", "Z-SP4-8"},
     "odd_orthogonal": {"ISO-BC-EVEN"},
     "plus_orthogonal": {"Z-D4-2"},
     "minus_orthogonal": {"ISO-2D-LOWRANK"},

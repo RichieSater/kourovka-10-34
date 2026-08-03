@@ -1,1 +1,8 @@
+# Generated Lean/Lake build products only.  All `.lean` sources, including
+# DirectPower.lean and AmbientWreath.lean, plus toolchain/coverage manifests,
+# FORMAL-INTERFACE.json, and check_formal_interface.py, are proof evidence and
+# must stay visible to Git.
 .lake/
+*.olean
+*.ilean
+*.olean.hash

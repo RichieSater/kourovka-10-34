@@ -31,6 +31,29 @@ required=[
  ']{GLS1}','\\cite{LPS1990}','$7892$ parameter instances',
  '\\cite[Lemma~2.10, pp.~173--174]{ZhangShi2009}',
  '\\cite[p.~432]{LucchiniMorini2002}',
+ '\\cite[Tables~5--6, p.~xvi]{ATLAS}',
+ '\\cite[\\S10, pp.~220--221, and summary table, p.~239]{Carter1965}',
+ '\\cite[Thm.~4.5(i)--(ii), p.~166]{Wilson2009}',
+ '\\cite[specialized theorem, p.~283]{Zsigmondy}',
+ '\\cite[Thm.~2.2, p.~2]{Jones2007}',
+ '\\cite[Thm.~2.2.7(a)]{GLS3}',
+ '\\cite[Thm.~5.3, p.~61]{CameronNotes}',
+ 'certificate recorded as \\texttt{Sp43}, of order $25920$',
+ 'exact $34$-branch arithmetic manifest',
+ 'separate Rocq/MathComp kernel check',
+ 'internal direct product of',
+ 'The strengthened Rocq theorem also constructs an',
+ 'explicit external coordinate product',
+ 'producing exactly the group equivalence $N\\cong S^k$',
+ 'constructs the injective homomorphism',
+ 'from minimal normality by an orbit-support argument',
+ 'fail-closed formal',
+ 'No unproved group-theoretic lemma',
+ 'reindexing any such nonempty finite coordinate type',
+ 'explicit trusted interface',
+ 'OpenAI Codex',
+ 'twelve branch occurrences',
+ 'seven distinct Zsigmondy exception records',
 ]
 for token in required:
  if token not in TEX: die('required manuscript token missing: '+token)
@@ -66,12 +89,26 @@ if len(noncomment_lines(ROOT/'computations/data/simple_groups_5e5_to_1.05e7.txt'
 arith=(ROOT/'computations/certificates/sweepN_item5_arith.log').read_text()
 if 'instances checked: 7892' not in arith or 'FAILURES: 0' not in arith:
  die('7892-instance receipt does not match manuscript')
-for name,count in [('LIE-SOURCE-MAP.csv',7),('MAXIMALITY-SOURCE-MAP.csv',10),
-                   ('SPORADIC-SOURCE-MAP.csv',42)]:
+source_maps=[
+ ('LIE-SOURCE-MAP.csv',7),('MAXIMALITY-SOURCE-MAP.csv',10),
+ ('SPORADIC-SOURCE-MAP.csv',42),('ORDER-FORMULA-SOURCE-MAP.csv',23),
+ ('ZSIGMONDY-INVOCATIONS.csv',31),('BOUNDARY-SOURCE-MAP.csv',12),
+]
+source_rows=0
+for name,count in source_maps:
  with (ROOT/'audit'/name).open(newline='') as f: actual=sum(1 for _ in csv.DictReader(f))
  if actual != count: die(f'{name}: row count drift: {actual} != {count}')
+ source_rows += actual
 exceptions=json.loads((ROOT/'audit/EXCEPTION-MANIFEST.json').read_text())['exceptions']
-if len(exceptions) != 17: die('exception-manifest count drift')
+if len(exceptions) != 20: die('exception-manifest count drift')
+arithmetic_manifest=json.loads((ROOT/'audit/FAMILY-ARITHMETIC-MANIFEST.json').read_text())
+if arithmetic_manifest.get('expected_branch_count') != 34 or len(arithmetic_manifest.get('branches',[])) != 34:
+ die('family-arithmetic manifest branch count drift')
+generated_arithmetic=json.loads((ROOT/'audit/ARITHMETIC-EXCEPTIONS.generated.json').read_text())
+if len(generated_arithmetic.get('exception_cases',[])) != 12:
+ die('generated arithmetic exception-occurrence count drift')
+if len(generated_arithmetic.get('zsigmondy_exception_ids',[])) != 7:
+ die('generated arithmetic distinct Zsigmondy-exception count drift')
 
 gap_essential=[
  'sweepJ_divisibility','sweepJ2_tail','sweepJ3_bigrange','sweepJ4_patch',
@@ -91,11 +128,15 @@ for base in gap_essential:
 python_checkers=[
  'computations/python/sweepN_item5_arith.py',
  'computations/python/verify_coverage.py','computations/python/verify_coverage_big.py',
+ 'computations/independent/family_arithmetic_universal.py',
  'computations/independent/family_arithmetic_symbolic.py',
  'computations/independent/verify_family_manifest.py',
  'computations/independent/verify_finite_witnesses.py',
  'computations/independent/verify_lie_sources.py',
  'computations/independent/verify_maximality_sources.py',
+ 'computations/independent/verify_order_formula_sources.py',
+ 'computations/independent/verify_zsigmondy_sources.py',
+ 'computations/independent/verify_boundary_sources.py',
  'computations/independent/verify_logs.py',
  'computations/independent/verify_manuscript.py',
 ]
@@ -103,5 +144,8 @@ quick=(ROOT/'verify-quick.sh').read_text()
 for script in python_checkers:
  if not (ROOT/script).is_file(): die('missing proof checker '+script)
  if script not in full or script not in quick: die('checker omitted from quick/full gate: '+script)
+for gate_text,gate_name in [(quick,'quick'),(full,'full')]:
+ if 'formal-rocq/verify.sh' not in gate_text:
+  die(f'Rocq/MathComp build omitted from {gate_name} gate')
 
-print(f'MANUSCRIPT/MANIFEST CONSISTENCY|PASS|families={len(ids)}|required_tokens={len(required)}|source_rows=59|exceptions={len(exceptions)}|gap_sweeps={len(gap_essential)}|checkers={len(python_checkers)}')
+print(f'MANUSCRIPT/MANIFEST CONSISTENCY|PASS|families={len(ids)}|required_tokens={len(required)}|source_rows={source_rows}|exceptions={len(exceptions)}|gap_sweeps={len(gap_essential)}|checkers={len(python_checkers)}')

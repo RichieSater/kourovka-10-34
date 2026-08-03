@@ -11,10 +11,17 @@ SCRIPTS={
  'logs': ROOT/'computations/independent/verify_logs.py',
  'family': ROOT/'computations/independent/verify_family_manifest.py',
  'coverage': ROOT/'computations/python/verify_coverage.py',
- 'audit': ROOT/'audit/check_audit.py',
+ 'evidence': ROOT/'audit/evidence_hashes.py',
  'maximality': ROOT/'computations/independent/verify_maximality_sources.py',
+ 'order_sources': ROOT/'computations/independent/verify_order_formula_sources.py',
+ 'zsigmondy_sources': ROOT/'computations/independent/verify_zsigmondy_sources.py',
+ 'boundary_sources': ROOT/'computations/independent/verify_boundary_sources.py',
  'formal': ROOT/'formal/check_formal.py',
+ 'static': ROOT/'audit/static_check.py',
+ 'rocq': ROOT/'formal-rocq/verify.sh',
  'arith': ROOT/'computations/python/sweepN_item5_arith.py',
+ 'universal_arith': ROOT/'computations/independent/family_arithmetic_universal.py',
+ 'symbolic_arith': ROOT/'computations/independent/family_arithmetic_symbolic.py',
 }
 
 def snapshot(dst: Path) -> None:
@@ -26,17 +33,19 @@ def snapshot(dst: Path) -> None:
     shutil.copytree(ROOT/'computations',dst/'computations',
                     ignore=shutil.ignore_patterns('__pycache__','*.regen'))
     shutil.copytree(ROOT/'audit',dst/'audit')
-    for name in ['README.md','verify-quick.sh','verify-full.sh','submission-gate.sh']:
+    for name in ['README.md','verify-quick.sh','verify-full.sh']:
         shutil.copy2(ROOT/name,dst/name)
     shutil.copy2(ROOT/'.gitignore',dst/'.gitignore')
     (dst/'paper').mkdir()
     shutil.copy2(ROOT/'paper/kourovka1034.tex',dst/'paper/kourovka1034.tex')
+    shutil.copytree(ROOT/'paper/submission',dst/'paper/submission')
     shutil.copytree(ROOT/'formal',dst/'formal',ignore=shutil.ignore_patterns('.lake'))
-    # check_audit also validates repository-root operational instructions.
+    shutil.copytree(ROOT/'formal-rocq',dst/'formal-rocq',
+                    ignore=shutil.ignore_patterns('*.vo','*.glob','.*.aux'))
     # Give every snapshot its own non-Git operational root so mutations cannot
     # leak between otherwise isolated cases.
     operational=dst/'_repo'; operational.mkdir()
-    for name in ['AGENTS.md','CLAUDE.md','.gitignore']:
+    for name in ['.gitignore','.dockerignore']:
         shutil.copy2(ROOT.parent/name,operational/name)
 
 def run(which: str, root: Path) -> subprocess.CompletedProcess:
@@ -44,11 +53,26 @@ def run(which: str, root: Path) -> subprocess.CompletedProcess:
     env['KOUROVKA_FORMAL_ROOT']=str(root/'formal')
     env['KOUROVKA_REPO_ROOT']=str(root/'_repo')
     # Most checkers accept an explicit evidence-root environment variable.  The
-    # self-contained arithmetic program does not read repository files, so its
-    # mutated snapshot itself must be executed.
-    script=(root/'computations/python/sweepN_item5_arith.py') if which=='arith' else SCRIPTS[which]
+    # Self-contained arithmetic programs do not read repository files, so the
+    # mutated snapshot itself must be executed.  Running the repository copy
+    # here would make source mutations vacuous while still reporting a clean
+    # baseline.
+    if which == 'arith':
+        script=root/'computations/python/sweepN_item5_arith.py'
+    elif which == 'universal_arith':
+        script=root/'computations/independent/family_arithmetic_universal.py'
+    elif which == 'symbolic_arith':
+        script=root/'computations/independent/family_arithmetic_symbolic.py'
+    elif which == 'rocq':
+        return subprocess.run(
+            ['sh',str(root/'formal-rocq/verify.sh')],env=env,text=True,
+            stdout=subprocess.PIPE,stderr=subprocess.STDOUT,
+        )
+    else:
+        script=SCRIPTS[which]
     cmd=[PY,str(script)]
     if which=='audit': cmd += ['--profile','lint']
+    if which=='evidence': cmd += ['--verify']
     if which=='formal': cmd += ['--no-build']
     return subprocess.run(cmd,env=env,text=True,stdout=subprocess.PIPE,stderr=subprocess.STDOUT)
 
@@ -61,11 +85,33 @@ def replace_first(path: Path, pattern: str, repl) -> None:
 def main() -> int:
     with tempfile.TemporaryDirectory(prefix='kourovka-mutations-') as t:
         base=Path(t)/'base'; snapshot(base)
-        for checker in ['coverage','family','finite','logs','audit','maximality','formal','arith']:
+        for checker in [
+            'coverage','family','finite','logs','evidence','maximality',
+            'order_sources','zsigmondy_sources','boundary_sources','formal','static','rocq','arith',
+            'universal_arith','symbolic_arith',
+        ]:
             r=run(checker,base)
             if r.returncode:
                 print(r.stdout)
                 raise SystemExit(f'HARD-FAIL: baseline {checker} checker fails')
+
+        # Generated formal build products are intentionally ignored by both
+        # Git and the global evidence closure.  Their appearance after a local
+        # kernel build must not make a clean evidence manifest drift.
+        build_products = [
+            base/'formal-rocq/Injected.vo',
+            base/'formal-rocq/.Injected.aux',
+            base/'formal/Injected.olean',
+        ]
+        for artifact in build_products:
+            artifact.write_bytes(b'generated-build-product\n')
+        r = run('evidence', base)
+        if r.returncode:
+            print(r.stdout)
+            raise SystemExit('HARD-FAIL: generated build product entered evidence closure')
+        for artifact in build_products:
+            artifact.unlink()
+        print('BUILD PRODUCT EVIDENCE EXCLUSION|PASS|artifacts=3')
 
         tests=[]
         def case(name, checker, mutate): tests.append((name,checker,mutate))
@@ -107,16 +153,46 @@ def main() -> int:
         def package_drift(r):
             p=r/'computations/certificates/sweepM_sporadic.log'; replace_first(p,'ctbllib=1.3.11','ctbllib=1.3.10')
         case('change package version','logs',package_drift)
-        def add_todo(r):
-            p=r/'audit/OBLIGATIONS.csv'; p.write_text(p.read_text()+'TODO\n')
-        case('leave TODO in audit matrix','audit',add_todo)
         def drift_hashed_evidence(r):
             p=r/'paper/kourovka1034.tex'; p.write_text(p.read_text()+'\n% injected evidence drift\n')
-        case('alter obligation-bound evidence','audit',drift_hashed_evidence)
+        case('alter hash-bound manuscript evidence','evidence',drift_hashed_evidence)
         def source_pinpoint_drift(r):
             p=r/'audit/MAXIMALITY-SOURCE-MAP.csv'
             replace_first(p,r'Theorem C, pp\. 33--34','Theorem C, p. 999')
         case('change maximality source pinpoint','maximality',source_pinpoint_drift)
+        def remove_order_source_row(r):
+            p=r/'audit/ORDER-FORMULA-SOURCE-MAP.csv'
+            lines=p.read_text().splitlines(); lines.pop(1)
+            p.write_text('\n'.join(lines)+'\n')
+        case('remove order-formula source row','order_sources',remove_order_source_row)
+        def order_semantic_drift(r):
+            p=r/'audit/ORDER-FORMULA-SOURCE-MAP.csv'
+            replace_first(p, r',n>=15,', ',n>=16,')
+        case('alter order-formula parameter range','order_sources',order_semantic_drift)
+        def zsigmondy_hash_drift(r):
+            p=r/'audit/ZSIGMONDY-INVOCATIONS.csv'
+            replace_first(
+                p,
+                r'45b2aea11e6e92711ab9b744b368dcb8ae0e84e69e5267c8515f61072faa9132',
+                '05b2aea11e6e92711ab9b744b368dcb8ae0e84e69e5267c8515f61072faa9132',
+            )
+        case('alter Zsigmondy source hash','zsigmondy_sources',zsigmondy_hash_drift)
+        def zsigmondy_exponent_drift(r):
+            p=r/'audit/ZSIGMONDY-INVOCATIONS.csv'
+            replace_first(p, r',2,2f,f>=3,6,', ',2,3f,f>=3,6,')
+        case('alter Zsigmondy invocation exponent','zsigmondy_sources',zsigmondy_exponent_drift)
+        def boundary_pinpoint_drift(r):
+            p=r/'audit/BOUNDARY-SOURCE-MAP.csv'
+            replace_first(p,r'Theorem 2\.2\.7\(a\)',r'Theorem 2.2.7(b)')
+        case('alter boundary source pinpoint','boundary_sources',boundary_pinpoint_drift)
+        def boundary_route_drift(r):
+            p=r/'audit/BOUNDARY-SOURCE-MAP.csv'
+            replace_first(
+                p,
+                r'BND-PSL2,"PSL\(2,q\) lower boundary",psl2,',
+                'BND-PSL2,"PSL(2,q) lower boundary",psu3,',
+            )
+        case('misroute boundary family','boundary_sources',boundary_route_drift)
         def add_sorry(r):
             p=r/'formal/Kourovka1034/Reduction.lean'
             p.write_text(p.read_text()+'\nexample : True := by sorry\n')
@@ -125,58 +201,102 @@ def main() -> int:
             p=r/'formal/FORMAL-COVERAGE.json'; d=json.loads(p.read_text())
             d['mathlib_commit']='0'*40; p.write_text(json.dumps(d))
         case('change formal library lock','formal',formal_lock_drift)
+        def remove_wreath_coverage(r):
+            p=r/'formal/FORMAL-COVERAGE.json'; d=json.loads(p.read_text())
+            d['closed_manuscript_claims']=[
+                x for x in d['closed_manuscript_claims']
+                if x['claim_id']!='RED-WREATH-INTERFACE'
+            ]
+            p.write_text(json.dumps(d))
+        case('remove ambient-wreath formal coverage','formal',remove_wreath_coverage)
+        def formal_interface_signature_drift(r):
+            p=r/'formal/FORMAL-INTERFACE.json'; d=json.loads(p.read_text())
+            d['producer']['positive_count']='0 <= #|I|'; p.write_text(json.dumps(d))
+        case('alter formal-interface producer signature','formal',formal_interface_signature_drift)
+        def formal_interface_reindex_base_drift(r):
+            p=r/'formal/FORMAL-INTERFACE.json'; d=json.loads(p.read_text())
+            d['reindex']['output']='Nonempty (N ≃* (Fin (Nat.card I) → S))'
+            p.write_text(json.dumps(d))
+        case('remove formal-interface base-coordinate output','formal',formal_interface_reindex_base_drift)
+        def formal_interface_correspondence_drift(r):
+            p=r/'formal/FORMAL-INTERFACE.json'; d=json.loads(p.read_text())
+            d['definition_correspondence'][1]['lean']='List H'
+            p.write_text(json.dumps(d))
+        case('alter cross-kernel definition correspondence','formal',formal_interface_correspondence_drift)
+        def remove_coord_producer_coverage(r):
+            p=r/'formal-rocq/FORMAL-COVERAGE.json'; d=json.loads(p.read_text())
+            d['closed_manuscript_claims']=[
+                x for x in d['closed_manuscript_claims'] if x['claim_id']!='RED-COORD'
+            ]
+            p.write_text(json.dumps(d))
+        case('remove RED-COORD producer coverage','formal',remove_coord_producer_coverage)
+        def delete_formal_interface_checker(r):
+            (r/'formal/check_formal_interface.py').unlink()
+        case('delete formal-interface checker','formal',delete_formal_interface_checker)
+        def delete_wreath_source(r):
+            (r/'formal/Kourovka1034/AmbientWreath.lean').unlink()
+        case('delete ambient-wreath formal source','formal',delete_wreath_source)
+        def rocq_source_pin_drift(r):
+            p=r/'formal-rocq/TOOLCHAIN.json'; d=json.loads(p.read_text())
+            d['mathcomp_release_commit']='0'*40; p.write_text(json.dumps(d))
+        case('change Rocq/MathComp source pin','rocq',rocq_source_pin_drift)
+        def rocq_bridge_source_pin_drift(r):
+            p=r/'formal-rocq/TOOLCHAIN.json'; d=json.loads(p.read_text())
+            d['mathcomp_source_sha256']['finite_group/morphism.v']='0'*64
+            p.write_text(json.dumps(d))
+        case('change Rocq bridge-source hash','rocq',rocq_bridge_source_pin_drift)
+        def add_rocq_admitted(r):
+            p=r/'formal-rocq/CharacteristicallySimple.v'
+            p.write_text(p.read_text()+'\nLemma injected_escape : True. Admitted.\n')
+        case('insert Rocq Admitted escape','rocq',add_rocq_admitted)
+        def remove_rocq_from_evidence(r):
+            (r/'formal-rocq/CharacteristicallySimple.v').unlink()
+        case('remove Rocq source from global evidence closure','evidence',remove_rocq_from_evidence)
         def exceptional_gap_drift(r):
             p=r/'computations/python/sweepN_item5_arith.py'
             replace_first(p,
                           r'check_direct\("X:S4\(8\)", 3, spo\(4, 8\), \[8\*\*4\*49, szo\(8\)\], 6, 1\)',
                           'check_direct("X:S4(8)", 3, spo(4, 8), [8**4*49, szo(8)], 6, 4)')
         case('alter exceptional valuation gap','arith',exceptional_gap_drift)
-        def cleanroom_schema_drift(r):
-            p=r/'audit/CLEANROOM-RECEIPTS.json'; d=json.loads(p.read_text())
-            d['required_distinct_machines']=1; p.write_text(json.dumps(d))
-        case('weaken clean-room machine policy','audit',cleanroom_schema_drift)
-        def remove_burden_row(r):
-            p=r/'audit/BURDEN-OF-PROOF-MATRIX.csv'
-            lines=p.read_text().splitlines(); lines.pop(1)
-            p.write_text('\n'.join(lines)+'\n')
-        case('remove granular burden row','audit',remove_burden_row)
-        def weaken_submission_profile(r):
-            p=r/'audit/BURDEN-OF-PROOF-MATRIX.csv'
-            replace_first(p,r'(?m)^(IMM-01,[^\n]*?),YES,YES,NO,',r'\1,NO,YES,NO,')
-        case('weaken burden profile flag','audit',weaken_submission_profile)
-        def forge_derived_status(r):
-            p=r/'audit/BURDEN-OF-PROOF-MATRIX.csv'
-            replace_first(p,r'(?m)^(IMM-01,[^\n]*?),PASS,',r'\1,OPEN,')
-        case('forge granular burden status','audit',forge_derived_status)
-        def hide_proof_logs(r):
-            p=r/'_repo/.gitignore'; p.write_text(p.read_text()+'\n*.log\n')
-        case('hide proof logs in gitignore','audit',hide_proof_logs)
-        def hide_nested_audit_data(r):
-            p=r/'.gitignore'; p.write_text(p.read_text()+'\naudit/\n')
-        case('hide proof data in nested gitignore','audit',hide_nested_audit_data)
-        def break_writer_gate_guide(r):
-            p=r/'audit/WRITER-GATE-README.md'
-            text=p.read_text()
-            if 'submission-gate.sh confidence99' not in text:
-                raise RuntimeError('writer guide gate command absent')
-            p.write_text(text.replace(
-                'submission-gate.sh confidence99',
-                'submission-gate.sh confidence98',
-            ))
-        case('remove writer guide gate command','audit',break_writer_gate_guide)
-        def break_dependency_dag(r):
-            p=r/'audit/DEPENDENCY-DAG.json'; d=json.loads(p.read_text())
-            d['nodes'][0]['hypotheses']=[]; p.write_text(json.dumps(d))
-        case('erase dependency-DAG hypotheses','audit',break_dependency_dag)
-        def remove_universal_occurrence(r):
-            p=r/'audit/UNIVERSAL-CLAIMS.csv'
-            lines=p.read_text().splitlines(); lines.pop(1)
-            p.write_text('\n'.join(lines)+'\n')
-        case('remove universal-claim audit row','audit',remove_universal_occurrence)
-        def stale_submission_report(r):
-            p=r/'audit/SUBMISSION-REPORT.md'; p.write_text(p.read_text()+'stale injected count\n')
-        case('stale generated submission report','audit',stale_submission_report)
-
+        def arithmetic_branch_exponent_drift(r):
+            p=r/'audit/FAMILY-ARITHMETIC-MANIFEST.json'; d=json.loads(p.read_text())
+            branch=next(x for x in d['branches'] if x['id']=='AR-PSL2-EVEN')
+            branch['primitive_exponent']=[0,3]; p.write_text(json.dumps(d))
+        case('alter universal arithmetic branch exponent','universal_arith',arithmetic_branch_exponent_drift)
+        def remove_arithmetic_branch(r):
+            p=r/'audit/FAMILY-ARITHMETIC-MANIFEST.json'; d=json.loads(p.read_text())
+            d['branches'].pop(); p.write_text(json.dumps(d))
+        case('remove universal arithmetic branch','universal_arith',remove_arithmetic_branch)
+        def arithmetic_exception_view_drift(r):
+            p=r/'audit/ARITHMETIC-EXCEPTIONS.generated.json'; d=json.loads(p.read_text())
+            d['exception_cases'].pop(); p.write_text(json.dumps(d))
+        case('alter generated arithmetic exception view','universal_arith',arithmetic_exception_view_drift)
+        def arithmetic_finite_anchor_drift(r):
+            p=r/'audit/FAMILY-ARITHMETIC-MANIFEST.json'; d=json.loads(p.read_text())
+            d['finite_exception_anchors'][0]['expected_xcases'] += 1
+            p.write_text(json.dumps(d))
+        case('alter finite arithmetic anchor count','universal_arith',arithmetic_finite_anchor_drift)
+        def arithmetic_substitute_gap_drift(r):
+            p=r/'audit/FAMILY-ARITHMETIC-MANIFEST.json'; d=json.loads(p.read_text())
+            d['substitute_certificates'][0]['required_gap'] += 1
+            p.write_text(json.dumps(d))
+        case('alter universal substitute valuation gap','universal_arith',arithmetic_substitute_gap_drift)
+        def arithmetic_formal_mirror_drift(r):
+            p=r/'formal/Kourovka1034/FamilyArithmetic.lean'
+            replace_first(
+                p,
+                r'(def branchBounds[\s\S]*?⟨\.psl2Even, ⟨0, )1(⟩, ⟨0, 2⟩, 0⟩)',
+                r'\g<1>0\g<2>',
+            )
+        case('alter Lean arithmetic mirror bound','universal_arith',arithmetic_formal_mirror_drift)
+        def arithmetic_independent_mirror_drift(r):
+            p=r/'computations/independent/family_arithmetic_symbolic.py'
+            replace_first(p, r'\(\(\), \(2,\)\), "factor", 1', '((), (1,)), "factor", 1')
+        case('diverge independent arithmetic model','universal_arith',arithmetic_independent_mirror_drift)
+        def psl2_8_gap_drift(r):
+            p=r/'computations/independent/family_arithmetic_symbolic.py'
+            replace_first(p, r'assert 2 > vp\(3, 3\) == 1', 'assert 1 > vp(3, 3) == 1')
+        case('alter PSL(2,8) substitute-prime gap','symbolic_arith',psl2_8_gap_drift)
         for index,(name,checker,mutate) in enumerate(tests,1):
             d=Path(t)/f'm{index}'; shutil.copytree(base,d)
             mutate(d); result=run(checker,d)

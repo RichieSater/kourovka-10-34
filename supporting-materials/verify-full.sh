@@ -60,9 +60,13 @@ for item in \
   "computations/python/verify_coverage_big.py:computations/certificates/verify_coverage_big.log" \
   "computations/independent/verify_finite_witnesses.py:computations/certificates/verify_finite_witnesses.log" \
   "computations/independent/verify_family_manifest.py:computations/certificates/verify_family_manifest.log" \
+  "computations/independent/family_arithmetic_universal.py:computations/certificates/family_arithmetic_universal.log" \
   "computations/independent/family_arithmetic_symbolic.py:computations/certificates/family_arithmetic_symbolic.log" \
   "computations/independent/verify_lie_sources.py:computations/certificates/verify_lie_sources.log" \
   "computations/independent/verify_maximality_sources.py:computations/certificates/verify_maximality_sources.log" \
+  "computations/independent/verify_order_formula_sources.py:computations/certificates/verify_order_formula_sources.log" \
+  "computations/independent/verify_zsigmondy_sources.py:computations/certificates/verify_zsigmondy_sources.log" \
+  "computations/independent/verify_boundary_sources.py:computations/certificates/verify_boundary_sources.log" \
   "computations/independent/verify_logs.py:computations/certificates/verify_logs.log" \
   "computations/independent/verify_manuscript.py:computations/certificates/verify_manuscript.log"
 do
@@ -83,7 +87,17 @@ done
 
 echo "== formal arithmetic build (no placeholders/custom axioms) =="
 python3 "$ROOT/formal/check_formal.py"
-python3 "$ROOT/audit/check_audit.py" --profile lint
+echo "== Rocq/MathComp characteristically-simple and explicit-power build =="
+rocq_regen="$CERT_DIR/formal_rocq_charsimple.log.regen"
+sh "$ROOT/formal-rocq/verify.sh" >"$rocq_regen" 2>&1
+check_log "$rocq_regen"
+if ! cmp -s "$CERT_DIR/formal_rocq_charsimple.log" "$rocq_regen"; then
+  echo "HARD-FAIL: Rocq characteristically-simple certificate drift" >&2
+  diff -u "$CERT_DIR/formal_rocq_charsimple.log" "$rocq_regen" >&2 || true
+  exit 1
+fi
+rm -f "$rocq_regen"
+echo "   byte-identical: PASS"
 python3 "$ROOT/audit/static_check.py"
 python3 "$ROOT/computations/mutation-tests/run_mutation_tests.py"
 python3 "$ROOT/audit/evidence_hashes.py" --verify

@@ -111,8 +111,8 @@ def equivProd : CoordinateWreath D I ≃ (I → D) × Equiv.Perm I where
 instance [Finite D] [Finite I] : Finite (CoordinateWreath D I) :=
   Finite.of_equiv ((I → D) × Equiv.Perm I) equivProd.symm
 
-/-- Exact order of the finite coordinate wreath product. -/
 omit [Group D] in
+/-- Exact order of the finite coordinate wreath product. -/
 theorem card [Finite D] [Finite I] :
     Nat.card (CoordinateWreath D I) =
       Nat.card D ^ Nat.card I * (Nat.card I).factorial := by

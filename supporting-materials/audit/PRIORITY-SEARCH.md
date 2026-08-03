@@ -39,14 +39,39 @@ the Zenkov announcement quoted above.
 | arXiv/web index | exact theorem phrase, exact paper title, problem number, and Russian variants | No published full proof located.  The July 2026 paper *On two questions from the Kourovka Notebook concerning maximal subgroups* concerns different problems. |
 | MathNet | smj2078 record, full Russian text and reference list | Confirms the 2010 theorem, MR/DOI metadata, and exact Zenkov 1997 citation. |
 
+## Supplementary citation-chain sweep (2026-08-02)
+
+A second, deeper pass of 33 logged queries was run on 2026-08-02 across
+arXiv (listing, API full-text, and the complete Kourovka Notebook v45 PDF
+downloaded and searched locally), the zbMATH Open API, OpenAlex, Semantic
+Scholar, Crossref, Math-Net.Ru, the official Kourovka Notebook site, and
+English- and Russian-language web search.  Key outcomes:
+
+- The Kourovka Notebook v45 (July 3, 2026 — the latest edition) still lists
+  Problem 10.34 verbatim as open, with only the Tikhonenko–Tyutyanov 2010
+  almost-simple editorial comment; its author index credits 10.34 to no
+  solver.
+- TT2010 has zero forward citations on OpenAlex, Semantic Scholar, and
+  Crossref, and no citing articles on Math-Net.Ru.
+- Zenkov's 1997 announced negative answer remains an unpublished conference
+  abstract: his complete indexed output (24 zbMATH documents) contains no
+  matching paper; his sole factorization-adjacent paper (2004) addresses
+  Problem 14.62.
+- Candidates examined and dismissed: Lemeshev–Monakhov 2012 (full text
+  searched — cofactors, not 10.34), Vasil'ev–Murashka–Furs 2022
+  (formational maximal subgroups; metadata-level check only), Chunikhin
+  1956 (predates the problem), arXiv:2607.17477 and arXiv:2607.06434
+  (solve other Kourovka problems).
+
 ## Remaining limitation
 
 A subscriber-level MathSciNet forward/backward citation search was not
-available on this host.  A direct MR2654533 request on 2026-08-01 was
-reproduced in the dedicated browser and redirected to the AMS/LibLynx
+available.  A direct MR2654533 request on 2026-08-01 was reproduced in the
+dedicated browser and redirected to the AMS/LibLynx
 institution-or-registered-user login; no authorized subscription credential
-is configured, so the login was not bypassed.  Crossref, OpenAlex, Google
-Scholar, zbMATH, MathNet, arXiv/web search, and the official Notebook all
-independently yielded no later full proof.  The obligation remains open until
-that access limitation is removed or a qualified human literature search
-independently signs off.
+is configured, so the login was not bypassed.  MathSciNet-only review text
+and print-only conference proceedings therefore remain outside the search's
+reach, and the novelty statement in the manuscript is deliberately limited
+to the named databases and dates.  Crossref, OpenAlex, Google Scholar,
+zbMATH, Semantic Scholar, Math-Net.Ru, arXiv/web search, and the official
+Notebook all independently yielded no later full proof.

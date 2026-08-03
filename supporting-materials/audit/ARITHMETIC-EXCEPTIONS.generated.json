@@ -1,0 +1,160 @@
+{
+  "schema_version": 1,
+  "generator": "computations/independent/family_arithmetic_universal.py",
+  "branch_count": 34,
+  "primitive_branch_count": 32,
+  "zsigmondy_equation": {
+    "base": 2,
+    "exponent": 6
+  },
+  "exception_cases": [
+    {
+      "branch_id": "AR-PSL2-EVEN",
+      "p": 2,
+      "f": 3,
+      "n": null,
+      "exception_ids": [
+        "Z-PSL2-8"
+      ],
+      "route": "substitute"
+    },
+    {
+      "branch_id": "AR-C-HIGHRANK",
+      "p": 2,
+      "f": 1,
+      "n": 3,
+      "exception_ids": [
+        "Z-SP6-2"
+      ],
+      "route": "finite"
+    },
+    {
+      "branch_id": "AR-G2-NOGRAPH",
+      "p": 2,
+      "f": 1,
+      "n": 2,
+      "exception_ids": [
+        "SIMP-G2-2"
+      ],
+      "route": "boundary"
+    },
+    {
+      "branch_id": "AR-PSU-EVEN",
+      "p": 2,
+      "f": 1,
+      "n": 4,
+      "exception_ids": [
+        "Z-PSU4-2",
+        "ISO-PSU4-2"
+      ],
+      "route": "finite-alias"
+    },
+    {
+      "branch_id": "AR-PSU3",
+      "p": 2,
+      "f": 1,
+      "n": 3,
+      "exception_ids": [
+        "SIMP-PSU3-2"
+      ],
+      "route": "boundary"
+    },
+    {
+      "branch_id": "AR-PSL-TRIVIAL",
+      "p": 2,
+      "f": 2,
+      "n": 3,
+      "exception_ids": [
+        "Z-PSL3-4"
+      ],
+      "route": "finite"
+    },
+    {
+      "branch_id": "AR-PSL-TRIVIAL",
+      "p": 2,
+      "f": 1,
+      "n": 6,
+      "exception_ids": [
+        "Z-PSL6-2"
+      ],
+      "route": "substitute"
+    },
+    {
+      "branch_id": "AR-DPLUS",
+      "p": 2,
+      "f": 1,
+      "n": 4,
+      "exception_ids": [
+        "Z-D4-2"
+      ],
+      "route": "substitute"
+    },
+    {
+      "branch_id": "AR-PSL3-GRAPH",
+      "p": 2,
+      "f": 2,
+      "n": 3,
+      "exception_ids": [
+        "Z-PSL3-4"
+      ],
+      "route": "finite-boundary"
+    },
+    {
+      "branch_id": "AR-PSLN-GRAPH",
+      "p": 2,
+      "f": 1,
+      "n": 6,
+      "exception_ids": [
+        "Z-PSL6-2"
+      ],
+      "route": "substitute"
+    },
+    {
+      "branch_id": "AR-D4-TRIALITY",
+      "p": 2,
+      "f": 1,
+      "n": 4,
+      "exception_ids": [
+        "Z-D4-2"
+      ],
+      "route": "substitute"
+    },
+    {
+      "branch_id": "AR-SP4-GRAPH-ODD",
+      "p": 2,
+      "f": 3,
+      "n": 2,
+      "exception_ids": [
+        "Z-SP4-8"
+      ],
+      "route": "substitute"
+    }
+  ],
+  "zsigmondy_exception_ids": [
+    "Z-D4-2",
+    "Z-PSL2-8",
+    "Z-PSL3-4",
+    "Z-PSL6-2",
+    "Z-PSU4-2",
+    "Z-SP4-8",
+    "Z-SP6-2"
+  ],
+  "non_zsigmondy_boundary_ids": [
+    "ISO-PSU4-2",
+    "SIMP-G2-2",
+    "SIMP-PSU3-2"
+  ],
+  "substitute_certificate_ids": [
+    "SUB-D4-2-ORDINARY",
+    "SUB-D4-2-TRIALITY",
+    "SUB-PSL2-8",
+    "SUB-PSL6-2-A",
+    "SUB-PSL6-2-B",
+    "SUB-SP4-8"
+  ],
+  "finite_certificate_exception_ids": [
+    "Z-PSL3-4",
+    "Z-PSU4-2",
+    "Z-SP6-2"
+  ]
+}

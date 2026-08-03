@@ -1,0 +1,29 @@
+{
+  "schema_version": 1,
+  "proof_assistant": "The Rocq Prover",
+  "rocq_version": "9.2",
+  "mathcomp_version": "2.6.0",
+  "mathcomp_release_tag": "mathcomp-2.6.0",
+  "mathcomp_release_commit": "7cde45afa55ead3410e17081d9ab4bdd53def3e7",
+  "mathcomp_maximal_v_sha256": "70bcd07cc9e1826525def1c65fdaab2236094dd9de82d2fad5f2bbc3e00f5ffe",
+  "mathcomp_source_sha256": {
+    "boot/bigop.v": "ace2aaa4cef9ba0e32872740017511ad4458232111c6c1388a3946c39ffcb3d4",
+    "boot/finset.v": "d99ac8546ab87ab71d612c001cff1d4ba208f055f8f3798ee8221822e676d453",
+    "finite_group/automorphism.v": "08a55384548dedb9bf73029e69dd11914d1f453a01bfdaa40f33c3419a100d2b",
+    "finite_group/gproduct.v": "28f399eca0cd4877219a53531a9a7e5566d2d1b8789c00628abc602b05563c0a",
+    "finite_group/morphism.v": "41f31d99d6b07f4dcafcdb528cd369fc71f6aed1c5273546e8b6145263517d63",
+    "solvable/maximal.v": "70bcd07cc9e1826525def1c65fdaab2236094dd9de82d2fad5f2bbc3e00f5ffe"
+  },
+  "local_reference_environment": {
+    "architecture": "arm64",
+    "ocaml": "5.5.0",
+    "homebrew_math_comp_formula": "2.6.0_1",
+    "homebrew_rocq_formula": "9.2.0"
+  },
+  "trusted_boundary": [
+    "Rocq kernel 9.2",
+    "MathComp 2.6.0 compiled libraries",
+    "the exact MathComp sources used by the decomposition and coordinate bridge, with every listed SHA-256 checked by verify.sh"
+  ],
+  "closed_scope": "A finite characteristically-simple nonsolvable group is an internal direct product of k>0 automorphic copies of one nonsolvable, explicitly nonabelian simple subgroup H, has exact order |G|=|H|^k, and is group-isomorphic to the explicit external coordinate product of those k copies."
+}

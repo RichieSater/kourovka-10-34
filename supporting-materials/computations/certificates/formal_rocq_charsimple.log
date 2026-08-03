@@ -1,0 +1,3 @@
+ROCQ TOOLCHAIN|PASS|rocq=9.2|mathcomp-maximal-sha256=70bcd07cc9e1826525def1c65fdaab2236094dd9de82d2fad5f2bbc3e00f5ffe
+ROCQ CHARSIMPLE|PASS|theorem=nonsolvable_charsimple_dprod|assumptions=none
+ROCQ EXPLICIT POWER|PASS|theorem=nonsolvable_charsimple_explicit_power|assumptions=none|source-pins=6

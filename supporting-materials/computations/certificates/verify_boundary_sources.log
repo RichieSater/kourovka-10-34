@@ -1,0 +1,5 @@
+classification-boundary source rows: 12
+classification families source-covered: 21
+boundary exceptions routed exactly once: 9
+PSU(4,2)=PSp(4,3) finite-certificate alias: PASS
+BOUNDARY SOURCE TOPOLOGY VERIFICATION|PASS

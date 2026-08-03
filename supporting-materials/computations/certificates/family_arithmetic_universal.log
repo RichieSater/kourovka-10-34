@@ -1,0 +1,9 @@
+exact arithmetic branches: 34
+primitive branches: 32
+Zsigmondy invocation rows covered: 31 (B/C shared)
+exhaustive (2,6) parameter routes: 12
+substitute valuations: 6
+finite exception anchors: 3
+formal manifest mirror: 107 bounds, 32 occurrences, 18 fixed factors, 12 exceptions
+manifest-independent symbolic mirror: exact branch/formula/substitute equality
+UNIVERSAL FAMILY ARITHMETIC MANIFEST|PASS

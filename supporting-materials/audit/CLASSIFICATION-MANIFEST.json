@@ -26,7 +26,8 @@
       "route": "THM-PSL2",
       "exceptions": [
         "SIMP-PSL2-2-3",
-        "MAX-PSL2-LE11"
+        "MAX-PSL2-LE11",
+        "Z-PSL2-8"
       ]
     },
     {
@@ -56,7 +57,8 @@
       "parameters": "n >= 4",
       "route": "THM-TWISTED-RANKGE2",
       "exceptions": [
-        "Z-PSU4-2"
+        "Z-PSU4-2",
+        "ISO-PSU4-2"
       ]
     },
     {
@@ -66,6 +68,7 @@
       "route": "THM-NOGRAPH for n>=3 or q odd; THM-GRAPH for n=2 and q even >=4",
       "exceptions": [
         "SIMP-SP4-2",
+        "Z-SP6-2",
         "Z-SP4-8"
       ]
     },

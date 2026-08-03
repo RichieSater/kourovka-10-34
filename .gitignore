@@ -19,8 +19,14 @@ venv/
 .env.*
 
 # Lean build cache; the toolchain, lake manifest, sources, and coverage JSON
-# remain tracked proof inputs.
+# remain tracked proof inputs. In particular DirectPower.lean,
+# AmbientWreath.lean, FORMAL-INTERFACE.json, and its checker must never be
+# ignored.
 supporting-materials/formal/.lake/
+
+# Rocq compilation products are scoped in formal-rocq/.gitignore.  Its .v
+# source, coverage/toolchain JSON, verifier, and committed certificate remain
+# visible to Git.
 
 # LaTeX/Tectonic transient products.  The release PDF at repository root is
 # deliberately tracked.

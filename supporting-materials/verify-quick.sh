@@ -5,44 +5,58 @@
 set -eu
 cd "$(dirname "$0")"
 
-echo "== 1/13 coverage, |S| < 5e5 =="
+echo "== 1/18 coverage, |S| < 5e5 =="
 python3 computations/python/verify_coverage.py
 
-echo "== 2/13 coverage, 5e5..1.05e7 =="
+echo "== 2/18 coverage, 5e5..1.05e7 =="
 python3 computations/python/verify_coverage_big.py
 
-echo "== 3/13 concrete family arithmetic receipts =="
+echo "== 3/18 concrete family arithmetic receipts =="
 python3 computations/python/sweepN_item5_arith.py
 
-echo "== 4/13 independent symbolic family arithmetic =="
+echo "== 4/18 exact universal family-arithmetic manifest =="
+python3 computations/independent/family_arithmetic_universal.py
+
+echo "== 5/18 independent symbolic family arithmetic =="
 python3 computations/independent/family_arithmetic_symbolic.py
 
-echo "== 5/13 independent classification/exception topology =="
+echo "== 6/18 independent classification/exception topology =="
 python3 computations/independent/verify_family_manifest.py
 
-echo "== 6/13 independent finite-witness recomputation =="
+echo "== 7/18 independent finite-witness recomputation =="
 python3 computations/independent/verify_finite_witnesses.py
 
-echo "== 7/13 high-risk Lie sources and 2E6 Levi derivation =="
+echo "== 8/18 high-risk Lie sources and 2E6 Levi derivation =="
 python3 computations/independent/verify_lie_sources.py
 
-echo "== 8/13 family maximality source topology =="
+echo "== 9/18 family maximality source topology =="
 python3 computations/independent/verify_maximality_sources.py
 
-echo "== 9/13 fail-closed certificate-log scan =="
+echo "== 10/18 exact group/subgroup/Levi order-formula sources =="
+python3 computations/independent/verify_order_formula_sources.py
+
+echo "== 11/18 exact Zsigmondy statement and invocation hypotheses =="
+python3 computations/independent/verify_zsigmondy_sources.py
+
+echo "== 12/18 classification boundary and exceptional-isomorphism sources =="
+python3 computations/independent/verify_boundary_sources.py
+
+echo "== 13/18 Rocq/MathComp characteristically-simple and explicit-power theorems =="
+formal-rocq/verify.sh
+
+echo "== 14/18 fail-closed certificate-log scan =="
 python3 computations/independent/verify_logs.py
 
-echo "== 10/13 manuscript/manifest consistency =="
+echo "== 15/18 manuscript/manifest consistency =="
 python3 computations/independent/verify_manuscript.py
 
-echo "== 11/13 audit schema and explicit formal coverage =="
-python3 audit/check_audit.py --profile lint
+echo "== 16/18 explicit formal coverage and cross-kernel interface =="
 python3 formal/check_formal.py --no-build
 
-echo "== 12/13 static determinism/soft-failure scan =="
+echo "== 17/18 static determinism/soft-failure scan =="
 python3 audit/static_check.py
 
-echo "== 13/13 certificate and evidence checksums =="
+echo "== 18/18 certificate and evidence checksums =="
 if command -v shasum >/dev/null 2>&1; then
   (cd computations/certificates && shasum -a 256 -c SHA256SUMS)
 else

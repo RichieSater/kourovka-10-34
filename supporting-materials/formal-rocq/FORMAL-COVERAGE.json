@@ -1,0 +1,24 @@
+{
+  "schema_version": 1,
+  "toolchain_manifest": "TOOLCHAIN.json",
+  "closed_manuscript_claims": [
+    {
+      "claim_id": "RED-DIRECT-POWER",
+      "theorem": "nonsolvable_charsimple_dprod",
+      "file": "CharacteristicallySimple.v",
+      "scope": "Every finite characteristically simple nonsolvable group is an internal direct product of k>0 automorphic copies of one nonsolvable, explicitly nonabelian simple subgroup, and its exact order is |H|^k. This is the exact internal-direct-product encoding of N=S^k."
+    },
+    {
+      "claim_id": "RED-COORD",
+      "theorem": "nonsolvable_charsimple_explicit_power",
+      "file": "CharacteristicallySimple.v",
+      "scope": "From the same characteristically-simple hypotheses, constructs a group isomorphism from G to the explicit coordinate-indexed external product setXn of copies of H over the finite factor index subtype, retaining the same simple nonsolvable and explicitly nonabelian H, the same positive factor count, the exact internal direct-product identity, and |G|=|H|^k. FORMAL-INTERFACE.json binds this exact existential coordinate isomorphism and positive base to the explicit MulEquiv/base input of the Lean ambient-wreath theorem."
+    }
+  ],
+  "explicitly_not_closed": [],
+  "forbidden_constructs": [
+    "Admitted",
+    "admit",
+    "Axiom"
+  ]
+}

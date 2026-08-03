@@ -1,0 +1,2743 @@
+{
+  "schema_version": 1,
+  "scope": "Exact arithmetic branch specification for Theorems 6.1--6.6; published group, subgroup, Levi, and outer-automorphism formulas are named source assumptions, while the deductions from those assumptions are checked mechanically.",
+  "affine_convention": "[a,b] denotes (a*n+b)*f; for fixed-rank branches n is the displayed fixed rank. Each selected_factor_bound_sets record is the source-derived complete upper-bound list for the p-exponents of factors p^j-1 in that named subgroup's p'-order; constants record remaining integer factors. A q^m+1 factor is represented by doubled p-exponent 2*m*f unless it is named under special_avoidance.",
+  "expected_branch_count": 34,
+  "branches": [
+    {
+      "id": "AR-PSL2-ODD",
+      "theorem": "6.1",
+      "family": "PSL(2,q), q odd",
+      "proof_kind": "defining-characteristic",
+      "domain": {
+        "rank": null,
+        "f_min": 1,
+        "f_parity": "any",
+        "p_mode": "odd",
+        "q_min": 13
+      },
+      "pair": [
+        "split torus normalizer",
+        "nonsplit torus normalizer"
+      ],
+      "obstruction": {
+        "prime": "p",
+        "group_valuation": "f",
+        "subgroup_valuations": [
+          0,
+          0
+        ],
+        "outer_divisor": "2f",
+        "universal_fact": "v_p(f)<f for f>0"
+      },
+      "order_source_ids": [
+        "ORD-PSL2-GROUP-OUTER",
+        "ORD-PSL2-SUBGROUPS"
+      ],
+      "zsigmondy_invocation_id": null,
+      "exception_ids": [
+        "MAX-PSL2-LE11"
+      ]
+    },
+    {
+      "id": "AR-PSL2-EVEN",
+      "theorem": "6.1",
+      "family": "PSL(2,2^f)",
+      "proof_kind": "primitive-exponent",
+      "domain": {
+        "rank": null,
+        "f_min": 3,
+        "f_parity": "any",
+        "p_mode": "fixed",
+        "p": 2,
+        "q_min": 8
+      },
+      "pair": [
+        "Borel",
+        "split torus normalizer"
+      ],
+      "primitive_exponent": [
+        0,
+        2
+      ],
+      "group_factor": {
+        "kind": "plus",
+        "q_exponent": [
+          0,
+          1
+        ],
+        "minimum_valuation": 1
+      },
+      "outer": {
+        "kind": "factorwise",
+        "constant": 1,
+        "diagonal_exponents": []
+      },
+      "exception_cases": [
+        {
+          "p": 2,
+          "f": 3,
+          "n": null,
+          "ids": [
+            "Z-PSL2-8"
+          ],
+          "route": "substitute"
+        }
+      ],
+      "order_source_ids": [
+        "ORD-PSL2-GROUP-OUTER",
+        "ORD-PSL2-SUBGROUPS"
+      ],
+      "zsigmondy_invocation_id": "ZIG-PSL2-EVEN",
+      "exception_ids": [
+        "Z-PSL2-8"
+      ],
+      "selected_factor_bound_sets": [
+        {
+          "subgroup": "Borel",
+          "exponents": [
+            [
+              0,
+              1
+            ]
+          ],
+          "constants": []
+        },
+        {
+          "subgroup": "split torus normalizer",
+          "exponents": [
+            [
+              0,
+              1
+            ]
+          ],
+          "constants": [
+            2
+          ]
+        }
+      ]
+    },
+    {
+      "id": "AR-ALTERNATING",
+      "theorem": "6.2",
+      "family": "A_n",
+      "proof_kind": "alternating-prime-interval",
+      "domain": {
+        "rank": {
+          "variable": "n",
+          "min": 15,
+          "parity": "any"
+        },
+        "f_min": null,
+        "f_parity": null,
+        "p_mode": "selected-largest-prime",
+        "q_min": null
+      },
+      "pair": [
+        "two admissible intransitive/imprimitive classes",
+        "two admissible intransitive/imprimitive classes"
+      ],
+      "obstruction": {
+        "prime_condition": "n/2<p<=n",
+        "group_valuation": 1,
+        "subgroup_valuations": [
+          0,
+          0
+        ],
+        "outer_divisor": 2,
+        "class_count_condition": "p>=n/2+3"
+      },
+      "large_range": {
+        "n_min": 31,
+        "source": "Nagura",
+        "inequality": "5n/6<p<=n"
+      },
+      "finite_range": {
+        "n_min": 15,
+        "n_max": 30,
+        "largest_primes": [
+          13,
+          13,
+          17,
+          17,
+          19,
+          19,
+          19,
+          19,
+          23,
+          23,
+          23,
+          23,
+          23,
+          23,
+          29,
+          29
+        ]
+      },
+      "order_source_ids": [
+        "ORD-ALT",
+        "ORD-ALT-PRIME-INTERVAL"
+      ],
+      "zsigmondy_invocation_id": null,
+      "exception_ids": [
+        "MAX-AN-LE14"
+      ]
+    },
+    {
+      "id": "AR-C-HIGHRANK",
+      "theorem": "6.3",
+      "family": "C_n(q), n>=3",
+      "proof_kind": "primitive-exponent",
+      "domain": {
+        "rank": {
+          "variable": "n",
+          "min": 3,
+          "parity": "any"
+        },
+        "f_min": 1,
+        "f_parity": "any",
+        "p_mode": "any",
+        "q_min": null
+      },
+      "pair": [
+        "P_1",
+        "P_2"
+      ],
+      "primitive_exponent": [
+        2,
+        0
+      ],
+      "group_factor": {
+        "kind": "minus",
+        "q_exponent": [
+          2,
+          0
+        ],
+        "minimum_valuation": 1
+      },
+      "outer": {
+        "kind": "size-bound",
+        "coefficient": 4
+      },
+      "exception_cases": [
+        {
+          "p": 2,
+          "f": 1,
+          "n": 3,
+          "ids": [
+            "Z-SP6-2"
+          ],
+          "route": "finite"
+        }
+      ],
+      "order_source_ids": [
+        "ORD-CLASSICAL-GROUPS",
+        "ORD-LIE-OUTER",
+        "ORD-PARABOLIC-LEVI-GENERAL",
+        "ORD-NOGRAPH-LEVIS"
+      ],
+      "zsigmondy_invocation_id": "ZIG-BC-HIGHRANK",
+      "exception_ids": [
+        "Z-SP6-2"
+      ],
+      "selected_factor_bound_sets": [
+        {
+          "subgroup": "P_1",
+          "exponents": [
+            [
+              2,
+              -2
+            ]
+          ],
+          "constants": []
+        },
+        {
+          "subgroup": "P_2",
+          "exponents": [
+            [
+              2,
+              -4
+            ],
+            [
+              0,
+              2
+            ]
+          ],
+          "constants": []
+        }
+      ]
+    },
+    {
+      "id": "AR-B-HIGHRANK",
+      "theorem": "6.3",
+      "family": "B_n(q), n>=3, q odd",
+      "proof_kind": "primitive-exponent",
+      "domain": {
+        "rank": {
+          "variable": "n",
+          "min": 3,
+          "parity": "any"
+        },
+        "f_min": 1,
+        "f_parity": "any",
+        "p_mode": "odd",
+        "q_min": null
+      },
+      "pair": [
+        "P_1",
+        "P_2"
+      ],
+      "primitive_exponent": [
+        2,
+        0
+      ],
+      "group_factor": {
+        "kind": "minus",
+        "q_exponent": [
+          2,
+          0
+        ],
+        "minimum_valuation": 1
+      },
+      "outer": {
+        "kind": "size-bound",
+        "coefficient": 4
+      },
+      "exception_cases": [],
+      "order_source_ids": [
+        "ORD-CLASSICAL-GROUPS",
+        "ORD-LIE-OUTER",
+        "ORD-PARABOLIC-LEVI-GENERAL",
+        "ORD-NOGRAPH-LEVIS"
+      ],
+      "zsigmondy_invocation_id": "ZIG-BC-HIGHRANK",
+      "exception_ids": [],
+      "selected_factor_bound_sets": [
+        {
+          "subgroup": "P_1",
+          "exponents": [
+            [
+              2,
+              -2
+            ]
+          ],
+          "constants": []
+        },
+        {
+          "subgroup": "P_2",
+          "exponents": [
+            [
+              2,
+              -4
+            ],
+            [
+              0,
+              2
+            ]
+          ],
+          "constants": []
+        }
+      ]
+    },
+    {
+      "id": "AR-C2-ODD",
+      "theorem": "6.3",
+      "family": "C_2(q), q odd",
+      "proof_kind": "primitive-exponent",
+      "domain": {
+        "rank": {
+          "fixed": 2
+        },
+        "f_min": 1,
+        "f_parity": "any",
+        "p_mode": "odd",
+        "q_min": null
+      },
+      "pair": [
+        "P_1",
+        "P_2"
+      ],
+      "primitive_exponent": [
+        0,
+        4
+      ],
+      "group_factor": {
+        "kind": "minus",
+        "q_exponent": [
+          0,
+          4
+        ],
+        "minimum_valuation": 1
+      },
+      "outer": {
+        "kind": "size-bound",
+        "coefficient": 4
+      },
+      "exception_cases": [],
+      "order_source_ids": [
+        "ORD-CLASSICAL-GROUPS",
+        "ORD-LIE-OUTER",
+        "ORD-PARABOLIC-LEVI-GENERAL",
+        "ORD-NOGRAPH-LEVIS"
+      ],
+      "zsigmondy_invocation_id": "ZIG-C2-ODD",
+      "exception_ids": [],
+      "selected_factor_bound_sets": [
+        {
+          "subgroup": "P_1",
+          "exponents": [
+            [
+              0,
+              2
+            ]
+          ],
+          "constants": []
+        },
+        {
+          "subgroup": "P_2",
+          "exponents": [
+            [
+              0,
+              2
+            ]
+          ],
+          "constants": []
+        }
+      ]
+    },
+    {
+      "id": "AR-G2-NOGRAPH",
+      "theorem": "6.3",
+      "family": "G_2(q), p!=3",
+      "proof_kind": "primitive-exponent",
+      "domain": {
+        "rank": {
+          "fixed": 2
+        },
+        "f_min": 1,
+        "f_parity": "any",
+        "p_mode": "not",
+        "p": 3,
+        "q_min": null
+      },
+      "pair": [
+        "P_1",
+        "P_2"
+      ],
+      "primitive_exponent": [
+        0,
+        6
+      ],
+      "group_factor": {
+        "kind": "minus",
+        "q_exponent": [
+          0,
+          6
+        ],
+        "minimum_valuation": 1
+      },
+      "outer": {
+        "kind": "size-bound",
+        "coefficient": 4
+      },
+      "exception_cases": [
+        {
+          "p": 2,
+          "f": 1,
+          "n": 2,
+          "ids": [
+            "SIMP-G2-2"
+          ],
+          "route": "boundary"
+        }
+      ],
+      "order_source_ids": [
+        "ORD-EXCEPTIONAL-GROUPS",
+        "ORD-LIE-OUTER",
+        "ORD-PARABOLIC-LEVI-GENERAL",
+        "ORD-NOGRAPH-LEVIS"
+      ],
+      "zsigmondy_invocation_id": "ZIG-G2-NOGRAPH",
+      "exception_ids": [
+        "SIMP-G2-2"
+      ],
+      "selected_factor_bound_sets": [
+        {
+          "subgroup": "P_1",
+          "exponents": [
+            [
+              0,
+              2
+            ]
+          ],
+          "constants": []
+        },
+        {
+          "subgroup": "P_2",
+          "exponents": [
+            [
+              0,
+              2
+            ]
+          ],
+          "constants": []
+        }
+      ]
+    },
+    {
+      "id": "AR-F4-NOGRAPH",
+      "theorem": "6.3",
+      "family": "F_4(q), p!=2",
+      "proof_kind": "primitive-exponent",
+      "domain": {
+        "rank": {
+          "fixed": 4
+        },
+        "f_min": 1,
+        "f_parity": "any",
+        "p_mode": "not",
+        "p": 2,
+        "q_min": null
+      },
+      "pair": [
+        "selected end-node parabolic 1",
+        "selected end-node parabolic 2"
+      ],
+      "primitive_exponent": [
+        0,
+        12
+      ],
+      "group_factor": {
+        "kind": "minus",
+        "q_exponent": [
+          0,
+          12
+        ],
+        "minimum_valuation": 1
+      },
+      "outer": {
+        "kind": "size-bound",
+        "coefficient": 4
+      },
+      "exception_cases": [],
+      "order_source_ids": [
+        "ORD-EXCEPTIONAL-GROUPS",
+        "ORD-LIE-OUTER",
+        "ORD-PARABOLIC-LEVI-GENERAL",
+        "ORD-NOGRAPH-LEVIS"
+      ],
+      "zsigmondy_invocation_id": "ZIG-F4-NOGRAPH",
+      "exception_ids": [],
+      "selected_factor_bound_sets": [
+        {
+          "subgroup": "selected end-node parabolic 1",
+          "exponents": [
+            [
+              0,
+              6
+            ]
+          ],
+          "constants": []
+        },
+        {
+          "subgroup": "selected end-node parabolic 2",
+          "exponents": [
+            [
+              0,
+              6
+            ]
+          ],
+          "constants": []
+        }
+      ]
+    },
+    {
+      "id": "AR-E7",
+      "theorem": "6.3",
+      "family": "E_7(q)",
+      "proof_kind": "primitive-exponent",
+      "domain": {
+        "rank": {
+          "fixed": 7
+        },
+        "f_min": 1,
+        "f_parity": "any",
+        "p_mode": "any",
+        "q_min": null
+      },
+      "pair": [
+        "selected end-node parabolic 1",
+        "selected end-node parabolic 2"
+      ],
+      "primitive_exponent": [
+        0,
+        18
+      ],
+      "group_factor": {
+        "kind": "minus",
+        "q_exponent": [
+          0,
+          18
+        ],
+        "minimum_valuation": 1
+      },
+      "outer": {
+        "kind": "size-bound",
+        "coefficient": 4
+      },
+      "exception_cases": [],
+      "order_source_ids": [
+        "ORD-EXCEPTIONAL-GROUPS",
+        "ORD-LIE-OUTER",
+        "ORD-PARABOLIC-LEVI-GENERAL",
+        "ORD-NOGRAPH-LEVIS"
+      ],
+      "zsigmondy_invocation_id": "ZIG-E7",
+      "exception_ids": [],
+      "selected_factor_bound_sets": [
+        {
+          "subgroup": "selected end-node parabolic 1",
+          "exponents": [
+            [
+              0,
+              12
+            ]
+          ],
+          "constants": []
+        },
+        {
+          "subgroup": "selected end-node parabolic 2",
+          "exponents": [
+            [
+              0,
+              12
+            ]
+          ],
+          "constants": []
+        }
+      ]
+    },
+    {
+      "id": "AR-E8",
+      "theorem": "6.3",
+      "family": "E_8(q)",
+      "proof_kind": "primitive-exponent",
+      "domain": {
+        "rank": {
+          "fixed": 8
+        },
+        "f_min": 1,
+        "f_parity": "any",
+        "p_mode": "any",
+        "q_min": null
+      },
+      "pair": [
+        "selected end-node parabolic 1",
+        "selected end-node parabolic 2"
+      ],
+      "primitive_exponent": [
+        0,
+        30
+      ],
+      "group_factor": {
+        "kind": "minus",
+        "q_exponent": [
+          0,
+          30
+        ],
+        "minimum_valuation": 1
+      },
+      "outer": {
+        "kind": "size-bound",
+        "coefficient": 4
+      },
+      "exception_cases": [],
+      "order_source_ids": [
+        "ORD-EXCEPTIONAL-GROUPS",
+        "ORD-LIE-OUTER",
+        "ORD-PARABOLIC-LEVI-GENERAL",
+        "ORD-NOGRAPH-LEVIS"
+      ],
+      "zsigmondy_invocation_id": "ZIG-E8",
+      "exception_ids": [],
+      "selected_factor_bound_sets": [
+        {
+          "subgroup": "selected end-node parabolic 1",
+          "exponents": [
+            [
+              0,
+              18
+            ]
+          ],
+          "constants": []
+        },
+        {
+          "subgroup": "selected end-node parabolic 2",
+          "exponents": [
+            [
+              0,
+              18
+            ]
+          ],
+          "constants": []
+        }
+      ]
+    },
+    {
+      "id": "AR-PSU-ODD",
+      "theorem": "6.4",
+      "family": "PSU(n,q), odd n>=5",
+      "proof_kind": "primitive-exponent",
+      "domain": {
+        "rank": {
+          "variable": "n",
+          "min": 5,
+          "parity": "odd"
+        },
+        "f_min": 1,
+        "f_parity": "any",
+        "p_mode": "any",
+        "q_min": null
+      },
+      "pair": [
+        "P_1",
+        "P_2"
+      ],
+      "primitive_exponent": [
+        2,
+        0
+      ],
+      "group_factor": {
+        "kind": "plus",
+        "q_exponent": [
+          1,
+          0
+        ],
+        "minimum_valuation": 1
+      },
+      "outer": {
+        "kind": "factorwise",
+        "constant": 3,
+        "diagonal_exponents": [
+          [
+            0,
+            2
+          ]
+        ]
+      },
+      "exception_cases": [],
+      "order_source_ids": [
+        "ORD-CLASSICAL-GROUPS",
+        "ORD-LIE-OUTER",
+        "ORD-PARABOLIC-LEVI-GENERAL",
+        "ORD-PSU-LEVIS"
+      ],
+      "zsigmondy_invocation_id": "ZIG-PSU-ODD",
+      "exception_ids": [],
+      "selected_factor_bound_sets": [
+        {
+          "subgroup": "P_1",
+          "exponents": [
+            [
+              0,
+              2
+            ],
+            [
+              2,
+              -4
+            ]
+          ],
+          "constants": []
+        },
+        {
+          "subgroup": "P_2",
+          "exponents": [
+            [
+              0,
+              4
+            ],
+            [
+              2,
+              -8
+            ]
+          ],
+          "constants": []
+        }
+      ]
+    },
+    {
+      "id": "AR-PSU-EVEN",
+      "theorem": "6.4",
+      "family": "PSU(n,q), even n>=4",
+      "proof_kind": "primitive-exponent",
+      "domain": {
+        "rank": {
+          "variable": "n",
+          "min": 4,
+          "parity": "even"
+        },
+        "f_min": 1,
+        "f_parity": "any",
+        "p_mode": "any",
+        "q_min": null
+      },
+      "pair": [
+        "P_1",
+        "P_2"
+      ],
+      "primitive_exponent": [
+        2,
+        -2
+      ],
+      "group_factor": {
+        "kind": "plus",
+        "q_exponent": [
+          1,
+          -1
+        ],
+        "minimum_valuation": 1
+      },
+      "outer": {
+        "kind": "factorwise",
+        "constant": 3,
+        "diagonal_exponents": [
+          [
+            0,
+            2
+          ]
+        ]
+      },
+      "exception_cases": [
+        {
+          "p": 2,
+          "f": 1,
+          "n": 4,
+          "ids": [
+            "Z-PSU4-2",
+            "ISO-PSU4-2"
+          ],
+          "route": "finite-alias"
+        }
+      ],
+      "order_source_ids": [
+        "ORD-CLASSICAL-GROUPS",
+        "ORD-LIE-OUTER",
+        "ORD-PARABOLIC-LEVI-GENERAL",
+        "ORD-PSU-LEVIS"
+      ],
+      "zsigmondy_invocation_id": "ZIG-PSU-EVEN",
+      "exception_ids": [
+        "Z-PSU4-2",
+        "ISO-PSU4-2"
+      ],
+      "selected_factor_bound_sets": [
+        {
+          "subgroup": "P_1",
+          "exponents": [
+            [
+              0,
+              4
+            ],
+            [
+              2,
+              -6
+            ],
+            [
+              1,
+              -2
+            ]
+          ],
+          "constants": []
+        },
+        {
+          "subgroup": "P_2",
+          "exponents": [
+            [
+              0,
+              4
+            ],
+            [
+              2,
+              -6
+            ],
+            [
+              1,
+              -2
+            ]
+          ],
+          "constants": []
+        }
+      ]
+    },
+    {
+      "id": "AR-2D",
+      "theorem": "6.4",
+      "family": "^2D_n(q), n>=4",
+      "proof_kind": "primitive-exponent",
+      "domain": {
+        "rank": {
+          "variable": "n",
+          "min": 4,
+          "parity": "any"
+        },
+        "f_min": 1,
+        "f_parity": "any",
+        "p_mode": "any",
+        "q_min": null
+      },
+      "pair": [
+        "P_1",
+        "P_2"
+      ],
+      "primitive_exponent": [
+        2,
+        0
+      ],
+      "group_factor": {
+        "kind": "plus",
+        "q_exponent": [
+          1,
+          0
+        ],
+        "minimum_valuation": 1
+      },
+      "outer": {
+        "kind": "factorwise",
+        "constant": 12,
+        "diagonal_exponents": []
+      },
+      "exception_cases": [],
+      "order_source_ids": [
+        "ORD-CLASSICAL-GROUPS",
+        "ORD-LIE-OUTER",
+        "ORD-PARABOLIC-LEVI-GENERAL",
+        "ORD-2D-LEVIS"
+      ],
+      "zsigmondy_invocation_id": "ZIG-2DN",
+      "exception_ids": [],
+      "selected_factor_bound_sets": [
+        {
+          "subgroup": "P_1",
+          "exponents": [
+            [
+              0,
+              1
+            ],
+            [
+              2,
+              -2
+            ]
+          ],
+          "constants": []
+        },
+        {
+          "subgroup": "P_2",
+          "exponents": [
+            [
+              0,
+              2
+            ],
+            [
+              2,
+              -4
+            ]
+          ],
+          "constants": []
+        }
+      ]
+    },
+    {
+      "id": "AR-3D4",
+      "theorem": "6.4",
+      "family": "^3D_4(q)",
+      "proof_kind": "primitive-exponent",
+      "domain": {
+        "rank": {
+          "fixed": 4
+        },
+        "f_min": 1,
+        "f_parity": "any",
+        "p_mode": "any",
+        "q_min": null
+      },
+      "pair": [
+        "P_1",
+        "P_2"
+      ],
+      "primitive_exponent": [
+        0,
+        12
+      ],
+      "group_factor": {
+        "kind": "cyclotomic",
+        "q_exponent": [
+          0,
+          12
+        ],
+        "minimum_valuation": 1
+      },
+      "outer": {
+        "kind": "factorwise",
+        "constant": 3,
+        "diagonal_exponents": []
+      },
+      "exception_cases": [],
+      "order_source_ids": [
+        "ORD-EXCEPTIONAL-GROUPS",
+        "ORD-LIE-OUTER",
+        "ORD-PARABOLIC-LEVI-GENERAL",
+        "ORD-3D4-LEVIS"
+      ],
+      "zsigmondy_invocation_id": "ZIG-3D4",
+      "exception_ids": [],
+      "selected_factor_bound_sets": [
+        {
+          "subgroup": "P_1",
+          "exponents": [
+            [
+              0,
+              6
+            ],
+            [
+              0,
+              1
+            ]
+          ],
+          "constants": []
+        },
+        {
+          "subgroup": "P_2",
+          "exponents": [
+            [
+              0,
+              2
+            ],
+            [
+              0,
+              3
+            ]
+          ],
+          "constants": []
+        }
+      ]
+    },
+    {
+      "id": "AR-2E6",
+      "theorem": "6.4",
+      "family": "^2E_6(q)",
+      "proof_kind": "primitive-exponent",
+      "domain": {
+        "rank": {
+          "fixed": 6
+        },
+        "f_min": 1,
+        "f_parity": "any",
+        "p_mode": "any",
+        "q_min": null
+      },
+      "pair": [
+        "any two maximal parabolic classes",
+        "any two maximal parabolic classes"
+      ],
+      "primitive_exponent": [
+        0,
+        18
+      ],
+      "group_factor": {
+        "kind": "plus",
+        "q_exponent": [
+          0,
+          9
+        ],
+        "minimum_valuation": 1
+      },
+      "outer": {
+        "kind": "factorwise",
+        "constant": 3,
+        "diagonal_exponents": [
+          [
+            0,
+            2
+          ]
+        ]
+      },
+      "exception_cases": [],
+      "order_source_ids": [
+        "ORD-EXCEPTIONAL-GROUPS",
+        "ORD-LIE-OUTER",
+        "ORD-PARABOLIC-LEVI-GENERAL",
+        "ORD-2E6-LEVIS"
+      ],
+      "zsigmondy_invocation_id": "ZIG-2E6",
+      "exception_ids": [],
+      "selected_factor_bound_sets": [
+        {
+          "subgroup": "P_{tau-orbit {2}} (SU6)",
+          "exponents": [
+            [
+              0,
+              10
+            ]
+          ],
+          "constants": []
+        },
+        {
+          "subgroup": "P_{tau-orbit {1,6}} (SL2 x SL3(q^2))",
+          "exponents": [
+            [
+              0,
+              6
+            ]
+          ],
+          "constants": []
+        },
+        {
+          "subgroup": "P_{tau-orbit {4}} (^2D4)",
+          "exponents": [
+            [
+              0,
+              8
+            ]
+          ],
+          "constants": []
+        },
+        {
+          "subgroup": "P_{tau-orbit {3,5}} (SL3 x SL2(q^2))",
+          "exponents": [
+            [
+              0,
+              4
+            ]
+          ],
+          "constants": []
+        }
+      ]
+    },
+    {
+      "id": "AR-2F4",
+      "theorem": "6.4",
+      "family": "^2F_4(2^f), odd f>=3",
+      "proof_kind": "primitive-exponent",
+      "domain": {
+        "rank": {
+          "fixed": 4
+        },
+        "f_min": 3,
+        "f_parity": "odd",
+        "p_mode": "fixed",
+        "p": 2,
+        "q_min": 8
+      },
+      "pair": [
+        "P_1",
+        "P_2"
+      ],
+      "primitive_exponent": [
+        0,
+        12
+      ],
+      "group_factor": {
+        "kind": "plus",
+        "q_exponent": [
+          0,
+          6
+        ],
+        "minimum_valuation": 1
+      },
+      "outer": {
+        "kind": "factorwise",
+        "constant": 3,
+        "diagonal_exponents": []
+      },
+      "exception_cases": [],
+      "order_source_ids": [
+        "ORD-EXCEPTIONAL-GROUPS",
+        "ORD-LIE-OUTER",
+        "ORD-PARABOLIC-LEVI-GENERAL",
+        "ORD-2F4-LEVIS"
+      ],
+      "zsigmondy_invocation_id": "ZIG-2F4",
+      "exception_ids": [],
+      "selected_factor_bound_sets": [
+        {
+          "subgroup": "P_1",
+          "exponents": [
+            [
+              0,
+              4
+            ],
+            [
+              0,
+              1
+            ]
+          ],
+          "constants": []
+        },
+        {
+          "subgroup": "P_2",
+          "exponents": [
+            [
+              0,
+              2
+            ],
+            [
+              0,
+              1
+            ]
+          ],
+          "constants": []
+        }
+      ]
+    },
+    {
+      "id": "AR-PSU3",
+      "theorem": "6.5",
+      "family": "PSU(3,q), q>=8 uniform branch",
+      "proof_kind": "primitive-exponent",
+      "domain": {
+        "rank": {
+          "fixed": 3
+        },
+        "f_min": 1,
+        "f_parity": "any",
+        "p_mode": "any",
+        "q_min": 8
+      },
+      "pair": [
+        "Borel",
+        "nonisotropic point stabilizer"
+      ],
+      "primitive_exponent": [
+        0,
+        6
+      ],
+      "group_factor": {
+        "kind": "plus",
+        "q_exponent": [
+          0,
+          3
+        ],
+        "minimum_valuation": 1
+      },
+      "outer": {
+        "kind": "factorwise",
+        "constant": 2,
+        "diagonal_exponents": [
+          [
+            0,
+            2
+          ]
+        ]
+      },
+      "exception_cases": [
+        {
+          "p": 2,
+          "f": 1,
+          "n": 3,
+          "ids": [
+            "SIMP-PSU3-2"
+          ],
+          "route": "boundary"
+        }
+      ],
+      "order_source_ids": [
+        "ORD-CLASSICAL-GROUPS",
+        "ORD-LIE-OUTER",
+        "ORD-PSU3-SUBGROUPS"
+      ],
+      "zsigmondy_invocation_id": "ZIG-PSU3",
+      "exception_ids": [
+        "SIMP-PSU3-2",
+        "MAX-PSU3-SMALL"
+      ],
+      "selected_factor_bound_sets": [
+        {
+          "subgroup": "Borel",
+          "exponents": [
+            [
+              0,
+              2
+            ]
+          ],
+          "constants": []
+        },
+        {
+          "subgroup": "nonisotropic point stabilizer",
+          "exponents": [
+            [
+              0,
+              2
+            ]
+          ],
+          "constants": []
+        }
+      ]
+    },
+    {
+      "id": "AR-SUZUKI",
+      "theorem": "6.5",
+      "family": "^2B_2(2^f), odd f>=3",
+      "proof_kind": "primitive-exponent",
+      "domain": {
+        "rank": {
+          "fixed": 2
+        },
+        "f_min": 3,
+        "f_parity": "odd",
+        "p_mode": "fixed",
+        "p": 2,
+        "q_min": 8
+      },
+      "pair": [
+        "Borel",
+        "split torus normalizer"
+      ],
+      "primitive_exponent": [
+        0,
+        4
+      ],
+      "group_factor": {
+        "kind": "plus",
+        "q_exponent": [
+          0,
+          2
+        ],
+        "minimum_valuation": 1
+      },
+      "outer": {
+        "kind": "factorwise",
+        "constant": 1,
+        "diagonal_exponents": []
+      },
+      "exception_cases": [],
+      "order_source_ids": [
+        "ORD-EXCEPTIONAL-GROUPS",
+        "ORD-LIE-OUTER",
+        "ORD-SUZUKI-SUBGROUPS"
+      ],
+      "zsigmondy_invocation_id": "ZIG-SUZUKI",
+      "exception_ids": [],
+      "selected_factor_bound_sets": [
+        {
+          "subgroup": "Borel",
+          "exponents": [
+            [
+              0,
+              1
+            ]
+          ],
+          "constants": []
+        },
+        {
+          "subgroup": "split torus normalizer",
+          "exponents": [
+            [
+              0,
+              1
+            ]
+          ],
+          "constants": [
+            2
+          ]
+        }
+      ]
+    },
+    {
+      "id": "AR-SMALL-REE",
+      "theorem": "6.5",
+      "family": "^2G_2(3^f), odd f>=3",
+      "proof_kind": "primitive-exponent",
+      "domain": {
+        "rank": {
+          "fixed": 2
+        },
+        "f_min": 3,
+        "f_parity": "odd",
+        "p_mode": "fixed",
+        "p": 3,
+        "q_min": 27
+      },
+      "pair": [
+        "Borel",
+        "involution centralizer"
+      ],
+      "primitive_exponent": [
+        0,
+        6
+      ],
+      "group_factor": {
+        "kind": "plus",
+        "q_exponent": [
+          0,
+          3
+        ],
+        "minimum_valuation": 1
+      },
+      "outer": {
+        "kind": "factorwise",
+        "constant": 1,
+        "diagonal_exponents": []
+      },
+      "exception_cases": [],
+      "order_source_ids": [
+        "ORD-EXCEPTIONAL-GROUPS",
+        "ORD-LIE-OUTER",
+        "ORD-REE-SUBGROUPS"
+      ],
+      "zsigmondy_invocation_id": "ZIG-SMALL-REE",
+      "exception_ids": [
+        "SIMP-REE3"
+      ],
+      "selected_factor_bound_sets": [
+        {
+          "subgroup": "Borel",
+          "exponents": [
+            [
+              0,
+              1
+            ]
+          ],
+          "constants": []
+        },
+        {
+          "subgroup": "involution centralizer",
+          "exponents": [
+            [
+              0,
+              2
+            ]
+          ],
+          "constants": []
+        }
+      ]
+    },
+    {
+      "id": "AR-PSL-TRIVIAL",
+      "theorem": "6.6A",
+      "family": "PSL(n,q), n>=3, trivial graph part",
+      "proof_kind": "primitive-exponent",
+      "domain": {
+        "rank": {
+          "variable": "n",
+          "min": 3,
+          "parity": "any"
+        },
+        "f_min": 1,
+        "f_parity": "any",
+        "p_mode": "any",
+        "q_min": null
+      },
+      "pair": [
+        "P_1",
+        "P_2"
+      ],
+      "primitive_exponent": [
+        1,
+        0
+      ],
+      "group_factor": {
+        "kind": "minus",
+        "q_exponent": [
+          1,
+          0
+        ],
+        "minimum_valuation": 1
+      },
+      "central_divisor_exponents": [
+        [
+          0,
+          1
+        ]
+      ],
+      "outer": {
+        "kind": "factorwise",
+        "constant": 2,
+        "diagonal_exponents": [
+          [
+            0,
+            1
+          ]
+        ]
+      },
+      "exception_cases": [
+        {
+          "p": 2,
+          "f": 2,
+          "n": 3,
+          "ids": [
+            "Z-PSL3-4"
+          ],
+          "route": "finite"
+        },
+        {
+          "p": 2,
+          "f": 1,
+          "n": 6,
+          "ids": [
+            "Z-PSL6-2"
+          ],
+          "route": "substitute"
+        }
+      ],
+      "order_source_ids": [
+        "ORD-CLASSICAL-GROUPS",
+        "ORD-LIE-OUTER",
+        "ORD-PARABOLIC-LEVI-GENERAL",
+        "ORD-PSL-GRAPH-SUBGROUPS"
+      ],
+      "zsigmondy_invocation_id": "ZIG-PSLN-TRIVIAL",
+      "exception_ids": [
+        "Z-PSL3-4",
+        "Z-PSL6-2"
+      ],
+      "selected_factor_bound_sets": [
+        {
+          "subgroup": "P_1",
+          "exponents": [
+            [
+              1,
+              -1
+            ]
+          ],
+          "constants": []
+        },
+        {
+          "subgroup": "P_2",
+          "exponents": [
+            [
+              0,
+              2
+            ],
+            [
+              1,
+              -2
+            ]
+          ],
+          "constants": []
+        }
+      ]
+    },
+    {
+      "id": "AR-DPLUS",
+      "theorem": "6.6A/B3",
+      "family": "D_n(q), n>=4, non-triality pair",
+      "proof_kind": "primitive-exponent",
+      "domain": {
+        "rank": {
+          "variable": "n",
+          "min": 4,
+          "parity": "any"
+        },
+        "f_min": 1,
+        "f_parity": "any",
+        "p_mode": "any",
+        "q_min": null
+      },
+      "pair": [
+        "P_1",
+        "P_2"
+      ],
+      "primitive_exponent": [
+        2,
+        -2
+      ],
+      "group_factor": {
+        "kind": "minus",
+        "q_exponent": [
+          2,
+          -2
+        ],
+        "minimum_valuation": 1
+      },
+      "outer": {
+        "kind": "factorwise",
+        "constant": 24,
+        "diagonal_exponents": []
+      },
+      "exception_cases": [
+        {
+          "p": 2,
+          "f": 1,
+          "n": 4,
+          "ids": [
+            "Z-D4-2"
+          ],
+          "route": "substitute"
+        }
+      ],
+      "order_source_ids": [
+        "ORD-CLASSICAL-GROUPS",
+        "ORD-LIE-OUTER",
+        "ORD-PARABOLIC-LEVI-GENERAL",
+        "ORD-D4-SMALL"
+      ],
+      "zsigmondy_invocation_id": "ZIG-DPLUS-ALL",
+      "exception_ids": [
+        "Z-D4-2"
+      ],
+      "selected_factor_bound_sets": [
+        {
+          "subgroup": "P_1",
+          "exponents": [
+            [
+              1,
+              -1
+            ],
+            [
+              2,
+              -4
+            ]
+          ],
+          "constants": []
+        },
+        {
+          "subgroup": "P_2",
+          "exponents": [
+            [
+              0,
+              2
+            ],
+            [
+              1,
+              -2
+            ],
+            [
+              2,
+              -6
+            ]
+          ],
+          "constants": []
+        }
+      ]
+    },
+    {
+      "id": "AR-SP4-TRIVIAL",
+      "theorem": "6.6A",
+      "family": "Sp(4,2^f), trivial graph part",
+      "proof_kind": "primitive-exponent",
+      "domain": {
+        "rank": {
+          "fixed": 2
+        },
+        "f_min": 2,
+        "f_parity": "any",
+        "p_mode": "fixed",
+        "p": 2,
+        "q_min": 4
+      },
+      "pair": [
+        "P_1",
+        "P_2"
+      ],
+      "primitive_exponent": [
+        0,
+        4
+      ],
+      "group_factor": {
+        "kind": "plus",
+        "q_exponent": [
+          0,
+          2
+        ],
+        "minimum_valuation": 1
+      },
+      "outer": {
+        "kind": "factorwise",
+        "constant": 1,
+        "diagonal_exponents": []
+      },
+      "exception_cases": [],
+      "order_source_ids": [
+        "ORD-CLASSICAL-GROUPS",
+        "ORD-LIE-OUTER",
+        "ORD-PARABOLIC-LEVI-GENERAL",
+        "ORD-SP4-FIXED"
+      ],
+      "zsigmondy_invocation_id": "ZIG-SP4-TRIVIAL",
+      "exception_ids": [],
+      "selected_factor_bound_sets": [
+        {
+          "subgroup": "P_1",
+          "exponents": [
+            [
+              0,
+              2
+            ]
+          ],
+          "constants": []
+        },
+        {
+          "subgroup": "P_2",
+          "exponents": [
+            [
+              0,
+              2
+            ]
+          ],
+          "constants": []
+        }
+      ]
+    },
+    {
+      "id": "AR-F4-TRIVIAL",
+      "theorem": "6.6A",
+      "family": "F_4(2^f), trivial graph part",
+      "proof_kind": "primitive-exponent",
+      "domain": {
+        "rank": {
+          "fixed": 4
+        },
+        "f_min": 1,
+        "f_parity": "any",
+        "p_mode": "fixed",
+        "p": 2,
+        "q_min": 2
+      },
+      "pair": [
+        "P_1",
+        "P_2"
+      ],
+      "primitive_exponent": [
+        0,
+        12
+      ],
+      "group_factor": {
+        "kind": "minus",
+        "q_exponent": [
+          0,
+          12
+        ],
+        "minimum_valuation": 1
+      },
+      "outer": {
+        "kind": "factorwise",
+        "constant": 1,
+        "diagonal_exponents": []
+      },
+      "exception_cases": [],
+      "order_source_ids": [
+        "ORD-EXCEPTIONAL-GROUPS",
+        "ORD-LIE-OUTER",
+        "ORD-PARABOLIC-LEVI-GENERAL",
+        "ORD-NOGRAPH-LEVIS"
+      ],
+      "zsigmondy_invocation_id": "ZIG-F4-TRIVIAL",
+      "exception_ids": [],
+      "selected_factor_bound_sets": [
+        {
+          "subgroup": "P_1",
+          "exponents": [
+            [
+              0,
+              6
+            ]
+          ],
+          "constants": []
+        },
+        {
+          "subgroup": "P_2",
+          "exponents": [
+            [
+              0,
+              6
+            ]
+          ],
+          "constants": []
+        }
+      ]
+    },
+    {
+      "id": "AR-G2-TRIVIAL",
+      "theorem": "6.6A",
+      "family": "G_2(3^f), trivial graph part",
+      "proof_kind": "primitive-exponent",
+      "domain": {
+        "rank": {
+          "fixed": 2
+        },
+        "f_min": 1,
+        "f_parity": "any",
+        "p_mode": "fixed",
+        "p": 3,
+        "q_min": 3
+      },
+      "pair": [
+        "P_1",
+        "P_2"
+      ],
+      "primitive_exponent": [
+        0,
+        6
+      ],
+      "group_factor": {
+        "kind": "minus",
+        "q_exponent": [
+          0,
+          6
+        ],
+        "minimum_valuation": 1
+      },
+      "outer": {
+        "kind": "factorwise",
+        "constant": 1,
+        "diagonal_exponents": []
+      },
+      "exception_cases": [],
+      "order_source_ids": [
+        "ORD-EXCEPTIONAL-GROUPS",
+        "ORD-LIE-OUTER",
+        "ORD-PARABOLIC-LEVI-GENERAL",
+        "ORD-NOGRAPH-LEVIS"
+      ],
+      "zsigmondy_invocation_id": "ZIG-G2-TRIVIAL",
+      "exception_ids": [],
+      "selected_factor_bound_sets": [
+        {
+          "subgroup": "P_1",
+          "exponents": [
+            [
+              0,
+              2
+            ]
+          ],
+          "constants": []
+        },
+        {
+          "subgroup": "P_2",
+          "exponents": [
+            [
+              0,
+              2
+            ]
+          ],
+          "constants": []
+        }
+      ]
+    },
+    {
+      "id": "AR-PSL3-GRAPH",
+      "theorem": "6.6B1",
+      "family": "PSL(3,q), graph part",
+      "proof_kind": "primitive-exponent",
+      "domain": {
+        "rank": {
+          "fixed": 3
+        },
+        "f_min": 1,
+        "f_parity": "any",
+        "p_mode": "any",
+        "q_min": 5
+      },
+      "pair": [
+        "Borel",
+        "split torus normalizer"
+      ],
+      "primitive_exponent": [
+        0,
+        3
+      ],
+      "group_factor": {
+        "kind": "minus",
+        "q_exponent": [
+          0,
+          3
+        ],
+        "minimum_valuation": 1
+      },
+      "central_divisor_exponents": [
+        [
+          0,
+          1
+        ]
+      ],
+      "outer": {
+        "kind": "factorwise",
+        "constant": 2,
+        "diagonal_exponents": [
+          [
+            0,
+            1
+          ]
+        ]
+      },
+      "exception_cases": [
+        {
+          "p": 2,
+          "f": 2,
+          "n": 3,
+          "ids": [
+            "Z-PSL3-4"
+          ],
+          "route": "finite-boundary"
+        }
+      ],
+      "order_source_ids": [
+        "ORD-CLASSICAL-GROUPS",
+        "ORD-LIE-OUTER",
+        "ORD-PSL-GRAPH-SUBGROUPS"
+      ],
+      "zsigmondy_invocation_id": "ZIG-PSL3-GRAPH",
+      "exception_ids": [
+        "Z-PSL3-4",
+        "MAX-PSL3-LE4"
+      ],
+      "selected_factor_bound_sets": [
+        {
+          "subgroup": "Borel",
+          "exponents": [
+            [
+              0,
+              1
+            ]
+          ],
+          "constants": []
+        },
+        {
+          "subgroup": "split torus normalizer",
+          "exponents": [
+            [
+              0,
+              1
+            ]
+          ],
+          "constants": [
+            6
+          ]
+        }
+      ]
+    },
+    {
+      "id": "AR-PSL4-GRAPH",
+      "theorem": "6.6B2",
+      "family": "PSL(4,q), graph part",
+      "proof_kind": "primitive-exponent",
+      "domain": {
+        "rank": {
+          "fixed": 4
+        },
+        "f_min": 1,
+        "f_parity": "any",
+        "p_mode": "any",
+        "q_min": null
+      },
+      "pair": [
+        "P_2",
+        "incident point-hyperplane flag stabilizer"
+      ],
+      "primitive_exponent": [
+        0,
+        4
+      ],
+      "group_factor": {
+        "kind": "minus",
+        "q_exponent": [
+          0,
+          4
+        ],
+        "minimum_valuation": 1
+      },
+      "central_divisor_exponents": [
+        [
+          0,
+          1
+        ]
+      ],
+      "outer": {
+        "kind": "factorwise",
+        "constant": 2,
+        "diagonal_exponents": [
+          [
+            0,
+            1
+          ]
+        ]
+      },
+      "exception_cases": [],
+      "order_source_ids": [
+        "ORD-CLASSICAL-GROUPS",
+        "ORD-LIE-OUTER",
+        "ORD-PSL-GRAPH-SUBGROUPS"
+      ],
+      "zsigmondy_invocation_id": "ZIG-PSL4-GRAPH",
+      "exception_ids": [],
+      "selected_factor_bound_sets": [
+        {
+          "subgroup": "P_2",
+          "exponents": [
+            [
+              0,
+              2
+            ]
+          ],
+          "constants": []
+        },
+        {
+          "subgroup": "incident point-hyperplane flag stabilizer",
+          "exponents": [
+            [
+              0,
+              2
+            ],
+            [
+              0,
+              1
+            ]
+          ],
+          "constants": []
+        }
+      ]
+    },
+    {
+      "id": "AR-PSLN-GRAPH",
+      "theorem": "6.6B2",
+      "family": "PSL(n,q), n>=5, graph part",
+      "proof_kind": "primitive-exponent",
+      "domain": {
+        "rank": {
+          "variable": "n",
+          "min": 5,
+          "parity": "any"
+        },
+        "f_min": 1,
+        "f_parity": "any",
+        "p_mode": "any",
+        "q_min": null
+      },
+      "pair": [
+        "point-hyperplane flag stabilizer",
+        "line-(n-2)-space flag stabilizer"
+      ],
+      "primitive_exponent": [
+        1,
+        0
+      ],
+      "group_factor": {
+        "kind": "minus",
+        "q_exponent": [
+          1,
+          0
+        ],
+        "minimum_valuation": 1
+      },
+      "central_divisor_exponents": [
+        [
+          0,
+          1
+        ]
+      ],
+      "outer": {
+        "kind": "factorwise",
+        "constant": 2,
+        "diagonal_exponents": [
+          [
+            0,
+            1
+          ]
+        ]
+      },
+      "exception_cases": [
+        {
+          "p": 2,
+          "f": 1,
+          "n": 6,
+          "ids": [
+            "Z-PSL6-2"
+          ],
+          "route": "substitute"
+        }
+      ],
+      "order_source_ids": [
+        "ORD-CLASSICAL-GROUPS",
+        "ORD-LIE-OUTER",
+        "ORD-PSL-GRAPH-SUBGROUPS"
+      ],
+      "zsigmondy_invocation_id": "ZIG-PSLN-GRAPH",
+      "exception_ids": [
+        "Z-PSL6-2"
+      ],
+      "selected_factor_bound_sets": [
+        {
+          "subgroup": "point-hyperplane flag stabilizer",
+          "exponents": [
+            [
+              1,
+              -2
+            ],
+            [
+              0,
+              1
+            ]
+          ],
+          "constants": []
+        },
+        {
+          "subgroup": "line-(n-2)-space flag stabilizer",
+          "exponents": [
+            [
+              0,
+              2
+            ],
+            [
+              1,
+              -4
+            ],
+            [
+              0,
+              1
+            ]
+          ],
+          "constants": []
+        }
+      ]
+    },
+    {
+      "id": "AR-D4-TRIALITY",
+      "theorem": "6.6B3",
+      "family": "D_4(q), triality graph part",
+      "proof_kind": "primitive-exponent",
+      "domain": {
+        "rank": {
+          "fixed": 4
+        },
+        "f_min": 1,
+        "f_parity": "any",
+        "p_mode": "any",
+        "q_min": null
+      },
+      "pair": [
+        "P_2",
+        "Q_{2}"
+      ],
+      "primitive_exponent": [
+        0,
+        6
+      ],
+      "group_factor": {
+        "kind": "minus",
+        "q_exponent": [
+          0,
+          6
+        ],
+        "minimum_valuation": 1
+      },
+      "outer": {
+        "kind": "factorwise",
+        "constant": 24,
+        "diagonal_exponents": []
+      },
+      "exception_cases": [
+        {
+          "p": 2,
+          "f": 1,
+          "n": 4,
+          "ids": [
+            "Z-D4-2"
+          ],
+          "route": "substitute"
+        }
+      ],
+      "order_source_ids": [
+        "ORD-CLASSICAL-GROUPS",
+        "ORD-LIE-OUTER",
+        "ORD-D4-SMALL"
+      ],
+      "zsigmondy_invocation_id": "ZIG-D4-TRIALITY",
+      "exception_ids": [
+        "Z-D4-2"
+      ],
+      "selected_factor_bound_sets": [
+        {
+          "subgroup": "P_2",
+          "exponents": [
+            [
+              0,
+              2
+            ]
+          ],
+          "constants": []
+        },
+        {
+          "subgroup": "Q_{2}",
+          "exponents": [
+            [
+              0,
+              2
+            ],
+            [
+              0,
+              1
+            ]
+          ],
+          "constants": []
+        }
+      ]
+    },
+    {
+      "id": "AR-E6",
+      "theorem": "6.6B4",
+      "family": "E_6(q), all graph parts",
+      "proof_kind": "primitive-exponent",
+      "domain": {
+        "rank": {
+          "fixed": 6
+        },
+        "f_min": 1,
+        "f_parity": "any",
+        "p_mode": "any",
+        "q_min": null
+      },
+      "pair": [
+        "P_2",
+        "P_4"
+      ],
+      "primitive_exponent": [
+        0,
+        12
+      ],
+      "group_factor": {
+        "kind": "minus",
+        "q_exponent": [
+          0,
+          12
+        ],
+        "minimum_valuation": 1
+      },
+      "central_divisor_exponents": [
+        [
+          0,
+          1
+        ]
+      ],
+      "outer": {
+        "kind": "factorwise",
+        "constant": 2,
+        "diagonal_exponents": [
+          [
+            0,
+            1
+          ]
+        ]
+      },
+      "exception_cases": [],
+      "order_source_ids": [
+        "ORD-EXCEPTIONAL-GROUPS",
+        "ORD-LIE-OUTER",
+        "ORD-E6-LEVIS"
+      ],
+      "zsigmondy_invocation_id": "ZIG-E6",
+      "exception_ids": [],
+      "selected_factor_bound_sets": [
+        {
+          "subgroup": "P_2",
+          "exponents": [
+            [
+              0,
+              6
+            ]
+          ],
+          "constants": []
+        },
+        {
+          "subgroup": "P_4",
+          "exponents": [
+            [
+              0,
+              3
+            ]
+          ],
+          "constants": []
+        }
+      ]
+    },
+    {
+      "id": "AR-SP4-GRAPH-ODD",
+      "theorem": "6.6B5",
+      "family": "Sp(4,2^f), graph part, odd f>=3",
+      "proof_kind": "primitive-exponent",
+      "domain": {
+        "rank": {
+          "fixed": 2
+        },
+        "f_min": 3,
+        "f_parity": "odd",
+        "p_mode": "fixed",
+        "p": 2,
+        "q_min": 8
+      },
+      "pair": [
+        "Borel",
+        "Suzuki fixed-point subgroup"
+      ],
+      "primitive_exponent": [
+        0,
+        2
+      ],
+      "group_factor": {
+        "kind": "plus",
+        "q_exponent": [
+          0,
+          1
+        ],
+        "minimum_valuation": 2
+      },
+      "special_avoidance": [
+        "if r|q+1 then r does not divide q^2+1 because their common divisor divides 2 and r>2"
+      ],
+      "outer": {
+        "kind": "factorwise",
+        "constant": 2,
+        "diagonal_exponents": []
+      },
+      "exception_cases": [
+        {
+          "p": 2,
+          "f": 3,
+          "n": 2,
+          "ids": [
+            "Z-SP4-8"
+          ],
+          "route": "substitute"
+        }
+      ],
+      "order_source_ids": [
+        "ORD-CLASSICAL-GROUPS",
+        "ORD-LIE-OUTER",
+        "ORD-SP4-FIXED"
+      ],
+      "zsigmondy_invocation_id": "ZIG-SP4-GRAPH-ODD",
+      "exception_ids": [
+        "Z-SP4-8"
+      ],
+      "selected_factor_bound_sets": [
+        {
+          "subgroup": "Borel",
+          "exponents": [
+            [
+              0,
+              1
+            ]
+          ],
+          "constants": []
+        },
+        {
+          "subgroup": "Suzuki fixed-point subgroup",
+          "exponents": [
+            [
+              0,
+              1
+            ]
+          ],
+          "constants": []
+        }
+      ]
+    },
+    {
+      "id": "AR-SP4-GRAPH-EVEN",
+      "theorem": "6.6B5",
+      "family": "Sp(4,2^f), graph part, even f>=2",
+      "proof_kind": "primitive-exponent",
+      "domain": {
+        "rank": {
+          "fixed": 2
+        },
+        "f_min": 2,
+        "f_parity": "even",
+        "p_mode": "fixed",
+        "p": 2,
+        "q_min": 4
+      },
+      "pair": [
+        "Borel",
+        "index-two subfield subgroup"
+      ],
+      "primitive_exponent": [
+        0,
+        4
+      ],
+      "group_factor": {
+        "kind": "plus",
+        "q_exponent": [
+          0,
+          2
+        ],
+        "minimum_valuation": 1
+      },
+      "outer": {
+        "kind": "factorwise",
+        "constant": 2,
+        "diagonal_exponents": []
+      },
+      "exception_cases": [],
+      "order_source_ids": [
+        "ORD-CLASSICAL-GROUPS",
+        "ORD-LIE-OUTER",
+        "ORD-SP4-FIXED"
+      ],
+      "zsigmondy_invocation_id": "ZIG-SP4-GRAPH-EVEN",
+      "exception_ids": [],
+      "selected_factor_bound_sets": [
+        {
+          "subgroup": "Borel",
+          "exponents": [
+            [
+              0,
+              1
+            ]
+          ],
+          "constants": []
+        },
+        {
+          "subgroup": "index-two subfield subgroup",
+          "exponents": [
+            [
+              0,
+              2
+            ],
+            [
+              0,
+              1
+            ]
+          ],
+          "constants": []
+        }
+      ]
+    },
+    {
+      "id": "AR-F4-GRAPH",
+      "theorem": "6.6B6",
+      "family": "F_4(2^f), graph part",
+      "proof_kind": "primitive-exponent",
+      "domain": {
+        "rank": {
+          "fixed": 4
+        },
+        "f_min": 1,
+        "f_parity": "any",
+        "p_mode": "fixed",
+        "p": 2,
+        "q_min": 2
+      },
+      "pair": [
+        "Q_{2,3}",
+        "Q_{1,4}"
+      ],
+      "primitive_exponent": [
+        0,
+        12
+      ],
+      "group_factor": {
+        "kind": "minus",
+        "q_exponent": [
+          0,
+          12
+        ],
+        "minimum_valuation": 1
+      },
+      "outer": {
+        "kind": "factorwise",
+        "constant": 2,
+        "diagonal_exponents": []
+      },
+      "exception_cases": [],
+      "order_source_ids": [
+        "ORD-EXCEPTIONAL-GROUPS",
+        "ORD-LIE-OUTER",
+        "ORD-F4-GRAPH-LEVIS"
+      ],
+      "zsigmondy_invocation_id": "ZIG-F4-GRAPH",
+      "exception_ids": [],
+      "selected_factor_bound_sets": [
+        {
+          "subgroup": "Q_{2,3}",
+          "exponents": [
+            [
+              0,
+              4
+            ],
+            [
+              0,
+              1
+            ]
+          ],
+          "constants": []
+        },
+        {
+          "subgroup": "Q_{1,4}",
+          "exponents": [
+            [
+              0,
+              2
+            ],
+            [
+              0,
+              1
+            ]
+          ],
+          "constants": []
+        }
+      ]
+    },
+    {
+      "id": "AR-G2-GRAPH-ODD",
+      "theorem": "6.6B7",
+      "family": "G_2(3^f), graph part, odd f",
+      "proof_kind": "primitive-exponent",
+      "domain": {
+        "rank": {
+          "fixed": 2
+        },
+        "f_min": 1,
+        "f_parity": "odd",
+        "p_mode": "fixed",
+        "p": 3,
+        "q_min": 3
+      },
+      "pair": [
+        "Borel",
+        "Ree fixed-point subgroup"
+      ],
+      "primitive_exponent": [
+        0,
+        3
+      ],
+      "group_factor": {
+        "kind": "minus",
+        "q_exponent": [
+          0,
+          3
+        ],
+        "minimum_valuation": 1
+      },
+      "special_avoidance": [
+        "if r|q^3-1 then r does not divide q^3+1 because their common divisor divides 2 and r>2"
+      ],
+      "outer": {
+        "kind": "factorwise",
+        "constant": 2,
+        "diagonal_exponents": []
+      },
+      "exception_cases": [],
+      "order_source_ids": [
+        "ORD-EXCEPTIONAL-GROUPS",
+        "ORD-LIE-OUTER",
+        "ORD-G2-FIXED"
+      ],
+      "zsigmondy_invocation_id": "ZIG-G2-GRAPH-ODD",
+      "exception_ids": [],
+      "selected_factor_bound_sets": [
+        {
+          "subgroup": "Borel",
+          "exponents": [
+            [
+              0,
+              1
+            ]
+          ],
+          "constants": []
+        },
+        {
+          "subgroup": "Ree fixed-point subgroup",
+          "exponents": [
+            [
+              0,
+              1
+            ]
+          ],
+          "constants": []
+        }
+      ]
+    },
+    {
+      "id": "AR-G2-GRAPH-EVEN",
+      "theorem": "6.6B7",
+      "family": "G_2(3^f), graph part, even f",
+      "proof_kind": "primitive-exponent",
+      "domain": {
+        "rank": {
+          "fixed": 2
+        },
+        "f_min": 2,
+        "f_parity": "even",
+        "p_mode": "fixed",
+        "p": 3,
+        "q_min": 9
+      },
+      "pair": [
+        "Borel",
+        "index-two subfield subgroup"
+      ],
+      "primitive_exponent": [
+        0,
+        6
+      ],
+      "group_factor": {
+        "kind": "plus",
+        "q_exponent": [
+          0,
+          3
+        ],
+        "minimum_valuation": 1
+      },
+      "outer": {
+        "kind": "factorwise",
+        "constant": 2,
+        "diagonal_exponents": []
+      },
+      "exception_cases": [],
+      "order_source_ids": [
+        "ORD-EXCEPTIONAL-GROUPS",
+        "ORD-LIE-OUTER",
+        "ORD-G2-FIXED"
+      ],
+      "zsigmondy_invocation_id": "ZIG-G2-GRAPH-EVEN",
+      "exception_ids": [],
+      "selected_factor_bound_sets": [
+        {
+          "subgroup": "Borel",
+          "exponents": [
+            [
+              0,
+              1
+            ]
+          ],
+          "constants": []
+        },
+        {
+          "subgroup": "index-two subfield subgroup",
+          "exponents": [
+            [
+              0,
+              3
+            ],
+            [
+              0,
+              1
+            ]
+          ],
+          "constants": []
+        }
+      ]
+    }
+  ],
+  "substitute_certificates": [
+    {
+      "id": "SUB-PSL2-8",
+      "exception_id": "Z-PSL2-8",
+      "branch_ids": [
+        "AR-PSL2-EVEN"
+      ],
+      "prime": 3,
+      "group_order": 504,
+      "subgroup_orders": [
+        56,
+        14
+      ],
+      "outer_multiple": 3,
+      "required_gap": 1
+    },
+    {
+      "id": "SUB-PSL6-2-A",
+      "exception_id": "Z-PSL6-2",
+      "branch_ids": [
+        "AR-PSL-TRIVIAL"
+      ],
+      "prime": 31,
+      "group_order": 20158709760,
+      "subgroup_orders": [
+        120960,
+        28224
+      ],
+      "outer_multiple": 2,
+      "required_gap": 0
+    },
+    {
+      "id": "SUB-PSL6-2-B",
+      "exception_id": "Z-PSL6-2",
+      "branch_ids": [
+        "AR-PSLN-GRAPH"
+      ],
+      "prime": 31,
+      "group_order": 20158709760,
+      "subgroup_orders": [
+        20160,
+        216
+      ],
+      "outer_multiple": 2,
+      "required_gap": 0
+    },
+    {
+      "id": "SUB-D4-2-ORDINARY",
+      "exception_id": "Z-D4-2",
+      "branch_ids": [
+        "AR-DPLUS"
+      ],
+      "prime": 5,
+      "group_order": 174182400,
+      "subgroup_orders": [
+        20160,
+        216
+      ],
+      "outer_multiple": 24,
+      "required_gap": 0
+    },
+    {
+      "id": "SUB-D4-2-TRIALITY",
+      "exception_id": "Z-D4-2",
+      "branch_ids": [
+        "AR-D4-TRIALITY"
+      ],
+      "prime": 5,
+      "group_order": 174182400,
+      "subgroup_orders": [
+        216,
+        6
+      ],
+      "outer_multiple": 24,
+      "required_gap": 0
+    },
+    {
+      "id": "SUB-SP4-8",
+      "exception_id": "Z-SP4-8",
+      "branch_ids": [
+        "AR-SP4-GRAPH-ODD"
+      ],
+      "prime": 3,
+      "group_order": 1056706560,
+      "subgroup_orders": [
+        200704,
+        29120
+      ],
+      "outer_multiple": 6,
+      "required_gap": 1
+    }
+  ],
+  "finite_exception_anchors": [
+    {
+      "exception_id": "Z-PSU4-2",
+      "alias_exception_id": "ISO-PSU4-2",
+      "group": "Sp43",
+      "order": 25920,
+      "certificate": "computations/certificates/sweepJ_divisibility.log",
+      "expected_xcases": 2,
+      "terminal": "Sp43^k EXCLUDED FOR ALL k >= 2 AND ALL X."
+    },
+    {
+      "exception_id": "Z-PSL3-4",
+      "alias_exception_id": null,
+      "group": "L3_4",
+      "order": 20160,
+      "certificate": "computations/certificates/sweepK_novelty.log",
+      "expected_xcases": 10,
+      "terminal": "SWEEP K DONE.|PASS"
+    },
+    {
+      "exception_id": "Z-SP6-2",
+      "alias_exception_id": null,
+      "group": "O(7,2)",
+      "order": 1451520,
+      "certificate": "computations/certificates/sweepJ3_bigrange.log",
+      "expected_xcases": 1,
+      "terminal": "O(7,2)^k EXCLUDED FOR ALL k >= 2 AND ALL X."
+    }
+  ]
+}

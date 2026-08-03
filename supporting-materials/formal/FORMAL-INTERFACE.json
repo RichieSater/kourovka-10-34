@@ -1,0 +1,58 @@
+{
+  "schema_version": 1,
+  "claim_id": "RED-COORD",
+  "producer": {
+    "proof_assistant": "The Rocq Prover 9.2",
+    "library": "MathComp 2.6.0",
+    "coverage_manifest": "../formal-rocq/FORMAL-COVERAGE.json",
+    "file": "../formal-rocq/CharacteristicallySimple.v",
+    "theorem": "nonsolvable_charsimple_explicit_power",
+    "output": "G \\isog setXn (fun _ : {f | f \\in I} => H)",
+    "factor_properties": "H \\subset G; simple H; ~~ solvable H; ~~ abelian H",
+    "factor_index": "{f | f \\in I}",
+    "factor_count": "#|I|",
+    "positive_count": "0 < #|I|",
+    "exact_order": "#|G| = #|H| ^ #|I|"
+  },
+  "reindex": {
+    "proof_assistant": "Lean 4.32.2",
+    "library": "mathlib 905b95818eb32af7874a58b427f50c1711a5e96c",
+    "coverage_manifest": "FORMAL-COVERAGE.json",
+    "file": "Kourovka1034/DirectPower.lean",
+    "theorem": "Kourovka1034.DirectPower.explicitPowerEquivFin_with_base",
+    "input": "[Nonempty I]; e : N \u2243* (I \u2192 S)",
+    "output": "Nonempty (Fin (Nat.card I)) \u2227 Nonempty (N \u2243* (Fin (Nat.card I) \u2192 S))"
+  },
+  "consumer": {
+    "proof_assistant": "Lean 4.32.2",
+    "library": "mathlib 905b95818eb32af7874a58b427f50c1711a5e96c",
+    "coverage_manifest": "FORMAL-COVERAGE.json",
+    "file": "Kourovka1034/AmbientWreath.lean",
+    "theorem": "Kourovka1034.AmbientWreath.ambient_coordinate_realization_and_bound",
+    "input": "e : N \u2243* (Fin k \u2192 S)"
+  },
+  "definition_correspondence": [
+    {
+      "rocq": "G \\isog L",
+      "lean": "Nonempty (G \u2243* L)",
+      "justification": "MathComp isogP expands isog to an injective group morphism whose image is exactly L; restricting the map and inverse to the subgroup carriers is exactly existence of a group equivalence between the subgroup types."
+    },
+    {
+      "rocq": "setXn (fun _ : J => H)",
+      "lean": "J \u2192 H",
+      "justification": "MathComp setXn is the subgroup of dependent finite functions whose j-th value lies in H, with pointwise group operations; for the constant family H its subgroup carrier is canonically the coordinatewise function group J \u2192 H."
+    },
+    {
+      "rocq": "J = {f | f \\in I}, with #|J| = #|I| and 0 < #|I|",
+      "lean": "[Nonempty J]; Fin (Nat.card J)",
+      "justification": "Positive finite cardinality supplies a factor element. The Lean theorem explicitPowerEquivFin_with_base kernel-checks both the resulting base coordinate in Fin (Nat.card J) and reindexing along Finite.equivFin."
+    },
+    {
+      "rocq": "simple H; ~~ solvable H; ~~ abelian H",
+      "lean": "S is a finite nonabelian simple group",
+      "justification": "The Rocq theorem now returns nonabelianness explicitly, derived in-kernel from nonsolvability via MathComp abelian_sol, so the same factor meets the Lean ambient theorem without an unstated implication at the interface."
+    }
+  ],
+  "composition": "Existential elimination chooses the Rocq-proved external-product isomorphism and positive factor index; Lean reindexes that index to Fin k, constructs the required base coordinate, and supplies the resulting MulEquiv to the universally quantified ambient theorem. The only cross-kernel trust is the audited definition correspondence between MathComp subgroup isomorphism/external product and Lean MulEquiv/function product; no unproved group-theoretic lemma is inserted at the seam.",
+  "checker": "check_formal_interface.py"
+}

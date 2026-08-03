@@ -10,7 +10,7 @@ its non-conjugate maximal subgroups is soluble. This answers Problem 10.34
 of the Kourovka Notebook (V. S. Monakhov, 1986) in the negative.
 
 This directory contains the paper source, every GAP script and log
-certificate backing its machine-verified claims, the arithmetic receipts for the uniform family proofs, a pinned Lean project,
+certificate backing its machine-verified claims, the arithmetic receipts for the uniform family proofs, pinned Lean and Rocq/MathComp projects,
 and a binary obligation ledger. Every proof-essential finite record now carries
 an exact subgroup-class identity rather than an order-only label.
 
@@ -31,27 +31,25 @@ supporting-materials/
 ├── verify-full.sh           Full (expensive) GAP reproduction
 ├── paper/
 │   ├── kourovka1034.tex     LaTeX source
-│   └── submission/          Abstract and audit materials
+│   └── submission/          Abstract
 ├── audit/
-│   ├── WRITER-GATE-README.md Writer workflow for both binary gates
-│   ├── BURDEN-OF-PROOF-MATRIX.csv Every granular submission/99% requirement
-│   ├── BURDEN-POLICY.json   Pinned profile and requirement inventory
-│   ├── OBLIGATIONS.csv      One binary row per proof obligation
-│   ├── DEPENDENCY-DAG.json  Main-theorem dependency graph
 │   ├── ASSUMPTIONS.md       Explicit external trust boundary
 │   ├── CLASSIFICATION-MANIFEST.json
 │   ├── EXCEPTION-MANIFEST.json
+│   ├── FAMILY-ARITHMETIC-MANIFEST.json Exact 34-branch arithmetic specification
+│   ├── ARITHMETIC-EXCEPTIONS.generated.json Generated exhaustive exception view
 │   ├── LIE-SOURCE-MAP.csv Exact high-risk Lie-type source obligations
 │   ├── MAXIMALITY-SOURCE-MAP.csv Exact family maximality pinpoints
+│   ├── ORDER-FORMULA-SOURCE-MAP.csv Exact group, subgroup, and Levi formulas
+│   ├── ZSIGMONDY-INVOCATIONS.csv One row for every primitive-prime invocation
+│   ├── BOUNDARY-SOURCE-MAP.csv Exact simplicity/isomorphism boundary sources
 │   ├── SPORADIC-SOURCE-MAP.csv Exact selected-class source map
 │   ├── PRIORITY-SEARCH.md  Reproducible prior-proof search and limits
-│   ├── SOURCE-LEDGER.md     Pinpoint citations and open actions
-│   ├── RED-TEAM-REPORT.md   Reproduced defects and adversarial tests
-│   ├── STOP-SHIP.md         Remaining binary blockers
-│   ├── SUBMISSION-REPORT.md Machine-generated-gate outcome summary
+│   ├── SOURCE-LEDGER.md     Pinpoint citations
 │   └── EVIDENCE.sha256      Cryptographic closure of proof evidence
-├── formal/                  Lean project + exact coverage manifest
-├── notes/                   Non-normative historical working notes
+├── formal/                  Lean project + coverage/formal-interface manifests
+│   └── Kourovka1034/        Includes reindexing and ambient-wreath proofs
+├── formal-rocq/             Rocq internal/external direct-power theorems + pins
 └── computations/
     ├── gap/                 Fail-closed GAP proof programs
     ├── python/              Primary coverage/arithmetic checks
@@ -96,6 +94,9 @@ The generated auxiliary files remain ignored inside `paper/`.
   the pinned container recipe.
 - **Python 3.9+**, standard library only for verification scripts.
 - **Lean 4.32.2** and the locked mathlib commit for `formal/`.
+- **Rocq 9.2** and **MathComp 2.6.0** for `formal-rocq/`; the verifier
+  checks six exact upstream source SHA-256 pins used by the decomposition and
+  explicit-coordinate bridge.
 - **Tectonic** (or a standard LaTeX installation) to build the paper.
 
 ## Quick verification
@@ -106,16 +107,23 @@ One command runs the fast, no-GAP regression and integrity checks:
 sh verify-quick.sh
 ```
 
-It runs finite coverage, concrete and symbolic family arithmetic,
+It runs finite coverage, concrete regression arithmetic, the exact universal
+34-branch arithmetic manifest, and a manifest-independent symbolic arithmetic
+implementation,
 family/exception topology, exact finite-witness parsing, fail-closed log scans,
-the high-risk Lie-source/Levi and maximality-source cross-checks, audit-schema checks,
+the high-risk Lie-source/Levi, maximality, exact order-formula, Zsigmondy
+invocation, and classification-boundary cross-checks, audit-schema checks,
+the Rocq/MathComp characteristically-simple/direct-power theorem,
 manuscript/manifest checks, and SHA-256 verification.
 
 The finite inventories contain exactly 47 and 51 groups in the two
 published ranges. The 7,892 concrete family instances are regression tests,
-not proofs of universal family statements; the independent symbolic checker
-separately verifies the encoded affine exponent inequalities and substitute
-prime valuations.
+not proofs of universal family statements. The primary universal checker binds
+all 34 branches to exact formula/source rows, proves the unbounded affine
+inequalities, regenerates the complete exception view, and checks every finite
+destination; the separately authored symbolic implementation does not read
+that manifest. Lean kernel-checks the universal arithmetic deductions while
+leaving the cited classification/order formulas as explicit external inputs.
 
 Expected final lines are `COVERAGE COMPLETE: ...`,
 `COVERAGE (big range) OK.`, `SWEEP N DONE.`, and
@@ -125,7 +133,7 @@ Expected final lines are `COVERAGE COMPLETE: ...`,
 
 The full suite (runtime depends strongly on GAP and hardware) regenerates every
 proof-essential certificate, scans it for soft failures, byte-compares it to
-the committed result, removes the temporary output, builds Lean, and runs the
+the committed result, removes the temporary output, builds Lean and Rocq, and runs the
 independent and mutation suites:
 
 ```sh
@@ -171,53 +179,7 @@ certificate and evidence manifests.  This keeps every file in
 `computations/certificates/` on a fail-closed release-gate path.
 
 
-## Binary release gates
-
-Writers and reviewing agents must first read
-[`audit/WRITER-GATE-README.md`](audit/WRITER-GATE-README.md). The complete
-dual-profile checklist is
-[`audit/BURDEN-OF-PROOF-MATRIX.csv`](audit/BURDEN-OF-PROOF-MATRIX.csv); it is
-gate-validated rather than maintained as advisory prose.
-
-```sh
-sh submission-gate.sh submission
-sh submission-gate.sh confidence99
-```
-
-A gate prints `PASS` only if every obligation required by that profile is
-closed. It is not a weighted score. The current checkout deliberately retains
-unresolved source, full-core formalization, literature-database, and two-host
-clean-room obligations, so the 99% gate must report `FAIL`; see
-[`audit/STOP-SHIP.md`](audit/STOP-SHIP.md). A passing test suite is evidence
-that the implemented checks work, not permission to relabel open mathematics
-as closed.
-
-### Two-machine clean-room receipts
-
-After committing a clean release candidate, run the following from two
-independent machines (the receipt path must be outside the clone):
-
-```sh
-computations/environment/run-cleanroom.sh /tmp/kourovka-cleanroom.json
-```
-
-Each run first makes an enforced non-hardlinked fresh clone, then builds the
-pinned container without cache, runs `verify-full.sh`, and writes both the JSON
-receipt and a `.full.log` companion. The receipt records the candidate commit
-plus hashes of the evidence manifest, certificate manifest, and complete log.
-Add each receipt/log pair to the later attestation commit with:
-
-```sh
-python3 audit/check_cleanroom.py \
-  --add /tmp/kourovka-cleanroom.json \
-  --log /tmp/kourovka-cleanroom.json.full.log
-python3 audit/check_cleanroom.py --require-complete
-```
-
-The second command hard-fails unless at least two distinct machines report the
-same candidate commit and manifests and byte-identical full-suite output. The
-current empty receipt bundle is intentionally valid only for linting; it cannot
-close `CLEANROOM` or pass the 99%-confidence gate.
+## Formal coverage
 
 The current Lean coverage closes the exact quotient-inheritance theorem; the
 minimal-order reduction through the unique minimal normal subgroup, its
@@ -226,21 +188,39 @@ exact coordinate-product construction, orbit-from-`X`-stability argument,
 normalizer intersection/supplement/order conclusions; the finite
 subgroup-product/lower-divisibility bridge; and the final universal-in-`k`
 arithmetic contradiction, as well as non-conjugacy of the resulting ambient
-normalizers. Constructing the normalized coordinate-action model in the
-reduction remains open. Conditional on that exact model, Lean also checks the
+normalizers. It also closes the 34-branch universal arithmetic deductions,
+including exhaustive Zsigmondy exception routing, conditional on the exact
+published formula and classification inputs recorded in the arithmetic
+manifest. Constructing the normalized coordinate-action model in the
+reduction is now kernel checked from an explicit equivalence
+`N ≃* (Fin k → S)`: Lean constructs the faithful wreath map, proves factor
+transitivity and the exact inner-base preimage, normalizes the coordinate
+closure, and proves the quotient divisor. `RED-COORD` is now closed by the
+strengthened Rocq theorem constructing an isomorphism to the explicit external
+coordinate product over an explicitly nonabelian factor, the Lean theorem
+reindexing any nonempty finite coordinate type to `Fin k` and constructing its
+base coordinate, and the fail-closed producer/reindex/consumer signature and
+definition-correspondence audit in
+`formal/FORMAL-INTERFACE.json`. Conditional on the normalized model, Lean also checks the
 full maximality lemma: supplement recovery of the coordinate-closure
 generators, invariance and stable uniformity of the projections of `H \cap N`,
 the saturation/Goursat product step, the finite-simple normalizer-tower/poset
 dichotomy, the ambient intersection dichotomy, and the final coatom conclusion.
 
+The root and nested `.gitignore` files deliberately ignore only caches,
+compiled Lean/Rocq products, TeX auxiliaries, and scratch regeneration files.
+Manifest CSV/JSON files, formal sources, certificate logs, and source maps
+are proof evidence and must remain visible to Git.
+
 ## Citing this repository
 
 Citation metadata lives in [`CITATION.cff`](../CITATION.cff) at the
-repository root. Cite the versioned release (currently `v1.0.5`), not
-the mutable default branch. The archived release DOI is
-[10.5281/zenodo.21746829](https://doi.org/10.5281/zenodo.21746829)
-(version v1.0.5); the concept DOI covering all versions is
-[10.5281/zenodo.21709124](https://doi.org/10.5281/zenodo.21709124).
+repository root. Cite the versioned release (currently `v1.0.6`), not
+the mutable default branch. The concept DOI covering all versions is
+[10.5281/zenodo.21709124](https://doi.org/10.5281/zenodo.21709124);
+the v1.0.6 version DOI is minted when the release is archived on
+Zenodo (the archived v1.0.5 version DOI is
+[10.5281/zenodo.21746829](https://doi.org/10.5281/zenodo.21746829)).
 
 ## License
 

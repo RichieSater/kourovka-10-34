@@ -1,4 +1,7 @@
-unbounded affine branches proved: 12
-fixed-rank exponent branches checked: 13
-substitute-prime exact valuations: PSL(6,2), Omega+(8,2), Sp(4,8): PASS
+exact theorem branches independently encoded: 34
+primitive branches universally checked: 32
+source-derived exponent/diagonal bounds proved: 107
+special residue identities: Sp4 odd, G2 odd: PASS
+substitute-prime exact valuations: PSL(2,8), PSL(6,2) x2, Omega+(8,2) x2, Sp(4,8): PASS
+defining-characteristic and alternating universal lemmas: PASS
 INDEPENDENT SYMBOLIC FAMILY ARITHMETIC|PASS

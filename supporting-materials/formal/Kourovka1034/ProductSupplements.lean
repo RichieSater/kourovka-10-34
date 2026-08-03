@@ -22,9 +22,9 @@ machinery.
 * The finite subgroup-product cardinality formula and the resulting
   prime-power divisibility forced by Property P.
 
-The reduction which constructs the normalized coordinate-action model remains
-a separate explicit obligation in `FORMAL-COVERAGE.json`; the maximality
-argument using that model is checked in `Maximality.lean`.
+The normalized coordinate-action model is supplied by the separately checked
+`RED-COORD` and `RED-WREATH-INTERFACE` chain; the maximality argument using
+that model is checked in `Maximality.lean`.
 -/
 
 namespace Kourovka1034
