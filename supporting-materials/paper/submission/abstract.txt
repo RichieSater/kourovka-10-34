@@ -1,5 +1,5 @@
-We prove that every finite group which coincides with the product of any
-two of its non-conjugate maximal subgroups is soluble, answering Problem
+We prove that every finite group that is the product of every pair of
+its non-conjugate maximal subgroups is soluble, answering Problem
 10.34 of the Kourovka Notebook (V. S. Monakhov, 1986) in the negative.
 The almost simple case was settled by Tikhonenko and Tyutyanov (2010);
 the obstacle to the general case was the socle S^k with k >= 2, which no
@@ -9,5 +9,5 @@ the simple group S, subject to a valuation inequality, excludes the
 socle S^k for all k >= 2 and every admissible embedding at once. Such
 pairs are constructed uniformly for every infinite family of finite
 simple groups, with Zsigmondy primes as the arithmetic obstruction; the
-sporadic groups and all remaining small cases are settled by
+sporadic groups and every remaining small case are settled by
 independently re-checkable certificates produced in GAP.
