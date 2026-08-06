@@ -1,13 +1,13 @@
-# Kourovka 10.34 — supporting materials
+# Kourovka 10.34: supporting materials
 
 **[Download the current paper PDF](../kourovka1034.pdf)**
 LaTeX source: [`paper/kourovka1034.tex`](paper/kourovka1034.tex)
 
 ## Result
 
-**Claim.** Every finite group that coincides with the product of any two of
-its non-conjugate maximal subgroups is soluble. This answers Problem 10.34
-of the Kourovka Notebook (V. S. Monakhov, 1986) in the negative.
+**Claim.** Every finite group that is the product of every pair of its
+non-conjugate maximal subgroups is soluble. This answers Problem 10.34 of the
+Kourovka Notebook (V. S. Monakhov, 1986) in the negative.
 
 This directory contains the paper source, every GAP script and log
 certificate backing its machine-verified claims, the arithmetic receipts for the uniform family proofs, pinned Lean and Rocq/MathComp projects,
@@ -106,8 +106,8 @@ certificate reproduction with:
 
 ```sh
 docker build -f supporting-materials/computations/environment/Dockerfile \
-  -t kourovka1034:1.0.7 .
-docker run --rm kourovka1034:1.0.7
+  -t kourovka1034:1.0.8 .
+docker run --rm kourovka1034:1.0.8
 ```
 
 The image build kernel-checks the Lean project, then removes disposable
@@ -119,7 +119,7 @@ access.
 To run only the quick suite inside the same image:
 
 ```sh
-docker run --rm --entrypoint sh kourovka1034:1.0.7 \
+docker run --rm --entrypoint sh kourovka1034:1.0.8 \
   -c 'sh verify-quick.sh'
 ```
 
@@ -239,7 +239,7 @@ are proof evidence and must remain visible to Git.
 ## Citing this repository
 
 Citation metadata lives in [`CITATION.cff`](../CITATION.cff) at the
-repository root. Cite the versioned release (currently `v1.0.7`), not
+repository root. Cite the versioned release (currently `v1.0.8`), not
 the mutable default branch. The concept DOI covering all versions is
 [10.5281/zenodo.21709124](https://doi.org/10.5281/zenodo.21709124).
 Zenodo lists the immutable DOI for each archived release on that record's

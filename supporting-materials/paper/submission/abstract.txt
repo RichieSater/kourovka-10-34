@@ -1,13 +1,14 @@
 We prove that every finite group that is the product of every pair of
 its non-conjugate maximal subgroups is soluble, answering Problem
 10.34 of the Kourovka Notebook (V. S. Monakhov, 1986) in the negative.
-The almost simple case was settled by Tikhonenko and Tyutyanov (2010);
-the obstacle to the general case was the socle S^k with k >= 2, which no
-counting bound can control. We remove it with a divisibility criterion:
-a single pair of automorphism-stable conjugacy classes of subgroups of
-the simple group S, subject to a valuation inequality, excludes the
-socle S^k for all k >= 2 and every admissible embedding at once. Such
-pairs are constructed uniformly for every infinite family of finite
-simple groups, with Zsigmondy primes as the arithmetic obstruction; the
-sporadic groups and every remaining small case are settled by
-independently re-checkable certificates produced in GAP.
+Tikhonenko and Tyutyanov settled the almost simple case in 2010. What remains
+is the possibility of a minimal counterexample whose unique minimal normal
+subgroup is S^k, with S non-abelian simple and k >= 2. Because k is unbounded,
+no bound depending on a fixed ratio of subgroup orders can handle all such
+groups. We rule out this possibility with a divisibility criterion: a single
+pair of automorphism-stable conjugacy classes of subgroups of S, satisfying a
+valuation inequality, excludes the configuration for every k >= 2 and every
+admissible embedding. Such pairs are constructed uniformly for every infinite
+family of finite simple groups, with Zsigmondy primes as
+the arithmetic obstruction. The sporadic groups and the finitely many
+exceptional cases are handled by independently checkable GAP certificates.

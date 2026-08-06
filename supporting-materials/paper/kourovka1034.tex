@@ -25,7 +25,6 @@
 \DeclareMathOperator{\Inn}{Inn}
 \DeclareMathOperator{\Aut}{Aut}
 \DeclareMathOperator{\Out}{Out}
-\DeclareMathOperator{\Inndiag}{Inndiag}
 \DeclareMathOperator{\Syl}{Syl}
 \DeclareMathOperator{\Fix}{Fix}
 \DeclareMathOperator{\PSL}{PSL}
@@ -38,7 +37,6 @@
 \DeclareMathOperator{\GU}{GU}
 \DeclareMathOperator{\Sz}{Sz}
 \DeclareMathOperator{\ord}{ord}
-\newcommand{\N}{\mathbb{N}}
 \newcommand{\Z}{\mathbb{Z}}
 \newcommand{\F}{\mathbb{F}}
 \newcommand{\Pos}{\mathcal{P}}
@@ -53,7 +51,7 @@ soluble}
 \email{richiesater@gmail.com}
 \urladdr{https://orcid.org/0009-0007-9051-8207}
 
-\date{August 3, 2026}
+\date{August 5, 2026}
 
 \subjclass[2020]{Primary 20D40; Secondary 20E28, 20D05}
 \keywords{Factorizations of finite groups, maximal subgroups, soluble
@@ -65,16 +63,17 @@ groups, simple groups, Kourovka Notebook Problem 10.34}
 We prove that every finite group that is the product of every pair of
 its non-conjugate maximal subgroups is soluble, answering Problem
 10.34 of the Kourovka Notebook (V.~S.~Monakhov, 1986) in the negative.
-The almost simple case was settled by Tikhonenko and Tyutyanov (2010);
-the obstacle to the general case was the socle $S^k$ with $k\geq2$, which
-no counting bound can control. We remove it with a divisibility
-criterion: a single pair of automorphism-stable conjugacy classes of
-subgroups of the simple group $S$, subject to a valuation inequality,
-excludes the socle $S^k$ for \emph{all} $k\geq2$ and every admissible
-embedding at once. Such pairs are constructed uniformly for every
-infinite family of finite simple groups, with Zsigmondy primes as the
-arithmetic obstruction; the sporadic groups and every remaining small case
-are settled by independently re-checkable certificates produced in GAP.
+Tikhonenko and Tyutyanov settled the almost simple case in 2010. What remains
+is the possibility of a minimal counterexample whose unique minimal normal
+subgroup is $S^k$, with $S$ non-abelian simple and $k\geq2$. Because $k$ is
+unbounded, no bound depending on a fixed ratio of subgroup orders can handle
+all such groups. We rule out this possibility with a divisibility criterion:
+a single pair of automorphism-stable conjugacy classes of subgroups of $S$,
+satisfying a valuation inequality, excludes the configuration for every
+$k\geq2$ and every admissible embedding. Such pairs are constructed uniformly
+for every infinite family of finite simple groups, with Zsigmondy primes as
+the arithmetic obstruction. The sporadic groups and the finitely many
+exceptional cases are handled by independently checkable GAP certificates.
 \end{abstract}
 
 \maketitle
@@ -89,11 +88,10 @@ Problem 10.34 of the Kourovka Notebook, posed by V.~S.~Monakhov in 1986
 product of any two of its non-conjugate maximal subgroups?}
 \end{quote}
 
-Soluble groups with this property exist in abundance: any group
-whose maximal subgroups are all conjugate satisfies it vacuously,
-and $S_4 = AB$ for every pair of non-conjugate maximal subgroups $A,B$. The content
-of the problem is whether the property forces solubility. We prove that it
-does.
+Many soluble groups have this property: it holds vacuously whenever all
+maximal subgroups are conjugate, and $S_4=AB$ for every pair of non-conjugate
+maximal subgroups $A,B$. The content of the problem is whether the property
+forces solubility. We prove that it does.
 
 \begin{theorem}[Main Theorem]\label{thm:main}
 Let $G$ be a finite group such that $G=AB$ for every pair of maximal
@@ -105,23 +103,24 @@ every pair of non-conjugate maximal subgroups $A,B\leq G$.
 
 The almost simple case of Theorem~\ref{thm:main} was proved by Tikhonenko
 and Tyutyanov \cite{TT2010}. We use their theorem as the essential $k=1$
-branch of the main proof. The genuinely new case is $k\geq2$.
+branch of the main proof. The new content is the case $k\geq2$.
 Tikhonenko and Tyutyanov also record that Zenkov had announced a negative
 answer to the full problem in a 1997 conference abstract \cite{Zenkov1997},
 while stating that no proof of that announcement was known to
-them.  Searches completed on 2 August 2026 found no published full proof;
-accordingly, we claim a proof of the stated theorem, not absolute priority
-for the conclusion.  The priority-search record, source ledger, and their
-access limitations are in the supporting materials.
-For comparison only, Theorem~\ref{thm:Dprime} records how the present
-criterion also recovers the almost simple conclusion; neither that theorem
-nor its family-by-family application is a dependency of the Main Theorem.
+them. Searches completed on 2 August 2026 did not identify a published proof,
+and Problem 10.34 remains listed among the unsolved problems in the July 2026
+revision of the Kourovka Notebook \cite{Kourovka}. We therefore claim a proof
+of the theorem, not priority for the conclusion. For comparison,
+Theorem~\ref{thm:Dprime} shows that the present criterion also recovers the
+almost simple conclusion; it is not used in the proof of
+Theorem~\ref{thm:main}.
 
 The maximal factorizations of finite simple groups and their automorphism
 groups were classified by Liebeck, Praeger and Saxl \cite{LPS1990}. Their
 tables classify the factorizations that \emph{do} occur. Our route needs only
-to exhibit, for each coordinate closure, one pair that cannot factorize; the
-valuation obstruction avoids importing the full maximal-factorization tables.
+to exhibit, for each coordinate closure, one pair of classes whose associated
+maximal subgroups cannot factorize $G$; the valuation obstruction avoids
+importing the full maximal-factorization tables.
 
 \subsection*{Strategy}
 A minimal counterexample $G$ has a unique minimal normal subgroup
@@ -132,32 +131,33 @@ subgroup of $G$ of order exactly $|G/N|\cdot|V|^k$
 (\S\ref{sec:machinery}). Property $\mathrm{P}$ forces $G=B_VB_W$ for
 distinct such classes, and the resulting integrality condition
 $|B_V\cap B_W|\in\Z$ produces, for a well-chosen prime $p$, the
-divisibility $p^{dk}\mid |G/N|$ with $d$ independent of $k$, which is
+divisibility $p^{\eta k}\mid |G/N|$ with $\eta$ independent of $k$, which is
 incompatible with $|G/N|$ dividing $x^k\,k!$, where $x=|X/\Inn(S)|$ for
 the relevant $X\leq\Aut(S)$ (\S\ref{sec:criterion}). The conclusion
 (Theorem~\ref{thm:D}) is that a \emph{single} pair of stable classes in
-$S$, satisfying a valuation inequality, rules out the socle $S^k$ for
-every $k\geq 2$ and every admissible embedding at once.
+$S$, satisfying a valuation inequality, rules out the corresponding
+minimal-normal-subgroup configuration for every $k\geq 2$ and every
+admissible embedding.
 
 The $k\geq2$ branch thus reduces to exhibiting such a pair for every finite
 simple group $S$. By the classification of finite simple groups
 \cite[Ch.~1, Table~I, pp.~8--10]{GLS1} (see also
-\cite[Thm.~1.1]{RoneyDougal2021}), this is a finite
-list of infinite families plus $26$ sporadic groups and the Tits group.
+\cite[Thm.~1.1]{RoneyDougal2021}), the possibilities for $S$ comprise
+finitely many infinite families, the $26$ sporadic groups, and the Tits group.
 For the infinite families the pairs are constructed uniformly in
 \S\ref{sec:families}, with Zsigmondy primes of the relevant torus
-exponents as the obstruction primes. The finitely many exceptional
-configurations (among them Zsigmondy exceptions, small-field maximality
-exceptions, and the outer automorphisms of $A_6$) are routed in the
-finite exception manifest. The only ones above $1.05\times 10^{7}$ are the four
-alternating groups $A_{11},A_{12},A_{13},A_{14}$, settled by machine
+exponents as the obstruction primes. The finite exception manifest in
+\cite{Repo} covers the Zsigmondy exceptions, small-field maximality exceptions,
+the exceptional outer automorphisms of $A_6$, and the other isolated cases.
+The manifest identifies the relevant simple groups.
+The only ones above $1.05\times 10^{7}$ are the four
+alternating groups $A_{11},A_{12},A_{13},A_{14}$, handled by machine
 certificates, and the three Lie-type groups $\PSL(6,2)$, $\Omega^+(8,2)$,
-and $\Sp(4,8)$, handled in-text with substitute primes. In the interval
+and $\Sp(4,8)$, treated in the uniform proofs with substitute primes. In the interval
 $5\times10^5\leq |S|\leq1.05\times10^{7}$, the $38$ groups
-$\PSL(2,q)$ are deliberately routed to the uniform proof of
-Theorem~\ref{thm:psl2}; the other $13$ groups, the $47$ groups below
-$5\times10^5$, and every
-sporadic group are settled by machine certificates (\S\ref{sec:machine}).
+$\PSL(2,q)$ are handled by the uniform proof of Theorem~\ref{thm:psl2};
+the remaining $13$ groups, the $47$ groups below $5\times10^5$, and every
+sporadic group are handled by machine certificates (\S\ref{sec:machine}).
 
 Three structural facts keep the family analysis manageable. First, when
 the two exhibited classes consist of \emph{maximal} subgroups of $S$, all
@@ -181,60 +181,62 @@ The machine-certified ingredients were produced with GAP~4.16.0
 \cite{GAP}, using its simple-group iterators, the character table
 library \cite{CTblLib} and \textsc{Atlas} data \cite{ATLAS}, in the
 pinned computational environment described in \S\ref{sec:machine}.
-Proof-path scripts are deterministic and fail closed: any skipped
+The verification scripts used in the proof are deterministic and fail closed:
+any skipped
 case, soft failure, ambiguous identification, missing datum, version
 mismatch, or byte-level certificate difference is fatal to
-verification, and superseded exploratory scripts are excluded from
-the certificate path. Every finite certificate records class
+verification, and superseded exploratory scripts are not part of the
+verification suite. Every finite certificate records class
 positions and guard fingerprints as well as orders, the obstruction
 prime, and valuations. The scripts and logs are archived in a
 versioned release \cite{Repo}; \S\ref{sec:machine} specifies what is
 claimed from the machine and how it is certified, and also records
-the mechanical receipts behind the arithmetic of the family proofs of
+the verification records behind the arithmetic of the family proofs of
 \S\ref{sec:families}.
 
-The genuinely new abstract steps in Sections~2--4 are formalized in
-Lean~4 and Rocq and checked by their kernels. Lean checks the
-quotient inheritance and the minimal-order core of the reduction
-(uniqueness and characteristic simplicity of the minimal normal
-subgroup, non-solubility, soluble quotient, trivial centralizer, and
-faithfulness of the conjugation map $G\to\Aut(N)$); the
-product-supplement intersection, exact order, maximality, and
-non-conjugacy statements of \S\ref{sec:machinery}, under the
-normalized coordinate-action hypotheses of
-Conventions~\ref{conv:X}--\ref{conv:coord}; the
+The structural arguments of \S\S\ref{sec:reduction}--\ref{sec:criterion}
+and the universal arithmetic deductions used in \S\ref{sec:families} are
+formalized in Lean~4 and Rocq and checked by their kernels. Lean checks the
+quotient inheritance and the minimal-order core
+of the reduction: uniqueness and characteristic
+simplicity of the minimal normal subgroup, non-solubility, soluble quotient,
+trivial centralizer, and faithfulness of the conjugation map
+$G\to\Aut(N)$. It also checks the product-supplement intersection, exact
+order, maximality, and non-conjugacy statements of
+\S\ref{sec:machinery}, under the normalized coordinate-action hypotheses of
+Conventions~\ref{conv:X}--\ref{conv:coord}. A further development checks the
 subgroup-product/lower-divisibility bridge and the universal-in-$k$
-arithmetic contradiction of \S\ref{sec:criterion}; and the universal
-arithmetic deductions of the exact $34$-branch arithmetic manifest
+arithmetic contradiction of \S\ref{sec:criterion}. Finally, Lean checks the
+universal arithmetic deductions of the exact $34$-branch arithmetic manifest
 behind the family proofs, conditional on the published group, Levi,
-outer-automorphism, maximality, and Zsigmondy inputs identified by
-source rows. The direct-power step has a
-separate Rocq/MathComp kernel check: every finite characteristically
-simple non-soluble group is an
-internal direct product of $k>0$ automorphic copies of one
-non-soluble, non-abelian simple subgroup $S$, with $|N|=|S|^k$.
-The strengthened Rocq theorem also constructs an isomorphism from $N$
-to the explicit external coordinate product of those same factors.
-Lean then kernel-checks
-reindexing any such nonempty finite coordinate type to
-$\{1,\ldots,k\}$,
-producing exactly the group equivalence $N\cong S^k$ consumed
-downstream. From that equivalence the Lean development constructs the
-coordinate factors and proves that every automorphism permutes them;
-constructs the injective homomorphism
-$\Aut(S^k)\to\Aut(S)\wr S_k$; proves transitivity of the ambient
-$G$-action from minimal normality by an orbit-support argument;
-identifies the inverse image of $\Inn(S)^k$ as $N$; and checks the
-coordinate normalization and the divisor
-$|G/N|\mid |X/\Inn(S)|^k k!$. The producer, reindexing, and consumer
-theorem signatures are bound by a fail-closed formal interface
-manifest and checker.
-No unproved group-theoretic lemma is inserted at the Rocq/Lean seam;
-the audited correspondence between the two systems' definitions of
-subgroup isomorphism and external function product, like the two
-kernels and their locked libraries, remains an
-explicit trusted interface, as recorded in the repository
-assumptions. The formal coverage and interface manifests are part of
+outer-automorphism, maximality, and Zsigmondy inputs identified by the source
+rows.
+
+The direct-power step has a separate Rocq/MathComp kernel check: every finite
+characteristically simple non-soluble group is an internal direct product of
+$k>0$ automorphic copies of one non-soluble, non-abelian simple subgroup $S$,
+with $|N|=|S|^k$. The strengthened Rocq theorem also constructs an isomorphism
+from $N$ to the explicit external coordinate product of those same factors.
+
+Lean then kernel-checks reindexing any such nonempty finite coordinate type to
+$\{1,\ldots,k\}$, producing exactly the group equivalence $N\cong S^k$ used
+in the subsequent construction. From that equivalence the Lean development
+constructs the coordinate factors and proves that every automorphism permutes
+them; constructs the injective homomorphism
+$\Aut(S^k)\to\Aut(S)\wr S_k$; proves transitivity of the ambient $G$-action
+from minimal normality by an orbit-support argument; identifies the inverse
+image of $\Inn(S)^k$ as $N$; and checks the coordinate normalization and the
+divisibility $|G/N|\mid |X/\Inn(S)|^k k!$.
+
+The three theorem signatures, called \texttt{producer}, \texttt{reindex}, and
+\texttt{consumer} in the repository, are bound by a fail-closed formal
+interface manifest and checker. No unproved group-theoretic lemma is inserted
+at the Rocq--Lean interface. No single kernel checks the audited translation
+from MathComp's subgroup isomorphism and external function product to
+Lean's group equivalence and function product; that translation therefore
+remains an explicit trusted interface. The two kernels and their pinned
+libraries are trusted components as well. The formal coverage and interface
+manifests, together with the stated trust assumptions, are part of
 \cite{Repo}.
 
 Generative AI was used in the research and preparation of this paper;
@@ -262,25 +264,25 @@ Lemmas~\ref{lem:A}--\ref{lem:C}, \ref{lem:P} &
 Structural proof; kernel-checked in Lean; parabolic input from
 \cite{Carter} \\[2pt]
 Divisibility criterion: one stable pair with
-$d>\vp{p}(x)$ excludes $S^k$ for every $k\geq2$ &
+$\eta>\vp{p}(x)$ excludes $S^k$ for every $k\geq2$ &
 Thm.~\ref{thm:D} &
 Structural proof; kernel-checked in Lean \\[2pt]
 Stable pairs exist for every infinite family &
 \S\ref{sec:families}, Thms.~\ref{thm:psl2}--\ref{thm:graph} &
 Structural proofs from published order formulas; the universal
-arithmetic kernel-checked in Lean and reproduced by two independent
+arithmetic is kernel-checked in Lean and independently reproduced by two
 implementations (\S\ref{sec:machine}) \\[2pt]
 Sporadic groups, Tits group, and the finite base are excluded &
 Props.~\ref{prop:base}, \ref{prop:sporadic} &
 GAP certificates with coverage cross-checks; $38$ upper-range
-$\PSL(2,q)$ entries route to Thm.~\ref{thm:psl2} \\
+$\PSL(2,q)$ entries are covered by Thm.~\ref{thm:psl2} \\
 \bottomrule
 \end{tabular}
 \caption{Proof and verification roadmap.}\label{tab:roadmap}
 \end{table}
 
-Every machine-backed claim in \S\ref{sec:machine} names its script and
-committed log file.
+Every machine-backed claim in \S\ref{sec:machine} is mapped in the
+repository README to its script and committed log file.
 
 \section{Reduction to socle analysis}\label{sec:reduction}
 
@@ -312,7 +314,8 @@ factorizations project.
 \end{proof}
 
 \begin{proposition}[Minimal counterexample structure]\label{prop:min}
-Let $G$ be a non-soluble group with property $\mathrm{P}$ of least order.
+Let $G$ have least order among the non-soluble groups with property
+$\mathrm{P}$.
 Then $G$ has a unique minimal normal subgroup $N=S^k$ with $S$ non-abelian
 simple and $k\geq 1$, $C_G(N)=1$, $G/N$ is soluble, and $G$ embeds in
 $\Aut(S)\wr S_k$ with $N$ mapping onto $\Inn(S)^k$ and $G$ acting
@@ -332,14 +335,14 @@ simple. Now $C_G(N)\cap N=Z(N)=1$ since $N$ is a direct product of
 non-abelian simple groups; if $C_G(N)$ were nontrivial it would contain
 a minimal normal subgroup of $G$, necessarily $N$ by uniqueness,
 contradicting $C_G(N)\cap N=1$. So $C_G(N)=1$, and the conjugation
-action embeds $G$ into $\Aut(N)=
-\Aut(S)\wr S_k$ in the standard way; minimal normality of $N$ forces
-transitivity on coordinates.  Published references for the two standard
+action embeds $G$ into $\Aut(N)=\Aut(S)\wr S_k$ in the standard way;
+minimal normality of $N$ forces transitivity on coordinates. Published
+references for the two standard
 structural inputs used here are \cite[Lemma~2.10, pp.~173--174]{ZhangShi2009}
 for the automorphism group of a direct power and
 \cite[p.~432]{LucchiniMorini2002} for the resulting transitive wreath
-realization in the unique-minimal-normal-subgroup setting. Finally $G/N$ is soluble because it is a
-proper quotient.
+realization in the unique-minimal-normal-subgroup setting. Finally, $G/N$ is
+soluble because it is a proper quotient.
 \end{proof}
 
 \begin{convention}[Coordinate closure]\label{conv:X}
@@ -386,10 +389,9 @@ $c_{gh}=c_g\circ c_h$ these data compose by
 a_{gh,i}=a_{g,i}\,a_{h,\sigma_g^{-1}(i)} .
 \]
 After the normalization of Convention~\ref{conv:X}, every $a_{g,i}$
-lies in $X$. We retain
-the exponent convention $A^g=g^{-1}Ag$ of Lemma~\ref{lem:conj} for
-subgroup conjugation, so $A^g=c_{g^{-1}}(A)$; the two conventions are
-never interchanged. Write
+lies in $X$. Throughout, $c_g$ denotes left conjugation on elements, whereas
+$A^g=g^{-1}Ag$ denotes conjugation of subgroups; thus
+$A^g=c_{g^{-1}}(A)$. Write
 \[
 x:=|X/\Inn(S)|,\qquad t:=|G/N| .
 \]
@@ -403,10 +405,9 @@ Theorem~\ref{thm:main} but explains why the pairs used later are of
 \begin{remark}[Top--supplement pairs always factorize]
 If $M\supseteq N$ is maximal and $B$ is maximal with $B\not\supseteq N$,
 then $BN=G$ ($BN$ is a subgroup strictly containing the maximal $B$),
-and since $N\leq M$ we get $MB\supseteq NB=G$. Hence property
-$\mathrm{P}$ for $G$ is equivalent to: $\mathrm{P}(G/N)$ together with the
-factorization of every pair of non-conjugate maximal subgroups not
-containing $N$.
+and since $N\leq M$ we get $MB\supseteq NB=G$. Hence $G$ has property
+$\mathrm{P}$ if and only if $G/N$ has property $\mathrm{P}$ and the product
+of every pair of non-conjugate maximal subgroups not containing $N$ is $G$.
 \end{remark}
 
 \section{Product supplements}\label{sec:machinery}
@@ -414,7 +415,8 @@ containing $N$.
 Fix $G$ as in Conventions~\ref{conv:X} and~\ref{conv:coord}:
 $N=S^k\leq G\leq X\wr S_k$,
 $t=|G/N|$, $x=|X/\Inn(S)|$. For $V\leq S$ write $[V]$ for its
-$S$-conjugacy class. An $S$-class is \emph{$X$-stable} if $X$ permutes it,
+$S$-conjugacy class. An $S$-class is \emph{$X$-stable} if it is invariant
+under the action of $X$,
 i.e.\ $V^a$ is $S$-conjugate to $V$ for every $a\in X$ ($\Inn$-stability
 being automatic).
 
@@ -427,12 +429,12 @@ $V\leq W\leq S$.
 \end{definition}
 
 \begin{remark}\label{rem:maxauto}
-If $V$ is a \emph{maximal} subgroup of $S$ then, whenever $[V]$ is
-$X$-stable: $[V]\in\Pos_X(S)$ (maximal subgroups of a non-abelian simple
-group are self-normalizing), $[V]$ is a maximal element of the poset, and
-$V$ is normally saturating (its only overgroups are $V$ and $S$, and
-$\langle V^S\rangle=S$ by simplicity). So for maximal classes the lemmas
-below apply with no further hypotheses.
+If $V$ is a \emph{maximal} subgroup of $S$ and $[V]$ is $X$-stable, then
+$[V]\in\Pos_X(S)$ (maximal subgroups of a non-abelian simple group are
+self-normalizing), $[V]$ is a maximal element of the poset, and $V$ is
+normally saturating (its only overgroups are $V$ and $S$, and
+$\langle V^S\rangle=S$ by simplicity). Thus the lemmas below apply to
+maximal classes with no further hypotheses.
 \end{remark}
 
 \begin{lemma}[Existence]\label{lem:A}
@@ -452,7 +454,7 @@ since every coordinate of $V^k$ is $V$,
 \[
 (V^k)^g=\prod_{i=1}^{k} a_{g^{-1},i}(V),
 \]
-each factor the image of $V$ under a component automorphism
+each factor is the image of $V$ under a component automorphism
 $a_{g^{-1},i}\in X$. By $X$-stability there are $s_i\in S$ with
 $a_{g^{-1},i}(V)=V^{s_i}$. So $(V^k)^g$ is $N$-conjugate to
 $V^k$: there is $n\in N$ with $(V^k)^{gn}=V^k$, i.e.\ $gn\in B_V$, so
@@ -469,14 +471,14 @@ Let $B_V\leq H\leq G$. Since $H\supseteq B_V$ and $B_VN=G$ we have
 $HN=G$, so $H$ surjects onto $G/N$ and in particular acts
 coordinate-transitively.
 
-\emph{Step 1 ($H$'s twists recover $X$).} Let $H_1,G_1$ be the
+\emph{Step 1 (the coordinate components of $H$ recover $X$).} Let $H_1,G_1$ be the
 coordinate-$1$ stabilizers. For $g\in G_1$ write $g=hn$ ($h\in H$,
 $n\in N$); $n$ fixes every coordinate, hence so does $h$, so $h\in H_1$
 and $\pi_1(G_1)=\pi_1(H_1)\cdot\pi_1(N\cap G_1)=\pi_1(H_1)\cdot\Inn(S)$.
 Therefore $\pi_1(H_1)$ and $\Inn(S)$ together generate $X$, and a class
 of subgroups of $S$ is $X$-stable iff it is stable under $\pi_1(H_1)$.
 
-\emph{Step 2 (Goursat + saturation: $H\cap N$ is a product).} Let
+\emph{Step 2 (Goursat's lemma and saturation: $H\cap N$ is a product).} Let
 $T:=H\cap N\supseteq V^k$, let $W_i:=\pi_i(T)\leq S$ be the coordinate
 projections and $K_i:=T\cap S_i$ the coordinate kernels ($S_i$ the $i$-th
 factor). Then $V\leq K_i$ (as $V^k\cap S_i=V$ in coordinate $i$),
@@ -523,14 +525,14 @@ The next lemma supplies, structurally, all hypotheses of
 Lemma~\ref{lem:B} for the non-maximal (``novelty'') classes used in
 \S\ref{sec:families}: the standard parabolic subgroups whose maximal
 parabolic overgroups are fused by a graph automorphism. We use the
-notation of \cite{Carter}: $S$ an untwisted simple group of Lie type
-with split $BN$-pair of rank $\ell\geq2$ (all our applications are
-untwisted), $B$ a Borel subgroup,
-$\Delta$ the node set of the Dynkin diagram, and for
-$J\subseteq\Delta$, $Q_J\supseteq B$ the standard parabolic whose Levi
-subgroup $L_J$ is generated by the maximal torus $T$ and the root
-subgroups of $J$; the maximal parabolic omitting node $i$ is
-$P_i=Q_{\Delta\setminus\{i\}}$.
+notation of \cite{Carter}. Here $S$ is an untwisted simple group of Lie
+type with a split $BN$-pair of rank $\ell\geq2$; all our applications
+are untwisted. Write $B=U\rtimes T$ for a Borel subgroup, with unipotent
+radical $U$ and maximal torus $T$, and let $\Delta$ be the node set of
+the Dynkin diagram. For $J\subseteq\Delta$, let $Q_J\supseteq B$ be the
+standard parabolic whose Levi subgroup $L_J$ is generated by $T$ and the
+root subgroups corresponding to $J$. The maximal parabolic omitting node
+$i$ is $P_i=Q_{\Delta\setminus\{i\}}$.
 
 \begin{lemma}[Parabolic novelties]\label{lem:P}
 Fix $J\subseteq\Delta$ and put $V:=Q_J$. Suppose $X$ is such that
@@ -569,8 +571,8 @@ containing the full torus $T$. For each node $\alpha\in K$ the
 reflection representative $n_\alpha$ lies in $L_K$, and
 $U_{-\alpha}=U_\alpha^{\,n_\alpha}$. The subgroup
 $\langle B_L^{\,L_K}\rangle$ contains every $L_K$-conjugate of every
-subgroup of $B_L$; in particular it contains $T$, each $U_\alpha$
-($\alpha\in K$ positive), and each $U_{-\alpha}=U_\alpha^{\,n_\alpha}$.
+subgroup of $B_L$; in particular it contains $T$, each $U_\alpha$ for
+$\alpha\in K$, and each $U_{-\alpha}=U_\alpha^{\,n_\alpha}$.
 These generate $L_K$ by the root-subgroup description of the Levi
 decomposition \cite[\S8.5, pp.~118--120]{Carter}. So
 $\langle B^W\rangle\supseteq U_K\cdot L_K=W$.
@@ -587,7 +589,7 @@ let $[V]\neq[W]$ be
 maximal elements of $\Pos_X(S)$, both normally saturating. If some prime
 $p$ satisfies
 \[
-d:=\vp{p}(|S|)-\vp{p}(|V|)-\vp{p}(|W|)\;>\;\vp{p}(x),
+\eta=\eta_p(V,W):=\vp{p}(|S|)-\vp{p}(|V|)-\vp{p}(|W|)\;>\;\vp{p}(x),
 \]
 then for every $k\geq2$, no group $G$ with unique minimal normal
 subgroup $S^k$ and coordinate closure $X$ has property $\mathrm{P}$.
@@ -600,26 +602,28 @@ maximal subgroups of $G$, so property $\mathrm{P}$ forces $G=B_VB_W$ and
 |B_V\cap B_W|=\frac{|B_V|\,|B_W|}{|G|}
  = t\cdot\Bigl(\frac{|V|\,|W|}{|S|}\Bigr)^{k}\in\Z ,
 \]
-whence $p^{dk}\mid t$. But
+whence $p^{\eta k}\mid t$. But
 \[
 \vp{p}(t)\;\leq\;k\,\vp{p}(x)+\vp{p}(k!)
  \;=\;k\,\vp{p}(x)+\frac{k-s_p(k)}{p-1}
- \;<\;k\bigl(\vp{p}(x)+1\bigr)\;\leq\;dk ,
+ \;<\;k\bigl(\vp{p}(x)+1\bigr)\;\leq\;\eta k ,
 \]
 a contradiction.
 \end{proof}
 
-\begin{remark}
-(i) The criterion is independent of $k$: this is what closes infinite
-families, which no counting bound can do, since $(k!)^{1/k}\to\infty$
-outgrows any fixed ratio $|V||W|/|S|$. (ii) Only the \emph{existence} of
+\begin{remark}\label{rem:crit}
+(i) The criterion is uniform in $k$, and this uniformity handles the
+infinite families. No fixed counting ratio can do so, because
+$(k!)^{1/k}\to\infty$ and therefore eventually exceeds every fixed ratio
+$|V||W|/|S|$. (ii) Only the \emph{existence} of
 $B_V,B_W$ is used; no classification of the maximal subgroups of $G$
 (or even of $S$) is needed. In particular the criterion is insensitive
 to completeness of tabulated maximal-subgroup data: it needs only that
-the two exhibited subgroups are maximal (or Lemma~\ref{lem:P}-novelties)
-and their classes stable. (Machine \emph{verification} of stability for
+the two exhibited subgroups are maximal, or are novelties covered by
+Lemma~\ref{lem:P}, and that their classes are stable. (Machine
+\emph{verification} of stability for
 the finite base does use enumerated subgroup data; see the trust
-discussion in Section~\ref{sec:machine}.)
+discussion in \S\ref{sec:machine}.)
 \end{remark}
 
 The criterion has a $k=1$ counterpart, which recovers the almost
@@ -633,27 +637,30 @@ $B_W:=N_G(W)$. Then:
 \begin{enumerate}
 \item $B_V\cap S=V$, $B_VS=G$, and $|B_V|=t|V|$;
 \item $B_V$ and $B_W$ are non-conjugate maximal subgroups of $G$;
-\item if $d=\vp{p}(|S|)-\vp{p}(|V|)-\vp{p}(|W|)>\vp{p}(x)$ for some
+\item if $\eta=\vp{p}(|S|)-\vp{p}(|V|)-\vp{p}(|W|)>\vp{p}(x)$ for some
 prime $p$, then $G$ does not have property $\mathrm{P}$.
 \end{enumerate}
 \end{theorem}
 
 \begin{proof}
-\emph{Supplement and order.} $B_VS=G$ is the Frattini argument via
-$X$-stability, as in Lemma~\ref{lem:A}, and $B_V\cap S=N_S(V)=V$;
-hence $|B_V|=t|V|$.
+\emph{Supplement and order.} By the Frattini argument via $X$-stability,
+as in Lemma~\ref{lem:A}, we have $B_VS=G$. Moreover,
+$B_V\cap S=N_S(V)=V$, and hence $|B_V|=t|V|$.
 
 \emph{Maximality.} The proof of Lemma~\ref{lem:B} applies without the
 Goursat step; normal saturation enters only through that step and is
 not needed at $k=1$ (the hypothesis is kept for uniformity with
 Theorem~\ref{thm:D}). In detail, let $B_V\leq H\leq G$ and
 $T:=H\cap S$, an $H$-invariant subgroup containing $V$. If $T=S$ then
-$H\supseteq S$ and $H=HS=G$. Otherwise the normalizer tower of $T$
-ends at a proper self-normalizing subgroup whose class is $X$-stable
-and lies above $[V]$: here $G=B_VS\leq HS$ forces $HS=G$, so $X=G$ is
-generated by the images of $H$ and $S$, and stability may be tested
-against the $H$-invariance of $T$, as in Step~1 of
-Lemma~\ref{lem:B}. Poset-maximality of $[V]$ then forces $T=V$ and
+$H\supseteq S$ and $H=HS=G$. Otherwise, since $B_V\leq H$ and
+$G=B_VS$, we have $G=HS$. As $T$ is
+$H$-invariant, for $g=hs$ with $h\in H$ and $s\in S$ we have
+$T^g=(T^h)^s=T^s$; hence $[T]$ is $G$-stable. Since $X=G$, it is
+therefore $X$-stable, as in Step~1 of Lemma~\ref{lem:B}. The normalizer
+tower of $T$ ends at a proper
+self-normalizing subgroup $U$. Stability propagates up the tower, so
+$[U]\in\Pos_X(S)$ and $[U]\geq[V]$. Poset-maximality of $[V]$ forces
+$[U]=[V]$, and $V\leq T\leq U$ then gives $T=V$. Thus
 $H\leq N_G(V)=B_V$.
 
 \emph{Non-conjugacy.} If $B_V^g=B_W$ with $g\in G$, then
@@ -661,8 +668,8 @@ $V^g=(B_V\cap S)^g=B_W\cap S=W$, and $X$-stability of $[V]$ (here
 $X=G$) gives $[W]=[V]$, a contradiction.
 
 \emph{The arithmetic.} Property $\mathrm{P}$ forces $G=B_VB_W$, so
-$t\,|V||W|/|S|\in\Z$, i.e.\ $p^d\mid t=x$, contradicting
-$d>\vp{p}(x)$.
+$t\,|V||W|/|S|\in\Z$, i.e.\ $p^\eta\mid t=x$, contradicting
+$\eta>\vp{p}(x)$.
 \end{proof}
 
 \begin{convention}\label{conv:excluded}
@@ -684,10 +691,9 @@ CTblLib~1.3.11 and AtlasRep~2.1.11, overlaid with the
 GAP~4.16.0 is rejected. Both GAP global pseudorandom sources are
 reset at process start to the recorded seed $1034$, so internal
 library choices are reproducible; proof scripts contain no explicit random witness search.
-Each sweep named below corresponds to a script
-\texttt{sweep$\langle$name$\rangle$.g} and a certificate
-\texttt{sweep$\langle$name$\rangle$.log} in \cite{Repo}, whose README
-maps every paper claim to its scripts and certificates.
+The repository README in \cite{Repo} maps the short sweep labels used below
+to the corresponding script and certificate filenames and maps every paper
+claim to its verification artifacts.
 
 \begin{proposition}\label{prop:base}
 Every non-abelian simple group $S$ with $|S|\leq 1.05\times10^{7}$ is
@@ -698,97 +704,86 @@ excluded (in the sense of Convention~\ref{conv:excluded}).
 We combine the uniform $\PSL(2,q)$ argument of
 Theorem~\ref{thm:psl2}, whose proof of these cases does not appeal to
 the present proposition, with the finite computation in GAP organized
-as the two searches below. The group
-inventory is cross-checked against
-GAP's \texttt{SimpleGroupsIterator} in two installments, so that no
+as the two searches below. The group inventory is cross-checked against
+GAP's \texttt{SimpleGroupsIterator} over two disjoint ranges, so that no
 group in range is skipped: the $47$ groups with $|S|<5\times10^5$
-(receipt \texttt{verify\_coverage.log}) and the $51$ groups with
-$5\times10^5\leq|S|\leq1.05\times10^7$ (receipt
-\texttt{verify\_coverage\_big.log}).  Of the latter $51$, the $38$
-$\PSL(2,q)$ entries terminate in Theorem~\ref{thm:psl2} and its arithmetic
-receipt rather than in a redundant GAP maximal-subgroup enumeration; sweeps J3
-and J6 exhaust the other $13$.  The receipt also re-checks that the only
-two survivors among those $13$, $\Sp(4,4)$ at
-$x=4$ and $\PSL(5,2)$ at $x=2$, are closed by the novelty certificates
+(log \texttt{verify\_coverage.log}) and the $51$ groups with
+$5\times10^5\leq|S|\leq1.05\times10^{7}$ (log
+\texttt{verify\_coverage\_big.log}). Of the latter $51$, the $38$
+$\PSL(2,q)$ entries are handled by Theorem~\ref{thm:psl2} and its arithmetic
+verification rather than by a redundant GAP maximal-subgroup enumeration;
+sweeps J3 and J6 exhaust the other $13$. The coverage check also confirms
+that the only two cases in this upper range not excluded by maximal-class
+pairs, $\Sp(4,4)$ at
+$x=4$ and $\PSL(5,2)$ at $x=2$, are excluded by the novelty certificates
 of item~(2).
 
 \begin{enumerate}
-\item \emph{Maximal-class pairs (sweeps J, J2, J4, J3, J5, J6).} For each
-machine-routed simple $S$ in range and each $X$ with $\Inn(S)\leq X\leq\Aut(S)$, the
-program lists the $X$-stable classes of maximal subgroups of $S$ and
-searches for pairs $([V],[W])$ and primes $p$ satisfying the inequality of
-Theorem~\ref{thm:D}.  For each conjugacy class of subgroups of
-$\Out(S)$, the program audits every quotient-class representative
-and records the lexicographically canonical certificate; disagreement
-inside one quotient class is fatal.  Raw GAP class positions and pc-generator
-words are not used as identifiers: each \texttt{XCASE} is ordered and named by a
-SHA-256 fingerprint of the complete induced permutation action on the pinned
-maximal-subgroup-class list, together with intrinsic quotient/kernel data;
-the rare collision is refined by the structure of the almost-simple preimage.
-The independent parser requires a contiguous, fingerprint-distinct
-\texttt{XCASE} inventory, including survivor cases, and binds every successful
-\texttt{CERT} to exactly one such record. For all but six socles in range this succeeds for
-every $X$. A logged certificate line records
-$(|V|,|W|,p,d)$; for $S=A_5$, for example, the line
+\item \emph{Maximal-class pairs (sweeps J, J2, J4, J3, J5, J6).}
+For each simple group $S$ treated computationally and each $X$ with
+$\Inn(S)\leq X\leq\Aut(S)$, the program lists the $X$-stable classes of
+maximal subgroups of $S$ and searches for pairs $([V],[W])$ and primes
+$p$ satisfying the inequality of Theorem~\ref{thm:D}.
+
+\emph{Certificate identity and coverage.} To identify coordinate closures
+independently of GAP's internal class numbering, each closure is assigned a
+SHA-256 fingerprint derived from its action on the pinned maximal-subgroup
+classes, together with intrinsic quotient and kernel data. The checker verifies
+that every required closure appears exactly once and that each certificate is
+attached to one such closure. Each certificate records the selected classes,
+their orders, the obstruction prime, and the valuation gap.
+For all but six simple groups in range, a maximal-class pair is found for every
+$X$. For $S=A_5$, for example, the logged tuple
 $(|A_4|,|S_3|,5,1)$ excludes $A_5^k$ for every $k$ and every $X$. In
 addition, the alternating groups $A_{11}$--$A_{14}$, whose orders
 exceed the base bound, carry certificates of the same form for every
 $X$ (sweep J5, log \texttt{sweepJ5\_smallAn.log}); Theorem~\ref{thm:an}
 uses these for $11\leq n\leq14$.
-\item \emph{Novelty pairs (sweeps K, K2, K3, K4).} Six $(S,X)$ families
-admit too few stable maximal classes, in each case because an outer
-automorphism fuses classes: $\PSL(3,2)$ and $\PSL(2,11)$ at
-$x=2$; $A_6$ for $X/\Inn\in\{2_2,2_3,2^2\}$; $\PSL(3,4)$ for several
-$X$; $\Sp(4,4)$ at $x=4$; $\PSL(5,2)$ at $x=2$. Each is closed by a pair
-involving non-maximal classes that are maximal in $\Pos_X(S)$, with
-normal saturation verified computationally (sweep K2) or structurally
-(Lemma~\ref{lem:P}). Sweep K2 checks every embedding orbit of $V$ in
-each overgroup class, not merely one representative per pair of
-subgroup classes. For a fixed representative
-$V$ it enumerates actual overgroups with
-\texttt{IntermediateSubgroups(S,V)}; independently it enumerates every
-$N_S(V)\backslash S/W$ double coset whose conjugate of $V$ lies in $W$;
-and it compares both with \texttt{ContainedConjugates(S,W,V)} \emph{without}
-the one-result flag, using the pinned, regression-tested implementation
-noted above. Any orbit mismatch or normal-closure mismatch is fatal.
-Every record names the $S$-class position, order, index, normalizer order, a
-SHA-256 canonical numeric class fingerprint, the overgroup class,
-embedding-orbit identifier,
-and normal-closure order. The K certificates are cross-linked to those
-fingerprints, and the independent checker rejects any selected class whose K2
-status is not \texttt{SATURATES}; same-order non-conjugate classes are
-therefore never identified by order alone.
-Sweep K uses the same quotient-class scheme as item~(1),
-with the induced action on the complete pinned list of $S$-subgroup classes.
-The soundness of these stability determinations rests on the
-completeness of GAP's pinned subgroup-class enumerations; this is a
-declared trust assumption of the machine layer, cross-checked for the
-four novelty socles by the three agreeing K2 methods and for the
-sporadic route by the published \textsc{Atlas} maximal-subgroup data.
+\item \emph{Novelty pairs (sweeps K, K2, K3, K4).} Six simple groups,
+for the indicated coordinate closures, admit too few stable maximal
+classes because an outer automorphism fuses classes: $\PSL(3,2)$ and $\PSL(2,11)$ at
+$x=2$; $A_6$ for $X/\Inn(S)\in\{2_2,2_3,2^2\}$; $\PSL(3,4)$ for several
+$X$; $\Sp(4,4)$ at $x=4$; and $\PSL(5,2)$ at $x=2$. Each is excluded by a
+pair involving non-maximal classes that are maximal in $\Pos_X(S)$. For
+$\PSL(3,2)$, $\PSL(2,11)$, $A_6$, and $\PSL(3,4)$, normal saturation is
+verified computationally by sweep K2; for $\Sp(4,4)$ and $\PSL(5,2)$,
+it follows structurally from Lemma~\ref{lem:P}.
+
+\emph{Normal-saturation check and trust boundary.} For the four computational
+novelty cases, three independent procedures enumerate the relevant overgroups
+and embedding orbits and verify normal saturation; any disagreement causes
+verification to fail. Each selected subgroup class is tied to its fingerprint
+and normal-closure result, so same-order non-conjugate classes are not
+identified by order alone. These calculations assume the completeness of GAP's
+pinned subgroup-class enumerations. This assumption is cross-checked by the
+independent procedures and, for the sporadic groups, against the published
+\textsc{Atlas} data.
 Sample certificates: $\PSL(3,2)$ at
-$x=2$ is closed by the pair $(S_3,\,7{:}3)$ at $p=2$ with $d=2>1$;
-$\Sp(4,4)$ at $x=4$ by the pair (Borel,
-subfield $\Sp(4,2)$) at $p=5$ and $17$; and $\PSL(5,2)$ at $x=2$ by the
+$x=2$ is excluded by the pair $(S_3,\,7{:}3)$ at $r=2$ with logged
+valuation gap $2>1$. The case $\Sp(4,4)$ at $x=4$ is excluded by the pair (Borel,
+subfield $\Sp(4,2)$) at $r=5$ and $17$. The case $\PSL(5,2)$ at $x=2$
+is excluded by the
 incident-flag parabolics $(Q_{\{2,3\}},Q_{\{1,4\}})$ (the
 point--hyperplane and line--$3$-space flag stabilizers, in the standard
-parabolic notation of Lemma~\ref{lem:P}) at $p=5$ and $31$. The last
+parabolic notation of Lemma~\ref{lem:P}) at $r=5$ and $31$. The last
 two are
 instances of the uniform constructions of Theorem~\ref{thm:graph} below.
 \end{enumerate}
 \end{proof}
 
 \begin{proposition}\label{prop:sporadic}
-Every sporadic simple group, and the Tits group ${}^2F_4(2)'$, is
-excluded.
+Every sporadic simple group is excluded, as is the Tits group
+${}^2F_4(2)'$.
 \end{proposition}
 
 \begin{proof}
 Six of the $26$ sporadic groups ($M_{11}$, $M_{12}$, $M_{22}$,
-$M_{23}$, $J_1$, $J_2$) have order at most $1.05\times10^7$ and fall
+$M_{23}$, $J_1$, $J_2$) have order at most $1.05\times10^{7}$ and fall
 under Proposition~\ref{prop:base}. The remaining $20$ ($M_{24}$, $J_3$,
-$J_4$, $HS$, $McL$, $Co_1$, $Co_2$, $Co_3$, $Suz$, $He$, $Ru$, $O'N$,
-$\mathrm{Fi}_{22}$, $\mathrm{Fi}_{23}$, $\mathrm{Fi}_{24}'$, $HN$,
-$Ly$, $Th$, $B$, $M$) and the Tits group are handled by a dedicated
+$J_4$, $\mathrm{HS}$, $\mathrm{McL}$, $\mathrm{Co}_1$, $\mathrm{Co}_2$,
+$\mathrm{Co}_3$, $\mathrm{Suz}$, $\mathrm{He}$, $\mathrm{Ru}$, $\mathrm{O'N}$,
+$\mathrm{Fi}_{22}$, $\mathrm{Fi}_{23}$, $\mathrm{Fi}_{24}'$, $\mathrm{HN}$,
+$\mathrm{Ly}$, $\mathrm{Th}$, $B$, $M$) and the Tits group are handled by a dedicated
 computation (sweep~M; script \texttt{sweepM\_sporadic.g}, certificate
 \texttt{sweepM\_sporadic.log}): stable maximal classes and pair searches use the
 \textsc{Atlas} maximal-subgroup data via the GAP character table
@@ -804,19 +799,19 @@ record. For the non-Monster sporadics these are Wilson's corrected tables
 \cite[\S4, pp.~66--68]{Wilson2017}, whose published-proof provenance is
 summarized in \cite[\S2, pp.~23--24]{BreuerMalleOBrien2017}; the Tits entries
 are covered independently by \cite[pp.~553--563]{Wilson1984} and
-\cite{Tchakerian1986}; and the current Monster entries are Theorems~1.1--1.2
-and Table~1 of \cite[pp.~862--863]{DietrichEtAl2026}.
-Sample certificates: the Monster is closed via positions $45,46$ by
-the pair $(59{:}29,\,41{:}40)$ at $p=71$, and the Baby Monster via
+\cite{Tchakerian1986}; and the Monster entries are given by
+Theorems~1.1--1.2 and Table~1 of \cite[pp.~862--863]{DietrichEtAl2026}.
+Sample certificates: the Monster is excluded via positions $45,46$ by
+the pair $(59{:}29,\,41{:}40)$ at $r=71$, and the Baby Monster via
 positions $29,30$ by the pair
-$(L_2(11){.}2,\,47{:}23)$ at $p=31$. By the remark after
-Theorem~\ref{thm:D}, completeness is logically needed here only for the
+$(L_2(11){.}2,\,47{:}23)$ at $r=31$. By Remark~\ref{rem:crit},
+completeness is logically needed here only for the
 unique-order stability argument when $|\Out(S)|=2$. The source map is
 machine-checked against the certificate rather than maintained only in prose.
 \end{proof}
 
 Beyond the base, the family proofs of \S\ref{sec:families} carry their
-own numeric receipts: the valuation inequalities of
+own numeric verification records: the valuation inequalities of
 Theorems~\ref{thm:psl2}, \ref{thm:an},
 and~\ref{thm:twisted2}--\ref{thm:graph} were verified mechanically over
 large parameter ranges ($1272$ prime powers for Theorem~\ref{thm:psl2};
@@ -829,19 +824,18 @@ checked separately by the independent symbolic verifier in \cite{Repo}.
 These finite-range runs are regression checks, not proofs of the statements
 quantified over all ranks and fields.
 
-Separately, the release contains an exact $34$-branch arithmetic manifest for
-Theorems~\ref{thm:psl2}--\ref{thm:graph}.  A fail-closed universal checker
-binds every branch to its order-formula and Zsigmondy source rows,
-proves the source-derived affine exponent bounds on the full unbounded
-parameter rays, and mechanically regenerates the exception routing.  The
-unique positive-base Zsigmondy equation produces twelve branch occurrences,
-which reduce to seven distinct Zsigmondy exception records and are checked
-against the substitute-prime and finite certificates.  A separately
-written symbolic implementation reproduces the $34$ branches, bounds, residue
-arguments, and exceptional valuations without reading that manifest.  The
-same universal deductions are kernel-checked in Lean; the published group,
-Levi, outer-automorphism, maximality, and Zsigmondy results remain
-cited inputs rather than newly formalized classification theorems.
+The release also contains an exact $34$-branch arithmetic manifest for
+Theorems~\ref{thm:psl2}--\ref{thm:graph}. A universal checker matches every
+branch to its cited order formula and Zsigmondy source, verifies the stated
+exponent bounds for the full parameter ranges, and reproduces the treatment of
+the exceptional cases. The positive-base Zsigmondy exception occurs in twelve
+branches, corresponding to seven distinct exception records; each is checked
+against the substitute-prime and finite certificates. A
+separate symbolic implementation independently reproduces the $34$ branches,
+bounds, residue arguments, and exceptional valuations without reading the
+manifest. The same universal deductions are kernel-checked in Lean; the
+published group, Levi, outer-automorphism, maximality, and Zsigmondy results
+remain cited inputs rather than newly formalized classification theorems.
 
 \section{The infinite families}\label{sec:families}
 
@@ -849,34 +843,39 @@ Throughout this section $S$ is simple, $X$ is any group with
 $\Inn(S)\leq X\leq\Aut(S)$, and $x=|X/\Inn(S)|$. By
 Remark~\ref{rem:maxauto}, when the two exhibited classes consist of
 maximal subgroups of $S$, only their $X$-stability and the valuation
-inequality require proof. We use the specialized theorem of Zsigmondy
+inequality require proof. We use Zsigmondy's theorem
 \cite[specialized theorem, p.~283]{Zsigmondy}
 throughout: for integers $a\geq2$, $e\geq3$ with $(a,e)\neq(2,6)$, there
 is a prime $r$ with $\ord_r(a)=e$ (a \emph{primitive prime divisor} of
 $a^e-1$); such $r$ satisfies $r\equiv1\pmod e$. For $q=p^f$ we write
 $\Phi_e=\Phi_e(q)$ for cyclotomic values and always apply Zsigmondy to
 the prime $p$ with exponent $ef$, so $\ord_r(p)=ef$ and
-$r\equiv1\pmod{ef}$.  The source's additional positive-base exception
-has exponent $2$, outside every invocation here; the
-invocation-by-invocation hypothesis and exception audit is part of
-\cite{Repo}.  The $b=1$ specialization and both exceptions are
+$r\equiv1\pmod{ef}$. The source's additional positive-base exception has
+exponent $2$, which lies outside every invocation here and therefore does not
+apply. An invocation-by-invocation audit of the hypotheses and exceptions
+is part of \cite{Repo}. The $b=1$ specialization and both exceptions are
 independently restated in \cite[Thm.~2.2, p.~2]{Jones2007}.
 
 The simple-group and outer-automorphism order formulas used below are
 those of \cite[Tables~5--6, p.~xvi]{ATLAS}; for the classical families,
 the same formulas and their central divisors are also displayed in
-\cite[\S\S2.1--2.4, pp.~x--xii]{ATLAS}.  As an independent published
+\cite[\S\S2.1--2.4, pp.~x--xii]{ATLAS}. As an independent published
 derivation and tabulation we use
 \cite[\S10, pp.~220--221, and summary table, p.~239]{Carter1965}.
 For parabolics, the statement that the unipotent radical is extended by
 the group obtained from the complementary subdiagram (with node-orbits in
 the twisted case) is \cite[\S3.6, p.~xv]{ATLAS}; the Levi decomposition
 and its root-subgroup description are
-\cite[\S8.5, pp.~118--120]{Carter}.  Thus the cyclotomic bounds below are
+\cite[\S8.5, pp.~118--120]{Carter}. Thus the cyclotomic bounds below are
 not inferred from numeric tests: they come from the displayed group-order
-formulas applied to the named Levi types.  The formula-to-source and
+formulas applied to the named Levi types. The formula-to-source and
 parameter audit, including each exceptional substitute, is archived in
-\cite{Repo}.
+\cite{Repo}. In the exceptional case over $\F_2$ below,
+$\Omega^+(8,2)$ and $P\Omega^+(8,2)$ denote the same simple group; we use
+the shorter former notation when naming that finite group. For classical
+groups, argument notation such as $\Sp(4,2^f)$ denotes a named simple group,
+whereas subscript notation such as $\Sp_2(q)$ and $\GL_2(q)$ is used for Levi
+factors.
 
 \subsection{Projective special linear groups of rank one}
 
@@ -886,39 +885,39 @@ $S=\PSL(2,q)$, $q=p^f\geq4$, is excluded.
 
 \begin{proof}
 For $q\in\{4,5,7,8,9,11\}$ this is machine-certified by
-the lower-range J/K certificates of \S\ref{sec:machine}
-(not by an invocation of Proposition~\ref{prop:base}).  All other simple parameters are covered
+the lower-range J/K certificates of \S\ref{sec:machine}. All other simple parameters are covered
 uniformly below: odd $q\geq13$ by Case~A and even $q=2^f$, $f\geq3$, by
-Case~B (including $q=256$, without invoking the finite base). Recall
-$|S|=q(q^2-1)/e$ with $e=\gcd(2,q-1)$, and
-$\Out(S)=C_e\times C_f$, so $x\mid ef$: that is, $x\mid2f$ for $q$ odd
+Case~B. Recall
+$|S|=q(q^2-1)/d$ with $d=\gcd(2,q-1)$, and
+$\Out(S)=C_d\times C_f$, so $x\mid df$: that is, $x\mid2f$ for $q$ odd
 and $x\mid f$ for $q$ even.
 
 \emph{Case A: $q$ odd, $q\geq13$.} Let $U:=N_S(T_+)$ and $V:=N_S(T_-)$
-be the normalizers of the split and nonsplit maximal tori: dihedral of
-orders $q-1$ and $q+1$, and maximal in $S$ for $q\geq13$ by Dickson's
-theorem \cite{Dickson,Huppert}; see also
+be the normalizers of the split and nonsplit maximal tori. These are dihedral
+groups of orders $q-1$ and $q+1$, respectively. Both subgroups are maximal in $S$
+for $q\geq13$ by Dickson's theorem \cite{Dickson,Huppert}; see also
 \cite[Tables~8.1--8.2, p.~376, and Table~8.7, p.~380]{BHRD}.
-All split (resp.\ nonsplit) maximal tori
-are $S$-conjugate and every automorphism maps one to one (there is no
+All split maximal tori are $S$-conjugate, as are all nonsplit maximal
+tori, and every automorphism preserves each type (there is no
 graph automorphism in type $A_1$; diagonal and field automorphisms act
 algebraically), so $[U]$ and $[V]$ are $X$-stable for every $X$. Now
-$|U||V|/|S|=e/q$, so for the defining prime $p$:
-$d=\vp{p}(|S|)-0-0=f$, while $x\mid2f$ gives
-$\vp{p}(x)\leq\vp{p}(f)\leq\log_pf<f=d$. Theorem~\ref{thm:D} applies.
+$|U||V|/|S|=d/q$, so for the defining prime $p$:
+$\eta=\vp{p}(|S|)-0-0=f$, while $x\mid2f$ gives
+$\vp{p}(x)\leq\vp{p}(f)\leq\log_pf<f=\eta$. Theorem~\ref{thm:D} applies.
 
 \emph{Case B: $q=2^f$, $f\geq3$.} Here $|S|=q(q^2-1)$ and $x\mid f$.
 Let $U$ be a Borel subgroup (the normalizer of a Sylow $2$-subgroup), of
-order $q(q-1)$, and $V:=N_S(T_+)$, dihedral of order $2(q-1)$, maximal
-for $q\geq8$ \cite{Dickson,Huppert}; see also
+order $q(q-1)$, and let $V:=N_S(T_+)$ be dihedral of order $2(q-1)$.
+Both $U$ and $V$ are maximal for $q\geq8$ \cite{Dickson,Huppert}; see also
 \cite[Tables~8.1--8.2, p.~376]{BHRD}. $[U]$ is the class of Sylow-$2$
-normalizers and $[V]$ the unique class of split torus normalizers: both
-$X$-stable. Now $|U||V|/|S|=2(q-1)/(q+1)$ with $q+1$ odd and coprime to
+normalizers, and $[V]$ is the unique class of split torus normalizers;
+both are $X$-stable. Now $|U||V|/|S|=2(q-1)/(q+1)$ with $q+1$ odd and coprime to
 $2(q-1)$, so it suffices to find a prime $r\mid q+1$ with
 $\vp{r}(q+1)>\vp{r}(f)$. If $f\neq3$, take $r$ a primitive prime divisor
 of $2^{2f}-1$: then $r\mid(2^{2f}-1)/(2^f-1)=q+1$ and
-$r\equiv1\pmod{2f}$, so $r>f$ and $\vp{r}(x)=0<\vp{r}(q+1)=d$. If $f=3$
-($q=8$): $q+1=9$, $r=3$: $d=2>1\geq\vp{3}(x)$.
+$r\equiv1\pmod{2f}$, so $r>f$ and
+$\vp{r}(x)=0<\vp{r}(q+1)=\eta$. If $f=3$, then $q=8$ and
+$q+1=9$; taking $r=3$ gives $\eta=2>1\geq\vp{3}(x)$.
 \end{proof}
 
 \subsection{Alternating groups}
@@ -928,16 +927,26 @@ $S=A_n$, $n\geq5$, is excluded.
 \end{theorem}
 
 \begin{proof}
-For $n\leq14$ this is machine-certified: $n\leq10$ falls under
+For $n\leq14$ this is machine-certified: the cases $n\leq10$ fall under
 Proposition~\ref{prop:base} (including $n=6$, whose exceptional outer
 automorphisms fuse classes; all five $X$ are handled there), and
-$11\leq n\leq14$ by the sweep-J5 certificates of \S\ref{sec:machine}.
+the cases $11\leq n\leq14$ are covered by the sweep-J5 certificates of
+\S\ref{sec:machine}.
 Assume $n\geq15$, so $\Aut(A_n)=S_n$ and $x\mid2$.
 
-Let $p$ be the largest prime $\leq n$. For $m<n/2$ let
+Let $p$ be the largest prime $\leq n$. We first record the bound
+$p\geq n/2+3$. By Nagura's theorem
+\cite[Theorem, pp.~180--181]{Nagura}, there is a prime in $(y,6y/5]$
+for $y\geq25$. Thus, for $n\geq31$, there is a prime in $(5n/6,n]$,
+and $5n/6>n/2+3$ for $n>18$. For $15\leq n\leq30$, the largest prime
+$p\leq n$ satisfies the bound by inspection:
+$p=13,13,17,17,19,19,19,19,23,23,23,23,23,23,29,29$ for
+$n=15,\dots,30$. In particular, $n/2<p\leq n$.
+
+For $m<n/2$ let
 $M_m:=(S_m\times S_{n-m})\cap A_n$, and for $n$ even let
 $I:=(S_{n/2}\wr S_2)\cap A_n$. Each $M_m$ is maximal in $A_n$, and $I$
-is maximal outside a finite list of exceptions all with $n\leq14$
+is maximal except in a finite list of cases, all with $n\leq14$
 \cite[Thm.~1 and Tables~I--II, pp.~366--368]{LPS1987}.
 Conjugation by $S_n$ preserves the partition shape
 (resp.\ block structure), each shape is a single $A_n$-class, and
@@ -945,20 +954,14 @@ $\Aut(A_n)=S_n$ for $n\neq6$: all these classes are $X$-stable for every
 $X$.
 
 For any two distinct classes among
-$\{M_m:\,n-p<m<n/2\}\cup\{I\ \text{if $n$ even and}\ n/2<p\}$:
-$\vp{p}(|A_n|)=1$ (Bertrand: $n/2<p\leq n$), while $\vp{p}$ of each
+$\{M_m:\,n-p<m<n/2\}\cup\{I\ \text{if $n$ even and}\ n/2<p\}$, we have
+$\vp{p}(|A_n|)=1$, while $\vp{p}$ of each
 subgroup order is $0$ (all parts of the partitions involved are $<p$),
-and $\vp{p}(x)\leq\vp{p}(2)=0$. So $d=1>0$ and
+and $\vp{p}(x)\leq\vp{p}(2)=0$. Thus $\eta=1>0$, and
 Theorem~\ref{thm:D} applies, provided two such classes
 exist. The number of admissible intransitive $m$ is
 $p-\lfloor n/2\rfloor-1$, plus one for $I$ when $n$ is even; two classes
-exist whenever $p\geq n/2+3$. By Nagura's theorem
-\cite[Theorem, pp.~180--181]{Nagura} (a prime
-in $(x,6x/5]$ for $x\geq25$), for $n\geq31$ there is a prime
-$p\in(5n/6,n]$, and $5n/6>n/2+3$ for $n>18$. For $15\leq n\leq30$ the
-largest prime $\leq n$ satisfies the bound by inspection
-($p=13,13,17,17,19,19,19,19,23,23,23,23,23,23,29,29$ for
-$n=15,\dots,30$).
+exist because $p\geq n/2+3$.
 \end{proof}
 
 \subsection{Lie type without graph symmetry}
@@ -1017,7 +1020,7 @@ these, nor $q$, nor $q-1$.
 $r>hf\geq4f\geq d_S f\geq x$, where $d_S\leq\gcd(2,q-1)^{\,2}\leq4$
 bounds the diagonal part and there is no graph part.
 
-So $d=\vp{r}(|S|)\geq1>0=\vp{r}(x)$ for the pair $([P_1],[P_2])$, and
+Thus $\eta=\vp{r}(|S|)\geq1>0=\vp{r}(x)$ for the pair $([P_1],[P_2])$, and
 Theorem~\ref{thm:D} applies, provided $r$ exists.
 
 \emph{Zsigmondy exceptions.} $p^{hf}=2^6$ forces $p=2$ and $hf=6$:
@@ -1042,10 +1045,10 @@ Then $S$ is excluded.
 \end{theorem}
 
 \begin{proof}
-These are exactly the twisted types of twisted $BN$-pair rank $\geq2$,
-so $S$ has at least two classes of maximal parabolic subgroups
-$P_1,P_2$, maximal in $S$ as in Theorem~\ref{thm:nograph}. Both inputs
-apply verbatim in the twisted case: every finite group of Lie type in defining
+Each of these groups has a twisted $BN$-pair of rank at least $2$, and
+therefore has at least two classes of maximal parabolic subgroups $P_1,P_2$.
+These subgroups are maximal in $S$, by the same argument as
+in Theorem~\ref{thm:nograph}: every finite group of Lie type in defining
 characteristic has a split $BN$-pair
 \cite[Example~1.16 and \S1.3.5, pp.~10--11]{Hiss2011}, and Carter's
 overgroup and self-normalizer theorems are stated for an arbitrary group
@@ -1074,11 +1077,10 @@ that a diagram-asymmetry argument alone would not suffice at twisted
 rank two: the twisted diagrams of $\PSU(4,q)$ and $\PSU(5,q)$ have a
 symmetric underlying graph, and the untwisted example $\Sp(4,2^f)$
 shows that a multiple bond by itself does not prevent a type-swapping
-automorphism.) So every parabolic
-class is $X$-stable for every $X$.
+automorphism.)
 
-\emph{The obstruction prime.} Choose the exponent $e$ and $r$ a
-primitive prime divisor of $p^{e}-1$ per type; in each case $r$ divides
+\emph{The obstruction prime.} For each type, choose the exponent $e$ and
+let $r$ be a primitive prime divisor of $p^{e}-1$. In each case $r$ divides
 $|S|$ but neither $|P_1|$ nor $|P_2|$:
 \begin{itemize}
 \item $\PSU(n,q)$, $n$ odd: $e=2nf$, so $r\mid\Phi_{2n}(q)\mid q^n+1$,
@@ -1091,12 +1093,14 @@ $m\leq\max(4f,2(n-2)f)<2nf$.
 $r\mid\Phi_{2(n-1)}(q)\mid q^{n-1}+1$ (the $i=n-1$ factor). Levi
 exponents are $\leq\max(4f,2(n-3)f,(n-2)f)<2(n-1)f$ for $n\geq4$.
 \item ${}^2D_n(q)$, $n\geq4$: $e=2nf$, $r\mid\Phi_{2n}(q)\mid q^n+1$,
-which divides $q^{n(n-1)}(q^n+1)\prod_{i=1}^{n-1}(q^{2i}-1)$. Levi of
-$P_i$: $\GL_i(q)\times O^-(2(n-i),q)$-type, exponents
-$\leq\max(2f,2(n-1)f)<2nf$.
+which divides $q^{n(n-1)}(q^n+1)\prod_{i=1}^{n-1}(q^{2i}-1)$.
+The Levi factor of $P_i$ has type
+$\GL_i(q)\times O^-(2(n-i),q)$, and its relevant exponents are at most
+$\max(2f,2(n-1)f)<2nf$.
 \item ${}^3D_4(q)$: $e=12f$, $r\mid\Phi_{12}(q)=q^4-q^2+1$, which
-divides $q^8+q^4+1=(q^4+q^2+1)(q^4-q^2+1)$, hence
-$|{}^3D_4(q)|=q^{12}(q^8+q^4+1)(q^6-1)(q^2-1)$. The two Levi factors
+divides $q^8+q^4+1=(q^4+q^2+1)(q^4-q^2+1)$. Since
+$|{}^3D_4(q)|=q^{12}(q^8+q^4+1)(q^6-1)(q^2-1)$, we have
+$r\mid|S|$. The two Levi factors
 are $\SL_2(q^3)\cdot(q-1)$ and $\SL_2(q)\cdot(q^3-1)$ (mod centers):
 $p'$-orders divide $(q^6-1)(q-1)$ and $(q^2-1)(q^3-1)$, exponents
 $\leq6f<12f$.
@@ -1118,26 +1122,27 @@ A_1(q^2){\times}A_2(q))$ in
 $r\mid\Phi_{12}(q)\mid q^6+1$, which divides
 $|{}^2F_4(q)|=q^{12}(q^6+1)(q^4-1)(q^3+1)(q-1)$. The two Levi derived
 groups are ${}^2B_2(q)\cong\Sz(q)$ and $\SL_2(q)$
-\cite[Thm.~4.5(i)--(ii), p.~166]{Wilson2009}
+\cite[Thm.~4.5(i)--(ii), p.~166]{Wilson2009} and
 \cite[Main Theorem, pp.~52--53]{Malle1991}: $p'$-orders divide
 $(q^2+1)(q-1)^2$ and
 $(q^2-1)(q-1)$, exponents $\leq4f<12f$. (${}^2F_4(2)$ is not simple;
 its derived group, the Tits group, is in the machine base.)
 \end{itemize}
 
-\emph{$r\nmid x$.} In every case $x$ divides $d_S\cdot c f$ where the
+\emph{$r\nmid x$.} In every case $x$ divides $d_S\cdot c f$, where the
 diagonal order $d_S$ divides $q+1$ (types ${}^2A$, ${}^2E_6$) or $4$
 (type ${}^2D$) or is $1$ (${}^3D_4$, ${}^2F_4$), and the field part has
 order $cf$ with $c\leq3$. Since $r\equiv1\pmod e$ with $e\geq6f$, $r$
-exceeds the field-part order; $r\mid d_S$ would give either $r\mid q+1$,
-so $\ord_r(p)\mid2f<e$, or $r\leq4<r$, both impossible. Hence
-$\vp{r}(x)=0<1\leq d$ and Theorem~\ref{thm:D} applies.
+exceeds the field-part order. If $r\mid d_S$, then either $r\mid q+1$,
+which would give $\ord_r(p)\mid2f<e$, or $r\leq4$, contradicting
+$r>e\geq6$. Hence
+$\eta=\vp{r}(|S|)\geq1>0=\vp{r}(x)$, and Theorem~\ref{thm:D} applies.
 
 \emph{Zsigmondy exceptions.} $r$ fails to exist only if $p^e=2^6$. Here
 $e\geq6$ always, and $e=6$ occurs only for $\PSU(4,q)$ with $f=1$; then
 $p^6=2^6$ forces $S=\PSU(4,2)\cong\PSp(4,3)$
-\cite[Thm.~5.3, p.~61]{CameronNotes}; this is the lower-range
-certificate recorded as \texttt{Sp43}, of order $25920$. No other case
+\cite[Thm.~5.3, p.~61]{CameronNotes}; this group, of order $25920$, is
+settled by the lower-range certificate \texttt{Sp43}. No other case
 reaches $p^e=2^6$.
 \end{proof}
 
@@ -1162,35 +1167,40 @@ prime.
 
 \emph{$\PSU(3,q)$, $q\geq8$.} $|S|=q^3(q^3+1)(q^2-1)/d$,
 $d=\gcd(3,q+1)$; $|B|=q^3(q^2-1)/d$. Let $V$ be the stabilizer of a
-nonisotropic point of the unitary geometry, of order $q(q-1)(q+1)^2/d$:
-maximal for $q\geq3$, $q\neq5$ \cite[Table~8.5, p.~379]{BHRD} (class
-$\mathcal{C}_1$), one class, preserved by every semilinear
-automorphism. Take $r$ a primitive prime divisor of $p^{6f}-1$ (exists:
-$p^{6f}=2^6$ would force $q=2$, not simple): $r\mid\Phi_6(q)=q^2-q+1$,
-which divides $(q^3+1)/(q+1)$, hence $|S|$; $\ord_r(p)=6f$ rules out
+nonisotropic point of the unitary geometry. It has order
+$q(q-1)(q+1)^2/d$ and is maximal for $q\geq3$, $q\neq5$
+\cite[Table~8.5, p.~379]{BHRD} (class $\mathcal{C}_1$). These stabilizers
+form a single class, preserved by every semilinear automorphism.
+Take $r$ a primitive prime divisor of $p^{6f}-1$. It exists because
+the exceptional equation $p^{6f}=2^6$ would force $q=2$, for which $S$
+is not simple. Then $r\mid\Phi_6(q)=q^2-q+1$,
+which divides $(q^3+1)/(q+1)$, and hence $r\mid|S|$;
+$\ord_r(p)=6f$ rules out
 $r$ dividing $q(q^2-1)$ or $q(q-1)(q+1)^2$. Also $x\mid2df$, and
 $r\equiv1\pmod{6f}$ gives $r>2f$, while $r\mid d\mid q+1$ would force
-$\ord_r(p)\mid2f$. So $d_{\mathrm{val}}:=\vp{r}(|S|)\geq1>0=\vp{r}(x)$.
+$\ord_r(p)\mid2f$. Thus $\eta:=\vp{r}(|S|)\geq1>0=\vp{r}(x)$.
 For $q\in\{3,4,5,7\}$ (in particular the maximality exception $q=5$),
 $S$ is in the machine base.
 
 \emph{$\Sz(q)$.} $|S|=q^2(q^2+1)(q-1)$; $|B|=q^2(q-1)$. Let
-$V:=D_{2(q-1)}$, the normalizer of a cyclic subgroup of order $q-1$:
-maximal by Suzuki's classification \cite{Suzuki1962}; see also
-\cite[Thm.~7.3.5, p.~367, and Table~8.16, p.~384]{BHRD}. It is one
-class, stable
-under $\Aut(S)=S\rtimes C_f$. Let $r$ be a primitive prime divisor of
-$2^{4f}-1$ (exists: $4f\geq12$): $r\mid\Phi_4(q)=q^2+1$, so $r\mid|S|$,
-$r\nmid|B|$, $r\nmid|V|$; $x\mid f$ and $r\equiv1\pmod{4f}>f$. So
+$V:=D_{2(q-1)}$ be the normalizer of a cyclic subgroup of order $q-1$.
+It is maximal by Suzuki's classification \cite{Suzuki1962}; see also
+\cite[Thm.~7.3.5, p.~367, and Table~8.16, p.~384]{BHRD}. These
+normalizers form a single class, stable under $\Aut(S)=S\rtimes C_f$. Let
+$r$ be a primitive prime divisor of $2^{4f}-1$. Such a prime exists
+because $4f\geq12$. Then $r\mid\Phi_4(q)=q^2+1$, so $r\mid|S|$,
+$r\nmid|B|$, $r\nmid|V|$; $x\mid f$, and
+$r\equiv1\pmod{4f}$ gives $r>f$. Thus
 $\vp{r}(|S|)\geq1>0=\vp{r}(x)$.
 
 \emph{${}^2G_2(q)$.} $|S|=q^3(q^3+1)(q-1)$; $|B|=q^3(q-1)$. Let
 $V:=C_S(\iota)\cong\langle\iota\rangle\times\PSL(2,q)$ for an involution
-$\iota$ (one class of involutions, so $[V]$ is $\Aut$-stable),
-$|V|=q(q^2-1)$; $V$ is maximal
-\cite[Thm.~C, pp.~33--34]{Kleidman1988}. Let $r$ be a
-primitive prime divisor of $3^{6f}-1$ (exists: $6f\geq18$):
-$r\mid\Phi_6(q)=q^2-q+1$, which divides $(q^3+1)/(q+1)$, so $r\mid|S|$;
+$\iota$. The involutions form a single $S$-class, so $[V]$ is
+$\Aut(S)$-stable. Moreover, $|V|=q(q^2-1)$, and $V$ is maximal
+\cite[Thm.~C, pp.~33--34]{Kleidman1988}. Let $r$ be a primitive prime
+divisor of $3^{6f}-1$. Such a prime exists because $6f\geq18$. Then
+$r\mid\Phi_6(q)=q^2-q+1$, which divides $(q^3+1)/(q+1)$, and hence
+$r\mid|S|$;
 $\ord_r(3)=6f$ rules out $r\mid q^3(q-1)$ and $r\mid q(q^2-1)$;
 $x\mid f<r$. So $\vp{r}(|S|)\geq1>0=\vp{r}(x)$.
 (${}^2G_2(3)$ is not simple; ${}^2G_2(3)'\cong\PSL(2,8)$ is covered by
@@ -1215,7 +1225,7 @@ Then $S$ is excluded.
 \begin{proof}
 We keep the standard-parabolic notation $Q_J$ of Lemma~\ref{lem:P}. The
 \emph{graph part} of $X$ is the image of $X$ in the quotient of
-$\Out(S)$ by its inndiag--field part: a subgroup of
+$\Out(S)$ by its inner-diagonal and field part: a subgroup of
 $C_2=\langle\delta\rangle$ for $\PSL(n,q)$ ($n\geq3$), $D_n$ ($n\geq5$),
 $E_6$; a subgroup of $S_3$ (triality) for $D_4$; while for $\Sp(4,2^f)$,
 $F_4(2^f)$, $G_2(3^f)$, $\Out(S)$ is cyclic of order $2f$ generated by
@@ -1230,44 +1240,57 @@ $\Aut(S)$-conjugacy; for $D_4$ this lets us assume a $C_2$ graph part is
 generated by the symmetry fixing nodes $1,2$ and swapping $3,4$.
 
 \emph{Case A: $X$ with trivial graph part.} Every parabolic class is
-$X$-stable, and the argument of Theorem~\ref{thm:nograph} applies with
-these data:
+$X$-stable, and the argument of Theorem~\ref{thm:nograph} applies. The selected
+pairs and obstruction primes are given below; the $E_6(q)$ entry refers forward
+to a construction valid for every $X$.
 \begin{itemize}
-\item $\PSL(n,q)$: pair $([P_1],[P_2])$, $r$ a primitive prime divisor
-of $p^{nf}-1$, so $r\mid\Phi_n(q)\mid q^n-1$, which divides $|S|\cdot
-d$ ($d=\gcd(n,q-1)$); the Levi factors ($\GL_{n-1}(q)$-type and
-$\GL_2{\times}\GL_{n-2}$-type) have cyclotomic exponents
-$\leq(n-1)f<nf$; $x\mid2df$ and $r\equiv1\pmod{nf}$ rules out
-$r\mid2f$ ($r>nf\geq3f>2f$) and $r\mid d$ (else $r\mid q-1$, so
-$\ord_r(p)\mid f$). Zsigmondy exceptions $p^{nf}=2^6$:
-$(n,f)=(3,2)$ is $\PSL(3,4)$ (machine base, all ten $X$), and
-$(n,f)=(6,1)$, $S=\PSL(6,2)$: take instead $r=31$ ($\ord_{31}(2)=5$)
-and the pair $([P_2],[P_3])$, whose Levi types $\GL_2{\times}\GL_4$
-and $\GL_3{\times}\GL_3$ have exponents $\leq4<5$, so
-$31\nmid|P_2||P_3|$ while $v_{31}(|\PSL(6,2)|)=1$ and $x\mid2$.
-\item $D_n(q)$, $n\geq4$: pair $([P_1],[P_2])$ (singular point and
-singular line stabilizers), $r$ primitive for $p^{2(n-1)f}-1$:
-$r\mid\Phi_{2n-2}(q)$, which divides
-$q^{n(n-1)}(q^n-1)\prod_{i=1}^{n-1}(q^{2i}-1)$; Levi factors
-($D_{n-1}$- and $A_1{\times}D_{n-2}$-type) have exponents
-$\leq\max((n-1)f,2(n-2)f)<2(n-1)f$; $x\mid24f$ (diagonal $\leq4$,
-field $f$, graph $\leq6$) and $r\equiv1\pmod{2(n-1)f}$ with
-$2(n-1)\geq6$ gives $r>6f$ and $r\nmid24$ (as $r$ is a prime exceeding
-$6$, $r\notin\{2,3\}$). Zsigmondy exception $p^{2(n-1)f}=2^6$:
-$(n,f)=(4,1)$, $S=\Omega^+(8,2)$, handled for every $X$ in Case~B3.
-\item $E_6(q)$: see Case~B4; the pair used there is stable for every
-$X$.
-\item $\Sp(4,2^f)$: pair $([P_1],[P_2])$, $r$ primitive for $2^{4f}-1$
-(exists, $4f\geq8$): $r\mid\Phi_4(q)=q^2+1$; Levi factors $\Sp_2(q)$
-and $\GL_2(q)$ have exponents $\leq2f<4f$; here $x\mid f$ and $r>4f$.
-\item $F_4(2^f)$: pair $([P_1],[P_2])$, $r$ primitive for $2^{12f}-1$:
-$r\mid\Phi_{12}(q)$; all proper Levis (types $B_3$, $C_3$,
-$A_2{\times}A_1$, $A_1{\times}A_2$) have exponents $\leq6f<12f$;
-$x\mid f<r$. (This completes the $p=2$ case excluded from
-Theorem~\ref{thm:nograph}.)
-\item $G_2(3^f)$: pair $([P_1],[P_2])$, $r$ primitive for $3^{6f}-1$:
-$r\mid\Phi_6(q)$; Levis of type $A_1$ have exponents $\leq2f<6f$;
-$x\mid f<r$. (The $p=3$ case of $G_2$.)
+\item \emph{$\PSL(n,q)$: pair $([P_1],[P_2])$, $r$ a primitive prime divisor
+of $p^{nf}-1$.} Then $r\mid\Phi_n(q)\mid q^n-1$, and this cyclotomic
+factor divides $|S|\cdot d$, where $d=\gcd(n,q-1)$. The Levi factors,
+of $\GL_{n-1}(q)$-type and $\GL_2{\times}\GL_{n-2}$-type, have
+cyclotomic exponents at most $(n-1)f<nf$. Moreover, $x\mid2df$. The
+congruence $r\equiv1\pmod{nf}$ rules out $r\mid2f$, since
+$r>nf\geq3f>2f$, and also rules out $r\mid d$, since that would imply
+$r\mid q-1$ and hence $\ord_r(p)\mid f$. The Zsigmondy exceptions occur
+when $p^{nf}=2^6$. If $(n,f)=(3,2)$, then $S=\PSL(3,4)$, which is in the
+machine base for all ten $X$. If $(n,f)=(6,1)$, then $S=\PSL(6,2)$;
+take instead $r=31$ ($\ord_{31}(2)=5$) and the pair
+$([P_2],[P_3])$. Their Levi types $\GL_2{\times}\GL_4$ and
+$\GL_3{\times}\GL_3$ have exponents at most $4<5$, so
+$31\nmid|P_2||P_3|$, whereas $\vp{31}(|\PSL(6,2)|)=1$ and $x\mid2$.
+
+\item \emph{$D_n(q)$, $n\geq4$: pair $([P_1],[P_2])$ (singular-point and
+singular-line stabilizers).} Let $r$ be a primitive prime divisor of
+$p^{2(n-1)f}-1$. Then $r\mid\Phi_{2n-2}(q)$, which divides
+$q^{n(n-1)}(q^n-1)\prod_{i=1}^{n-1}(q^{2i}-1)$. The Levi factors, of
+$D_{n-1}$-type and $A_1{\times}D_{n-2}$-type, have exponents at most
+$\max((n-1)f,2(n-2)f)<2(n-1)f$. Moreover, $x\mid24f$, accounting for
+diagonal, field, and graph factors of orders at most $4$, $f$, and $6$,
+respectively. Since $r\equiv1\pmod{2(n-1)f}$ and $2(n-1)\geq6$, we
+have $r>6f$ and $r\nmid24$. The only Zsigmondy exception is
+$p^{2(n-1)f}=2^6$, which gives $(n,f)=(4,1)$ and
+$S=\Omega^+(8,2)$; Case~B3 handles this group for every $X$.
+
+\item \emph{$E_6(q)$.} The pair used in Case~B4 is stable for every $X$.
+
+\item \emph{$\Sp(4,2^f)$.} Take the pair $([P_1],[P_2])$, and let $r$
+be a primitive prime divisor of $2^{4f}-1$. Such a prime exists because
+$4f\geq8$. It divides
+$\Phi_4(q)=q^2+1$. The Levi factors $\Sp_2(q)$ and $\GL_2(q)$ have
+exponents at most $2f<4f$; here $x\mid f$ and $r>4f$.
+
+\item \emph{$F_4(2^f)$.} Take the pair $([P_1],[P_2])$, and let $r$ be a
+primitive prime divisor of $2^{12f}-1$. It divides $\Phi_{12}(q)$. All
+proper Levi factors, of types
+$B_3$, $C_3$, $A_2{\times}A_1$, and $A_1{\times}A_2$, have exponents
+at most $6f<12f$, and $x\mid f<r$. This completes the $p=2$ case
+excluded from Theorem~\ref{thm:nograph}.
+
+\item \emph{$G_2(3^f)$.} Take the pair $([P_1],[P_2])$, and let $r$ be a
+primitive prime divisor of $3^{6f}-1$. It divides $\Phi_6(q)$. Levi factors
+of type $A_1$ have
+exponents at most $2f<6f$, and $x\mid f<r$. This is the $p=3$ case of
+$G_2$.
 \end{itemize}
 
 \emph{Case B: $X$ with nontrivial graph part.} Novelty classes below are
@@ -1284,19 +1307,19 @@ $J$ and powers of $q-1$), as listed.
 
 \emph{B1. $\PSL(3,q)$, $q\geq5$.} (For $q\leq4$ the group is in the
 machine base, including all ten $X$ for $\PSL(3,4)$.) The pair
-consists of $[B]$ and $[N]$, where
-$N:=N_S(T)\cong((q-1)^2/d).S_3$ is the normalizer of a maximal split
+consists of $[B]$ and $[N_T]$, where
+$N_T:=N_S(T)\cong((q-1)^2/d).S_3$ is the normalizer of a maximal split
 torus and $d=\gcd(3,q-1)$. The Borel class is a novelty: its proper
 overgroups $P_1,P_2$ are swapped by $\delta$, which exchanges the
 points and lines of $PG(2,q)$, so Lemma~\ref{lem:P} applies. The
 torus normalizer is maximal for $q\geq5$
 \cite{Mitchell1911,Hartley1925}, \cite[Table~8.3, p.~378]{BHRD} (class
-$\mathcal{C}_2$), forms a single class, and is preserved by every
-automorphism. Take $r$ primitive for $p^{3f}-1$, so that
+$\mathcal{C}_2$). Its conjugates form a single class preserved by every
+automorphism. Let $r$ be a primitive prime divisor of $p^{3f}-1$. Then
 $r\mid\Phi_3(q)=q^2+q+1$ and $\vp{r}(|S|)\geq1$. Primitivity gives
 $r\nmid|B|=q^3(q-1)^2/d$ and $r\nmid q-1$, and
-$r\nmid|N|=6(q-1)^2/d$ follows because $r\equiv1\pmod3$ forces
-$r\geq7$, so $r\nmid6$. Finally $x\mid2df$: $r>3f$ rules out
+$r\nmid|N_T|=6(q-1)^2/d$ follows because $r\equiv1\pmod3$ forces
+$r\geq7$, so $r\nmid6$. Finally, $x\mid2df$: $r>3f$ rules out
 $r\mid2f$, and $r\geq7$ rules out $r\mid d=3$. The Zsigmondy
 exception $p^{3f}=2^6$ is $\PSL(3,4)$, in the machine base.
 
@@ -1307,16 +1330,19 @@ class (Levi $A_1{\times}A_1$, exponents $\leq2f$), while $Q_{\{2\}}$,
 the stabilizer of an incident point--hyperplane flag, is a novelty
 whose proper overgroups
 $P_1,P_3$ are swapped by $\delta$ (Lemma~\ref{lem:P}); its Levi ($A_1$
-plus torus) has exponents $\leq2f$. Take $r$ primitive for $p^{4f}-1$:
-it avoids both orders ($2f<4f$), $\vp{r}(|S|)\geq1$, and $x\mid2df$
-($d=\gcd(4,q-1)$) with $r\equiv1\pmod{4f}$ excluding $r\mid2f$ and
-$r\mid d$. There is no Zsigmondy exception ($2^{4f}=2^6$ is
+plus torus) has exponents $\leq2f$. Let $r$ be a primitive prime divisor
+of $p^{4f}-1$.
+It avoids both orders because $2f<4f$, and $\vp{r}(|S|)\geq1$. Here
+$x\mid2df$, where $d=\gcd(4,q-1)$; the congruence
+$r\equiv1\pmod{4f}$ excludes both $r\mid2f$ and $r\mid d$. There is no
+Zsigmondy exception ($2^{4f}=2^6$ is
 impossible).
 For $n\geq5$ the pair consists of the two novelties
 $([Q_{J_1}],[Q_{J_2}])$, where
-$J_1:=\Delta\setminus\{1,n{-}1\}$ and $J_2:=\Delta\setminus\{2,n{-}2\}$
-give the stabilizers of an incident point--hyperplane flag and an
-incident line--$(n{-}2)$-space flag. Both node sets $\{1,n{-}1\}$ and
+$J_1:=\Delta\setminus\{1,n{-}1\}$ and
+$J_2:=\Delta\setminus\{2,n{-}2\}$. The subgroups $Q_{J_1}$ and $Q_{J_2}$ are,
+respectively, the stabilizers of an incident point--hyperplane flag and an
+incident line--$(n{-}2)$-space flag. Both deleted node sets $\{1,n{-}1\}$ and
 $\{2,n{-}2\}$
 are $\delta$-orbits, so both $[Q_{J_i}]$ are $X$-stable; the proper
 overgroups of $Q_{J_1}$ are $P_1,P_{n-1}$, swapped by $\delta$, and
@@ -1329,14 +1355,14 @@ exponents $\leq(n{-}2)f$, and the blocks $(2,n{-}4,2)$, with exponents
 $\leq\max(2,n{-}4)f$. The prime $r$ of Case~A avoids both, and
 $\vp{r}(x)=0$ as there. The Zsigmondy exception is $(n,f)=(6,1)$,
 $S=\PSL(6,2)$: take $r=31$ again; the two Levi orders involve only
-$\GL_4(2)$, $\GL_2(2)$ factors and $2$-powers, so $31$ divides neither,
-while $v_{31}(|S|)=1>0=v_{31}(2)$.
+$\GL_4(2)$- and $\GL_2(2)$-factors and $2$-powers, so $31$ divides neither,
+while $\vp{31}(|S|)=1>0=\vp{31}(2)$.
 
 \emph{B3. $D_n(q)$.} For $n\geq5$ the graph part is at most the $C_2$
 swapping the two spinor nodes $n{-}1,n$ and fixing $1,\dots,n{-}2$: the
 Case~A pair $([P_1],[P_2])$ is $X$-stable for \emph{every} $X$ and
 Case~A's argument goes through unchanged (its $x$-bound already allowed
-the graph factor). For $n=4$: if the graph part is trivial or the
+the graph factor). For $n=4$, if the graph part is trivial or the
 normalized $C_2$ (fixing nodes $1,2$), the pair $([P_1],[P_2])$ is
 $X$-stable and Case~A applies. If the graph part contains a triality,
 take the pair $([P_2],[Q_{\{2\}}])$: node $2$ is fixed by all of $S_3$,
@@ -1346,26 +1372,28 @@ $A_1$ plus torus, exponents $\leq2f$) has proper overgroups
 $Q_{\{1,2\}},Q_{\{2,3\}},Q_{\{2,4\}}$ and $P_4,P_3,P_1$, which fall
 into the two regular $\langle\text{triality}\rangle$-orbits induced by
 the permutation of the end nodes $\{1,3,4\}$; none is $X$-stable
-(Lemma~\ref{lem:P}). The prime $r$ primitive for $p^{6f}-1$ avoids both
-classes, $\vp{r}(|S|)\geq1$, and $r\nmid x$ as in Case~A.
+(Lemma~\ref{lem:P}). Let $r$ be a primitive prime divisor of $p^{6f}-1$.
+It avoids both classes, $\vp{r}(|S|)\geq1$, and $r\nmid x$ as in Case~A.
 \emph{Zsigmondy exception ($f=1$, $p=2$): $S=\Omega^+(8,2)$.} Here
 $x\mid24$; take $r=5=\Phi_4(2)$, so
-$v_5(|S|)=v_5\bigl(2^{12}(2^6-1)(2^4-1)^2(2^2-1)\bigr)=2$ and
-$v_5(x)\leq v_5(24)=0$. In the triality case the pair
+$\vp{5}(|S|)=\vp{5}\bigl(2^{12}(2^6-1)(2^4-1)^2(2^2-1)\bigr)=2$ and
+$\vp{5}(x)\leq\vp{5}(24)=0$. In the triality case the pair
 $([P_2],[Q_{\{2\}}])$ still serves: both
-Levi orders are $\{2,3\}$-numbers, so $d=2-0-0=2>0$. In the
+Levi orders are $\{2,3\}$-numbers, so $\eta=2-0-0=2>0$. In the
 trivial/$C_2$ case the pair $([P_1],[P_2])$ gives
-$v_5(|P_1|)=v_5(|\SL_4(2)|)=1$ (Levi
-$D_3\cong A_3$) and $v_5(|P_2|)=0$, so $d=2-1-0=1>0$.
+$\vp{5}(|P_1|)=\vp{5}(|\SL_4(2)|)=1$ (Levi
+$D_3\cong A_3$) and $\vp{5}(|P_2|)=0$, so $\eta=2-1-0=1>0$.
 
 \emph{B4. $E_6(q)$, all $X$.} The diagram involution fixes nodes $2$
 and $4$ (Bourbaki numbering: $\delta$ swaps $1\leftrightarrow6$,
 $3\leftrightarrow5$). The pair is $([P_2],[P_4])$: two $X$-stable
-classes of \emph{maximal} parabolics for every $X$. $r$ primitive for $p^{12f}-1$:
-$r\mid\Phi_{12}(q)$, which divides $|S|\cdot d$; the Levi of $P_2$ has
-type $A_5$ (exponents $\leq6f$), that of $P_4$ type
-$A_2{\times}A_1{\times}A_2$ ($\leq3f$), both $<12f$; $x\mid2df\leq6f<r$
-($d=\gcd(3,q-1)$). No Zsigmondy exception. This simultaneously covers
+classes of \emph{maximal} parabolics for every $X$. Let $r$ be a primitive
+prime divisor of $p^{12f}-1$. Then $r\mid\Phi_{12}(q)$, which divides
+$|S|\cdot d$. For these classes,
+the Levi of $P_2$ has type $A_5$ and exponents at most $6f$; that of $P_4$ has type
+$A_2{\times}A_1{\times}A_2$ and exponents at most $3f$. Both bounds are
+less than $12f$. Finally, $x\mid2df\leq6f<r$, where
+$d=\gcd(3,q-1)$. There is no Zsigmondy exception. This simultaneously covers
 Case~A for $E_6$.
 
 \emph{B5. $\Sp(4,q)$, $q=2^f$, $f\geq2$, $X$ with graph part.} (For
@@ -1375,10 +1403,11 @@ class is a novelty: its proper overgroups $P_1,P_2$, the point
 and totally-isotropic-line stabilizers, are swapped by $\rho$, so
 Lemma~\ref{lem:P} applies. For the second class, put
 $V:=\Fix(\tilde\rho^{\,f})\cap S$, where $\tilde\rho$ is the Steinberg
-endomorphism of the ambient algebraic group with $\tilde\rho^2=
-\varphi_2$ and $\tilde\rho^{\,2f}=F_q$; that is, $V=\Sz(q)$ for $f$
-odd and $V=\Sp(4,2^{f/2})$, the index-two subfield subgroup, for $f$
-even. In both cases $V$ is maximal
+endomorphism of the ambient algebraic group with $\tilde\rho^2=\varphi_2$
+and $\tilde\rho^{\,2f}=F_q$. Thus $V=\Sz(q)$ for odd $f$,
+whereas for even $f$ the group $V=\Sp(4,2^{f/2})$ is the subfield
+subgroup over $\F_{2^{f/2}}$ corresponding to the degree-two extension
+$\F_{2^f}/\F_{2^{f/2}}$. In both cases $V$ is maximal
 \cite[Table~8.14, p.~384]{BHRD}, \cite{Suzuki1962}.
 
 \emph{Stability of $[V]$.}
@@ -1387,34 +1416,38 @@ $\tilde\rho$ commutes with its own power $\tilde\rho^{\,f}$, so
 $\rho(V)=V$; inner automorphisms preserve $[V]$ trivially, so
 $[V]$ is $\Aut$-stable.
 
-\emph{Primes.} For $f$ odd, $2f\neq6$: $r$
-primitive for $2^{2f}-1$ divides $q+1$, so
+\emph{Primes.} \emph{Case $f$ odd, $2f\neq6$.} Let $r$ be a primitive
+prime divisor of $2^{2f}-1$. Such a prime divides $q+1$, so
 $\vp{r}(|S|)=\vp{r}\bigl((q^2-1)(q^4-1)\bigr)=2\vp{r}(q+1)\geq2$,
 while $\vp{r}(|B|)=\vp{r}(q^4(q-1)^2)=0$ and $\vp{r}(|\Sz(q)|)=0$ since
-$\gcd(q+1,\,q(q^2+1)(q-1))=1$ for $q$ even; finally $x\mid2f<r$. If $2f=6$
-($q=8$), take $r=3$: then $v_3(|\Sp(4,8)|)=v_3(63\cdot4095)=4>1\geq
-v_3(x)$, with $v_3(|B|)=v_3(|\Sz(8)|)=0$. For $f$ even: $r$ primitive for
-$2^{4f}-1$ exists ($4f\geq8$) and divides $q^2+1$, so $\vp{r}(|S|)\geq1$;
+$\gcd(q+1,\,q(q^2+1)(q-1))=1$ for $q$ even; finally $x\mid2f<r$.
+If $2f=6$ (so $q=8$), take $r=3$; then
+$\vp{3}(|\Sp(4,8)|)=\vp{3}(63\cdot4095)=4>1\geq\vp{3}(x)$, with
+$\vp{3}(|B|)=\vp{3}(|\Sz(8)|)=0$.
+
+\emph{Case $f$ even.} Let $r$ be a primitive prime divisor of
+$2^{4f}-1$. Such a prime exists because $4f\geq8$; it divides $q^2+1$,
+so $\vp{r}(|S|)\geq1$;
 $|\Sp(4,q_0)|=q_0^4(q_0^2-1)(q_0^4-1)$ with $q_0^2=q$ has cyclotomic
 exponents $\leq2f<4f$, so $\vp{r}(|V|)=0$ and $\vp{r}(|B|)=0$; again
-$x\mid2f<r$. ($\Sp(4,4)$ doubles as the machine template: the sweep-K3
-certificate pair (Borel, $\Sp(4,2)$) at $p=5=\Phi_4(2)$ and
-$p=17=\Phi_8(2)$ matches this construction.)
+$x\mid2f<r$. The sweep-K3 certificate for $\Sp(4,4)$ records the same
+construction: the pair (Borel, $\Sp(4,2)$) at $r=5=\Phi_4(2)$ and
+$r=17=\Phi_8(2)$.
 
 \emph{B6. $F_4(q)$, $q=2^f$, $X$ with graph part.} Here $\rho$ reverses the
-diagram $1$--$2$$\Rightarrow$$3$--$4$, swapping $1\leftrightarrow4$
+diagram $1\!-\!2\Rightarrow3\!-\!4$, swapping $1\leftrightarrow4$
 and $2\leftrightarrow3$. The pair consists of the two novelties
-$([Q_{J_1}],[Q_{J_2}])$ with
+$([Q_{J_1}],[Q_{J_2}])$, where
 $J_1:=\{2,3\}$ and $J_2:=\{1,4\}$, both $\rho$-invariant node sets.
 The proper overgroups of $Q_{J_1}$ are $Q_{\{1,2,3\}}=P_4$ and
 $Q_{\{2,3,4\}}=P_1$, swapped by $\rho$; those of $Q_{J_2}$ are
 $Q_{\{1,2,4\}}$
 and $Q_{\{1,3,4\}}$, also swapped by $\rho$ and of distinct types,
 hence in distinct
-classes. So Lemma~\ref{lem:P} applies to both. Levi types: $B_2$
-($\cong\Sp_4(q)$, exponents $\leq4f$) and $A_1{\times}A_1$
-($\leq2f$). A prime
-$r$ primitive for $2^{12f}-1$ avoids both, and
+classes. So Lemma~\ref{lem:P} applies to both. The corresponding Levi types
+are $B_2$ and $A_1{\times}A_1$. The first is isomorphic to $\Sp(4,q)$ and
+has exponents at most $4f$, while the second has exponents at most $2f$.
+Let $r$ be a primitive prime divisor of $2^{12f}-1$. It avoids both, and
 $\vp{r}(|S|)\geq1$ while $x\mid2f<12f<r$. There are no exceptions.
 
 \emph{B7. $G_2(q)$, $q=3^f$, $X$ with graph part.} Here $\rho$ swaps the two
@@ -1424,25 +1457,30 @@ overgroups $P_1,P_2$ are swapped by $\rho$ (Lemma~\ref{lem:P}), and
 $[V]$, where
 $V:=\Fix(\tilde\rho^{\,f})\cap S$ as in B5. Thus $V={}^2G_2(q)$ for
 $f$ odd, maximal in $G_2(q)$ \cite[Thm.~A, p.~33]{Kleidman1988} (for $f=1$,
-$V={}^2G_2(3)\cong P\Gamma L_2(8)$, maximal in $G_2(3)$ by the
+$V={}^2G_2(3)\cong\mathrm{P}\Gamma\mathrm{L}_2(8)$, maximal in $G_2(3)$ by the
 \textsc{Atlas} \cite{ATLAS} and \cite[Thm.~A, p.~33]{Kleidman1988}), and
-$V=G_2(3^{f/2})$, the index-two subfield subgroup, for $f$ even; this
-too is maximal
+$V=G_2(3^{f/2})$ for even $f$. In the latter case, $V$ is the subfield
+subgroup over $\F_{3^{f/2}}$ corresponding to the degree-two extension
+$\F_{3^f}/\F_{3^{f/2}}$, and it too is maximal
 \cite[Thm.~A, p.~33]{Kleidman1988}. The class $[V]$ is
 $\Aut$-stable by the commuting-endomorphism argument of B5, since
 $\Out(G_2(3^f))=\langle\rho\rangle\cong C_{2f}$.
 
-\emph{Primes.} For $f$
-odd: $r$ primitive for $3^{3f}-1$ exists for all $f\geq1$, because
+\emph{Primes.} \emph{Case $f$ odd.} Let $r$ be a primitive prime divisor
+of $3^{3f}-1$. Such a prime exists for all $f\geq1$, because
 $p=3\neq2$
 excludes the $2^6$ exception ($f=1$ gives $r=13\mid3^3-1$). Then
-$r\mid\Phi_3(q)=q^2+q+1$, which divides $q^6-1$, hence
-$|S|=q^6(q^6-1)(q^2-1)$. Primitivity gives $r\nmid|B|=q^6(q-1)^2$ and
+$r\mid\Phi_3(q)=q^2+q+1$, which divides $q^6-1$. Since
+$|S|=q^6(q^6-1)(q^2-1)$, it follows that $r\mid|S|$. Primitivity gives
+$r\nmid|B|=q^6(q-1)^2$ and
 $r\nmid q-1$ (as $r\mid 3^f-1$ would force $\ord_r(3)\leq f<3f$),
 while $r\nmid|{}^2G_2(q)|=q^3(q^3+1)(q-1)$ because $r\mid q^3-1$ and
-$\gcd(q^3-1,q^3+1)=2<r$. Since $x\mid2f$ and $r\equiv1\pmod{3f}$ gives
-$r\geq3f+1>2f$, we get $\vp{r}(x)=0<1\leq\vp{r}(|S|)$. For $f$ even: $r$
-primitive for $3^{6f}-1$ divides $\Phi_6(q)=q^2-q+1$, which divides
+$\gcd(q^3-1,q^3+1)=2<r$. Since $x\mid2f$ and
+$r\equiv1\pmod{3f}$, we have $r\geq3f+1>2f$; hence
+$\vp{r}(x)=0<1\leq\vp{r}(|S|)$.
+
+\emph{Case $f$ even.} Let $r$ be a primitive prime divisor of
+$3^{6f}-1$. Such a prime divides $\Phi_6(q)=q^2-q+1$, which divides
 $q^3+1$; hence
 $r\nmid|B|$ and $r\nmid|G_2(3^{f/2})|=q^3(q^3-1)(q-1)$, while
 $x\mid2f<6f<r$. ($G_2(3)$ additionally carries a full machine
@@ -1461,12 +1499,12 @@ Convention~\ref{conv:excluded}.
 \begin{proof}
 By the classification of finite simple groups
 \cite[Ch.~1, Table~I, pp.~8--10]{GLS1}, $S$ is alternating,
-of Lie type, or one of the $26$ sporadic groups; we run through the
-list and name the theorem responsible.  The simplicity exceptions are
+of Lie type, or one of the $26$ sporadic groups. The cases are as follows.
+The simplicity exceptions are
 those in \cite[Thm.~2.2.7(a)]{GLS3}; the low-rank classical
 identifications and the exceptional derived-group identifications are
 recorded in \cite[\S2.4, pp.~xi--xii, and \S3.5, p.~xv]{ATLAS}
-(with the individual Atlas entries pinpointed in the source map in
+(with the individual \textsc{Atlas} entries pinpointed in the source map in
 \cite{Repo}).
 \begin{itemize}
 \item $A_n$ ($n\geq5$): Theorem~\ref{thm:an}.
@@ -1486,8 +1524,8 @@ their derived groups $\PSU(3,3)$ and $\PSL(2,8)$ are covered.)
 \item $\PSU(n,q)$: $n=3$: Theorem~\ref{thm:twisted1}; $n\geq4$:
 Theorem~\ref{thm:twisted2}.
 \item ${}^2D_n(q)$ ($n\geq4$), ${}^3D_4(q)$, ${}^2E_6(q)$,
-${}^2F_4(2^f)$: the first three and ${}^2F_4(2^f)$ ($f$ odd $\geq3$)
-by Theorem~\ref{thm:twisted2}; the Tits group ${}^2F_4(2)'$ by
+${}^2F_4(2^f)$ ($f$ odd $\geq3$): all four families are covered by
+Theorem~\ref{thm:twisted2}; the Tits group ${}^2F_4(2)'$ by
 Proposition~\ref{prop:sporadic}. (${}^2D_2$, ${}^2D_3$ are
 $\PSL(2,q^2)$, $\PSU(4,q)$, already listed.)
 \item $\Sz(2^f)$ ($f$ odd $\geq3$), ${}^2G_2(3^f)$ ($f$ odd $\geq3$):
@@ -1499,8 +1537,8 @@ isomorphisms are harmless), so the proposition follows.
 \end{proof}
 
 \begin{proof}[Proof of Theorem~\ref{thm:main}]
-Suppose not, and let $G$ be a non-soluble group with property
-$\mathrm{P}$ of least order. By Proposition~\ref{prop:min}, $G$ has a
+Suppose not, and let $G$ have least order among the non-soluble groups
+with property $\mathrm{P}$. By Proposition~\ref{prop:min}, $G$ has a
 unique minimal normal subgroup $N=S^k$, $S$ non-abelian simple, and
 after conjugation $N\leq G\leq X\wr S_k$ as in Convention~\ref{conv:X}.
 If $k=1$, then $G$ is almost simple, contrary to the theorem of
@@ -1513,19 +1551,18 @@ contradiction.
 \end{proof}
 
 \begin{corollary}[Supplementary reproof]
-The present criterion also recovers that no almost simple group has property
+The present criterion also proves that no almost simple group has property
 $\mathrm{P}$.
 \end{corollary}
 
 \begin{proof}
-Theorem~\ref{thm:Dprime} with the same witnesses used in
-Proposition~\ref{prop:coverage}. This corollary is not used in the proof of the
-Main Theorem.
+Apply Theorem~\ref{thm:Dprime} with the same witnesses used in
+Proposition~\ref{prop:coverage}.
 \end{proof}
 
 \begin{remark}
-The proof yields slightly more than solubility of the minimal
-counterexample: for \emph{every} finite group $G$ with a unique minimal
+The argument proves the following stronger statement: for \emph{every}
+finite group $G$ with a unique minimal
 normal subgroup $S^k$ ($S$ non-abelian simple, $k\geq2$), some pair of
 non-conjugate maximal subgroups of $G$ fails to factorize $G$. The
 reduction of \S\ref{sec:reduction} is needed only to pass from an
@@ -1533,16 +1570,19 @@ arbitrary non-soluble group to this configuration.
 \end{remark}
 
 \subsection*{Data Availability}
-All code, GAP scripts, and log certificates required to reproduce the
+All verification code, including the GAP scripts, and all certificate
+logs required to reproduce the
 machine-verified claims of \S\ref{sec:machine}, together with the
-arithmetic receipts for the family proofs of \S\ref{sec:families}, are
+arithmetic verification records for the family proofs of
+\S\ref{sec:families}, are
 archived in the versioned release \cite{Repo}. The release includes
 SHA-256 checksums of every certificate log, a \path{CITATION.cff}
-file, a single command running the quick verification suite, and
+file, a single command that runs the quick verification suite, and
 separate documented commands for full GAP certificate regeneration and
 byte comparison, Lean and Rocq builds, and mutation-test
 reproduction. Its README maps each claim of this paper to the script
-and certificate that verify it.
+and certificate that verify it. The priority-search record and source
+ledger supporting the discussion in the Introduction are also included.
 
 \subsection*{Funding}
 This research received no external funding.
@@ -1562,7 +1602,7 @@ author reviewed the mathematical arguments, reran the verification
 scripts or checked their outputs against the committed certificate
 logs, verified the cited references, and edited the final manuscript. All
 machine-verified claims are backed by the committed, independently
-re-checkable certificates described in \S\ref{sec:machine}. The author
+checkable certificates described in \S\ref{sec:machine}. The author
 takes full responsibility for the content of this article.
 
 \begin{thebibliography}{99}
@@ -1704,9 +1744,9 @@ classifications and applications, in \emph{Surveys in Combinatorics
 
 \bibitem{Repo}
 R.~Sater, \emph{Kourovka 10.34: proofs, GAP scripts and machine
-certificates}, version 1.0.7, Zenodo, 2026;
+certificates}, version 1.0.8, Zenodo, 2026;
 concept DOI 10.5281/zenodo.21709124 (resolves to the latest version);
-\path{https://github.com/RichieSater/kourovka-10-34/releases/tag/v1.0.7}.
+\path{https://github.com/RichieSater/kourovka-10-34/releases/tag/v1.0.8}.
 
 \bibitem{Steinberg}
 R.~Steinberg, Automorphisms of finite linear groups,
@@ -1745,7 +1785,8 @@ Simple Groups: Thirty Years of the Atlas and Beyond}, Contemp.\ Math.\
 V.~I.~Zenkov, Factorization of finite groups, in \emph{Abstracts of the
 International Algebra Conference in Memory of D.~K.~Faddeev},
 St.~Petersburg, 1997, p.~202 (in Russian); bibliographic data and the
-announcement are recorded in \cite[p.~212]{TT2010}.
+announcement are recorded in the Russian original of
+Tikhonenko--Tyutyanov (2010), p.~212.
 
 \bibitem{ZhangShi2009}
 L.~Zhang, W.~Shi, Noncommuting graph characterization of some simple
@@ -1754,7 +1795,7 @@ groups with connected prime graphs, \emph{Int.\ Electron.\ J.\ Algebra}
 
 \bibitem{Zsigmondy}
 K.~Zsigmondy, Zur Theorie der Potenzreste, \emph{Monatsh.\ Math.\
-Phys.} \textbf{3} (1892), 265--284, DOI 10.1007/BF01692444.
+Phys.} \textbf{3} (1892), 265--284; DOI 10.1007/BF01692444.
 
 \end{thebibliography}
 

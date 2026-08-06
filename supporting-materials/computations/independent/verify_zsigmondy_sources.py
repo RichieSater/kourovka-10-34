@@ -200,7 +200,7 @@ def main() -> int:
         r"\cite[Thm.~2.2, p.~2]{Jones2007}",
         r"DOI 10.1007/BF01692444",
         "additional positive-base exception",
-        "exponent $2$, outside every invocation here",
+        "exponent $2$, which lies outside every invocation here",
     }
     missing = sorted(token for token in required_tex if token not in PAPER.read_text())
     if missing:

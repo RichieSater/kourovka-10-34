@@ -9,9 +9,9 @@ V. S. Monakhov in 1986.
 
 **[Read the paper](https://arxiv.org/abs/2608.02970)** ·
 **[Review the verification guide](supporting-materials/README.md)** ·
-**[Reproduce release v1.0.7](#reproduction)**
+**[Reproduce release v1.0.8](#reproduction)**
 
-> **Status — public preprint.** The manuscript is permanently available as
+> **Status: public preprint.** The manuscript is permanently available as
 > [arXiv:2608.02970](https://arxiv.org/abs/2608.02970). It has not been
 > accepted through journal peer review, and the complete informal argument
 > has not been independently certified.
@@ -30,7 +30,7 @@ certificates cover the designated finite cases and exceptions.
 
 A 1997 conference abstract announced a negative answer. Because no published
 full proof was located in the literature search recorded with this release,
-the manuscript claims a proof of the theorem, not absolute priority for its
+the manuscript claims a proof of the theorem, not priority for its
 conclusion. See
 [`PRIORITY-SEARCH.md`](supporting-materials/audit/PRIORITY-SEARCH.md).
 
@@ -64,7 +64,7 @@ scope, theorem names, expected output, and certificate locations are in the
 ## Reproduction
 
 The immutable research artifact is
-[`v1.0.7`](https://github.com/RichieSater/kourovka-10-34/releases/tag/v1.0.7).
+[`v1.0.8`](https://github.com/RichieSater/kourovka-10-34/releases/tag/v1.0.8).
 Clone that tag rather than the moving default branch.
 
 ### Quick verification
@@ -72,7 +72,7 @@ Clone that tag rather than the moving default branch.
 Requires Python 3.9+, Rocq 9.2, and MathComp 2.6.0:
 
 ```sh
-git clone --branch v1.0.7 --depth 1 \
+git clone --branch v1.0.8 --depth 1 \
   https://github.com/RichieSater/kourovka-10-34.git
 cd kourovka-10-34
 sh supporting-materials/verify-quick.sh
@@ -88,12 +88,12 @@ for soft failures, byte-compares the regenerated output with the committed
 logs, builds Lean and Rocq, and runs the independent and mutation suites:
 
 ```sh
-git clone --branch v1.0.7 --depth 1 \
+git clone --branch v1.0.8 --depth 1 \
   https://github.com/RichieSater/kourovka-10-34.git
 cd kourovka-10-34
 docker build -f supporting-materials/computations/environment/Dockerfile \
-  -t kourovka1034:1.0.7 .
-docker run --rm kourovka1034:1.0.7
+  -t kourovka1034:1.0.8 .
+docker run --rm kourovka1034:1.0.8
 ```
 
 For individual GAP, Lean, Rocq, and Python commands, see
