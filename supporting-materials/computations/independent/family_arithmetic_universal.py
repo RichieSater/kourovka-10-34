@@ -1,5 +1,6 @@
 #!/usr/bin/env python3
-"""Universal, fail-closed audit of every arithmetic branch in Theorems 6.1--6.6.
+"""Universal audit of the branches labeled thm:an, thm:psl2, thm:nograph,
+thm:twisted2, thm:twisted1, and thm:graph.
 
 This verifier consumes the exact branch specification in
 ``audit/FAMILY-ARITHMETIC-MANIFEST.json``.  Published group, subgroup,

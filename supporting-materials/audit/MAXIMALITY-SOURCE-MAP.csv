@@ -1,11 +1,11 @@
 claim_id,manuscript_location,families,subgroup_classes,parameter_range,primary_source,pinpoint,independent_corroboration,exception_ids,status
-MAX-PARABOLIC,Theorems 6.3--6.6,finite groups of Lie type,maximal standard parabolics,rank at least two,Carter1972,"Theorems 8.3.2--8.3.3, p. 112","Hiss2011, Section 1.3.5, pp. 10--11",,CITED-PASS
-MAX-RANK1-BOREL,Theorem 6.5,"PSU(3,q); Sz(q); 2G2(q)",Borel subgroup,all simple parameters,Hiss2011,"Example 1.16 and Section 1.3.5, pp. 10--11","Carter1972, Theorems 8.3.2--8.3.3, p. 112",SIMP-PSU3-2;SIMP-REE3,CITED-PASS
-MAX-PSL2,Theorem 6.2,"PSL(2,q)",split and nonsplit torus normalizers; Borel,q odd q>=13; q even q>=8,BHRD,"Tables 8.1--8.2, p. 376; Table 8.7, p. 380","Dickson; Huppert, II.8.27",MAX-PSL2-LE11,CITED-PASS
-MAX-AN,Theorem 6.3,A_n,intransitive and imprimitive subgroups,n>=15,LPS1987,"Theorem 1 and Tables I--II, pp. 366--368",manuscript reduction plus exact J/J5 certificates,MAX-AN-LE14,CITED-PASS
-MAX-PSU3,Theorem 6.5,"PSU(3,q)",nonisotropic-point stabilizer,q>=8,BHRD,"Table 8.5, p. 379",Hiss2011 unitary geometry; exact finite certificates,MAX-PSU3-SMALL,CITED-PASS
-MAX-SZ,Theorem 6.5,Sz(q),normalizer D_2(q-1),q=2^(2m+1) >= 8,BHRD,"Theorem 7.3.5, p. 367; Table 8.16, p. 384",Suzuki1962,,CITED-PASS
-MAX-REE,Theorem 6.5,2G2(q),"involution centralizer 2 x PSL(2,q)",q=3^(2m+1) >= 27,Kleidman1988,"Theorem C, pp. 33--34",BHRD rank-one tables; Wilson2017,SIMP-REE3,CITED-PASS
-MAX-PSL3,Theorem 6.6 B1,"PSL(3,q)",maximal split-torus normalizer,q>=5,BHRD,"Table 8.3, p. 378",Mitchell1911; Hartley1925,MAX-PSL3-LE4,CITED-PASS
-MAX-SP4,Theorem 6.6 B5,"Sp(4,2^f)",Suzuki fixed-point or index-two subfield subgroup,f>=2,BHRD,"Table 8.14, p. 384",Suzuki1962; commuting-endomorphism derivation,SIMP-SP4-2,CITED-PASS
-MAX-G2,Theorem 6.6 B7,G2(3^f),Ree fixed-point or index-two subfield subgroup,f>=1,Kleidman1988,"Theorem A, p. 33",Atlas for f=1; Wilson2017,,CITED-PASS
+MAX-PARABOLIC,Appendix A.2--A.5,finite groups of Lie type,maximal standard parabolics,rank at least two,Carter1972,"Theorems 8.3.2--8.3.3, p. 112","Hiss2011, Section 1.3.5, pp. 10--11",,CITED-PASS
+MAX-RANK1-BOREL,Appendix A.4 (Theorem thm:twisted1),"PSU(3,q); Sz(q); 2G2(q)",Borel subgroup,all simple parameters,Hiss2011,"Example 1.16 and Section 1.3.5, pp. 10--11","Carter1972, Theorems 8.3.2--8.3.3, p. 112",SIMP-PSU3-2;SIMP-REE3,CITED-PASS
+MAX-PSL2,Appendix A.1 (Theorem thm:psl2),"PSL(2,q)",split and nonsplit torus normalizers; Borel,q odd q>=13; q even q>=8,BHRD,"Tables 8.1--8.2, p. 376; Table 8.7, p. 380","Dickson; Huppert, II.8.27",MAX-PSL2-LE11,CITED-PASS
+MAX-AN,Section 5.1 (Theorem thm:an),A_n,intransitive and imprimitive subgroups,n>=15,LPS1987,"Theorem 1 and Tables I--II, pp. 366--368",manuscript reduction plus exact J/J5 certificates,MAX-AN-LE14,CITED-PASS
+MAX-PSU3,Appendix A.4 (Theorem thm:twisted1),"PSU(3,q)",nonisotropic-point stabilizer,q>=8,BHRD,"Table 8.5, p. 379",Hiss2011 unitary geometry; exact finite certificates,MAX-PSU3-SMALL,CITED-PASS
+MAX-SZ,Appendix A.4 (Theorem thm:twisted1),Sz(q),normalizer D_2(q-1),q=2^(2m+1) >= 8,BHRD,"Theorem 7.3.5, p. 367; Table 8.16, p. 384",Suzuki1962,,CITED-PASS
+MAX-REE,Appendix A.4 (Theorem thm:twisted1),2G2(q),"involution centralizer 2 x PSL(2,q)",q=3^(2m+1) >= 27,Kleidman1988,"Theorem C, pp. 33--34",BHRD rank-one tables; Wilson2017,SIMP-REE3,CITED-PASS
+MAX-PSL3,Appendix A.5 (Theorem thm:graph) B1,"PSL(3,q)",maximal split-torus normalizer,q>=5,BHRD,"Table 8.3, p. 378",Mitchell1911; Hartley1925,MAX-PSL3-LE4,CITED-PASS
+MAX-SP4,Appendix A.5 (Theorem thm:graph) B5,"Sp(4,2^f)",Suzuki fixed-point or index-two subfield subgroup,f>=2,BHRD,"Table 8.14, p. 384",Suzuki1962; commuting-endomorphism derivation,SIMP-SP4-2,CITED-PASS
+MAX-G2,Appendix A.5 (Theorem thm:graph) B7,G2(3^f),Ree fixed-point or index-two subfield subgroup,f>=1,Kleidman1988,"Theorem A, p. 33",Atlas for f=1; Wilson2017,,CITED-PASS

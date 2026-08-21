@@ -66,7 +66,7 @@ theorem propertyP_of_surjective
   refine ⟨φ a, ha, φ b, hb, ?_⟩
   rw [hab, map_mul]
 
-/-- Manuscript Lemma 2.2: property P passes to a quotient by a normal
+/-- Manuscript label `lem:quot`: property P passes to a quotient by a normal
 subgroup. -/
 theorem propertyP_quotient
     {G : Type*} [Group G] (N : Subgroup G) [N.Normal]

@@ -72,7 +72,7 @@ TestSocleTransitive := function(name, P, k)
         fi;
       od;
     od;
-    Print("    |G| = ", n, "  [G:N] = ", n/Size(N),
+    Print("    |G| = ", n, "  |G:N| = ", n/Size(N),
           "  maxclasses = ", Length(mx), " (suppl: ", nsupp, ")  ");
     if ok then
       Print("!!! COUNTEREXAMPLE !!!\n");

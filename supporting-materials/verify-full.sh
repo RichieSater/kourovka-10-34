@@ -6,13 +6,15 @@ set -eu
 
 ROOT=$(CDPATH= cd -- "$(dirname "$0")" && pwd)
 GAP_BIN=${GAP_BIN:-"$HOME/gap-4.16.0/gap"}
-GAP_FLAGS="-q -b -o 8g -T"
+# -r suppresses user GAP roots, preventing duplicate or shadowing package
+# metadata from contaminating the pinned CTblLib/AtlasRep environment.
+GAP_FLAGS="-r -q -b -o 8g -T"
 GAP_DIR="$ROOT/computations/gap"
 CERT_DIR="$ROOT/computations/certificates"
 
 [ -x "$GAP_BIN" ] || { echo "HARD-FAIL: GAP binary missing: $GAP_BIN" >&2; exit 1; }
 
-echo "== exact proof environment and upstream regressions =="
+echo "== versioned proof tools, pinned artifacts, and upstream regressions =="
 GAP_BIN="$GAP_BIN" sh "$ROOT/computations/environment/check-environment.sh"
 
 SWEEPS="

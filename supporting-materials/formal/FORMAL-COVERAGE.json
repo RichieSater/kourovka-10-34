@@ -19,7 +19,7 @@
             "claim_id": "RED-COORD",
             "theorem": "Kourovka1034.DirectPower.explicitPowerEquivFin_with_base",
             "file": "Kourovka1034/DirectPower.lean",
-            "scope": "Lean endpoint of the paired formal interface: from any explicit coordinate isomorphism N ~= (I -> S) over a nonempty finite factor type, it kernel-checkingly constructs both a base coordinate and N ~= (Fin (Nat.card I) -> S), exactly the data consumed by AmbientWreath. The Rocq theorem nonsolvable_charsimple_explicit_power supplies the matching explicit external-product isomorphism, positive index, and explicitly nonabelian simple factor; FORMAL-INTERFACE.json binds and checks the theorem signatures and definition correspondence."
+            "scope": "Lean endpoint of the paired formal interface: from any explicit coordinate isomorphism N ~= (I -> S) over a nonempty finite factor type, it kernel-checkingly constructs both a base coordinate and N ~= (Fin (Nat.card I) -> S), exactly the data consumed by AmbientWreath. The Rocq theorem nonsolvable_charsimple_explicit_power supplies the matching explicit external-product isomorphism, positive index, and explicitly nonabelian simple factor; FORMAL-INTERFACE.json guards the enumerated theorem signatures, correspondence rows, and definition-source tokens. It does not establish arbitrary cross-library semantic equivalence, which remains a trusted correspondence."
         },
         {
             "claim_id": "RED-WREATH-INTERFACE",
@@ -55,7 +55,7 @@
             "claim_id": "SUP-MAX",
             "theorem": "Kourovka1034.coordinate_product_normalizer_isCoatom",
             "file": "Kourovka1034/Maximality.lean",
-            "scope": "Exact proof of manuscript Lemma 3.3 from normalized coordinate-action data: supplement recovery of coordinate-closure generators, invariant projection stability and uniformity, saturation/Goursat product decomposition, stable-poset dichotomy, ambient intersection dichotomy, and coatom maximality"
+            "scope": "Exact proof of the manuscript result labeled lem:B from normalized coordinate-action data: supplement recovery of coordinate-closure generators, invariant projection stability and uniformity, saturation/Goursat product decomposition, stable-poset dichotomy, ambient intersection dichotomy, and coatom maximality"
         },
         {
             "claim_id": "SUP-NONCONJ",
@@ -73,6 +73,13 @@
     "explicitly_not_closed": [
         "PAR-NOVELTY"
     ],
+    "comparator": {
+        "challenge": "Comparator/Challenge.lean",
+        "solution": "Comparator/Solution.lean",
+        "theorem": "conditionalProductSupplementSpine",
+        "project_theorem": "Kourovka1034.no_propertyP_of_product_supplement_data",
+        "status": "exact conditional spine; not an end-to-end main theorem"
+    },
     "forbidden_constructs": [
         "sorry",
         "admit",

@@ -32,7 +32,7 @@ for T in reps do
   tcount := tcount + 1;
   if tcount <= SKIP then
     Print("    [skip ", tcount, "] |G| = ", Size(G),
-          "  [G:N] = ", Size(G)/Size(N), "  (certified in sweepG_k3.log)\n");
+          "  |G:N| = ", Size(G)/Size(N), "  (certified in sweepG_k3.log)\n");
     continue;
   fi;
   mx := MaximalSubgroupClassReps(G);
@@ -56,7 +56,7 @@ for T in reps do
       fi;
     od;
   od;
-  Print("    [", tcount, "] |G| = ", n, "  [G:N] = ", n/Size(N),
+  Print("    [", tcount, "] |G| = ", n, "  |G:N| = ", n/Size(N),
         "  maxclasses = ", Length(mx), " (suppl: ", nsupp, ")  ");
   if ok then
     Print("!!! COUNTEREXAMPLE !!!\n");

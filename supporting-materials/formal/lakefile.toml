@@ -5,6 +5,9 @@ defaultTargets = ["Kourovka1034"]
 [[lean_lib]]
 name = "Kourovka1034"
 
+[[lean_lib]]
+name = "Comparator"
+
 [[require]]
 name = "mathlib"
 git = "https://github.com/leanprover-community/mathlib4.git"

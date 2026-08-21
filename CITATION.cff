@@ -8,13 +8,16 @@ identifiers:
   - type: doi
     value: 10.5281/zenodo.21709124
     description: Concept DOI for all versions
-title: "Kourovka 10.34: proofs, GAP scripts and machine certificates"
+title: >-
+  Kourovka 10.34: manuscript, formal developments, certificates, and
+  reproducibility materials
 authors:
   - family-names: Sater
     given-names: Richie
     affiliation: Independent Researcher
-version: 1.0.8
-date-released: 2026-08-05
+    orcid: https://orcid.org/0009-0007-9051-8207
+version: 1.1.0
+date-released: 2026-08-21
 repository-code: https://github.com/RichieSater/kourovka-10-34
 url: https://github.com/RichieSater/kourovka-10-34
 license: MIT
@@ -26,11 +29,15 @@ keywords:
   - simple groups
   - Kourovka Notebook
   - GAP
+  - Lean
+  - Rocq
+  - computer-assisted proof
 abstract: >-
-  Paper, GAP scripts, log certificates, coverage cross-checks, and
-  arithmetic receipts supporting a negative solution to Kourovka
-  Notebook Problem 10.34: every finite group that is the product of
-  every pair of its non-conjugate maximal subgroups is soluble.
+  Exact reproducibility archive for a proof that every finite group that is
+  the product of every pair of its non-conjugate maximal subgroups is
+  soluble. The archive contains the manuscript, partial Lean and Rocq
+  formalizations, a Comparator interface, GAP certificates, independent
+  Python checks, source maps, and pinned computational inputs.
 preferred-citation:
   type: article
   title: >-
@@ -40,5 +47,7 @@ preferred-citation:
     - family-names: Sater
       given-names: Richie
       affiliation: Independent Researcher
+      orcid: https://orcid.org/0009-0007-9051-8207
   year: 2026
+  url: https://arxiv.org/abs/2608.02970
   notes: Preprint; resolves Kourovka Notebook Problem 10.34.

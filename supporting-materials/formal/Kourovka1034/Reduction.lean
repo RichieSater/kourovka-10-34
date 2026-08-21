@@ -10,7 +10,7 @@ import Mathlib.Order.Preorder.Finite
 # Minimal-counterexample reduction
 
 This module checks the minimal-order and elementary finite-group part of
-Proposition 2.3: every nontrivial proper quotient is soluble, there is a unique
+Manuscript label `prop:min`: every nontrivial proper quotient is soluble, there is a unique
 minimal normal subgroup, that subgroup and the ambient group are nonsoluble,
 and its centralizer is trivial.  The direct-power description is checked in
 the separate Rocq project, and `AmbientWreath.lean` checks the transitive

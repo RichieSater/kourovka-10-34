@@ -4,7 +4,9 @@ ROOT=$(CDPATH= cd -- "$(dirname "$0")/../.." && pwd)
 GAP_BIN=${GAP_BIN:-"$HOME/gap-4.16.0/gap"}
 [ -x "$GAP_BIN" ] || { echo "HARD-FAIL: GAP missing: $GAP_BIN" >&2; exit 1; }
 cd "$ROOT/computations/gap"
-"$GAP_BIN" -q -b <<'GAPEOF'
+# Keep the environment gate under the same isolated package-root policy as
+# verify-full.sh.  In particular, do not inspect packages under a user GAP root.
+"$GAP_BIN" -r -q -b <<'GAPEOF'
 Read("proof_common.g");
 CheckContainedConjugatesRegression();
 Print("ENVIRONMENT CHECK|PASS\n");

@@ -10,7 +10,8 @@ import Mathlib.Order.Preorder.Finite
 /-!
 # Maximality of the product supplement
 
-This module kernel-checks manuscript Lemma 3.3 conditional on the normalized
+This module kernel-checks the manuscript maximality result labeled `lem:B`
+conditional on the normalized
 coordinate-action data isolated in the coordinate-reduction obligation.  It
 proves the normal-saturation/Goursat product step, recovers coordinate-closure
 stability from the stabilizer components and inner automorphisms, derives the
@@ -110,7 +111,7 @@ def PosetMaximalStableSelfNormalizing
   ∀ U : Subgroup S, V ≤ U → U ≠ ⊤ →
     Subgroup.normalizer (U : Set S) = U → StableSubgroupClass X U → U = V
 
-/-- Formal normalizer-tower argument from manuscript Lemma 3.3.
+/-- Formal normalizer-tower argument from manuscript label `lem:B`.
 
 In a finite simple group, a nontrivial `X`-stable overgroup of a poset-maximal
 self-normalizing class is either that class or the whole group.  Rather than
@@ -283,7 +284,7 @@ theorem stable_coordinateProjection_of_component_generators
   intro a ha
   exact hclosure a (hXle i ha)
 
-/-- Goursat/saturation step from manuscript Lemma 3.3.
+/-- Goursat/saturation step from manuscript label `lem:B`.
 
 If `V` normally saturates every overgroup and `T ≤ S^I` contains the full
 coordinate product `V^I`, then `T` is exactly the product of its coordinate
@@ -374,8 +375,8 @@ theorem saturation_forces_coordinate_product
       exact Finset.noncommProd_mulSingle f
     rwa [heq] at hp
 
-/-- The exact direct-power intersection dichotomy underlying manuscript
-Lemma 3.3.  Normal saturation first makes `T` a product of its projections;
+/-- The exact direct-power intersection dichotomy underlying manuscript label
+`lem:B`. Normal saturation first makes `T` a product of its projections;
 the coordinate-closure generators make those projections `X`-stable; poset
 maximality makes each projection `V` or `S`; and coordinate transitivity
 prevents a mixture of the two cases. -/
@@ -474,7 +475,7 @@ theorem card_subgroup_eq_card_quotient_mul_card_inf
       rw [hkerCard, hrange, Subgroup.card_top]
     _ = Nat.card (G ⧸ N) * Nat.card ↥(C ⊓ N) := Nat.mul_comm _ _
 
-/-- Final lattice/cardinality step of manuscript Lemma 3.3.
+/-- Final lattice/cardinality step of manuscript label `lem:B`.
 
 Once every overgroup `H ≥ B` has intersection `A` with `N` or contains all of
 `N`, a proper supplement `B` is a coatom.  Thus the remaining maximality
@@ -711,7 +712,7 @@ theorem supplement_ne_top_of_proper_coordinate_base
   have hzi := (hA z).mp hzA i0
   simpa [z, f] using hzi
 
-/-- Exact ambient maximality conclusion of manuscript Lemma 3.3, conditional
+/-- Exact ambient maximality conclusion of manuscript label `lem:B`, conditional
 on the normalized coordinate-action data and the intersection/supplement
 identities supplied by the existence lemma. -/
 theorem coordinate_product_normalizer_isCoatom

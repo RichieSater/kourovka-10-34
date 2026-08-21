@@ -17,7 +17,8 @@ NON_EVIDENCE_NAMES={'.DS_Store','.lia.cache'}
 def selected() -> list[Path]:
     fixed=[ROOT/'README.md',ROOT/'verify-quick.sh',ROOT/'verify-full.sh',
            ROOT/'paper/kourovka1034.tex',
-           REPO/'.gitignore',REPO/'.dockerignore']
+           REPO/'.gitignore',REPO/'.dockerignore',REPO/'README.md',
+           REPO/'CITATION.cff',REPO/'.zenodo.json']
     trees=['audit','formal','formal-rocq','paper/submission','computations/gap','computations/python',
            'computations/independent','computations/mutation-tests',
            'computations/environment','computations/data','computations/certificates']

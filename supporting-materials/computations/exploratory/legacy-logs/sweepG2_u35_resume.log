@@ -1,32 +1,32 @@
 === socle U35^3 (resume):  |S|^k = 2000376000000000,  |W/N| = 1296
-    [skip 1] |G| = 6001128000000000  [G:N] = 3  (certified in sweepG_k3.log)
-    [skip 2] |G| = 12002256000000000  [G:N] = 6  (certified in sweepG_k3.log)
-    [skip 3] |G| = 12002256000000000  [G:N] = 6  (certified in sweepG_k3.log)
-    [skip 4] |G| = 12002256000000000  [G:N] = 6  (certified in sweepG_k3.log)
-    [skip 5] |G| = 18003384000000000  [G:N] = 9  (certified in sweepG_k3.log)
-    [skip 6] |G| = 18003384000000000  [G:N] = 9  (certified in sweepG_k3.log)
-    [skip 7] |G| = 24004512000000000  [G:N] = 12  (certified in sweepG_k3.log)
-    [skip 8] |G| = 24004512000000000  [G:N] = 12  (certified in sweepG_k3.log)
-    [skip 9] |G| = 36006768000000000  [G:N] = 18  (certified in sweepG_k3.log)
-    [skip 10] |G| = 36006768000000000  [G:N] = 
+    [skip 1] |G| = 6001128000000000  |G:N| = 3  (certified in sweepG_k3.log)
+    [skip 2] |G| = 12002256000000000  |G:N| = 6  (certified in sweepG_k3.log)
+    [skip 3] |G| = 12002256000000000  |G:N| = 6  (certified in sweepG_k3.log)
+    [skip 4] |G| = 12002256000000000  |G:N| = 6  (certified in sweepG_k3.log)
+    [skip 5] |G| = 18003384000000000  |G:N| = 9  (certified in sweepG_k3.log)
+    [skip 6] |G| = 18003384000000000  |G:N| = 9  (certified in sweepG_k3.log)
+    [skip 7] |G| = 24004512000000000  |G:N| = 12  (certified in sweepG_k3.log)
+    [skip 8] |G| = 24004512000000000  |G:N| = 12  (certified in sweepG_k3.log)
+    [skip 9] |G| = 36006768000000000  |G:N| = 18  (certified in sweepG_k3.log)
+    [skip 10] |G| = 36006768000000000  |G:N| =
 18  (certified in sweepG_k3.log)
-    [skip 11] |G| = 36006768000000000  [G:N] = 
+    [skip 11] |G| = 36006768000000000  |G:N| =
 18  (certified in sweepG_k3.log)
-    [skip 12] |G| = 36006768000000000  [G:N] = 
+    [skip 12] |G| = 36006768000000000  |G:N| =
 18  (certified in sweepG_k3.log)
-    [skip 13] |G| = 48009024000000000  [G:N] = 
+    [skip 13] |G| = 48009024000000000  |G:N| =
 24  (certified in sweepG_k3.log)
-    [skip 14] |G| = 48009024000000000  [G:N] = 
+    [skip 14] |G| = 48009024000000000  |G:N| =
 24  (certified in sweepG_k3.log)
-    [skip 15] |G| = 48009024000000000  [G:N] = 
+    [skip 15] |G| = 48009024000000000  |G:N| =
 24  (certified in sweepG_k3.log)
-    [skip 16] |G| = 54010152000000000  [G:N] = 
+    [skip 16] |G| = 54010152000000000  |G:N| =
 27  (certified in sweepG_k3.log)
-    [skip 17] |G| = 54010152000000000  [G:N] = 
+    [skip 17] |G| = 54010152000000000  |G:N| =
 27  (certified in sweepG_k3.log)
-    [skip 18] |G| = 72013536000000000  [G:N] = 
+    [skip 18] |G| = 72013536000000000  |G:N| =
 36  (certified in sweepG_k3.log)
-    [skip 19] |G| = 96018048000000000  [G:N] = 
+    [skip 19] |G| = 96018048000000000  |G:N| =
 48  (certified in sweepG_k3.log)
-    [skip 20] |G| = 108020304000000000  [G:N] = 
+    [skip 20] |G| = 108020304000000000  |G:N| =
 54  (certified in sweepG_k3.log)

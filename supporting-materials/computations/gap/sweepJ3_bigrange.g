@@ -1,7 +1,7 @@
 # Sweep J3: divisibility criterion (sweep J) over all non-abelian simple
 # groups with 500000 <= |S| <= 10500000 other than PSL(2,q).  The 38
 # PSL(2,q) entries in the independent 51-group inventory are routed to the
-# uniform Dickson/valuation proof (Theorem 6.1 and sweep L), not re-enumerated
+# uniform Dickson/valuation proof (manuscript label thm:psl2 and sweep L), not re-enumerated
 # here; this avoids making a redundant, expensive GAP maximal-subgroup sweep
 # part of the logical certificate.  M23 and PSL(5,2) are likewise delegated
 # to sweep J6's direct automorphism constructions.  For each remaining S and every

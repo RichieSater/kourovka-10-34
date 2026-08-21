@@ -8,7 +8,7 @@ import Mathlib.GroupTheory.QuotientGroup.Basic
 /-!
 # Transitive coordinate normalization and the wreath quotient bound
 
-This file formalizes the coordinate bookkeeping in Convention 2.4 after the
+This file formalizes the coordinate bookkeeping labeled `conv:coord` after the
 standard structural realization `N ≃ S^k` and
 `G ↪ Aut(S) wr Sym(k)` has been supplied.  The structural realization itself
 is an explicit external-source obligation; it is not postulated as an axiom.
@@ -271,7 +271,8 @@ noncomputable def normalizedHom (rho : G →* CoordinateWreath A I) (base : I)
     (delta_permutation rho base htrans)
 
 /-- Every component of the normalized realization belongs to the coordinate
-closure.  This is the exact transporter calculation in Convention 2.4. -/
+closure. This is the exact transporter calculation labeled
+`lem:coordinate-normalization`. -/
 theorem normalized_component_mem_closure
     (K : Subgroup A) (rho : G →* CoordinateWreath A I) (base : I)
     (htrans : ∀ i : I, ∃ g : G, (rho g).permutation base = i) :

@@ -4,7 +4,7 @@ import Mathlib.NumberTheory.Padics.PadicVal.Basic
 # The numerical core of the divisibility criterion
 
 This file kernel-checks the final universal-in-`k` contradiction in
-Theorem 4.1 of the manuscript.  It deliberately exposes the two divisibility
+the manuscript criterion labeled `thm:D`. It deliberately exposes the two divisibility
 facts supplied by the group-theoretic part of the proof:
 
 * `p ^ (d * k) ∣ t`, forced by a hypothetical factorization; and

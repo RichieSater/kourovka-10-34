@@ -27,13 +27,19 @@ COMPUTATIONS = ROOT / "computations"
 CERTIFICATES = COMPUTATIONS / "certificates"
 DATA = COMPUTATIONS / "data"
 
+def require(condition: bool, message: object) -> None:
+    """Fail closed even when Python is run with optimization enabled."""
+    if not condition:
+        raise SystemExit("HARD-FAIL: " + str(message))
+
+
 canon = {}
 for line in (DATA / "simple_groups_5e5_to_1.05e7.txt").read_text().splitlines():
     order, name = line.split()
     order = int(order)
-    assert order not in canon, f"order collision at {order}"
+    require(order not in canon, f"order collision at {order}")
     canon[order] = name
-assert len(canon) == 51, len(canon)
+require(len(canon) == 51, len(canon))
 
 j3_log = (CERTIFICATES / "sweepJ3_bigrange.log").read_text()
 j6_log = (CERTIFICATES / "sweepJ6_L52_M23.log").read_text()

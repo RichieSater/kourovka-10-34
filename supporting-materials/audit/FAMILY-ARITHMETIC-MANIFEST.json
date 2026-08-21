@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "scope": "Exact arithmetic branch specification for Theorems 6.1--6.6; published group, subgroup, Levi, and outer-automorphism formulas are named source assumptions, while the deductions from those assumptions are checked mechanically.",
+  "scope": "Exact arithmetic branch specification for the manuscript results labeled thm:an, thm:psl2, thm:nograph, thm:twisted2, thm:twisted1, and thm:graph; published group, subgroup, Levi, and outer-automorphism formulas are named source assumptions, while the deductions from those assumptions are checked mechanically.",
   "affine_convention": "[a,b] denotes (a*n+b)*f; for fixed-rank branches n is the displayed fixed rank. Each selected_factor_bound_sets record is the source-derived complete upper-bound list for the p-exponents of factors p^j-1 in that named subgroup's p'-order; constants record remaining integer factors. A q^m+1 factor is represented by doubled p-exponent 2*m*f unless it is named under special_avoidance.",
   "expected_branch_count": 34,
   "branches": [

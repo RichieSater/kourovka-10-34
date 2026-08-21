@@ -350,8 +350,8 @@ theorem card_coordinateProductSubgroup
     _ = Nat.card P := by rw [hmap]
     _ = Nat.card V ^ k := card_pi_subgroup_fin V k
 
-/-- Exact formal version of manuscript Lemma 3.2 (Existence), conditional on
-the normalized coordinate-action data supplied by Convention 2.4.
+/-- Exact formal version of the manuscript construction labeled `lem:A`,
+conditional on the normalized coordinate-action data labeled `conv:coord`.
 
 For the constructed `A = V^k`, its ambient normalizer intersects `N` in
 `A`, supplements `N`, and has order
@@ -389,8 +389,8 @@ theorem coordinate_product_normalizer_data
   refine ⟨hinf, hsup, ?_⟩
   rw [hcard, hcardA]
 
-/-- Exact formal version of manuscript Lemma 3.4 (Non-conjugacy), conditional
-on the same normalized coordinate-action data.
+/-- Exact formal version of the manuscript nonconjugacy result labeled
+`lem:C`, conditional on the same normalized coordinate-action data.
 
 If `V` and `W` are self-normalizing and represent distinct `S`-conjugacy
 classes, then the ambient normalizers of their coordinate products are not
@@ -610,7 +610,8 @@ theorem forced_prime_power_of_order_identity
   rw [← hval']
   exact Nat.le_add_left _ _
 
-/-- Exact group-to-arithmetic bridge in Theorem 4.1.  The maximality,
+/-- Exact group-to-arithmetic bridge in the manuscript criterion labeled
+`thm:D`. The maximality,
 nonconjugacy, and normalizer-order conclusions supplied by the preceding
 product-supplement lemmas are explicit hypotheses here. -/
 theorem product_supplement_forces_prime_power
@@ -637,7 +638,8 @@ theorem product_supplement_forces_prime_power
   exact forced_prime_power_of_order_identity hp ht.ne'
     Nat.card_pos.ne' hs hv hw horder hd
 
-/-- The complete contradiction in Theorem 4.1 after the exact construction,
+/-- The complete contradiction in the manuscript criterion labeled `thm:D`
+after the exact construction,
 maximality, nonconjugacy, order, and wreath-quotient conclusions have been
 supplied.  This combines the group-to-arithmetic bridge above with the
 universal-in-`k` theorem in `Divisibility.lean`. -/

@@ -76,7 +76,7 @@ EXPECTED = {
         "Section 3.6, p. xv", "Carter1972, Section 8.5, pp. 118--120",
     ),
     "ORD-NOGRAPH-LEVIS": (
-        "symplectic;odd_orthogonal;g2;f4;e7;e8", "ranges in Theorem 6.3",
+        "symplectic;odd_orthogonal;g2;f4;e7;e8", "ranges in manuscript label thm:nograph",
         "Carter1972", "Section 8.5, pp. 118--120",
         "ATLAS1985, Table 3, p. xiv; Tables 6--7, p. xvi",
     ),
@@ -181,7 +181,8 @@ def main() -> int:
     classification = json.loads((AUDIT / "CLASSIFICATION-MANIFEST.json").read_text())
     all_families = {item["id"] for item in classification["families"]}
     # Sporadics and the Tits group are finite table/certificate routes, not
-    # uniform family formula branches in Theorems 6.1--6.6.
+    # uniform family formula branches labeled thm:an, thm:psl2, thm:nograph,
+    # thm:twisted2, thm:twisted1, and thm:graph.
     expected_families = all_families - {"sporadic", "tits"}
 
     paper_raw = PAPER.read_text()

@@ -1,14 +1,14 @@
-We prove that every finite group that is the product of every pair of
-its non-conjugate maximal subgroups is soluble, answering Problem
-10.34 of the Kourovka Notebook (V. S. Monakhov, 1986) in the negative.
-Tikhonenko and Tyutyanov settled the almost simple case in 2010. What remains
-is the possibility of a minimal counterexample whose unique minimal normal
-subgroup is S^k, with S non-abelian simple and k >= 2. Because k is unbounded,
-no bound depending on a fixed ratio of subgroup orders can handle all such
-groups. We rule out this possibility with a divisibility criterion: a single
-pair of automorphism-stable conjugacy classes of subgroups of S, satisfying a
-valuation inequality, excludes the configuration for every k >= 2 and every
-admissible embedding. Such pairs are constructed uniformly for every infinite
-family of finite simple groups, with Zsigmondy primes as
-the arithmetic obstruction. The sporadic groups and the finitely many
-exceptional cases are handled by independently checkable GAP certificates.
+We prove that every finite group that is the product of every pair of its
+non-conjugate maximal subgroups is soluble, answering Problem 10.34 of the
+Kourovka Notebook. The almost-simple case was proved by Tikhonenko and
+Tyutyanov. For the remaining minimal-counterexample branch, with unique
+minimal normal subgroup S^k and k >= 2, two automorphism-stable coordinate
+subgroup classes satisfying the supplement criterion yield non-conjugate
+maximal supplements. The factorization hypothesis would then impose a p-adic
+demand growing linearly with k, whereas the wreath-product quotient contributes
+only coordinate outer automorphisms and k!. One fixed valuation gap therefore
+rules out this branch for every k >= 2. Using the classification of finite
+simple groups (CFSG) and published subgroup and order data, uniform parabolic,
+torus, and primitive-prime-divisor arguments cover the infinite families;
+stable flag parabolics handle graph fusion; GAP certificates cover the
+designated finite and sporadic cases.

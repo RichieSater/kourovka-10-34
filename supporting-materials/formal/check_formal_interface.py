@@ -179,10 +179,11 @@ def main() -> None:
         "isomorphism and positive factor index; Lean reindexes that index to "
         "Fin k, constructs the required base coordinate, and supplies the "
         "resulting MulEquiv to the universally quantified ambient theorem. "
-        "The only cross-kernel trust is the audited definition correspondence "
-        "between MathComp subgroup isomorphism/external product and Lean "
-        "MulEquiv/function product; no unproved group-theoretic lemma is "
-        "inserted at the seam."
+        "The checker guards the enumerated theorem signatures, correspondence "
+        "rows, and definition-source tokens. It does not prove arbitrary "
+        "semantic equivalence between the two libraries; the mathematical "
+        "identification across kernels remains an audited trusted "
+        "correspondence."
     )
     if data["composition"] != expected_composition:
         die("composition rule drift")

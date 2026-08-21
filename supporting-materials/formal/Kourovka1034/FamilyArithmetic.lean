@@ -7,7 +7,9 @@ import Mathlib.Tactic.Ring
 /-!
 # Universal arithmetic certificates for the finite-simple-group families
 
-This module kernel-checks the arithmetic deductions in Theorems 6.1--6.6
+This module kernel-checks the arithmetic deductions in the manuscript results
+labeled `thm:an`, `thm:psl2`, `thm:nograph`, `thm:twisted2`, `thm:twisted1`,
+and `thm:graph`,
 conditional on the exact published group/Levi/outer-order formulas named in
 `audit/FAMILY-ARITHMETIC-MANIFEST.json`.  It does not assert those published
 classification formulas as new axioms.  It proves the universal affine

@@ -3,7 +3,8 @@
 
 This file intentionally does **not** read FAMILY-ARITHMETIC-MANIFEST.json,
 the primary sweep, or any generated certificate.  It independently encodes
-the 34 branches of Theorems 6.1--6.6 in a compact symbolic representation and
+the 34 branches labeled thm:an, thm:psl2, thm:nograph, thm:twisted2,
+thm:twisted1, and thm:graph in a compact symbolic representation and
 checks every rank/field-degree inequality, group-factor occurrence, outer
 factor, exceptional equation, and substitute valuation.  The finite sweep is
 therefore regression evidence; this program is an unbounded symbolic proof
@@ -17,6 +18,12 @@ from __future__ import annotations
 from dataclasses import dataclass
 from math import gcd, isqrt, prod
 import sys
+
+
+def require(condition: bool, message: object) -> None:
+    """Fail closed even when Python is run with optimization enabled."""
+    if not condition:
+        raise SystemExit("HARD-FAIL: " + str(message))
 
 
 @dataclass(frozen=True)
@@ -226,10 +233,10 @@ def parity_ok(value: int, parity: str) -> bool:
 
 def universal_lt(low: Lin, high: Lin, case: PrimitiveCase) -> None:
     if case.n_kind in {"none", "fixed"}:
-        assert 0 < low.at(case.n0) < high.at(case.n0), case.key
+        require(0 < low.at(case.n0) < high.at(case.n0), case.key)
     else:
         diff = Lin(high.a - low.a, high.b - low.b)
-        assert low.at(case.n0) > 0 and diff.a >= 0 and diff.at(case.n0) > 0, case.key
+        require(low.at(case.n0) > 0 and diff.a >= 0 and diff.at(case.n0) > 0, case.key)
 
 
 def min_e(case: PrimitiveCase) -> int:
@@ -259,7 +266,7 @@ def solve_exception(case: PrimitiveCase) -> tuple[tuple[int | None, int], ...]:
     else:
         # E=6 and f>=1 imply a*n+b<=6.  Thus the following upper bound is
         # exhaustive, not a heuristic parameter cutoff.
-        assert case.exponent.a > 0
+        require(case.exponent.a > 0, 'family_arithmetic_symbolic.py:262: required condition failed: case.exponent.a > 0')
         upper = (6 - case.exponent.b) // case.exponent.a
         ns = tuple(n for n in range(case.n0, upper + 1) if parity_ok(n, case.n_parity))
     out = []
@@ -272,22 +279,22 @@ def solve_exception(case: PrimitiveCase) -> tuple[tuple[int | None, int], ...]:
 
 
 def verify_primitive_cases() -> int:
-    assert len(CASES) == 32 and len({c.key for c in CASES}) == 32
-    assert ("AR-PSL2-ODD",) + tuple(c.key for c in CASES[:1]) + ("AR-ALTERNATING",) + tuple(c.key for c in CASES[1:]) == EXPECTED_KEYS
+    require(len(CASES) == 32 and len({c.key for c in CASES}) == 32, 'family_arithmetic_symbolic.py:275: required condition failed: len(CASES) == 32 and len({c.key for c in CASES}) == 32')
+    require(("AR-PSL2-ODD",) + tuple(c.key for c in CASES[:1]) + ("AR-ALTERNATING",) + tuple(c.key for c in CASES[1:]) == EXPECTED_KEYS, 'family_arithmetic_symbolic.py:276: required condition failed: ("AR-PSL2-ODD",) + tuple(c.key for c in CASES[:1]) + ("AR-ALTERNATING",) + tuple(c.key for c in CASES[1:]) == EXPECTED_KEYS')
     inequalities = 0
     for case in CASES:
-        assert case.n_kind in {"none", "fixed", "variable"}
-        assert min_e(case) >= 3
+        require(case.n_kind in {"none", "fixed", "variable"}, 'family_arithmetic_symbolic.py:279: required condition failed: case.n_kind in {"none", "fixed", "variable"}')
+        require(min_e(case) >= 3, 'family_arithmetic_symbolic.py:280: required condition failed: min_e(case) >= 3')
         expected_group = case.group_q_exponent.twice() if case.group_kind == "plus" else case.group_q_exponent
-        assert case.group_kind in {"minus", "plus", "cyclotomic"}
-        assert case.exponent == expected_group, case.key
-        assert len(case.selected) == len(case.selected_constants) >= 2
+        require(case.group_kind in {"minus", "plus", "cyclotomic"}, 'family_arithmetic_symbolic.py:282: required condition failed: case.group_kind in {"minus", "plus", "cyclotomic"}')
+        require(case.exponent == expected_group, case.key)
+        require(len(case.selected) == len(case.selected_constants) >= 2, 'family_arithmetic_symbolic.py:284: required condition failed: len(case.selected) == len(case.selected_constants) >= 2')
         for bounds, constants in zip(case.selected, case.selected_constants):
-            assert bounds
+            require(bounds, 'family_arithmetic_symbolic.py:286: required condition failed: bounds')
             for bound in bounds:
                 universal_lt(bound, case.exponent, case)
                 inequalities += 1
-            assert all(max(factors(c), default=1) <= min_e(case) for c in constants)
+            require(all(max(factors(c), default=1) <= min_e(case) for c in constants), 'family_arithmetic_symbolic.py:290: required condition failed: all(max(factors(c), default=1) <= min_e(case) for c in constants)')
         for diag in case.diagonal:
             universal_lt(diag, case.exponent, case)
             inequalities += 1
@@ -296,13 +303,13 @@ def verify_primitive_cases() -> int:
             inequalities += 1
         if case.outer_kind == "size":
             diff = Lin(case.exponent.a, case.exponent.b - case.outer_constant)
-            assert (case.n_kind != "variable" and diff.at(case.n0) >= 0) or (
+            require((case.n_kind != "variable" and diff.at(case.n0) >= 0) or (
                 case.n_kind == "variable" and diff.a >= 0 and diff.at(case.n0) >= 0
-            ), case.key
+            ), case.key)
         else:
-            assert case.outer_kind == "factor"
-            assert max(factors(case.outer_constant), default=1) <= min_e(case), case.key
-        assert solve_exception(case) == case.exception_points, case.key
+            require(case.outer_kind == "factor", 'family_arithmetic_symbolic.py:303: required condition failed: case.outer_kind == "factor"')
+            require(max(factors(case.outer_constant), default=1) <= min_e(case), case.key)
+        require(solve_exception(case) == case.exception_points, case.key)
     return inequalities
 
 
@@ -324,9 +331,9 @@ def polynomial_special_residues() -> None:
         return tuple(out)
 
     # q^2+1 - (q+1)(q-1) = 2 (Sp4 odd graph-field branch).
-    assert sub((1, 0, 1), mul((1, 1), (-1, 1))) == (2,)
+    require(sub((1, 0, 1), mul((1, 1), (-1, 1))) == (2,), 'family_arithmetic_symbolic.py:327: required condition failed: sub((1, 0, 1), mul((1, 1), (-1, 1))) == (2,)')
     # q^3+1 - (q^3-1) = 2 (G2 odd graph-field branch).
-    assert sub((1, 0, 0, 1), (-1, 0, 0, 1)) == (2,)
+    require(sub((1, 0, 0, 1), (-1, 0, 0, 1)) == (2,), 'family_arithmetic_symbolic.py:329: required condition failed: sub((1, 0, 0, 1), (-1, 0, 0, 1)) == (2,)')
 
 
 def vp(n: int, p: int) -> int:
@@ -359,9 +366,9 @@ def substitute_valuations() -> tuple[dict, ...]:
     s = q * (q ** 2 - 1)
     borel = q * (q - 1)
     split_torus_normalizer = 2 * (q - 1)
-    assert vp(s, 3) == 2
-    assert vp(borel, 3) == vp(split_torus_normalizer, 3) == 0
-    assert 2 > vp(3, 3) == 1
+    require(vp(s, 3) == 2, 'family_arithmetic_symbolic.py:362: required condition failed: vp(s, 3) == 2')
+    require(vp(borel, 3) == vp(split_torus_normalizer, 3) == 0, 'family_arithmetic_symbolic.py:363: required condition failed: vp(borel, 3) == vp(split_torus_normalizer, 3) == 0')
+    require(2 > vp(3, 3) == 1, 'family_arithmetic_symbolic.py:364: required condition failed: 2 > vp(3, 3) == 1')
 
     # PSL(6,2), r=31, independently evaluate both graph routes.
     s = sl_order(6, 2)
@@ -369,9 +376,9 @@ def substitute_valuations() -> tuple[dict, ...]:
     psl_p3 = gl_order(3, 2) ** 2
     flag1 = gl_order(4, 2)
     flag2 = gl_order(2, 2) ** 3
-    assert vp(s, 31) == 1
-    assert all(vp(v, 31) == 0 for v in (psl_p2, psl_p3, flag1, flag2))
-    assert vp(2, 31) == 0
+    require(vp(s, 31) == 1, 'family_arithmetic_symbolic.py:372: required condition failed: vp(s, 31) == 1')
+    require(all(vp(v, 31) == 0 for v in (psl_p2, psl_p3, flag1, flag2)), 'family_arithmetic_symbolic.py:373: required condition failed: all(vp(v, 31) == 0 for v in (psl_p2, psl_p3, flag1, flag2))')
+    require(vp(2, 31) == 0, 'family_arithmetic_symbolic.py:374: required condition failed: vp(2, 31) == 0')
 
     # Omega^+(8,2), r=5, independently evaluate ordinary and triality pairs.
     s = omega_plus_order(4, 2)
@@ -379,17 +386,17 @@ def substitute_valuations() -> tuple[dict, ...]:
     trial2 = gl_order(2, 2)
     d_p1 = omega_plus_order(3, 2)
     d_p2 = gl_order(2, 2) * omega_plus_order(2, 2)
-    assert vp(s, 5) == 2
-    assert vp(trial1, 5) == vp(trial2, 5) == 0
-    assert vp(s, 5) - vp(d_p1, 5) - vp(d_p2, 5) == 1 > vp(24, 5)
+    require(vp(s, 5) == 2, 'family_arithmetic_symbolic.py:382: required condition failed: vp(s, 5) == 2')
+    require(vp(trial1, 5) == vp(trial2, 5) == 0, 'family_arithmetic_symbolic.py:383: required condition failed: vp(trial1, 5) == vp(trial2, 5) == 0')
+    require(vp(s, 5) - vp(d_p1, 5) - vp(d_p2, 5) == 1 > vp(24, 5), 'family_arithmetic_symbolic.py:384: required condition failed: vp(s, 5) - vp(d_p1, 5) - vp(d_p2, 5) == 1 > vp(24, 5)')
 
     # Sp(4,8), r=3.
     q = 8
     s = sp_order(2, q)
     sp_borel = q ** 4 * (q - 1) ** 2
     sp_suzuki = q ** 2 * (q ** 2 + 1) * (q - 1)
-    assert vp(s, 3) == 4 and vp(sp_borel, 3) == vp(sp_suzuki, 3) == 0
-    assert 4 > vp(6, 3) == 1
+    require(vp(s, 3) == 4 and vp(sp_borel, 3) == vp(sp_suzuki, 3) == 0, 'family_arithmetic_symbolic.py:391: required condition failed: vp(s, 3) == 4 and vp(sp_borel, 3) == vp(sp_suzuki, 3) == 0')
+    require(4 > vp(6, 3) == 1, 'family_arithmetic_symbolic.py:392: required condition failed: 4 > vp(6, 3) == 1')
 
     return (
         {"id": "SUB-PSL2-8", "exception_id": "Z-PSL2-8",
@@ -428,23 +435,23 @@ def direct_branches() -> None:
     # f>0; the formula inputs give group valuation f, subgroup valuations 0,
     # and x|2f.  Here we independently pin the exact branch hypotheses.
     psl2 = DIRECT_SPECS["AR-PSL2-ODD"]
-    assert psl2["domain"]["f_min"] == 1 and psl2["domain"]["p_mode"] == "odd"
-    assert psl2["obstruction"]["universal_fact"] == "v_p(f)<f for f>0"
-    assert all(vp(f, p) < f for p in (3, 5, 7, 11) for f in range(1, 128))
+    require(psl2["domain"]["f_min"] == 1 and psl2["domain"]["p_mode"] == "odd", 'family_arithmetic_symbolic.py:431: required condition failed: psl2["domain"]["f_min"] == 1 and psl2["domain"]["p_mode"] == "odd"')
+    require(psl2["obstruction"]["universal_fact"] == "v_p(f)<f for f>0", 'family_arithmetic_symbolic.py:432: required condition failed: psl2["obstruction"]["universal_fact"] == "v_p(f)<f for f>0"')
+    require(all(vp(f, p) < f for p in (3, 5, 7, 11) for f in range(1, 128)), 'family_arithmetic_symbolic.py:433: required condition failed: all(vp(f, p) < f for p in (3, 5, 7, 11) for f in range(1, 128))')
 
     # A_n, n=15..30: exact largest-prime list and valuation/class bound.
     alternating = DIRECT_SPECS["AR-ALTERNATING"]
     ps = tuple(alternating["finite_range"]["largest_primes"])
     for n, p in zip(range(15, 31), ps):
-        assert is_prime(p) and p <= n
-        assert not any(is_prime(k) for k in range(p + 1, n + 1))
-        assert 2 * p >= n + 6 and n < 2 * p
+        require(is_prime(p) and p <= n, 'family_arithmetic_symbolic.py:439: required condition failed: is_prime(p) and p <= n')
+        require(not any(is_prime(k) for k in range(p + 1, n + 1)), 'family_arithmetic_symbolic.py:440: required condition failed: not any(is_prime(k) for k in range(p + 1, n + 1))')
+        require(2 * p >= n + 6 and n < 2 * p, 'family_arithmetic_symbolic.py:441: required condition failed: 2 * p >= n + 6 and n < 2 * p')
     # For n>=31, Nagura gives 6p>5n.  The coefficient certificate below is
     # the universal linear deduction 12p>10n>=6n+36.
-    assert alternating["large_range"] == {
+    require(alternating["large_range"] == {
         "n_min": 31, "source": "Nagura", "inequality": "5n/6<p<=n"
-    }
-    assert 4 * alternating["large_range"]["n_min"] > 36
+    }, 'family_arithmetic_symbolic.py:444: required condition failed: alternating["large_range"] == {\n        "n_min": 31, "source": "Nagura", "inequality": "5n/6<p<=n"\n    }')
+    require(4 * alternating["large_range"]["n_min"] > 36, 'family_arithmetic_symbolic.py:447: required condition failed: 4 * alternating["large_range"]["n_min"] > 36')
 
 
 def main() -> int:

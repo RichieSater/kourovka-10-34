@@ -3,9 +3,15 @@
 **[Download the current paper PDF](../kourovka1034.pdf)**
 LaTeX source: [`paper/kourovka1034.tex`](paper/kourovka1034.tex)
 
+> **Archive status.** Release
+> [`v1.1.0`](https://github.com/RichieSater/kourovka-10-34/releases/tag/v1.1.0)
+> contains this corrected manuscript, the Comparator package, the complete
+> architecture/audit files, and the proof-evidence tree. Zenodo archives the
+> exact release under concept DOI 10.5281/zenodo.21709124.
+
 ## Result
 
-**Claim.** Every finite group that is the product of every pair of its
+**Theorem.** Every finite group that is the product of every pair of its
 non-conjugate maximal subgroups is soluble. This answers Problem 10.34 of the
 Kourovka Notebook (V. S. Monakhov, 1986) in the negative.
 
@@ -45,16 +51,24 @@ supporting-materials/
 │   ├── BOUNDARY-SOURCE-MAP.csv Exact simplicity/isomorphism boundary sources
 │   ├── SPORADIC-SOURCE-MAP.csv Exact selected-class source map
 │   ├── PRIORITY-SEARCH.md  Reproducible prior-proof search and limits
+│   ├── REVISION-BASELINE.md Canonical source, commit, PDF, and review baseline
+│   ├── CONTENT-PRESERVATION-MAP.md Baseline block-to-body/appendix/supplement audit
+│   ├── CONTRIBUTION-MAP.md Mathematical thesis, novelty, yield, and boundary
+│   ├── MATHEMATICAL-YIELD.md Three-paragraph explanation and seminar outline
+│   ├── REVIEW-PROTOCOL.md   Two-specialist review questions and status record
+│   ├── REVISION-CHANGELOG.md Claim changes separated from exposition moves
+│   ├── REVISION-PREFLIGHT.md Verified hashes, builds, and release boundary
 │   ├── SOURCE-LEDGER.md     Pinpoint citations
 │   └── EVIDENCE.sha256      Cryptographic closure of proof evidence
 ├── formal/                  Lean project + coverage/formal-interface manifests
+│   ├── Comparator/          Neutral challenge and exact solution comparison
 │   └── Kourovka1034/        Includes reindexing and ambient-wreath proofs
 ├── formal-rocq/             Rocq internal/external direct-power theorems + pins
 └── computations/
     ├── gap/                 Fail-closed GAP proof programs
     ├── python/              Primary coverage/arithmetic checks
     ├── independent/         Independent parsers/checkers
-    ├── environment/         Exact lock and container recipe
+    ├── environment/         Tool/artifact pins and container recipe
     ├── mutation-tests/      Deliberate fault-detection suite
     ├── certificates/        Committed logs and SHA-256 sums
     └── data/                Canonical finite inventories
@@ -99,15 +113,20 @@ The generated auxiliary files remain ignored inside `paper/`.
   explicit-coordinate bridge.
 - **Tectonic** (or a standard LaTeX installation) to build the paper.
 
+The named runtime tools and directly downloaded artifacts are version- or
+hash-pinned. The Debian package snapshot and complete opam solver closure are
+not frozen, so the environment is not fully hermetic at those package-manager
+layers.
+
 ## Container reproduction
 
-From the repository root, build the pinned environment and run the full
-certificate reproduction with:
+From the repository root, build the versioned tool/artifact environment and
+run the full certificate reproduction with:
 
 ```sh
 docker build -f supporting-materials/computations/environment/Dockerfile \
-  -t kourovka1034:1.0.8 .
-docker run --rm kourovka1034:1.0.8
+  -t kourovka1034:working .
+docker run --rm kourovka1034:working
 ```
 
 The image build kernel-checks the Lean project, then removes disposable
@@ -119,7 +138,7 @@ access.
 To run only the quick suite inside the same image:
 
 ```sh
-docker run --rm --entrypoint sh kourovka1034:1.0.8 \
+docker run --rm --entrypoint sh kourovka1034:working \
   -c 'sh verify-quick.sh'
 ```
 
@@ -139,6 +158,9 @@ the high-risk Lie-source/Levi, maximality, exact order-formula, Zsigmondy
 invocation, and classification-boundary cross-checks, audit-schema checks,
 the Rocq/MathComp characteristically-simple/direct-power theorem,
 manuscript/manifest checks, and SHA-256 verification.
+The static gate parses the labels declared by the principal TeX source and
+requires every proof-facing audit, formal, Python, and GAP artifact to use
+existing stable labels rather than obsolete printed theorem numbers.
 
 The finite inventories contain exactly 47 and 51 groups in the two
 published ranges. The 7,892 concrete family instances are regression tests,
@@ -164,34 +186,84 @@ independent and mutation suites:
 sh verify-full.sh
 ```
 
+The script invokes GAP with `-r`, suppressing user package roots so that local
+or duplicate package metadata cannot shadow the pinned CTblLib and AtlasRep
+copies. The environment gate runs under the same isolation policy.
+
 Alternatively, run GAP scripts individually from their directory so
 their relative `Read(...)` calls resolve correctly:
 
 ```sh
 cd computations/gap
-gap -q -b -o 8g -T sweepJ_divisibility.g
+gap -r -q -b -o 8g -T sweepJ_divisibility.g
 ```
 
 To regenerate a committed certificate, direct output to the sibling
 certificate directory, for example:
 
 ```sh
-gap -q -b -o 8g -T sweepJ_divisibility.g \
+gap -r -q -b -o 8g -T sweepJ_divisibility.g \
   > ../certificates/sweepJ_divisibility.log
 ```
 
 | Paper claim | GAP/Python scripts | Certificates | Typical runtime |
 |---|---|---|---|
-| Base maximal pairs, `|S| < 5e5` (§5, item 1) | `sweepJ_divisibility.g`, `sweepJ2_tail.g`, `sweepJ4_patch.g` | matching `sweepJ*.log` | minutes |
-| Upper finite inventory, `5e5..1.05e7` (§5, item 1) | `sweepJ3_bigrange.g`, `sweepJ6_L52_M23.g`, `sweepL_psl2_arith.g` | J3/J6 certify the 13 non-`PSL(2,q)` rows; 38 `PSL(2,q)` rows route to the exact uniform theorem and sweep-L receipt | minutes–hours |
-| Novelty pairs and saturation (§5, item 2) | `sweepK_novelty.g`, `sweepK2_saturation.g`, `sweepK3_bigsurvivors.g`, `sweepK4_L52.g` | matching `sweepK*.log` | minutes |
-| Sporadics and the Tits group (§5, Prop. 5.2) | `sweepM_sporadic.g` | `sweepM_sporadic.log` | minutes |
-| Coverage cross-checks (§5) | `gen_biglist.g`, `verify_coverage*.py` | `verify_coverage*.log` | seconds |
-| Family-proof receipts (§6) | `sweepL_psl2_arith.g`, `sweepL2_an_arith.g`, `sweepN_item5_arith.py` | matching logs | seconds–minutes |
+| Finite-range coverage (Appendix B) | `sweepJ_divisibility.g`, `sweepJ2_tail.g`, `sweepJ4_patch.g` | matching `sweepJ*.log` | minutes |
+| Upper finite inventory (Appendix B) | `sweepJ3_bigrange.g`, `sweepJ6_L52_M23.g`, `sweepL_psl2_arith.g` | J3/J6 certify the 13 non-`PSL(2,q)` rows; 38 `PSL(2,q)` rows route to the uniform theorem and arithmetic receipt | minutes–hours |
+| Stable-poset substitutes and saturation (Appendix B) | `sweepK_novelty.g`, `sweepK2_saturation.g`, `sweepK3_bigsurvivors.g`, `sweepK4_L52.g` | matching `sweepK*.log`; historical filenames retain `novelty` | minutes |
+| Sporadics and the Tits group (Appendix B) | `sweepM_sporadic.g` | `sweepM_sporadic.log` | minutes |
+| Coverage cross-checks (Sections 6 and Appendix B) | `gen_biglist.g`, `verify_coverage*.py` | `verify_coverage*.log` | seconds |
+| Family arithmetic (Appendix A) | `sweepL_psl2_arith.g`, `sweepL2_an_arith.g`, `sweepN_item5_arith.py` | matching logs | seconds–minutes |
 
 Scripts are in [`computations/gap/`](computations/gap/) and
 [`computations/python/`](computations/python/); committed outputs are in
 [`computations/certificates/`](computations/certificates/).
+
+### Operational details displaced from the manuscript
+
+The architecture revision moved proof-operational detail out of the article,
+not out of the repository. Appendix B retains the mathematical inventory,
+certificate fields, representative witnesses, completeness assumptions, and
+cross-checks; the exact reproduction information formerly stated in the body
+is preserved here:
+
+- The proof environment is GAP 4.16.0 with CTblLib 1.3.11 and AtlasRep
+  2.1.11, overlaid with the `ContainedConjugates` correction from GAP commit
+  `b12f8342d641075d58fcbe62cc00dd433d7b8e18`. The environment gate rejects
+  an unpatched installation.
+- Both GAP global pseudorandom sources are reset to seed `1034` at process
+  start. The proof scripts perform no explicit random witness search.
+- `verify_coverage_big.py`, with receipt `verify_coverage_big.log`, checks the
+  upper inventory regenerated by `SimpleGroupsIterator`. The lower inventory
+  is read from its frozen canonical data file and checked by
+  `verify_coverage.py`, with receipt `verify_coverage.log`, against every
+  certificate route; the committed replay does not independently regenerate
+  that lower range.
+- The former short sweep labels have the following exact source/receipt map:
+
+| Label | Script | Committed receipt |
+|---|---|---|
+| J | `sweepJ_divisibility.g` | `sweepJ_divisibility.log` |
+| J2 | `sweepJ2_tail.g` | `sweepJ2_tail.log` |
+| J3 | `sweepJ3_bigrange.g` | `sweepJ3_bigrange.log` |
+| J4 | `sweepJ4_patch.g` | `sweepJ4_patch.log` |
+| J5 | `sweepJ5_smallAn.g` | `sweepJ5_smallAn.log` |
+| J6 | `sweepJ6_L52_M23.g` | `sweepJ6_L52_M23.log` |
+| K | `sweepK_novelty.g` | `sweepK_novelty.log` |
+| K2 | `sweepK2_saturation.g` | `sweepK2_saturation.log` |
+| K3 | `sweepK3_bigsurvivors.g` | `sweepK3_bigsurvivors.log` |
+| K4 | `sweepK4_L52.g` | `sweepK4_L52.log` |
+| L | `sweepL_psl2_arith.g` | `sweepL_psl2_arith.log` |
+| L2 | `sweepL2_an_arith.g` | `sweepL2_an_arith.log` |
+| M | `sweepM_sporadic.g` | `sweepM_sporadic.log` |
+| N | `sweepN_item5_arith.py` | `sweepN_item5_arith.log` |
+
+The exact `Sp43` finite record used for
+`PSU(4,2) \cong PSp(4,3)` is in `sweepJ_divisibility.log`. Sporadic records
+retain their pinned `Maxes` positions, identifiers, orders, and source-map
+bindings. Certificate identity uses action and subgroup-class fingerprints,
+not order alone. Superseded exploratory programs remain under
+`computations/exploratory/` and are excluded from all proof-evidence manifests.
 
 Certificate blocks from sweeps J/J3 include one exact action-fingerprinted
 `XCASE` for every coordinate-closure class, plus `|S|`, `|Out|`,
@@ -225,11 +297,29 @@ coordinate product over an explicitly nonabelian factor, the Lean theorem
 reindexing any nonempty finite coordinate type to `Fin k` and constructing its
 base coordinate, and the fail-closed producer/reindex/consumer signature and
 definition-correspondence audit in
-`formal/FORMAL-INTERFACE.json`. Conditional on the normalized model, Lean also checks the
+`formal/FORMAL-INTERFACE.json`. That checker guards the enumerated signatures,
+correspondence rows, and definition-source tokens; it does not prove arbitrary
+semantic equivalence across Rocq/MathComp and Lean/mathlib, so the mathematical
+identification remains a trusted correspondence. Conditional on the normalized
+model, Lean also checks the
 full maximality lemma: supplement recovery of the coordinate-closure
 generators, invariance and stable uniformity of the projections of `H \cap N`,
 the saturation/Goursat product step, the finite-simple normalizer-tower/poset
 dichotomy, the ambient intersection dichotomy, and the final coatom conclusion.
+
+For a reader-facing statement of the strongest conditional spine, see
+[`formal/Comparator/README.md`](formal/Comparator/README.md). From
+`supporting-materials/formal/`, the exact proposition comparison is checked by:
+
+```sh
+lake build +Comparator.Challenge +Comparator.Solution
+```
+
+The challenge imports only mathlib and exposes every classification,
+maximality, exact-order, wreath-top, and valuation input as a hypothesis. The
+solution imports the project theorem and type-checks an equality between the
+two theorem constants. This is a conditional formal result, not an end-to-end
+formal proof; `PAR-NOVELTY` remains explicitly outside closed Lean coverage.
 
 The root and nested `.gitignore` files deliberately ignore only caches,
 compiled Lean/Rocq products, TeX auxiliaries, and scratch regeneration files.
@@ -238,9 +328,10 @@ are proof evidence and must remain visible to Git.
 
 ## Citing this repository
 
-Citation metadata lives in [`CITATION.cff`](../CITATION.cff) at the
-repository root. Cite the versioned release (currently `v1.0.8`), not
-the mutable default branch. The concept DOI covering all versions is
+Citation metadata lives in [`CITATION.cff`](../CITATION.cff) at the repository
+root. Cite `v1.1.0` for the present corrected manuscript and evidence tree;
+do not attribute the Comparator or architecture claims to the older v1.0.8
+baseline. The concept DOI covering all versions is
 [10.5281/zenodo.21709124](https://doi.org/10.5281/zenodo.21709124).
 Zenodo lists the immutable DOI for each archived release on that record's
 version history.

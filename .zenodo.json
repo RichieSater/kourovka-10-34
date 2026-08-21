@@ -1,14 +1,15 @@
 {
   "upload_type": "software",
-  "publication_date": "2026-08-05",
-  "title": "Kourovka 10.34: proofs, GAP scripts and machine certificates",
+  "publication_date": "2026-08-21",
+  "title": "Kourovka 10.34: manuscript, formal developments, certificates, and reproducibility materials",
   "creators": [
     {
       "name": "Sater, Richie",
-      "affiliation": "Independent Researcher"
+      "affiliation": "Independent Researcher",
+      "orcid": "0009-0007-9051-8207"
     }
   ],
-  "description": "<p>Paper, GAP scripts, log certificates, coverage cross-checks, and arithmetic receipts supporting a negative solution to Kourovka Notebook Problem 10.34.</p>",
+  "description": "<p>Exact reproducibility archive for a proof that every finite group that is the product of every pair of its non-conjugate maximal subgroups is soluble. The archive contains the 26-page manuscript, partial Lean and Rocq formalizations, a neutral Comparator interface, GAP certificates, independent Python checks, source maps, and pinned computational inputs.</p><p>The main theorem is proved by ordinary mathematics relative to the cited classification and subgroup-theoretic inputs; the formal developments provide partial rather than end-to-end coverage.</p>",
   "access_right": "open",
   "license": "other-open",
   "keywords": [
@@ -18,9 +19,19 @@
     "soluble groups",
     "simple groups",
     "Kourovka Notebook",
-    "GAP"
+    "GAP",
+    "Lean",
+    "Rocq",
+    "computer-assisted proof"
   ],
-  "version": "1.0.8",
+  "version": "1.1.0",
   "language": "eng",
+  "related_identifiers": [
+    {
+      "identifier": "https://arxiv.org/abs/2608.02970",
+      "relation": "isSupplementTo",
+      "scheme": "url"
+    }
+  ],
   "notes": "<p>Code files are released under the MIT License. The paper is copyright Richie Sater; all rights reserved pending journal submission.</p>"
 }

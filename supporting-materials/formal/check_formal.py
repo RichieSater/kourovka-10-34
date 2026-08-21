@@ -59,6 +59,47 @@ for f in files:
  t=code_only(f.read_text())
  if re.search(r'\b(sorry|admit|axiom|constant)\b',t):
   die('placeholder/custom axiom in '+str(f))
+
+# The Comparator challenge deliberately contains one placeholder and is not a
+# closed formal claim.  Its solution must use the project theorem and must
+# contain the elaboration-level equality check described in its README.
+challenge=ROOT/'Comparator/Challenge.lean'
+solution=ROOT/'Comparator/Solution.lean'
+comparator_readme=ROOT/'Comparator/README.md'
+for f in [challenge,solution,comparator_readme]:
+ if not f.is_file(): die('Comparator package file missing: '+str(f.relative_to(ROOT)))
+challenge_code=code_only(challenge.read_text())
+solution_code=code_only(solution.read_text())
+challenge_imports=re.findall(r'^\s*import\s+([^\s]+)',challenge.read_text(),re.M)
+if challenge_imports != [
+ 'Mathlib.Algebra.Group.Subgroup.Order',
+ 'Mathlib.NumberTheory.Padics.PadicVal.Basic',
+ 'Mathlib.SetTheory.Cardinal.Finite',
+]: die('Comparator challenge imports more than the neutral mathlib surface')
+if len(re.findall(r'\bsorry\b',challenge_code)) != 1:
+ die('Comparator challenge must contain exactly one intentional placeholder')
+if re.search(r'\b(admit|axiom|constant)\b',challenge_code):
+ die('Comparator challenge contains a non-challenge placeholder/custom axiom')
+if re.search(r'\b(sorry|admit|axiom|constant)\b',solution_code):
+ die('Comparator solution contains a placeholder/custom axiom')
+for token in [
+ 'import Comparator.Challenge',
+ 'import Kourovka1034.ProductSupplements',
+ 'no_propertyP_of_product_supplement_data',
+ '@Kourovka1034.Comparator.Challenge.conditionalProductSupplementSpine',
+ '@Kourovka1034.Comparator.Solution.conditionalProductSupplementSpine',
+ 'Subsingleton.elim',
+]:
+ if token not in solution.read_text(): die('Comparator solution/check missing: '+token)
+comparator=cov.get('comparator')
+if comparator != {
+ 'challenge': 'Comparator/Challenge.lean',
+ 'solution': 'Comparator/Solution.lean',
+ 'theorem': 'conditionalProductSupplementSpine',
+ 'project_theorem': 'Kourovka1034.no_propertyP_of_product_supplement_data',
+ 'status': 'exact conditional spine; not an end-to-end main theorem',
+}:
+ die('Comparator coverage record drift')
 for item in cov['closed_manuscript_claims']:
  f=ROOT/item['file']
  theorem=item['theorem'].split('.')[-1]
@@ -80,6 +121,13 @@ if audit_source.count('#print axioms') != len(closed_ids):
 if not args.no_build:
  r=subprocess.run(['lake','build'],cwd=ROOT)
  if r.returncode: raise SystemExit(r.returncode)
+ r=subprocess.run(
+  ['lake','build','+Comparator.Challenge','+Comparator.Solution'],cwd=ROOT,
+  text=True,capture_output=True)
+ if r.returncode: die('Comparator module build failed:\n'+r.stdout+r.stderr)
+ r=subprocess.run(['lake','env','lean','Comparator/Solution.lean'],cwd=ROOT,
+                  text=True,capture_output=True)
+ if r.returncode: die('Comparator proposition check failed:\n'+r.stdout+r.stderr)
  r=subprocess.run(['lake','env','lean','AxiomAudit.lean'],cwd=ROOT,
                   text=True,capture_output=True)
  if r.returncode: die('axiom audit failed:\n'+r.stdout+r.stderr)
@@ -92,9 +140,11 @@ if not args.no_build:
   used={x.strip() for x in report.split(',') if x.strip()}
   if not used <= allowed: die('nonstandard axiom dependency: '+', '.join(sorted(used-allowed)))
  label='FORMAL BUILD/COVERAGE'
+ comparator_status='ELABORATED-PASS'
 else:
  label='FORMAL SOURCE/COVERAGE'
+ comparator_status='SOURCE-CHECK-PASS'
 print(
  f"{label}|PASS|closed_claims={len(cov['closed_manuscript_claims'])}|"
- f"declared_outside_lean={len(cov['explicitly_not_closed'])}"
+ f"declared_outside_lean={len(cov['explicitly_not_closed'])}|comparator={comparator_status}"
 )

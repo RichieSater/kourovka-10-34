@@ -47,13 +47,16 @@ def snapshot(dst: Path) -> None:
     # Give every snapshot its own non-Git operational root so mutations cannot
     # leak between otherwise isolated cases.
     operational=dst/'_repo'; operational.mkdir()
-    for name in ['.gitignore','.dockerignore']:
+    for name in ['.gitignore','.dockerignore','README.md','CITATION.cff','.zenodo.json']:
         shutil.copy2(ROOT.parent/name,operational/name)
 
 def run(which: str, root: Path) -> subprocess.CompletedProcess:
     env=os.environ.copy(); env['KOUROVKA_SUPPORTING_ROOT']=str(root)
     env['KOUROVKA_FORMAL_ROOT']=str(root/'formal')
     env['KOUROVKA_REPO_ROOT']=str(root/'_repo')
+    if which == 'symbolic_arith':
+        # The proof-path arithmetic checker must remain fail-closed under -O.
+        env['PYTHONOPTIMIZE']='1'
     # Most checkers accept an explicit evidence-root environment variable.  The
     # Self-contained arithmetic programs do not read repository files, so the
     # mutated snapshot itself must be executed.  Running the repository copy
@@ -144,6 +147,19 @@ def main() -> int:
             replace_first(p, r'A_\{11\},A_\{12\},A_\{13\},A_\{14\}',
                           r'A_{11},A_{12},A_{13}')
         case('omit above-threshold alternating exception','manuscript',manuscript_exception_inventory_drift)
+        def legacy_square_index_drift(r):
+            p=r/'computations/exploratory/legacy-scripts/_common.g'
+            bad_index='[G'+':N]'
+            p.write_text(p.read_text()+'\n# injected forbidden subgroup index '+bad_index+'\n')
+        case('insert legacy square-delimited subgroup index','manuscript',legacy_square_index_drift)
+        def unsupported_subsequent_work_status(r):
+            p=r/'paper/kourovka1034.tex'
+            replace_first(
+                p,
+                r'These are\s+distinct proof architectures\.',
+                'Li and Yang independently proved the theorem; these are distinct proof architectures.',
+            )
+        case('assert unsupported Li--Yang independence','manuscript',unsupported_subsequent_work_status)
         def remove_x(r):
             p=r/'computations/certificates/sweepJ_divisibility.log'
             lines=p.read_text().splitlines(); i=next(i for i,x in enumerate(lines) if x.startswith('CERT|')); lines.pop(i); p.write_text('\n'.join(lines)+'\n')
@@ -311,8 +327,38 @@ def main() -> int:
         case('diverge independent arithmetic model','universal_arith',arithmetic_independent_mirror_drift)
         def psl2_8_gap_drift(r):
             p=r/'computations/independent/family_arithmetic_symbolic.py'
-            replace_first(p, r'assert 2 > vp\(3, 3\) == 1', 'assert 1 > vp(3, 3) == 1')
+            replace_first(p, r'require\(2 > vp\(3, 3\) == 1,', 'require(1 > vp(3, 3) == 1,')
         case('alter PSL(2,8) substitute-prime gap','symbolic_arith',psl2_8_gap_drift)
+        def insert_optimized_assert_escape(r):
+            p=r/'computations/independent/family_arithmetic_symbolic.py'
+            p.write_text(p.read_text()+'\nassert False, "optimized escape"\n')
+        case('insert optimization-disabled Python assertion','static',insert_optimized_assert_escape)
+        def remove_gap_root_isolation(r):
+            p=r/'verify-full.sh'
+            replace_first(p, r'GAP_FLAGS="-r -q -b -o 8g -T"',
+                          'GAP_FLAGS="-q -b -o 8g -T"')
+        case('remove GAP user-root isolation','static',remove_gap_root_isolation)
+        def restore_stale_manuscript_numbering(r):
+            p=r/'formal/Kourovka1034/FamilyArithmetic.lean'
+            replace_first(
+                p,
+                r'the manuscript results\n+labeled `thm:an`, `thm:psl2`, `thm:nograph`, `thm:twisted2`, `thm:twisted1`,\n+and `thm:graph`,',
+                'Theorems 6.1--6.6',
+            )
+        case('restore stale manuscript theorem numbering','static',restore_stale_manuscript_numbering)
+        def reverse_coordinate_transporter(r):
+            p=r/'paper/kourovka1034.tex'
+            correct=r'$g_j^{-1}\,g\,g_i$'
+            reversed_order=r'$g_i\,g\,g_j^{-1}$'
+            text=p.read_text()
+            if text.count(correct)!=1:
+                raise RuntimeError('correct coordinate transporter is not unique')
+            p.write_text(text.replace(correct,reversed_order,1))
+        case('restore reversed coordinate transporter','static',reverse_coordinate_transporter)
+        def restore_stale_release_metadata(r):
+            p=r/'_repo/CITATION.cff'
+            replace_first(p, r'(?m)^version: 1\.1\.0$', 'version: 1.0.8')
+        case('restore stale public release version','manuscript',restore_stale_release_metadata)
         def remove_mutation_receipt_compare(r):
             p=r/'verify-full.sh'
             replace_first(
