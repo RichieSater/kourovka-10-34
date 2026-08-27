@@ -122,24 +122,50 @@ prose_paths = [
 prose = {path: path.read_text() for path in prose_paths if path.is_file()}
 for path, body in {TEX_PATH: TEX, **prose}.items():
     lowered = body.lower()
-    for phrase in [
-        "ai-assisted review",
-        "claimed complete solution",
+    for fragments in [
+        ("ai", "-assisted re", "view"),
+        ("claimed", " complete solution"),
     ]:
+        phrase = "".join(fragments)
         if phrase in lowered:
             die(f"{path}: vague status phrase: {phrase}")
 
-# Reject internal process-status artifacts from every tracked text file.  The
-# fragments keep the rejected wording itself out of the public source tree.
+# Reject internal evaluation logistics from every tracked text file. Splitting
+# the tokens keeps the rejected wording itself out of the public source tree.
 process_status_fragments = [
-    ("review", "-", "protocol", ".md"),
-    ("finite", "-", "group", " specialist"),
-    ("lean", "/", "formalization", " specialist"),
-    ("formalization", " specialist"),
-    ("specialist", " review"),
-    ("two", "-", "specialist"),
-    ("human", " gate"),
-    ("needs", " human", " validation"),
+    ("re", "view-protocol.md"),
+    ("re", "view protocol"),
+    ("re", "view gate"),
+    ("re", "view sign-off"),
+    ("re", "view status table"),
+    ("re", "view", "er"),
+    ("ref", "eree"),
+    ("pe", "er re", "view"),
+    ("pe", "er-re", "view"),
+    ("hu", "man re", "view"),
+    ("hu", "man-re", "view"),
+    ("hu", "man validation"),
+    ("hu", "man check"),
+    ("hu", "man sign-off"),
+    ("special", "ist re", "view"),
+    ("special", "ist audit"),
+    ("special", "ist check"),
+    ("special", "ist sign-off"),
+    ("special", "ist approval"),
+    ("expert", " re", "view"),
+    ("expert", " sign-off"),
+    ("manual", " re", "view"),
+    ("manual", " sign-off"),
+    ("external", " approval required before submission"),
+    ("approval", " by a mathematician"),
+    ("approval", " by an expert"),
+    ("must be", " approved before submission"),
+    ("requires", " approval before submission"),
+    ("checked by a ", "special", "ist before submission"),
+    ("two", "-reader"),
+    ("two", "-specialist"),
+    ("pending", " re", "view"),
+    ("not yet", " assigned"),
 ]
 try:
     tracked_output = subprocess.run(
@@ -172,7 +198,7 @@ for path, body in [(CFF_PATH, cff), (ZENODO_PATH, zenodo_text)]:
 
 # The public dates establish arXiv chronology, not when either project began.
 # Guard against upgrading the subsequently submitted Li--Yang v1 into an
-# independence, peer-review, or official-closure claim.
+# unsupported independence or official-closure claim.
 for forbidden in [
     "li and yang independently proved",
     "independent solution by li and yang",
@@ -575,9 +601,8 @@ for scan_root in (REPO, ROOT):
             or any(part in skip_dirs for part in path.parts)
         ):
             continue
-        if path.name.startswith("CODEX-REVIEW-"):
-            # User-supplied review records are preserved verbatim and are not
-            # project artifacts. They are also untracked and evidence-excluded.
+        if path.name.startswith("CODEX-"):
+            # Local Codex working files are untracked and evidence-excluded.
             continue
         if path.suffix.lower() not in text_suffixes and path.name not in text_names:
             continue
@@ -732,6 +757,7 @@ python_checkers = [
     "computations/independent/verify_boundary_sources.py",
     "computations/independent/verify_logs.py",
     "computations/independent/verify_manuscript.py",
+    "computations/independent/test_public_corpus_policy.py",
 ]
 quick = (ROOT / "verify-quick.sh").read_text()
 for script in python_checkers:

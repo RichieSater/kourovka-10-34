@@ -49,6 +49,9 @@ def snapshot(dst: Path) -> None:
     operational=dst/'_repo'; operational.mkdir()
     for name in ['.gitignore','.dockerignore','README.md','CITATION.cff','.zenodo.json']:
         shutil.copy2(ROOT.parent/name,operational/name)
+    workflow_dir=operational/'.github/workflows'; workflow_dir.mkdir(parents=True)
+    shutil.copy2(ROOT.parent/'.github/workflows/public-corpus.yml',
+                 workflow_dir/'public-corpus.yml')
 
 def run(which: str, root: Path) -> subprocess.CompletedProcess:
     env=os.environ.copy(); env['KOUROVKA_SUPPORTING_ROOT']=str(root)
@@ -359,6 +362,23 @@ def main() -> int:
             p=r/'_repo/CITATION.cff'
             replace_first(p, r'(?m)^version: 1\.1\.0$', 'version: 1.0.8')
         case('restore stale public release version','manuscript',restore_stale_release_metadata)
+        def insert_public_approval_dependency(r):
+            p=r/'_repo/README.md'
+            phrase=''.join(('Approval by a ', 'special', 'ist re', 'view',
+                            'er is required before submission.'))
+            p.write_text(p.read_text()+'\n'+phrase+'\n')
+        case('insert public approval dependency','manuscript',insert_public_approval_dependency)
+        def insert_public_evaluation_status(r):
+            p=r/'_repo/README.md'
+            phrase=''.join(('This manuscript has not undergone ', 'pe',
+                            'er re', 'view.'))
+            p.write_text(p.read_text()+'\n'+phrase+'\n')
+        case('insert public evaluation-status wording','manuscript',insert_public_evaluation_status)
+        def insert_public_external_approval(r):
+            p=r/'_repo/README.md'
+            phrase=''.join(('External approval required before ', 'sub', 'mission.'))
+            p.write_text(p.read_text()+'\n'+phrase+'\n')
+        case('insert public external-approval dependency','manuscript',insert_public_external_approval)
         def remove_mutation_receipt_compare(r):
             p=r/'verify-full.sh'
             replace_first(

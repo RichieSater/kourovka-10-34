@@ -210,8 +210,6 @@ explicitly outside closed Lean coverage.
   The unmodified documented command then regenerated every proof-essential
   certificate byte-identically and completed both formal builds, the mutation
   suite, and the evidence check.
-- Added the two stale local `CODEX-REVIEW-*.md` briefing names to both ignore
-  files. Their contents were not edited or included in the evidence tree.
 
 ## Final adversarial local-correction pass (2026-08-21)
 

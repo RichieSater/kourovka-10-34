@@ -43,10 +43,20 @@ def display_path(p:Path)->str:
     # In mutation snapshots the operational repository root is deliberately a
     # child directory of the synthetic supporting root.  Preserve the release
     # manifest's canonical `../ROOT-FILE` spelling in both layouts.
-    if p.parent == REPO:
-        return '../'+p.name
-    try: return p.relative_to(ROOT).as_posix()
-    except ValueError: return '../'+p.relative_to(REPO).as_posix()
+    try:
+        REPO.relative_to(ROOT)
+        repo_inside_root=True
+    except ValueError:
+        repo_inside_root=False
+    if repo_inside_root:
+        try:
+            return '../'+p.relative_to(REPO).as_posix()
+        except ValueError:
+            pass
+    try:
+        return p.relative_to(ROOT).as_posix()
+    except ValueError:
+        return '../'+p.relative_to(REPO).as_posix()
 
 def digest(p:Path)->str:
     h=hashlib.sha256()

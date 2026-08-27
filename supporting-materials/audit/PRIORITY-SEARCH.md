@@ -118,9 +118,9 @@ The downloaded v1 artifacts were pinned during this audit:
 
 ### Why the citation is not described as correctness certification
 
-The v1 source was compared at theorem-and-proof-architecture level, but it was
-not accepted as peer review of this manuscript. A direct spot check also found
-unresolved family-coverage scope in Proposition 2.5 as written:
+The v1 source was compared at theorem-and-proof-architecture level but is not
+used as correctness certification for this manuscript. A direct spot check
+also found unresolved family-coverage scope in Proposition 2.5 as written:
 
 1. in the $L_n(q)$ branch, the even-rank paragraph excludes $q=2$ after
    disposing only of $L_4(2)$, while the odd-rank $q=2$ paragraph gives the
@@ -143,7 +143,7 @@ A subscriber-level MathSciNet forward/backward citation search was not
 available. A direct MR2654533 request on 2026-08-01 was reproduced in the
 dedicated browser and redirected to the AMS/LibLynx
 institution-or-registered-user login; no authorized subscription credential
-is configured, so the login was not bypassed.  MathSciNet-only review text
+is configured, so the login was not bypassed.  MathSciNet-only editorial text
 and print-only conference proceedings therefore remain outside the search's
 reach, and the novelty statement in the manuscript is deliberately limited
 to the named databases and dates. Crossref, OpenAlex, Google Scholar, zbMATH,

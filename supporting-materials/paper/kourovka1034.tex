@@ -5,11 +5,10 @@
 \usepackage{xcolor}
 \usepackage[colorlinks=true,linkcolor=blue!50!black,citecolor=blue!50!black]{hyperref}
 
-% Referee version: set to true to print line numbers (journal referee copy).
-% Leave false for the arXiv/archival copy.
-\newif\ifreferee
-\refereefalse
-\ifreferee
+% Set to true to print line numbers; leave false for the archival copy.
+\newif\iflinenumbers
+\linenumbersfalse
+\iflinenumbers
   \usepackage{lineno}
   \linenumbers
 \fi

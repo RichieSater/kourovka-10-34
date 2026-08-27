@@ -87,6 +87,9 @@ do
   echo "   byte-identical: PASS"
 done
 
+echo "== public-corpus fail-closed self-test =="
+python3 "$ROOT/computations/independent/test_public_corpus_policy.py"
+
 echo "== formal arithmetic build (no placeholders/custom axioms) =="
 (cd "$ROOT/formal" && lake exe cache get)
 python3 "$ROOT/formal/check_formal.py"

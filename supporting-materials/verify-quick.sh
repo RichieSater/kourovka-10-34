@@ -49,6 +49,7 @@ python3 computations/independent/verify_logs.py
 
 echo "== 15/18 manuscript/manifest consistency =="
 python3 computations/independent/verify_manuscript.py
+python3 computations/independent/test_public_corpus_policy.py
 
 echo "== 16/18 explicit formal coverage and cross-kernel interface =="
 python3 formal/check_formal.py --no-build

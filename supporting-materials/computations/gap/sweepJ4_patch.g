@@ -1,5 +1,5 @@
 # Sweep J4: certificate patch. Covers the 17 socles |S| < 500000 that were
-# missing from sweeps J/J2 (review finding, 2026-07-25):
+# missing from sweeps J/J2 (audit finding, 2026-07-25):
 #   - Sz(8): present in sweep J but skipped with an error — SuzukiGroup(8)
 #     returns a MATRIX group and AutPerm's Normalizer(SymmetricGroup(65), S)
 #     has no method for it.  Fixed here by constructing the degree-65

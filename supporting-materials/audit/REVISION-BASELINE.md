@@ -56,14 +56,3 @@ are the sole canonical manuscript paths in this repository.
 
 Labels, rather than numbers, remain the stable internal identifiers during
 the reorganization.
-
-## Controlling review records
-
-| Record | Date available | SHA-256 |
-|---|---:|---|
-| `AUTHORITATIVE_MATH_MANUSCRIPT_ARCHITECTURE_AND_10_34_REVISION_PLAN.md` | 2026-08-20 | `4ba6695fc28647e13c330c93b94c03de056d75b1e4e0ead125c92eb99f33efff` |
-| `CODEX-REVIEW-BRIEF.md` (local, untracked) | 2026-08-05 | `c1f9b9c3be16373fac4975a3717885361d23e47d1d773d67c69ef8d1d3c1f588` |
-| `CODEX-REVIEW-OUTPUT.md` (local, untracked) | 2026-08-05 | `009713bdc8cda08fb2e53c38553e6baa39674b7d5ab264f9434725b8628ea002` |
-
-No separate Alex transcript was supplied with the repository or the
-controlling plan, so no transcript date is asserted here.

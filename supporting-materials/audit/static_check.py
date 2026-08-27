@@ -21,6 +21,7 @@ PYTHON_ESSENTIAL=[
 'computations/independent/verify_zsigmondy_sources.py',
 'computations/independent/verify_boundary_sources.py',
 'computations/independent/verify_logs.py','computations/independent/verify_manuscript.py',
+'computations/independent/test_public_corpus_policy.py',
 'formal/check_formal_interface.py']
 
 # Proof-facing prose must point to stable manuscript labels, not a printed
@@ -247,7 +248,7 @@ for ignore_file in [REPO/'.gitignore',REPO/'.dockerignore']:
     ignore_text=ignore_file.read_text().splitlines()
     for name in [
         'AGENTS.md','CLAUDE.md','agents.md','claude.md',
-        'CODEX-REVIEW-BRIEF.md','CODEX-REVIEW-OUTPUT.md',
+        'CODEX-*.md',
     ]:
         if name not in ignore_text:
             die(f'{ignore_file.name} does not exclude local agent file {name}')

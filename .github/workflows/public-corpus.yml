@@ -16,3 +16,5 @@ jobs:
       - uses: actions/checkout@v4
       - name: Run fail-closed manuscript and repository checks
         run: python3 supporting-materials/computations/independent/verify_manuscript.py
+      - name: Prove the public-corpus policy fails closed
+        run: python3 supporting-materials/computations/independent/test_public_corpus_policy.py

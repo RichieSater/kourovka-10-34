@@ -51,7 +51,7 @@ supporting-materials/
 │   ├── BOUNDARY-SOURCE-MAP.csv Exact simplicity/isomorphism boundary sources
 │   ├── SPORADIC-SOURCE-MAP.csv Exact selected-class source map
 │   ├── PRIORITY-SEARCH.md  Reproducible prior-proof search and limits
-│   ├── REVISION-BASELINE.md Canonical source, commit, PDF, and review baseline
+│   ├── REVISION-BASELINE.md Canonical source, commit, PDF, and revision baseline
 │   ├── CONTENT-PRESERVATION-MAP.md Baseline block-to-body/appendix/supplement audit
 │   ├── CONTRIBUTION-MAP.md Mathematical thesis, novelty, yield, and boundary
 │   ├── MATHEMATICAL-YIELD.md Three-paragraph explanation and seminar outline

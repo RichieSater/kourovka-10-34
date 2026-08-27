@@ -666,7 +666,7 @@ def validate_independent_symbolic_mirror(manifest: dict) -> None:
     Importing the module here does not alter its independence: its default
     verifier never reads repository data, and all 34 branches remain literal
     data/code in that file.  This comparison merely makes disagreement between
-    the two paths fatal instead of relying on a reviewer to compare summaries.
+    the two paths fatal instead of relying on an unrecorded manual comparison.
     """
     try:
         import family_arithmetic_symbolic as symbolic

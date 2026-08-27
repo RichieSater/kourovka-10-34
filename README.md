@@ -8,7 +8,7 @@ negative answer to Problem 10.34 of the Kourovka Notebook, posed by
 V. S. Monakhov in 1986.
 
 **[Read the paper](https://arxiv.org/abs/2608.02970)** ·
-**[Review the verification guide](supporting-materials/README.md)** ·
+**[Verification guide](supporting-materials/README.md)** ·
 **[Reproduce release v1.1.0](#reproduction)**
 
 > **Status: proved public preprint; reproducibility release v1.1.0.** The

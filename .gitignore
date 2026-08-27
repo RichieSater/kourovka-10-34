@@ -13,9 +13,8 @@ CLAUDE.md
 agents.md
 claude.md
 
-# Local audit briefs are working notes, not release artifacts.
-CODEX-REVIEW-BRIEF.md
-CODEX-REVIEW-OUTPUT.md
+# Local Codex working files are not release artifacts.
+CODEX-*.md
 
 # Python caches and local environments (never proof receipts)
 __pycache__/
