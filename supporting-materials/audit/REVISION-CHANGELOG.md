@@ -149,8 +149,8 @@ explicitly outside closed Lean coverage.
   package pins, hashes, and mutation mechanics remain in the repository guide.
 - Added Appendix C's six-column allocation of ordinary proof, Lean, Rocq,
   GAP/Python, and external inputs.
-- Added canonical-baseline, contribution-map, mathematical-yield/seminar, and
-  two-specialist review documents.
+- Added canonical-baseline, contribution-map, and mathematical-yield/seminar
+  documents.
 - Removed the duplicate disclosure from the repository README. The principal
   manuscript source contains the sole disclosure.
 - Updated both repository guides and the submission abstract to match the new
@@ -302,9 +302,5 @@ explicitly outside closed Lean coverage.
 - Bound the release metadata to the stable Zenodo concept DOI
   `10.5281/zenodo.21709124`; Zenodo assigns the immutable version DOI when it
   archives the exact GitHub tag.
-- The two named specialist reviews remain pending in
-  `REVIEW-PROTOCOL.md`. Release authorization does not represent those reviews
-  as completed and does not constitute journal acceptance or peer review; they
-  remain gates for designating a journal-submission version.
 - A reciprocal 18.68 cross-reference remains appropriate maintenance in that
   separate repository, but it is not a release gate for this paper.

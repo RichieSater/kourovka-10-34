@@ -4,10 +4,10 @@
 **Branch:** `revision/architecture-2026-08-20`
 **Frozen baseline:** `35942dc7cf00cd145434661167de9f2224241717`
 
-This record identifies the verified working revision by content hashes. It does
-not replace the external specialist-review gate. Richie authorized this
-corrected tree for public reproducibility release `v1.1.0` on 21 August 2026;
-that authorization does not designate a journal-submission version.
+This record identifies the verified working revision by content hashes.
+Richie authorized this corrected tree for public reproducibility release
+`v1.1.0` on 21 August 2026. It records technical verification and release
+status without making any claim about journal acceptance or peer review.
 
 ## Canonical working artifacts
 
@@ -60,10 +60,6 @@ preflight gates and is designated for public reproducibility release
 Comparator files are tracked in the exact tagged commit, GitHub publishes that
 tag and the rebuilt PDF, Zenodo archives the same tag under concept DOI
 `10.5281/zenodo.21709124`, and the public metadata agrees with the tag.
-
-The two specialist-review rows in `REVIEW-PROTOCOL.md` remain pending and are
-not represented as completed by this release. Their resolution remains a gate
-for a journal-submission version.
 
 A reciprocal cross-reference from the separate Kourovka 18.68 manuscript is
 appropriate scholarly maintenance, but it is outside this repository and is

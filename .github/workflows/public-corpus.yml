@@ -1,0 +1,18 @@
+name: Public corpus checks
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+permissions:
+  contents: read
+
+jobs:
+  public-corpus:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Run fail-closed manuscript and repository checks
+        run: python3 supporting-materials/computations/independent/verify_manuscript.py

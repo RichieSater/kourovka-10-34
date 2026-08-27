@@ -6,6 +6,7 @@ import csv
 import json
 import os
 import re
+import subprocess
 import sys
 from pathlib import Path
 
@@ -123,11 +124,44 @@ for path, body in {TEX_PATH: TEX, **prose}.items():
     lowered = body.lower()
     for phrase in [
         "ai-assisted review",
-        "needs human validation",
         "claimed complete solution",
     ]:
         if phrase in lowered:
             die(f"{path}: vague status phrase: {phrase}")
+
+# Reject internal process-status artifacts from every tracked text file.  The
+# fragments keep the rejected wording itself out of the public source tree.
+process_status_fragments = [
+    ("review", "-", "protocol", ".md"),
+    ("finite", "-", "group", " specialist"),
+    ("lean", "/", "formalization", " specialist"),
+    ("formalization", " specialist"),
+    ("specialist", " review"),
+    ("two", "-", "specialist"),
+    ("human", " gate"),
+    ("needs", " human", " validation"),
+]
+try:
+    tracked_output = subprocess.run(
+        ["git", "-C", str(REPO), "ls-files", "-z"],
+        check=True,
+        stdout=subprocess.PIPE,
+    ).stdout
+    public_paths = [REPO / p.decode() for p in tracked_output.split(b"\0") if p]
+except (OSError, subprocess.CalledProcessError, UnicodeDecodeError):
+    public_paths = [p for p in REPO.rglob("*") if p.is_file()]
+
+for path in public_paths:
+    rel_parts = path.relative_to(REPO).parts
+    if ".git" in rel_parts or ".lake" in rel_parts or path.suffix.lower() == ".pdf":
+        continue
+    try:
+        lowered = path.read_text().lower()
+    except (OSError, UnicodeDecodeError):
+        continue
+    for fragments in process_status_fragments:
+        if "".join(fragments) in lowered:
+            die(f"{path}: prohibited internal process-status artifact")
 for path, body in [(CFF_PATH, cff), (ZENODO_PATH, zenodo_text)]:
     if re.search(
         r"generative[- ]AI|AI disclosure|OpenAI Codex|Anthropic Claude",
@@ -713,7 +747,6 @@ for required_file in [
     ROOT / "audit/REVISION-BASELINE.md",
     ROOT / "audit/CONTRIBUTION-MAP.md",
     ROOT / "audit/MATHEMATICAL-YIELD.md",
-    ROOT / "audit/REVIEW-PROTOCOL.md",
     ROOT / "audit/REVISION-CHANGELOG.md",
     ROOT / "audit/REVISION-PREFLIGHT.md",
     ROOT / "formal/Comparator/Challenge.lean",

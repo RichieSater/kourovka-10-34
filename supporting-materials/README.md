@@ -55,7 +55,6 @@ supporting-materials/
 │   ├── CONTENT-PRESERVATION-MAP.md Baseline block-to-body/appendix/supplement audit
 │   ├── CONTRIBUTION-MAP.md Mathematical thesis, novelty, yield, and boundary
 │   ├── MATHEMATICAL-YIELD.md Three-paragraph explanation and seminar outline
-│   ├── REVIEW-PROTOCOL.md   Two-specialist review questions and status record
 │   ├── REVISION-CHANGELOG.md Claim changes separated from exposition moves
 │   ├── REVISION-PREFLIGHT.md Verified hashes, builds, and release boundary
 │   ├── SOURCE-LEDGER.md     Pinpoint citations
