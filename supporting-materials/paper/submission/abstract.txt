@@ -1,14 +1,17 @@
 We prove that every finite group that is the product of every pair of its
 non-conjugate maximal subgroups is soluble, answering Problem 10.34 of the
 Kourovka Notebook. The almost-simple case was proved by Tikhonenko and
-Tyutyanov. For the remaining minimal-counterexample branch, with unique
-minimal normal subgroup S^k and k >= 2, two automorphism-stable coordinate
-subgroup classes satisfying the supplement criterion yield non-conjugate
-maximal supplements. The factorization hypothesis would then impose a p-adic
-demand growing linearly with k, whereas the wreath-product quotient contributes
-only coordinate outer automorphisms and k!. One fixed valuation gap therefore
-rules out this branch for every k >= 2. Using the classification of finite
-simple groups (CFSG) and published subgroup and order data, uniform parabolic,
-torus, and primitive-prime-divisor arguments cover the infinite families;
-stable flag parabolics handle graph fusion; GAP certificates cover the
-designated finite and sporadic cases.
+Tyutyanov. We treat the remaining minimal-counterexample branch, where the
+unique minimal normal subgroup has the form S^k, with S nonabelian simple and
+k >= 2. Two automorphism-stable coordinate subgroup classes satisfying a
+maximal-supplement criterion produce non-conjugate maximal supplements. If the
+factorization hypothesis held, their product would impose a p-adic divisibility
+requirement growing linearly with k, while the quotient contributes only
+coordinate outer automorphisms and a factor dividing k!. A fixed valuation gap
+therefore excludes every k >= 2 at once. Suitable subgroup classes are
+constructed uniformly across the infinite families of finite simple groups
+using parabolic, torus, and primitive-prime-divisor arguments; stable flag
+parabolics handle graph fusion, while GAP certificates cover designated finite
+and sporadic cases. The resulting all-k obstruction provides a reusable
+mechanism for eliminating direct-power socles in finite-group factorization
+problems.

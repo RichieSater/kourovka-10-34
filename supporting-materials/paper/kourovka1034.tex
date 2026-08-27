@@ -50,7 +50,7 @@ that are the product of every pair of non-conjugate maximal subgroups are
 soluble}
 
 \author{Richie Sater}
-\address{Independent Researcher, United States}
+\address{Independent Researcher, Washington, DC, United States}
 \email{richiesater@gmail.com}
 \urladdr{https://orcid.org/0009-0007-9051-8207}
 
@@ -66,17 +66,20 @@ groups, simple groups, Kourovka Notebook Problem 10.34}
 We prove that every finite group that is the product of every pair of its
 non-conjugate maximal subgroups is soluble, answering Problem 10.34 of the
 Kourovka Notebook. The almost-simple case was proved by Tikhonenko and
-Tyutyanov. For the remaining minimal-counterexample branch, with unique
-minimal normal subgroup $S^k$ and $k\geq2$, two automorphism-stable coordinate
-subgroup classes satisfying the supplement criterion yield non-conjugate
-maximal supplements. The factorization hypothesis would then impose a
-$p$-adic demand growing linearly with $k$, whereas the wreath-product quotient
-contributes only coordinate outer automorphisms and $k!$. One fixed valuation
-gap therefore rules out this branch for every $k\geq2$. Using the
-classification of finite simple groups (CFSG) and published subgroup and order
-data, uniform parabolic, torus, and primitive-prime-divisor arguments cover the
-infinite families; stable flag parabolics handle graph fusion; GAP
-certificates cover the designated finite and sporadic cases.
+Tyutyanov. We treat the remaining minimal-counterexample branch, where the
+unique minimal normal subgroup has the form $S^k$, with $S$ nonabelian simple
+and $k\geq2$. Two automorphism-stable coordinate subgroup classes satisfying a
+maximal-supplement criterion produce non-conjugate maximal supplements. If the
+factorization hypothesis held, their product would impose a $p$-adic
+divisibility requirement growing linearly with $k$, while the quotient
+contributes only coordinate outer automorphisms and a factor dividing $k!$. A
+fixed valuation gap therefore excludes every $k\geq2$ at once. Suitable
+subgroup classes are constructed uniformly across the infinite families of
+finite simple groups using parabolic, torus, and primitive-prime-divisor
+arguments; stable flag parabolics handle graph fusion, while GAP certificates
+cover designated finite and sporadic cases. The resulting all-$k$ obstruction
+provides a reusable mechanism for eliminating direct-power socles in
+finite-group factorization problems.
 \end{abstract}
 
 \maketitle
@@ -1924,8 +1927,10 @@ manifests. The main theorem therefore remains an ordinary mathematical proof
 supported by partial formal verification, certified finite computation, and
 explicit external classification inputs.
 
+\section*{Statements and Declarations}
+
 \subsection*{Data availability}
-The exact source and evidence tree is archived as release 1.1.1
+The exact source and evidence tree is archived as release 1.1.2
 \cite{Repo}. Its GitHub tag and Zenodo version record contain the manuscript,
 formal developments, GAP programs, finite certificates, arithmetic manifests,
 source maps, independent checkers, and computational-environment recipe
@@ -2092,9 +2097,9 @@ classifications and applications, in \emph{Surveys in Combinatorics
 
 \bibitem{Repo}
 R.~Sater, \emph{Kourovka 10.34: manuscript, formal developments,
-certificates, and reproducibility materials}, version 1.1.1, Zenodo, 2026;
+certificates, and reproducibility materials}, version 1.1.2, Zenodo, 2026;
 concept DOI 10.5281/zenodo.21709124 (resolves to the latest version);
-\path{https://github.com/RichieSater/kourovka-10-34/releases/tag/v1.1.1}.
+\path{https://github.com/RichieSater/kourovka-10-34/releases/tag/v1.1.2}.
 
 \bibitem{Sater1868}
 R.~Sater, \emph{Nonabelian composition factors of finite groups whose

@@ -4,7 +4,7 @@
 LaTeX source: [`paper/kourovka1034.tex`](paper/kourovka1034.tex)
 
 > **Archive status.** Release
-> [`v1.1.1`](https://github.com/RichieSater/kourovka-10-34/releases/tag/v1.1.1)
+> [`v1.1.2`](https://github.com/RichieSater/kourovka-10-34/releases/tag/v1.1.2)
 > contains this corrected manuscript, the Comparator package, the complete
 > architecture/audit files, and the proof-evidence tree. Zenodo archives the
 > exact release under concept DOI 10.5281/zenodo.21709124.
@@ -328,7 +328,7 @@ are proof evidence and must remain visible to Git.
 ## Citing this repository
 
 Citation metadata lives in [`CITATION.cff`](../CITATION.cff) at the repository
-root. Cite `v1.1.1` for the present corrected manuscript and evidence tree;
+root. Cite `v1.1.2` for the present corrected manuscript and evidence tree;
 do not attribute the Comparator or architecture claims to the older v1.0.8
 baseline. The concept DOI covering all versions is
 [10.5281/zenodo.21709124](https://doi.org/10.5281/zenodo.21709124).
@@ -338,5 +338,4 @@ version history.
 ## License
 
 Code (`*.g`, `*.py`) is released under the MIT License in
-[`LICENSE`](LICENSE). The paper is © Richie Sater; all rights
-reserved pending journal submission.
+[`LICENSE`](LICENSE). The paper is © Richie Sater; all rights reserved.

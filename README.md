@@ -9,15 +9,14 @@ V. S. Monakhov in 1986.
 
 **[Read the paper](https://arxiv.org/abs/2608.02970)** ·
 **[Verification guide](supporting-materials/README.md)** ·
-**[Reproduce release v1.1.1](#reproduction)**
+**[Reproduce release v1.1.2](#reproduction)**
 
-> **Status: proved public preprint; reproducibility release v1.1.1.** The
+> **Status: proved public preprint; reproducibility release v1.1.2.** The
 > theorem is proved in the manuscript by an ordinary mathematical argument,
 > with partial formal verification and computationally certified finite
 > components. The arXiv record is
-> [arXiv:2608.02970](https://arxiv.org/abs/2608.02970); release v1.1.1 contains
-> the corrected 26-page repository manuscript and its exact evidence tree. No
-> journal acceptance is recorded in this repository.
+> [arXiv:2608.02970](https://arxiv.org/abs/2608.02970); release v1.1.2 contains
+> the corrected 26-page repository manuscript and its exact evidence tree.
 
 ## Result
 
@@ -76,7 +75,7 @@ scope, theorem names, expected output, and certificate locations are in the
 ## Reproduction
 
 The latest immutable public research artifact is
-[`v1.1.1`](https://github.com/RichieSater/kourovka-10-34/releases/tag/v1.1.1),
+[`v1.1.2`](https://github.com/RichieSater/kourovka-10-34/releases/tag/v1.1.2),
 archived by Zenodo under the concept DOI
 [10.5281/zenodo.21709124](https://doi.org/10.5281/zenodo.21709124). It contains
 the corrected manuscript, Comparator package, architecture records, formal
@@ -89,7 +88,7 @@ frozen v1.0.8 comparison remains recorded in
 Requires Python 3.9+, Rocq 9.2, and MathComp 2.6.0:
 
 ```sh
-git clone --branch v1.1.1 --depth 1 \
+git clone --branch v1.1.2 --depth 1 \
   https://github.com/RichieSater/kourovka-10-34.git
 cd kourovka-10-34
 sh supporting-materials/verify-quick.sh
@@ -100,17 +99,17 @@ and hashes. It does **not** rerun the expensive GAP computations.
 
 ### Full certificate regeneration
 
-The v1.1.1 container rebuilds every proof-essential GAP certificate, checks
+The v1.1.2 container rebuilds every proof-essential GAP certificate, checks
 for soft failures, byte-compares the regenerated output with the committed
 logs, builds Lean and Rocq, and runs the independent and mutation suites:
 
 ```sh
-git clone --branch v1.1.1 --depth 1 \
+git clone --branch v1.1.2 --depth 1 \
   https://github.com/RichieSater/kourovka-10-34.git
 cd kourovka-10-34
 docker build -f supporting-materials/computations/environment/Dockerfile \
-  -t kourovka1034:1.1.1 .
-docker run --rm kourovka1034:1.1.1
+  -t kourovka1034:1.1.2 .
+docker run --rm kourovka1034:1.1.2
 ```
 
 The named runtime tools and directly downloaded artifacts are version- or

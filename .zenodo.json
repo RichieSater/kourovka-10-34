@@ -24,7 +24,7 @@
     "Rocq",
     "computer-assisted proof"
   ],
-  "version": "1.1.1",
+  "version": "1.1.2",
   "language": "eng",
   "related_identifiers": [
     {
@@ -33,5 +33,5 @@
       "scheme": "url"
     }
   ],
-  "notes": "<p>Code files are released under the MIT License. The paper is copyright Richie Sater; all rights reserved pending journal submission.</p>"
+  "notes": "<p>Code files are released under the MIT License. The manuscript is a preprint and is copyright Richie Sater.</p>"
 }

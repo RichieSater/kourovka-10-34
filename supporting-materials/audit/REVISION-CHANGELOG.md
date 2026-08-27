@@ -7,7 +7,9 @@ This ledger separates mathematical-claim changes from changes of exposition
 and evidence interface. Richie authorized the corrected public reproducibility
 release as `v1.1.0` on 21 August 2026; the frozen `v1.0.8` state remains the
 comparison baseline. Release `v1.1.1`, dated 27 August 2026, supersedes the
-public archive reference without changing any mathematical claim.
+earlier public archive reference without changing any mathematical claim.
+Release `v1.1.2`, also dated 27 August 2026, supersedes `v1.1.1`
+with venue-format and archive-metadata corrections only.
 
 ## Mathematical claim comparison
 
@@ -316,3 +318,16 @@ explicitly outside closed Lean coverage.
   and container tag.
 - The rendered manuscript changes only its date and archive version/link; the
   mathematical text and 26-page layout are preserved.
+
+## Venue-format metadata release (2026-08-27)
+
+- Expanded the abstract to the required 150--250-word range and made the
+  reusable all-`k` direct-power-socle obstruction its concluding point.
+- Completed the unaffiliated-author address as Washington, DC, United States.
+- Consolidated data availability, funding, competing interests, and the
+  existing disclosure under `Statements and Declarations`.
+- Added fail-closed checks for the abstract length, complete address, and
+  declaration heading. No theorem, proof, formal statement, computation, or
+  certificate changed.
+- Designated the synchronized GitHub and Zenodo archive as `v1.1.2` and
+  rebuilt the corrected 26-page manuscript.

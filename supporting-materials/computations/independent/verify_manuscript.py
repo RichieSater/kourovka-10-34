@@ -38,39 +38,41 @@ root_readme = ROOT_README_PATH.read_text()
 cff = CFF_PATH.read_text()
 zenodo_text = ZENODO_PATH.read_text()
 zenodo = json.loads(zenodo_text)
-if zenodo.get("version") != "1.1.1":
-    die("Zenodo metadata version is not 1.1.1")
+if zenodo.get("version") != "1.1.2":
+    die("Zenodo metadata version is not 1.1.2")
 if zenodo.get("publication_date") != "2026-08-27":
     die("Zenodo publication date is not 2026-08-27")
 for token in [
-    "version: 1.1.1",
+    "version: 1.1.2",
     "date-released: 2026-08-27",
     "doi: 10.5281/zenodo.21709124",
 ]:
     if token not in cff:
         die("CITATION.cff release metadata missing: " + token)
 for token in [
-    "reproducibility release v1.1.1",
-    "/releases/tag/v1.1.1",
-    "--branch v1.1.1",
-    "kourovka1034:1.1.1",
+    "reproducibility release v1.1.2",
+    "/releases/tag/v1.1.2",
+    "--branch v1.1.2",
+    "kourovka1034:1.1.2",
 ]:
     if token not in root_readme:
         die("root README release metadata missing: " + token)
 support_readme = (ROOT / "README.md").read_text()
-for token in ["/releases/tag/v1.1.1", "Cite `v1.1.1`"]:
+for token in ["/releases/tag/v1.1.2", "Cite `v1.1.2`"]:
     if token not in support_readme:
         die("supporting guide release metadata missing: " + token)
 for token in [
-    "archived as release 1.1.1",
-    "version 1.1.1, Zenodo, 2026",
-    "/releases/tag/v1.1.1",
+    "archived as release 1.1.2",
+    "version 1.1.2, Zenodo, 2026",
+    "/releases/tag/v1.1.2",
 ]:
     if token not in TEX:
         die("manuscript release metadata missing: " + token)
 for stale in [
     "--branch v1.0.8",
     "kourovka1034:1.0.8",
+    "--branch v1.1.1",
+    "kourovka1034:1.1.1",
     "corrected working revision not yet archived",
     "requires a new exact commit",
     "External circulation of this revision requires a new immutable archive",
@@ -231,7 +233,7 @@ for path, body, token in [
     (
         submission_abstract_path,
         submission_abstract,
-        "automorphism-stable coordinate\nsubgroup classes satisfying the supplement criterion",
+        "automorphism-stable coordinate subgroup classes satisfying a\nmaximal-supplement criterion",
     ),
     (
         yield_path,
@@ -272,23 +274,33 @@ for token in [
     if token not in TEX:
         die("final local manuscript correction missing: " + token)
 
-# Guard the final four exposition corrections.  The abstract must be readable
-# without terminology introduced later, the criterion must bind its own
-# variables, the normalization proof must state its local component rule, and
-# the size-only remark must identify the actual divergent upper bound.
+# Guard the final exposition corrections.  The abstract must meet the venue's
+# length requirement and remain readable without terminology introduced later,
+# the criterion must bind its own variables, the normalization proof must state
+# its local component rule, and the size-only remark must identify the actual
+# divergent upper bound.
 abstract_match = re.search(r"\\begin\{abstract\}(.*?)\\end\{abstract\}", TEX, re.S)
 if not abstract_match:
     die("principal abstract block missing")
 abstract_text = abstract_match.group(1)
 abstract_flat = re.sub(r"\s+", " ", abstract_text)
 submission_abstract_flat = re.sub(r"\s+", " ", submission_abstract)
+abstract_words = re.findall(
+    r"[A-Za-z0-9]+(?:[-'][A-Za-z0-9]+)*",
+    re.sub(r"\\[A-Za-z]+", " ", abstract_text),
+)
+if not 150 <= len(abstract_words) <= 250:
+    die(
+        "principal abstract is outside the 150--250 word requirement: "
+        + str(len(abstract_words))
+    )
 for stale in [r"Property $\\mathrm{P}$", "wreath top", "Using CFSG"]:
     if stale in abstract_flat or stale in submission_abstract_flat:
         die("undefined abstract terminology returned: " + stale)
 for token in [
-    "The factorization hypothesis would then impose",
-    "wreath-product quotient",
-    "classification of finite simple groups (CFSG)",
+    "If the factorization hypothesis held, their product would impose",
+    "the quotient contributes only coordinate outer automorphisms and a factor dividing",
+    "provides a reusable mechanism for eliminating direct-power socles",
 ]:
     if token not in abstract_flat or token not in submission_abstract_flat:
         die("abstract synchronization/correction missing: " + token)
@@ -376,6 +388,11 @@ for token in [
         die("correct size-bound explanation missing: " + token)
 
 # There is exactly one disclosure, and it lives only in the principal TeX file.
+statements_heading = r"\section*{Statements and Declarations}"
+if TEX.count(statements_heading) != 1:
+    die("principal TeX file must contain one Statements and Declarations section")
+if r"\address{Independent Researcher, Washington, DC, United States}" not in TEX:
+    die("principal TeX file is missing the complete unaffiliated-author address")
 heading = r"\subsection*{Declaration of generative AI use}"
 if TEX.count(heading) != 1:
     die("principal TeX file must contain exactly one generative-AI declaration")
@@ -423,8 +440,8 @@ required = [
     # Mathematical content and verification claims.
     "The quotient argument and the monolithic reduction are standard",
     "coordinate outer automorphisms and $k!$",
-    "rules out this branch for every",
-    "classification of finite simple groups (CFSG)",
+    "fixed valuation gap therefore excludes every",
+    "classification of finite simple groups",
     "Uniform parabolic, torus, and primitive-prime-divisor arguments",
     "The mathematical yield is the passage from local stable-class data",
     "exact $34$-branch arithmetic manifest",
