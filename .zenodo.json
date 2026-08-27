@@ -1,6 +1,6 @@
 {
   "upload_type": "software",
-  "publication_date": "2026-08-21",
+  "publication_date": "2026-08-27",
   "title": "Kourovka 10.34: manuscript, formal developments, certificates, and reproducibility materials",
   "creators": [
     {
@@ -24,7 +24,7 @@
     "Rocq",
     "computer-assisted proof"
   ],
-  "version": "1.1.0",
+  "version": "1.1.1",
   "language": "eng",
   "related_identifiers": [
     {

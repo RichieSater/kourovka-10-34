@@ -360,7 +360,7 @@ def main() -> int:
         case('restore reversed coordinate transporter','static',reverse_coordinate_transporter)
         def restore_stale_release_metadata(r):
             p=r/'_repo/CITATION.cff'
-            replace_first(p, r'(?m)^version: 1\.1\.0$', 'version: 1.0.8')
+            replace_first(p, r'(?m)^version: 1\.1\.1$', 'version: 1.0.8')
         case('restore stale public release version','manuscript',restore_stale_release_metadata)
         def insert_public_approval_dependency(r):
             p=r/'_repo/README.md'

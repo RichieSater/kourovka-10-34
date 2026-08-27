@@ -38,33 +38,33 @@ root_readme = ROOT_README_PATH.read_text()
 cff = CFF_PATH.read_text()
 zenodo_text = ZENODO_PATH.read_text()
 zenodo = json.loads(zenodo_text)
-if zenodo.get("version") != "1.1.0":
-    die("Zenodo metadata version is not 1.1.0")
-if zenodo.get("publication_date") != "2026-08-21":
-    die("Zenodo publication date is not 2026-08-21")
+if zenodo.get("version") != "1.1.1":
+    die("Zenodo metadata version is not 1.1.1")
+if zenodo.get("publication_date") != "2026-08-27":
+    die("Zenodo publication date is not 2026-08-27")
 for token in [
-    "version: 1.1.0",
-    "date-released: 2026-08-21",
+    "version: 1.1.1",
+    "date-released: 2026-08-27",
     "doi: 10.5281/zenodo.21709124",
 ]:
     if token not in cff:
         die("CITATION.cff release metadata missing: " + token)
 for token in [
-    "reproducibility release v1.1.0",
-    "/releases/tag/v1.1.0",
-    "--branch v1.1.0",
-    "kourovka1034:1.1.0",
+    "reproducibility release v1.1.1",
+    "/releases/tag/v1.1.1",
+    "--branch v1.1.1",
+    "kourovka1034:1.1.1",
 ]:
     if token not in root_readme:
         die("root README release metadata missing: " + token)
 support_readme = (ROOT / "README.md").read_text()
-for token in ["/releases/tag/v1.1.0", "Cite `v1.1.0`"]:
+for token in ["/releases/tag/v1.1.1", "Cite `v1.1.1`"]:
     if token not in support_readme:
         die("supporting guide release metadata missing: " + token)
 for token in [
-    "archived as release 1.1.0",
-    "version 1.1.0, Zenodo, 2026",
-    "/releases/tag/v1.1.0",
+    "archived as release 1.1.1",
+    "version 1.1.1, Zenodo, 2026",
+    "/releases/tag/v1.1.1",
 ]:
     if token not in TEX:
         die("manuscript release metadata missing: " + token)

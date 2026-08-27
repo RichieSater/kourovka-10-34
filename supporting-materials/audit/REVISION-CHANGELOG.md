@@ -6,7 +6,8 @@
 This ledger separates mathematical-claim changes from changes of exposition
 and evidence interface. Richie authorized the corrected public reproducibility
 release as `v1.1.0` on 21 August 2026; the frozen `v1.0.8` state remains the
-comparison baseline.
+comparison baseline. Release `v1.1.1`, dated 27 August 2026, supersedes the
+public archive reference without changing any mathematical claim.
 
 ## Mathematical claim comparison
 
@@ -302,3 +303,16 @@ explicitly outside closed Lean coverage.
   archives the exact GitHub tag.
 - A reciprocal 18.68 cross-reference remains appropriate maintenance in that
   separate repository, but it is not a release gate for this paper.
+
+## Public-corpus maintenance release (2026-08-27)
+
+- Removed an internal process artifact from the tracked repository tree; no
+  theorem, hypothesis, proof, formal statement, or computational certificate
+  changed.
+- Added a fail-closed public-corpus gate, a three-mutation self-test, and three
+  corresponding mutations in the main suite.
+- Designated the synchronized archive as `v1.1.1` and updated the manuscript,
+  both repository guides, citation metadata, Zenodo metadata, clone commands,
+  and container tag.
+- The rendered manuscript changes only its date and archive version/link; the
+  mathematical text and 26-page layout are preserved.

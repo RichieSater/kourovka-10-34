@@ -4,18 +4,19 @@
 **Branch:** `main`
 **Frozen baseline:** `35942dc7cf00cd145434661167de9f2224241717`
 
-This record identifies the verified revision by content hashes. Richie
-authorized the corrected mathematical and computational tree for public
-reproducibility release `v1.1.0` on 21 August 2026. The current `main` branch
-adds public-corpus safeguards without changing the rendered mathematical text.
+This record identifies the verified revision by content hashes. The corrected
+mathematical and computational tree was first archived as `v1.1.0` on
+21 August 2026. Release `v1.1.1`, dated 27 August 2026, carries the same
+mathematics with strengthened public-corpus safeguards and synchronized
+archive references.
 
 ## Canonical working artifacts
 
 | Artifact | Path | SHA-256 |
 |---|---|---|
-| Principal source | `supporting-materials/paper/kourovka1034.tex` | `0527da19e173f85656574ec4ca97f36b3e7eb768f2b237493eaa41f2d1668fd4` |
-| Compiled manuscript | `kourovka1034.pdf` | `e5420e31753fd545d605ad7c8fa74bed79366d701c370ac62ffed3b1a0100e6c` |
-| Rebuilt nested copy | `supporting-materials/paper/kourovka1034.pdf` | `e5420e31753fd545d605ad7c8fa74bed79366d701c370ac62ffed3b1a0100e6c` |
+| Principal source | `supporting-materials/paper/kourovka1034.tex` | `34db127e953211e3f65b82e1d1179a343822371a3a4cff6750d53148b4c4386a` |
+| Compiled manuscript | `kourovka1034.pdf` | `e625fb0a00394ea30970c37b5eef3daabd44c9912e849484296b990bc597a419` |
+| Rebuilt nested copy | `supporting-materials/paper/kourovka1034.pdf` | `e625fb0a00394ea30970c37b5eef3daabd44c9912e849484296b990bc597a419` |
 
 The PDF has 26 US-letter pages. The ignored nested build copy is byte-identical
 to the canonical top-level PDF and is not designated as a second manuscript.
@@ -28,7 +29,7 @@ to the canonical top-level PDF and is not designated as a second manuscript.
 | Visual PDF inspection | PASS; all 26 rendered pages inspected in contact sheets, with corrected pages 4 and 7 and the graph-summary and trust tables additionally inspected at full rendered size |
 | PDF text sentinel scan | PASS; no unresolved-reference, placeholder, tool-token, or failure marker found |
 | Manuscript/manifest architecture and style checker | PASS; 21 families, 94 required tokens, 125 source rows, 20 exceptions, and repository-wide subgroup-index gate |
-| Public release metadata gate | PASS; manuscript, both guides, CFF, Zenodo metadata, clone commands, and container tag consistently designate `v1.1.0`; CFF 1.2 validation passed |
+| Public release metadata gate | PASS; manuscript, both guides, CFF, Zenodo metadata, clone commands, and container tag consistently designate `v1.1.1`; CFF 1.2 validation passed |
 | Proof-artifact manuscript-label gate | PASS; 130 stable-label references checked against the labels declared by the principal TeX; obsolete printed manuscript numbering rejected; explicitly marked frozen-baseline comparison records excluded |
 | Ordinary/Lean normalization bridge | PASS; the TeX transporter $g_j^{-1}gg_i$, component $a_j^{-1}\circ c\circ a_i$, and conjugate $\delta^{-1}G\delta$ agree in orientation with the Lean term $\delta^{-1}\rho(g)\delta$ and its target-inverse/source transporter |
 | Subsequent-work attribution audit | PASS; Li--Yang `arXiv:2608.19478v1` metadata, public chronology, theorem overlap, and distinct method are recorded without unsupported independence, correctness-certification, or official-closure language |
@@ -56,7 +57,7 @@ those package-manager layers. The unmodified documented command
 
 The corrected mathematical and computational tree passes its technical
 preflight gates and is designated for public reproducibility release
-`v1.1.0`. The release procedure is complete only when the ten architecture and
+`v1.1.1`. The release procedure is complete only when the ten architecture and
 Comparator files are tracked in the exact tagged commit, GitHub publishes that
 tag and the rebuilt PDF, Zenodo archives the same tag under concept DOI
 `10.5281/zenodo.21709124`, and the public metadata agrees with the tag.
