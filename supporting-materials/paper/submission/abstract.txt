@@ -11,7 +11,7 @@ coordinate outer automorphisms and a factor dividing k!. A fixed valuation gap
 therefore excludes every k >= 2 at once. Suitable subgroup classes are
 constructed uniformly across the infinite families of finite simple groups
 using parabolic, torus, and primitive-prime-divisor arguments; stable flag
-parabolics handle graph fusion, while GAP certificates cover designated finite
-and sporadic cases. The resulting all-k obstruction provides a reusable
+parabolics handle graph fusion, while GAP computations verify the remaining
+finite and sporadic cases. The resulting all-k obstruction provides a reusable
 mechanism for eliminating direct-power socles in finite-group factorization
 problems.

@@ -37,10 +37,10 @@ computational boundary statement.
 | Baseline location | Preserved content | Revised location | Preservation status |
 |---|---|---|---|
 | Abstract and Introduction | Problem, answer, theorem, history, priority boundary, relation to maximal factorizations | Abstract and Section 1 | Retained and compressed around the principal mechanism |
-| Introduction, “Strategy” | Minimal counterexample, stable product normalizers, all-multiplicity valuation contradiction | Section 1, “Proof mechanism”; Sections 2--4 | Retained; the three-paragraph mechanism now precedes verification detail |
+| Introduction, “Strategy” | Minimal counterexample, stable product normalizers, all-multiplicity valuation contradiction | Section 1, “Outline of the proof”; Sections 2--4 | Retained in conventional introductory prose |
 | Introduction, classification inventory | CFSG routes, finite ranges, family exceptions, ordinary versus graph-fusion cases | Section 6; Appendices A and B | Retained and made claim-centered |
-| Introduction, computer verification | Exact Lean/Rocq/GAP/Python allocation and trust boundary | Appendix C | Restored at claim level; operational reproduction detail is in the supplement |
-| Introduction, proof/verification roadmap | Five logical layers and their evidence | Section 6 coverage table; Appendix C trust tables and exact-interface paragraphs | Retained in three reader-facing tables with the conceptual and computational trust layers separated |
+| Introduction, computer verification | Mathematical claims established by GAP, Lean, and Rocq | Appendices B and C | Retained at claim level; operational reproduction detail is in the supplement |
+| Introduction, proof/verification roadmap | Family coverage and the boundary of the supplementary formalization | Section 6 coverage table; Appendices B and C | Retained in conventional mathematical prose; operational tables remain outside the article |
 | Section 2, Reduction to socle analysis | `lem:conj`, `lem:quot`, `prop:min`, coordinate normalization and wreath bound | Section 2 | Retained; normalization and the quotient divisor are now named lemmas with ordinary proofs |
 | Section 3, Product supplements | `def:poset`, `rem:maxauto`, `lem:A`, `lem:B`, `lem:C`, `lem:P` | Section 3 | Statements and proofs retained; `cor:supplement-engine` packages their outputs |
 | Section 4, Divisibility criterion | `thm:D`, `rem:crit`, `thm:Dprime` and proofs | Section 4 and Appendix A | Retained; the unused detailed $k=1$ proof moved to Appendix A, while its theorem statement remains in Section 4 |
@@ -83,10 +83,9 @@ states all of the following:
    field size 3,000, explicitly labeled as regression checks rather than
    universal proofs.
 
-## Formal and computational details explicitly restored in Appendix C
+## Formal details summarized in Appendix C
 
-Appendix C now names, rather than merely summarizes, the baseline formal
-surface:
+Appendix C gives a compact account of the formal results:
 
 - the exact minimal-counterexample facts checked in Lean;
 - the supplement intersection, order, maximality, nonconjugacy,
@@ -96,13 +95,11 @@ surface:
   exact order;
 - Lean reindexing, coordinate permutation, faithful wreath map, transitivity,
   inner-base preimage, coordinate normalization, and quotient divisor;
-- the producer/reindexer/consumer interface, the enumerated source/signature
-  drift checks, and the remaining trusted cross-library semantic boundary; and
-- deterministic fail-closed finite verification, identity fingerprints, and
-  exclusion of exploratory scripts from proof evidence.
+- the remaining cross-library correspondence between the Rocq and Lean
+  formulations.
 
 The detailed package-installation and command interface remains in the
-repository guide so that Appendix C stays a verification architecture rather
+repository guide so that Appendix C remains a mathematical account rather
 than an execution transcript.
 
 ## Preservation after the independent accuracy audit
@@ -160,6 +157,6 @@ previously mapped appendix destination. No baseline material was discarded.
 Release finalization as `v1.1.0` changes only archive, citation, reproduction,
 and Data Availability metadata. The body/appendix allocation is unchanged:
 the supplementary family proofs remain in Appendix A, finite and sporadic
-certificate claims in Appendix B, and the formal/computational trust boundary
-in Appendix C. Operational replay detail remains in the repository guide. No
+computations in Appendix B, and supplementary formal verification in
+Appendix C. Operational replay detail remains in the repository guide. No
 mathematical item was removed for the public archive.

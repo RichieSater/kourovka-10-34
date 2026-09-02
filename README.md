@@ -28,7 +28,7 @@ The almost-simple case was proved by Tikhonenko and Tyutyanov in 2010. The
 new part treats the remaining minimal-counterexample case with socle
 \(S^k\), \(k\ge 2\), using an all-\(k\) divisibility obstruction. Uniform
 arguments cover the infinite families of finite simple groups; GAP
-certificates cover the designated finite cases and exceptions.
+computations verify the designated finite cases and exceptions.
 
 A 1997 conference abstract announced a negative answer. This paper does not
 claim priority for the conclusion; the search record is in
@@ -36,8 +36,9 @@ claim priority for the conclusion; the search record is in
 this paper's arXiv v1 and v2, dated 4 and 6 August 2026, respectively, Jinbao
 Li and Yong Yang submitted
 [arXiv:2608.19478v1](https://arxiv.org/abs/2608.19478), dated 19 August
-2026, which states the same theorem and develops a different product--socle
-lifting approach. These are distinct proof architectures.
+2026, which states the same theorem. Their argument differs from this paper's
+in using product--socle lifting rather than the stable-class valuation
+obstruction.
 
 ## Verification scope
 
@@ -148,9 +149,9 @@ automorphism classifications, group and Levi order formulas, parabolic theory,
 and Zsigmondy's theorem. The finite certificates additionally assume the
 completeness and correctness of the pinned GAP and character-table data. Lean
 does not close the graph-fusion flag-parabolic claim `PAR-NOVELTY`, and neither
-Lean nor Rocq proves the main theorem end to end. The exact allocation of
-claims among prose, kernels, computation, and external sources appears in
-Appendix C of the paper and in
+Lean nor Rocq proves the main theorem end to end. Appendix B of the paper
+states the finite GAP computations, Appendix C summarizes the supplementary
+formal results, and the full operational boundary appears in
 [`ASSUMPTIONS.md`](supporting-materials/audit/ASSUMPTIONS.md).
 
 ## Citation and license

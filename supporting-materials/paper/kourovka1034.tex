@@ -76,19 +76,15 @@ contributes only coordinate outer automorphisms and a factor dividing $k!$. A
 fixed valuation gap therefore excludes every $k\geq2$ at once. Suitable
 subgroup classes are constructed uniformly across the infinite families of
 finite simple groups using parabolic, torus, and primitive-prime-divisor
-arguments; stable flag parabolics handle graph fusion, while GAP certificates
-cover designated finite and sporadic cases. The resulting all-$k$ obstruction
-provides a reusable mechanism for eliminating direct-power socles in
-finite-group factorization problems.
+arguments; stable flag parabolics handle graph fusion, while GAP computations
+verify the remaining finite and sporadic cases. The resulting all-$k$
+obstruction provides a reusable mechanism for eliminating direct-power socles
+in finite-group factorization problems.
 \end{abstract}
 
 \maketitle
 
 \section{Introduction}\label{sec:intro}
-
-This section states the problem and answer, identifies the new mechanism and
-its inherited inputs, and gives a concise roadmap of the proof and its
-verification boundary.
 
 Problem 10.34 of the Kourovka Notebook, posed by V.~S.~Monakhov in 1986
 \cite{Kourovka}, asks:
@@ -118,9 +114,9 @@ the problem as unsolved \cite{Kourovka}. Accordingly, this paper proves the
 theorem but does not claim priority for the conclusion. After this paper's
 arXiv v1 and v2, dated 4 August 2026 and 6 August 2026, respectively, Li and
 Yang submitted a separately authored preprint dated 19 August 2026 that states
-the same theorem \cite{LiYang2026}. Their proof uses product--socle lifting
-from nonfactorizing almost-simple coordinate subgroups rather than the
-stable-class valuation obstruction. These are distinct proof architectures.
+the same theorem \cite{LiYang2026}. Their argument differs from ours in that it
+uses product--socle lifting from nonfactorizing almost-simple coordinate
+subgroups rather than the stable-class valuation obstruction.
 
 For comparison, Theorem~\ref{thm:Dprime}
 also recovers the almost-simple conclusion; it is not used in the proof of
@@ -135,7 +131,7 @@ transitive direct-power extension. The classification of finite simple groups,
 maximality and order data, automorphism descriptions, parabolic theory, and
 Zsigmondy's theorem remain external inputs to the family coverage.
 
-\subsection*{Proof mechanism}
+\subsection*{Outline of the proof}
 Suppose that a minimal counterexample $G$ exists. Its unique minimal normal
 subgroup has the form $N=S^k$, where $S$ is non-abelian simple, and $G$ has a
 transitive coordinate realization inside an automorphism wreath product. If
@@ -152,34 +148,13 @@ A fixed valuation gap therefore gives a contradiction for every $k\geq2$.
 It remains to construct one such pair for each non-abelian finite simple group.
 Uniform parabolic, torus, and primitive-prime-divisor arguments handle the
 infinite families. Graph automorphisms require stable flag-parabolic classes
-in several families. GAP certificates handle the designated finite base,
+in several families. GAP computations verify the designated finite base,
 sporadic groups, and exceptional parameters.
 
-\subsection*{Contribution and dependence}
-The conceptual hierarchy of the proof is summarized below. Imported
-classification and primitive-prime-divisor results are inputs, not claims of
-novelty.
-
-\begin{table}[htbp]
-\small
-\begin{tabular}{@{}p{0.42\textwidth}p{0.50\textwidth}@{}}
-\toprule
-Component & Status \\
-\midrule
-Almost-simple $k=1$ result & Prior theorem of Tikhonenko--Tyutyanov \\
-CFSG and maximal-subgroup/order data & Cited external inputs \\
-Reduction to a unique socle $S^k$ & Standard ingredients assembled for property $\mathrm{P}$ \\
-Suitable stable, self-normalizing classes satisfying poset maximality and normal saturation & Central maximal-supplement machinery with exact order \\
-Uniform-in-$k$ product-supplement valuation obstruction & Principal conceptual result \\
-Stable flag parabolics under graph fusion & Distinctive structural mechanism \\
-Infinite-family coverage & Application of the criterion using cited classification and arithmetic inputs \\
-Finite and sporadic coverage & GAP-certified component \\
-Lean and Rocq developments & Partial, conditional formal verification; not an end-to-end proof \\
-\bottomrule
-\end{tabular}
-\caption{New, inherited, and externally supplied components.}
-\label{tab:contributions}
-\end{table}
+The almost-simple case $k=1$ is due to Tikhonenko and Tyutyanov. The new part
+of the present proof treats socles $S^k$ for every $k\geq2$ by means of the
+valuation obstruction above. The classification of finite simple groups and
+the cited maximal-subgroup results are external inputs.
 
 The mathematical yield is the passage from local stable-class data in $S$ to
 an obstruction valid for every multiplicity $k$. Poset maximality and normal
@@ -188,21 +163,14 @@ maximal supplements; the valuation gap is the transferable numerical input.
 The graph-fusion cases show that ordinary maximal subgroups are not essential:
 stable flag parabolics can replace fused maximal classes.
 
-The manuscript proves the theorem by ordinary mathematical argument. Lean
-checks named structural and arithmetic statements under explicit hypotheses;
-Rocq/MathComp supplies a direct-power component through an audited interface;
-GAP certifies designated finite cases; and Python checks manifests,
-certificates, source maps, and independent arithmetic. Appendix~\ref{app:trust}
-states exactly how these components compose and which claims remain external.
-
 \section{Reduction to the monolithic coordinate case}\label{sec:reduction}
 
 By the end of this section, every counterexample has been converted into a
 transitive $S^k$-coordinate problem. The remaining task will be to construct
 two incompatible maximal supplements from local subgroup classes of $S$.
 The quotient argument and the monolithic reduction are standard; the explicit
-coordinate closure records exactly the arithmetic contribution available
-above the socle.
+coordinate closure determines the arithmetic contribution available above the
+socle.
 
 \begin{lemma}[Factorizations and conjugate representatives]\label{lem:conj}
 If $G=AB$ for subgroups $A,B$, then $G=A^xB^y$ for all $x,y\in G$.
@@ -386,7 +354,7 @@ This section identifies the precise hypotheses under which a local class in
 $S$ yields a maximal subgroup of every admissible $S^k$-extension. Stability
 and self-normalization give the supplement, intersection, and exact order;
 poset maximality and normal saturation give maximality. The nonconjugacy
-statement and graph-fusion substitute complete the engine recorded in
+statement and graph-fusion substitute complete the construction stated in
 Corollary~\ref{cor:supplement-engine}.
 
 Fix $G$ as in Conventions~\ref{conv:X} and~\ref{conv:coord}:
@@ -555,7 +523,7 @@ decomposition \cite[\S8.5, pp.~118--120]{Carter}. So
 $\langle B^W\rangle\supseteq U_K\cdot L_K=W$.
 \end{proof}
 
-\begin{corollary}[Stable product-supplement engine]
+\begin{corollary}[Stable product-supplement criterion]
 \label{cor:supplement-engine}
 Let $[V]\neq[W]$ be maximal elements of $\Pos_X(S)$ and suppose that both
 $V$ and $W$ are normally saturating. Then
@@ -579,11 +547,11 @@ stable-poset maximality and normal-saturation hypotheses in the flag case.
 
 The corollary isolates the exact output needed below: two non-conjugate
 maximal supplements and their orders. No family-specific classification data
-enters this engine.
+enters this construction.
 
 \section{The stable-class divisibility criterion}\label{sec:criterion}
 
-The purpose of this section is to convert the supplement engine into the
+The purpose of this section is to convert the supplement construction into the
 uniform obstruction that drives the paper. The key comparison is between a
 missing $p$-part repeated in every socle coordinate and the smaller $p$-budget
 available in the wreath top.
@@ -636,7 +604,7 @@ structural hypotheses of Theorem~\ref{thm:D}. With $p=5$,
 Since $|X/\Inn(S)|$ divides $|\Out(A_5)|=2$, its $5$-valuation is zero.
 Theorem~\ref{thm:D} therefore excludes every admissible group with socle
 $A_5^k$ at once, for all $k\geq2$. This small example displays the complete
-workflow: stable maximal classes, one obstruction prime, one strict gap, and
+pattern: stable maximal classes, one obstruction prime, one strict gap, and
 no enumeration over $k$.
 \end{example}
 
@@ -655,10 +623,8 @@ $B_V,B_W$ is used; no classification of the maximal subgroups of $G$
 (or even of $S$) is needed. In particular the criterion is insensitive
 to completeness of tabulated maximal-subgroup data: it needs only that
 the two exhibited subgroups are maximal, or are flag-parabolic substitutes covered by
-Lemma~\ref{lem:P}, and that their classes are stable. (Machine
-\emph{verification} of stability for
-the finite base does use enumerated subgroup data; see the trust
-boundary in Appendix~\ref{app:trust}.)
+Lemma~\ref{lem:P}, and that their classes are stable. For the finite cases,
+stability is checked from the subgroup data used in Appendix~\ref{app:finite}.
 \end{remark}
 
 A related monolithic-coordinate construction appears in the study of finite
@@ -704,7 +670,7 @@ by Tikhonenko--Tyutyanov \cite{TT2010}.
 The criterion is most useful when the family work is reduced to a repeatable
 sequence: select stable classes, prove maximality, choose an obstruction prime,
 check the group and subgroup valuations, bound the outer contribution, and
-route the exceptions. We retain one ordinary application and one graph-fusion
+handle the exceptions. We retain one ordinary application and one graph-fusion
 application here. Appendix~\ref{app:families} gives the remaining family
 proofs in the same format.
 
@@ -715,10 +681,11 @@ $S=A_n$, $n\geq5$, is excluded.
 \end{theorem}
 
 \begin{proof}
-\emph{Finite exceptions.} For $n\leq14$ this is covered by finite GAP certificates: the cases $n\leq10$ fall under
+\emph{Finite exceptions.} The cases $n\leq14$ were checked in GAP: those with
+$n\leq10$ fall under
 Proposition~\ref{prop:base} (including $n=6$, whose exceptional outer
 automorphisms fuse classes; all five $X$ are handled there), and
-the cases $11\leq n\leq14$ are covered by the finite certificates of
+the cases $11\leq n\leq14$ are covered by the computations in
 Appendix~\ref{app:finite}.
 Assume $n\geq15$, so $\Aut(A_n)=S_n$ and $x\mid2$.
 
@@ -753,7 +720,7 @@ $p-\lfloor n/2\rfloor-1$, plus one for $I$ when $n$ is even; two classes
 exist because $p\geq n/2+3$.
 
 \emph{Conclusion.} Theorem~\ref{thm:D} excludes $A_n$ for every
-$n\geq15$, while the exact finite certificates cover the preceding degrees.
+$n\geq15$, while the GAP computations cover the preceding degrees.
 \end{proof}
 
 The alternating family illustrates the ordinary mechanism: maximality and
@@ -841,10 +808,10 @@ multiplicity.
 \section{Classification coverage and proof of the main theorem}\label{sec:coverage}
 
 The preceding sections contain the reduction, the reusable criterion, and two
-representative applications. Table~\ref{tab:coverage} routes every remaining
-simple family to a detailed appendix proof or a finite certificate claim; it
-also identifies the common source of the obstruction prime and the exceptional
-route. Thus the logical path to Theorem~\ref{thm:main} is visible without
+representative applications. Table~\ref{tab:coverage} lists the proof for every
+remaining simple family, together with the source of the obstruction prime and
+the treatment of exceptional parameters. Thus the logical path to
+Theorem~\ref{thm:main} is visible without
 reading the repetitive calculations first.
 
 \begin{table}[htbp]
@@ -853,13 +820,13 @@ reading the repetitive calculations first.
 \toprule
 Family & Stable classes & Prime source & Exceptional handling & Detailed proof \\
 \midrule
-Alternating & Intransitive and imprimitive maximals & Prime near $n$ & Small degrees certified & \S\ref{sec:applications} \\
-$\PSL(2,q)$ & Borel or torus normalizers & Defining or primitive prime & Small fields certified & App.~\ref{app:psl2} \\
+Alternating & Intransitive and imprimitive maximals & Prime near $n$ & Small degrees checked in GAP & \S\ref{sec:applications} \\
+$\PSL(2,q)$ & Borel or torus normalizers & Defining or primitive prime & Small fields checked in GAP & App.~\ref{app:psl2} \\
 Lie type, no graph fusion & Two maximal parabolics & Zsigmondy & Finite base or substitute prime & App.~\ref{app:nograph} \\
 Twisted rank at least two & Relative maximal parabolics & Zsigmondy & Listed small parameters & App.~\ref{app:twisted2} \\
-Twisted rank one & Borel and geometric maximal & Zsigmondy & Small fields certified & App.~\ref{app:twisted1} \\
-Graph-automorphism families & Fixed parabolics, stable flags, split-torus normalizers, or stable fixed-point/subfield classes & Family-specific primitive prime & Finite certificates or substitutes & \S\ref{sec:applications}, App.~\ref{app:graph} \\
-Sporadic and Tits & Certified stable maximal classes & Certificate prime & Exact finite records & App.~\ref{app:finite} \\
+Twisted rank one & Borel and geometric maximal & Zsigmondy & Small fields checked in GAP & App.~\ref{app:twisted1} \\
+Graph-automorphism families & Fixed parabolics, stable flags, split-torus normalizers, or stable fixed-point/subfield classes & Family-specific primitive prime & Finite GAP checks or substitutes & \S\ref{sec:applications}, App.~\ref{app:graph} \\
+Sporadic and Tits & Stable maximal classes checked in GAP & Obstruction prime & Finite GAP computations & App.~\ref{app:finite} \\
 \bottomrule
 \end{tabular}
 \caption{Coverage of the finite simple groups by the stable-class criterion.}
@@ -879,9 +846,7 @@ of Lie type, or one of the $26$ sporadic groups. The cases are as follows.
 The simplicity exceptions are
 those in \cite[Thm.~2.2.7(a)]{GLS3}; the low-rank classical
 identifications and the exceptional derived-group identifications are
-recorded in \cite[\S2.4, pp.~xi--xii, and \S3.5, p.~xv]{ATLAS}
-(with the individual \textsc{Atlas} entries pinpointed in the source map in
-\cite{Repo}).
+recorded in \cite[\S2.4, pp.~xi--xii, and \S3.5, p.~xv]{ATLAS}.
 \begin{itemize}
 \item $A_n$ ($n\geq5$): Theorem~\ref{thm:an}.
 \item $\PSL(2,q)$ ($q\geq4$): Theorem~\ref{thm:psl2}.
@@ -948,7 +913,7 @@ parabolic class is stable.
 
 The global coverage still depends on CFSG and on published maximal-subgroup,
 order, automorphism, parabolic, and primitive-prime-divisor results. The finite
-and sporadic residue is computationally certified, and the formal developments
+and sporadic cases are verified by GAP computations, and the formal developments
 verify only the conditional components stated in Appendix~\ref{app:trust};
 they do not replace those external inputs or give an end-to-end formal proof.
 
@@ -959,8 +924,8 @@ wreath-top budget also appears in the exact-complement problem
 questions are whether the supplement criterion applies to other prescribed
 products of maximal subgroups, whether its stable-poset hypotheses admit a
 classification-free source in broader families, and whether the remaining
-parabolic and finite-coverage interfaces can be formalized without importing
-the full classification ledger into a proof assistant.
+parabolic and finite casework can be formalized without formalizing the full
+classification of finite simple groups.
 
 
 \appendix
@@ -969,7 +934,7 @@ the full classification ledger into a proof assistant.
 
 This appendix first records the unused $k=1$ comparison and then discharges the
 repetitive infinite-family obligations while the main body retains the two
-mechanisms that teach the method. Every family case follows the same audit
+mechanisms that teach the method. Every family case follows the same
 order: \emph{selected classes}; \emph{maximality and
 stability}; \emph{obstruction prime}; \emph{occurrence in $|S|$};
 \emph{avoidance of the selected subgroup orders}; \emph{outer contribution};
@@ -1014,7 +979,7 @@ Tikhonenko--Tyutyanov \cite{TT2010}.
 
 \subsection*{Common inputs for the family analysis}\label{app:common-inputs}
 
-Three simplifications organize the ledger. First, when both selected classes
+Three simplifications organize the discussion. First, when both selected classes
 consist of maximal subgroups of $S$, the stable-poset and normal-saturation
 hypotheses are automatic, so only stability and the valuation inequality need
 checking. Second, in the twisted families the automorphism structure induces
@@ -1038,9 +1003,9 @@ $\Phi_e=\Phi_e(q)$ for cyclotomic values and always apply Zsigmondy to
 the prime $p$ with exponent $ef$, so $\ord_r(p)=ef$ and
 $r\equiv1\pmod{ef}$. The source's additional positive-base exception has
 exponent $2$, which lies outside every invocation here and therefore does not
-apply. An invocation-by-invocation audit of the hypotheses and exceptions
-is part of \cite{Repo}. The $b=1$ specialization and both exceptions are
-independently restated in \cite[Thm.~2.2, p.~2]{Jones2007}.
+apply. The hypotheses and exceptional cases are checked at each invocation.
+The $b=1$ specialization and both exceptions are independently restated in
+\cite[Thm.~2.2, p.~2]{Jones2007}.
 
 The simple-group and outer-automorphism order formulas used below are
 those of \cite[Tables~5--6, p.~xvi]{ATLAS}; for the classical families,
@@ -1052,11 +1017,9 @@ For parabolics, the statement that the unipotent radical is extended by
 the group obtained from the complementary subdiagram (with node-orbits in
 the twisted case) is \cite[\S3.6, p.~xv]{ATLAS}; the Levi decomposition
 and its root-subgroup description are
-\cite[\S8.5, pp.~118--120]{Carter}. Thus the cyclotomic bounds below are
-not inferred from numeric tests: they come from the displayed group-order
-formulas applied to the named Levi types. The formula-to-source and
-parameter audit, including each exceptional substitute, is archived in
-\cite{Repo}. In the exceptional case over $\F_2$ below,
+\cite[\S8.5, pp.~118--120]{Carter}. The cyclotomic bounds below follow from
+these group-order formulas applied to the named Levi types.
+In the exceptional case over $\F_2$ below,
 $\Omega^+(8,2)$ and $P\Omega^+(8,2)$ denote the same simple group; we use
 the shorter former notation when naming that finite group. For classical
 groups, argument notation such as $\Sp(4,2^f)$ denotes a named simple group,
@@ -1072,7 +1035,7 @@ $S=\PSL(2,q)$, $q=p^f\geq4$, is excluded.
 \begin{proof}
 \emph{Finite exceptions and order data.}
 For $q\in\{4,5,7,8,9,11\}$ this is covered by
-the finite GAP certificates of Appendix~\ref{app:finite}. All other simple parameters are covered
+the GAP computations of Appendix~\ref{app:finite}. All other simple parameters are covered
 uniformly below: odd $q\geq13$ by Case~A and even $q=2^f$, $f\geq3$, by
 Case~B. Recall
 $|S|=q(q^2-1)/d$ with $d=\gcd(2,q-1)$, and
@@ -1115,7 +1078,7 @@ $\vp{r}(x)=0<\vp{r}(q+1)=\eta$. If $f=3$, then $q=8$ and
 $q+1=9$; taking $r=3$ gives $\eta=2>1\geq\vp{3}(x)$.
 
 \emph{Conclusion.} Theorem~\ref{thm:D} applies in both parity branches,
-and the finite certificates route the remaining simple parameters.
+and the finite computations handle the remaining simple parameters.
 \end{proof}
 
 \subsection{Lie type without graph symmetry}\label{app:nograph}
@@ -1187,7 +1150,7 @@ base) or $\Sp(6,2)$ (finite base). For $h\in\{12,18,30\}$, $hf=6$ is
 impossible; $B_n$ has $q$ odd.
 
 \emph{Conclusion.} Theorem~\ref{thm:D} applies to every nonexceptional
-parameter, and Appendix~\ref{app:finite} supplies the two routed cases.
+parameter, and Appendix~\ref{app:finite} supplies the two remaining cases.
 \end{proof}
 
 \subsection{Twisted groups of twisted rank at least two}\label{app:twisted2}
@@ -1313,11 +1276,11 @@ $\eta=\vp{r}(|S|)\geq1>0=\vp{r}(x)$ whenever the primitive prime exists.
 $e\geq6$ always, and $e=6$ occurs only for $\PSU(4,q)$ with $f=1$; then
 $p^6=2^6$ forces $S=\PSU(4,2)\cong\PSp(4,3)$
 \cite[Thm.~5.3, p.~61]{CameronNotes}; this group, of order $25920$, is
-settled by the finite certificate of Appendix~\ref{app:finite}. No other case
+covered by the finite computation of Appendix~\ref{app:finite}. No other case
 reaches $p^e=2^6$.
 
 \emph{Conclusion.} Theorem~\ref{thm:D} applies to every uniform branch,
-and the sole exceptional simple group is routed to the exact finite record.
+and the sole exceptional simple group is covered by that finite computation.
 \end{proof}
 
 \subsection{Twisted groups of twisted rank one}\label{app:twisted1}
@@ -1501,7 +1464,7 @@ exceptional graph--field fixed-point constructions.
 \setlength{\tabcolsep}{3pt}
 \renewcommand{\arraystretch}{1.13}
 \begin{longtable}{@{}L{0.105\textwidth}L{0.295\textwidth}L{0.265\textwidth}L{0.255\textwidth}@{}}
-\caption{Nontrivial-graph branches: selected classes, arithmetic, and exception routing.}
+\caption{Nontrivial-graph branches: selected classes, arithmetic, and exceptional cases.}
 \label{tab:graph-summary}\\
 \toprule
 Branch & Stable classes and maximality mechanism & Obstruction prime and Levi avoidance & Outer contribution and exceptions \\
@@ -1545,7 +1508,7 @@ B4: $E_6(q)$
 B5: $\Sp(4,2^f)$
 & Use the Borel flag-parabolic substitute and $V=\Fix(\widetilde\rho^{\,f})\cap S$: $V=\Sz(q)$ for odd $f$, and $V=\Sp(4,2^{f/2})$ for even $f$. Maximality and stability are proved below.
 & For odd $f$, use a primitive divisor of $2^{2f}-1$; for even $f$, one of $2^{4f}-1$. The fixed-point subgroup and Borel avoid it.
-& $x\mid2f$. The nonsimple $f=1$ case routes to $A_6$; $q=8$ uses the substitute prime $3$. The finite $q=4$ record checks the same construction.
+& $x\mid2f$. The nonsimple $f=1$ case reduces to $A_6$; $q=8$ uses the substitute prime $3$. For $q=4$, the same construction is checked directly in GAP.
 \\[2pt]
 B6: $F_4(2^f)$
 & Use the invariant flag parabolics $Q_{\{2,3\}}$ and $Q_{\{1,4\}}$; each pair of proper parabolic overgroups is interchanged by $\rho$. Details appear below.
@@ -1555,7 +1518,7 @@ B6: $F_4(2^f)$
 B7: $G_2(3^f)$
 & Use the Borel flag-parabolic substitute and $V=\Fix(\widetilde\rho^{\,f})\cap S$: $V={}^2G_2(q)$ for odd $f$, and $V=G_2(3^{f/2})$ for even $f$. Maximality and stability are proved below.
 & For odd $f$, use a primitive divisor of $3^{3f}-1$; for even $f$, one of $3^{6f}-1$. The factors $q^6-1$ and $q^2-1$ in the group order supply the required primes.
-& $x\mid2f$. There is no Zsigmondy exception; $G_2(3)$ also has a finite certificate for both coordinate closures.
+& $x\mid2f$. There is no Zsigmondy exception; both coordinate closures for $G_2(3)$ are checked directly in GAP.
 \\
 \end{longtable}
 \endgroup
@@ -1612,7 +1575,7 @@ while both selected subgroups have zero $3$-valuation.
 Writing $q_0^2=q$, one has
 $|\Sp(4,q_0)|=q_0^4(q_0^2-1)(q_0^4-1)$, whose cyclotomic exponents are at
 most $2f<4f$. Hence $r$ avoids both $V$ and $B$, while it divides $|S|$
-and $x\mid2f<r$. The finite $\Sp(4,4)$ certificate records this same
+and $x\mid2f<r$. The GAP computation for $\Sp(4,4)$ checks this same
 construction with the primes $5$ and $17$.
 
 \emph{Invariant flag parabolics (B6).}
@@ -1648,19 +1611,21 @@ because the base is $3$.
 Then $r\mid\Phi_6(q)=q^2-q+1$, while
 $r\nmid|B|$ and
 $r\nmid|G_2(3^{f/2})|=q^3(q^3-1)(q-1)$; also $x\mid2f<6f<r$.
-The group $G_2(3)$ additionally carries a finite certificate for both $X$.
+Both coordinate closures for $G_2(3)$ are additionally checked in GAP.
 
 \emph{Conclusion.} In every case the selected classes and prime satisfy
 Theorem~\ref{thm:D}, which excludes $S^k$ for every $k\geq2$.
 \end{proof}
 
 
-\section{Finite and sporadic certificate claims}\label{app:finite}
+\section{Finite and sporadic computations}\label{app:finite}
 
-This appendix states exactly what the finite computations contribute. Command
-lines, package installation, certificate filenames, hashes, and mutation-test
-mechanics are kept in the repository supplement \cite{Repo}; none of those
-operational details substitutes for the mathematical claims below.
+The following finite cases were checked in GAP \cite{GAP}. For each simple
+group $S$ and each coordinate closure $\Inn(S)\leq X\leq\Aut(S)$, the
+calculation finds two distinct $X$-stable subgroup classes, verifies the
+required maximality or normal-saturation condition, and exhibits an
+obstruction prime satisfying the strict valuation gap in
+Theorem~\ref{thm:D}.
 
 \subsection{Finite-range coverage}
 
@@ -1670,89 +1635,69 @@ in the sense of Convention~\ref{conv:excluded}.
 \end{proposition}
 
 \begin{proof}
-\emph{Inventory and routing.}
-The certified inventory is the disjoint union of the $47$ non-abelian simple
-groups with $|S|<5\times10^5$ and the $51$ groups with
-$5\times10^5\leq|S|\leq1.05\times10^7$. The committed replay regenerates the
-upper range with GAP's simple-group iterator. The lower range is read from its
-frozen canonical inventory and checked for certificate coverage and routing;
-the committed replay does not independently regenerate that lower range. In
-the upper inventory,
-the $38$ groups $\PSL(2,q)$ are routed to the uniform proof in
-Appendix~\ref{app:psl2}; the remaining $13$ receive finite certificates.
+The computation covers the $47$ non-abelian simple groups with
+$|S|<5\times10^5$ and the $51$ groups with
+$5\times10^5\leq|S|\leq1.05\times10^7$. The $51$ groups in the upper range
+are generated with GAP's simple-group iterator. For the lower range, the
+calculation uses the stated list of $47$ groups. Of the groups in the upper
+range, the $38$ groups $\PSL(2,q)$ are covered by the uniform proof in
+Appendix~\ref{app:psl2}, and the remaining $13$ are checked in GAP.
 Exactly two of those $13$ are not excluded by ordinary maximal-class pairs:
-$\Sp(4,4)$ for $x=4$ and $\PSL(5,2)$ for $x=2$. Both are routed to the
-stable-poset substitute certificates described below.
+$\Sp(4,4)$ for $x=4$ and $\PSL(5,2)$ for $x=2$. Both require the
+stable-poset substitutes described below.
 
-The exception manifest has precisely seven simple groups above the displayed
-order bound: $A_{11},A_{12},A_{13},A_{14}$ receive finite certificates used
-in Theorem~\ref{thm:an}, while $\PSL(6,2)$, $\Omega^+(8,2)$, and
-$\Sp(4,8)$ are treated in Appendix~\ref{app:graph} by the stated substitute
-primes. Thus every finite or exceptional route that appeared in the original
-body-level inventory remains explicit in an appendix.
+Four additional alternating groups above the displayed order bound,
+$A_{11},A_{12},A_{13},A_{14}$, are checked in GAP for use in
+Theorem~\ref{thm:an}. The three remaining exceptional parameters
+$\PSL(6,2)$, $\Omega^+(8,2)$, and $\Sp(4,8)$ are treated in
+Appendix~\ref{app:graph} using the stated substitute primes.
 
-\emph{Ordinary and stable-poset substitute records.}
-The repository retains the historical machine field
-\texttt{kind=novelty}; in the manuscript a \emph{stable-poset substitute}
-means a selected class that need not be maximal in $S$ but whose product
-normalizer is maximal in $G$ by Lemma~\ref{lem:B}.
-For every certified simple group $S$ and every coordinate closure
-$\Inn(S)\leq X\leq\Aut(S)$, a successful record identifies two distinct
-$X$-stable subgroup classes, their exact class identities and orders, an
-obstruction prime, and the strict valuation gap required by
-Theorem~\ref{thm:D}. For ordinary records the selected subgroups are maximal
-in $S$. A maximal-class pair is available for every coordinate closure except
-in designated closures of six simple groups:
+For each group treated computationally, the selected subgroup classes are
+maximal in $S$ except for the following six groups:
 \[
  \PSL(3,2),\ \PSL(2,11),\ A_6,\ \PSL(3,4),\ \Sp(4,4),\ \PSL(5,2).
 \]
 More precisely, the exceptional closures are $x=2$ for $\PSL(3,2)$ and
-$\PSL(2,11)$; $X/\Inn(S)\in\{2_2,2_3,2^2\}$ for $A_6$; several recorded
+$\PSL(2,11)$; $X/\Inn(S)\in\{2_2,2_3,2^2\}$ for $A_6$; several
 closures for $\PSL(3,4)$; $x=4$ for $\Sp(4,4)$; and $x=2$ for
-$\PSL(5,2)$. For the first four groups, the computation additionally
-certifies normal saturation by three distinct overgroup and embedding-orbit
-implementations. They share the same GAP runtime, group representations, and
-pinned subgroup data, so their agreement is a cross-check within that shared
-trust base rather than independent software verification. For $\Sp(4,4)$ and
-$\PSL(5,2)$,
+$\PSL(5,2)$. In these closures the selected class need not be maximal in $S$,
+but its product normalizer is maximal in $G$ by Lemma~\ref{lem:B}. For the
+first four groups, normal saturation was checked by three different
+overgroup and embedding-orbit calculations. These calculations use the same
+GAP installation, group representations, and subgroup data, so their agreement
+is a consistency check rather than an independent computation. For
+$\Sp(4,4)$ and $\PSL(5,2)$,
 Lemma~\ref{lem:P} proves saturation and stable-poset maximality structurally.
 Thus Corollary~\ref{cor:supplement-engine} and Theorem~\ref{thm:D} apply to
-every record.
+all of these cases.
 
-\emph{Representative certificates.}
-Example~\ref{ex:a5} records the ordinary tuple
-$(|A_4|,|S_3|,5,1)$. A stable-poset substitute record for $\PSL(3,2)$ with $x=2$ uses
+For illustration, Example~\ref{ex:a5} gives the tuple
+$(|A_4|,|S_3|,5,1)$. For $\PSL(3,2)$ with $x=2$, the computation uses
 the pair $(S_3,7{:}3)$ at $r=2$, with valuation gap $2>1$.
 For $\Sp(4,4)$ with $x=4$, the pair is a Borel subgroup and the subfield
-subgroup $\Sp(4,2)$, with certificate primes $5$ and $17$. For
+subgroup $\Sp(4,2)$, with obstruction primes $5$ and $17$. For
 $\PSL(5,2)$ with $x=2$, the selected classes are the incident-flag
-parabolics $(Q_{\{2,3\}},Q_{\{1,4\}})$, with certificate primes $5$ and
+parabolics $(Q_{\{2,3\}},Q_{\{1,4\}})$, with obstruction primes $5$ and
 $31$. The last two pairs are also instances of the uniform graph-fusion
 constructions in Appendix~\ref{app:graph}.
 
-\emph{Identity, completeness, and cross-checks.}
-Each coordinate closure has a SHA-256 action fingerprint together with
-intrinsic quotient and kernel data; the checker requires every required
-closure exactly once. Each subgroup record carries its class identity, so
-same-order non-conjugate classes are not identified by order alone. The
-completeness assumptions are explicit: the two finite inventories and the
-relevant subgroup classes in the pinned GAP data are assumed complete.
-An independent routing and coverage check verifies that every inventory entry
-is routed exactly once, and the three saturation implementations fail on any
-disagreement.
-The repository supplement exposes the challenge data and the independently
-parsed successful records.
+The calculation treats each coordinate closure separately, distinguishing the
+permutation actions by their intrinsic kernel and quotient data. It also uses
+subgroup-class identities, rather than orders alone, so that non-conjugate
+classes of the same order remain distinct. Completeness of the two finite
+group lists and of the relevant subgroup classes in the GAP data is assumed.
+Every required group and coordinate closure is checked once, and the three
+normal-saturation calculations are compared in the cases where they apply.
 \end{proof}
 
 \subsection{Sporadic groups and the Tits group}
 
-\begin{proposition}[Certified sporadic and Tits cases]\label{prop:sporadic}
+\begin{proposition}[Sporadic groups and the Tits group]\label{prop:sporadic}
 Every sporadic simple group is excluded, as is the Tits group
 ${}^2F_4(2)'$.
 \end{proposition}
 
 \begin{proof}
-\emph{Inventory and certificate content.}
 The six groups $M_{11},M_{12},M_{22},M_{23},J_1,J_2$ lie in
 Proposition~\ref{prop:base}. The remaining $20$ sporadic groups are
 \[
@@ -1763,183 +1708,99 @@ M_{24},J_3,J_4,\mathrm{HS},\mathrm{McL},\mathrm{Co}_1,\mathrm{Co}_2,
 \mathrm{Ly},\mathrm{Th},B,M.
 \end{gathered}
 \]
-For each of these groups and the Tits group, a certificate records two stable
+For each of these groups and the Tits group, GAP verifies two stable
 maximal-subgroup classes, their published class identities and orders, an
-obstruction prime, and the valuation gap. The resulting $42$ selected-class
-records are bound to the group, character-table identifier, pinned maximal-list
-position, and exact order. If $\Out(S)=1$, stability is automatic. If
-$|\Out(S)|=2$, the selected order occurs exactly once in the complete pinned
-list of maximal-subgroup classes, so automorphisms must preserve that class.
-This unique-order argument is the only point here at which completeness of the
-pinned maximal-subgroup list is logically required; no stored class fusion is
+obstruction prime, and the valuation gap. Altogether this gives $42$ selected
+classes. If $\Out(S)=1$, stability is automatic. If
+$|\Out(S)|=2$, the selected order occurs exactly once in the complete
+list of maximal-subgroup classes used in the computation, so automorphisms must
+preserve that class. This unique-order argument is the only point here at which
+completeness of that list is logically required; no stored class fusion is
 assumed.
 
-\emph{Representative certificates.}
-The Monster record uses maximal-list positions $45,46$, and the Baby Monster
-record uses positions $29,30$. Their respective pairs and primes are
+For example, the respective pairs and primes for the Monster and Baby Monster
+are
 \[
  (59{:}29,41{:}40),\quad r=71;
  \qquad
  (L_2(11){.}2,47{:}23),\quad r=31.
 \]
-These examples are illustrative; the claim uses all $42$ records rather than
-the samples alone.
+These examples are illustrative; the proposition uses all $42$ selected
+classes rather than these samples alone.
 
-The selected records are cross-checked against the published \textsc{Atlas}
-and pinned character-table-library data \cite{CTblLib,ATLAS}, Wilson's
+The selected classes are compared with the published \textsc{Atlas}
+and GAP Character Table Library data \cite{CTblLib,ATLAS}, Wilson's
 corrected sporadic tables
 \cite[\S4, pp.~66--68]{Wilson2017}, and their provenance account
 \cite[\S2, pp.~23--24]{BreuerMalleOBrien2017}. The Tits entries also have the
 independent sources \cite[pp.~553--563]{Wilson1984} and
 \cite{Tchakerian1986}; the Monster entries use Theorems~1.1--1.2 and Table~1
 of \cite[pp.~862--863]{DietrichEtAl2026}. These source checks identify the
-mathematical maximal-subgroup claims; GAP \cite{GAP} supplies the finite
-certificates.
+mathematical maximal-subgroup claims; GAP performs the finite calculations.
 \end{proof}
 
-\subsection{Family-arithmetic certificates}
+\subsection{Checks of the family arithmetic}
 
-The family proofs use an exact $34$-branch arithmetic manifest. A universal
-checker matches every branch to its cited group order, Levi order,
-outer-automorphism bound, maximality source, and Zsigmondy invocation; it also
-routes all exceptional parameters to substitute primes or finite records. The
-positive-base Zsigmondy exception occurs in $12$ branches, representing seven
-distinct exception records, and every one is matched to its finite destination
-or substitute-prime argument. A separately authored symbolic implementation
-reproduces all $34$ branches, bounds, residue arguments, and exceptional
-valuations without reading that manifest, and Lean checks the resulting
-conditional arithmetic statements. The published formulas and classification
+The arithmetic in the family proofs was checked branch by branch. For each of
+the $34$ branches, the calculation substitutes the stated group and Levi
+orders, outer-automorphism bound, maximality result, and
+primitive-prime-divisor choice, and verifies the required valuation inequality.
+The positive-base exception to Zsigmondy's theorem occurs in $12$ branches,
+representing seven distinct cases; each is handled by the finite computation
+or substitute-prime argument cited in the proof. A separate symbolic
+calculation obtains the same inequalities and exceptional valuations directly
+from the formulas, and the corresponding conditional arithmetic statements
+have been formalized in Lean. The published formulas and classification
 results remain external inputs.
 
-Finite sweeps over $1272$ projective-linear prime powers, alternating degrees
-through $10^4$, and $7892$ Lie-type parameter instances, with ranks through
-$25$ and field sizes through $3000$, returned no failures. These are regression
-checks, not proofs of the universally quantified family statements. Their role
-is to detect transcription or implementation errors in the formulas proved in
-Appendix~\ref{app:families}, not to replace those proofs.
+As a further check, the formulas were evaluated for $1272$ projective-linear
+prime powers, alternating degrees through $10^4$, and $7892$ Lie-type
+parameter instances, with ranks through $25$ and field sizes through $3000$;
+no counterexample was found. These finite computations do not prove the
+universally quantified family statements, which follow from the arguments in
+Appendix~\ref{app:families}.
 
-\section{Verification and trust boundary}\label{app:trust}
+\section{Supplementary formal verification}\label{app:trust}
 
-The proof spine and the classification/computation layer are separated in
-Tables~\ref{tab:trust-spine} and~\ref{tab:trust-coverage}, so that each row
-states both its evidentiary mode and its external assumptions.
+The theorem is proved above by ordinary mathematical arguments, using the
+cited classification results and the GAP computations of
+Appendix~\ref{app:finite}. Supplementary Lean and Rocq formalizations check
+several parts of the argument but do not constitute an end-to-end formal proof.
 
-\begin{table}[htbp]
-\footnotesize
-\setlength{\tabcolsep}{4pt}
-\renewcommand{\arraystretch}{1.12}
-\begin{tabular}{@{}L{0.30\textwidth}L{0.15\textwidth}L{0.23\textwidth}L{0.25\textwidth}@{}}
-\toprule
-Claim & Ordinary proof relative to cited inputs & Formal coverage & External or trusted input \\
-\midrule
-Property $\mathrm{P}$ and quotient inheritance & Complete & Lean: complete & Standard finite-group definitions \\
-Minimal-counterexample core & Complete & Lean: complete; Rocq interface input & Standard finite-group facts \\
-Characteristically simple direct-power decomposition & Complete & Rocq producer; Lean reindexing consumer & Rocq--Lean semantic correspondence \\
-Faithful wreath realization and quotient divisor & Complete & Lean: complete & Explicit direct-power equivalence \\
-Product-supplement intersection and exact order & Complete & Lean: conditional & Stable-class hypotheses \\
-Product-normalizer maximality & Complete & Lean: conditional & Stable-poset and saturation inputs \\
-Nonconjugacy and valuation contradiction & Complete & Lean: conditional; Python arithmetic cross-check & Stable-class and order hypotheses \\
-Main theorem end to end & Complete relative to cited external inputs & Not end-to-end formalized & CFSG, classifications, formal interface, and finite certificates \\
-\bottomrule
-\end{tabular}
-\caption{Ordinary and formal status of the conceptual proof spine.}
-\label{tab:trust-spine}
-\end{table}
+In Lean, quotient inheritance and the minimal-counterexample reduction are
+proved through uniqueness and characteristic simplicity of the minimal normal
+subgroup, solubility of the quotient, triviality of the centralizer, and
+faithfulness of the conjugation action. Under the normalized coordinate
+hypotheses, Lean also proves the product-supplement intersection and order
+formula, maximality, nonconjugacy, the subgroup-product divisibility step, and
+the valuation contradiction for every $k$. The conditional arithmetic
+inequalities used in the $34$ family cases are formalized as well; the group
+and Levi orders, maximal-subgroup results, outer-automorphism bounds, and
+applications of Zsigmondy's theorem remain external hypotheses.
 
-\begin{table}[htbp]
-\footnotesize
-\setlength{\tabcolsep}{4pt}
-\renewcommand{\arraystretch}{1.12}
-\begin{tabular}{@{}L{0.27\textwidth}L{0.22\textwidth}L{0.19\textwidth}L{0.24\textwidth}@{}}
-\toprule
-Coverage claim & GAP/Python role & Formal status & External or shared trust base \\
-\midrule
-Universal family arithmetic & Manifest, symbolic implementation, and regression sweeps & Lean: conditional branch theorems & Published group, Levi, outer, maximality, and Zsigmondy data \\
-Graph-fusion flag-parabolic substitutes & Selected finite checks only & \texttt{PAR-NOVELTY} not closed in Lean & Cited $BN$-pair and parabolic theory \\
-Finite-range and sporadic coverage & GAP certificates and Python parsing & Not formalized & Pinned GAP, \textsc{Atlas}, and character-table completeness \\
-Cross-kernel coordinate interface & Signature and source-token checks & Rocq producer and Lean consumer each kernel-checked & Semantic correspondence between the two libraries \\
-Evidence closure and mutation tests & Hash closure and deliberate fault detection & Not a mathematical proof layer & Shared files, runtimes, and pinned data are explicit \\
-\bottomrule
-\end{tabular}
-\caption{Computational, classification, and cross-kernel trust boundary.}
-\label{tab:trust-coverage}
-\end{table}
-
-Lean's strongest reader-facing output is the conditional product-supplement
-spine: exact subgroup orders, maximality, nonconjugacy, the wreath-top divisor,
-and a strict valuation gap imply that property $\mathrm{P}$ fails. The working
-source tree contains a Comparator package that states this proposition
-independently of the project implementation and checks the project theorem
-against that statement.
-It does not import CFSG coverage, the flag-parabolic substitute step, or finite GAP certificates
-as formal theorems.
-
-More explicitly, Lean checks quotient inheritance and the minimal-order core:
-uniqueness and characteristic simplicity of the minimal normal subgroup,
-its non-solubility, the solubility of the quotient, its trivial centralizer,
-and faithfulness of the conjugation action. Under the normalized coordinate
-hypotheses it checks the product-supplement intersection and exact order,
-maximality, nonconjugacy, the subgroup-product lower-divisibility bridge, and
-the universal-in-$k$ arithmetic contradiction. It also checks the conditional
-arithmetic deductions for all $34$ family branches. The group and Levi orders,
-outer-automorphism and maximality data, and Zsigmondy inputs remain the cited
-external hypotheses of those branch theorems.
-
-The coverage manifest retains the historical identifier
-\texttt{PAR-NOVELTY}. It denotes the flag-parabolic substitute used when graph
-automorphisms fuse parabolic classes.
-It remains explicitly not closed in Lean; its proof is the ordinary argument
-of Lemma~\ref{lem:P} and the representative application in
-\S\ref{sec:applications}, using the cited parabolic theory.
-
-Rocq/MathComp proves that the relevant finite characteristically simple
-non-soluble group is an internal direct product of $k>0$ automorphic copies of
-one non-soluble, non-abelian simple subgroup $S$, with $|N|=|S|^k$, and also
-constructs an isomorphism to the corresponding external coordinate product.
-Lean reindexes the nonempty coordinate type to $\{1,\ldots,k\}$ and consumes
-the resulting equivalence $N\cong S^k$. It then constructs the coordinate
-factors, proves that automorphisms permute them, constructs the faithful map
-$\Aut(S^k)\to\Aut(S)\wr S_k$, proves transitivity of the $G$-action on the
-factors, identifies the inverse image of $\Inn(S)^k$ as $N$, normalizes the
-coordinate closure, and proves
+Rocq/MathComp proves that the finite characteristically simple non-soluble
+normal subgroup is an internal direct product of $k>0$ automorphic copies of a
+non-abelian simple group $S$, with $|N|=|S|^k$, and constructs the corresponding
+isomorphism with an external direct power. From an equivalence $N\cong S^k$,
+Lean constructs the coordinate factors and the faithful homomorphism
+$\Aut(S^k)\to\Aut(S)\wr S_k$, proves transitivity on the factors, identifies
+the inverse image of $\Inn(S)^k$, and proves
 \[
  |G/N|\mid |X/\Inn(S)|^k k!.
 \]
-No single kernel checks the translation between the two libraries' notions of
-subgroup isomorphism and external product; that translation is the stated
-trusted interface. The fail-closed formal interface checker identifies the
-exact producer, reindexer, and consumer declarations and rejects drift in the
-enumerated signatures and definition-source tokens. It does not decide
-arbitrary semantic equivalence across the two libraries. The mathematical
-identification between the two formulations therefore remains an audited
-trusted correspondence, along with both kernels and their pinned libraries.
-
-GAP certifies only the finite inventories and subgroup-class facts stated in
-Appendix~\ref{app:finite}. Python independently parses those certificates,
-checks coverage and source-map topology, and reproduces the family arithmetic.
-Finite parameter sweeps are regression tests, not proofs of universal
-statements. The proof-essential scripts are deterministic and fail closed:
-a skipped case, soft failure, ambiguous identity, missing datum, version
-mismatch, or byte-level certificate mismatch is fatal. Finite records retain
-class positions and guard fingerprints as well as orders, primes, and
-valuations; superseded exploratory scripts are excluded from the proof-evidence
-manifests. The main theorem therefore remains an ordinary mathematical proof
-supported by partial formal verification, certified finite computation, and
-explicit external classification inputs.
+No single proof assistant checks the translation between the MathComp and Lean
+formulations of subgroup isomorphism and external direct product. Neither
+formalization includes the classification of finite simple groups, the cited
+maximal-subgroup classifications, the flag-parabolic argument for graph
+fusion, or the finite GAP computations.
 
 \section*{Statements and Declarations}
 
 \subsection*{Data availability}
-The exact source and evidence tree is archived as release 1.1.2
-\cite{Repo}. Its GitHub tag and Zenodo version record contain the manuscript,
-formal developments, GAP programs, finite certificates, arithmetic manifests,
-source maps, independent checkers, and computational-environment recipe
-described here. The repository guide maps each computational claim to its
-artifact; Appendices~\ref{app:finite} and \ref{app:trust} state the
-mathematical claims and trust boundary without requiring operational log names
-in the proof narrative. Runtime tools and direct downloads are version- or
-hash-pinned, but the Debian package snapshot and complete opam solver closure
-are not frozen; long-term replay is not fully hermetic at those layers.
+Source code and detailed output for the computations in
+Appendix~\ref{app:finite}, together with the supplementary formal developments,
+are archived as release 1.1.2 \cite{Repo}. The repository records the software
+versions, external data, and assumptions needed to reproduce these checks.
 
 \subsection*{Funding}
 This research received no external funding.
