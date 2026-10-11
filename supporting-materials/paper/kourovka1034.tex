@@ -45,7 +45,7 @@
 \newcommand{\vp}[1]{v_{#1}}
 \newcolumntype{L}[1]{>{\raggedright\arraybackslash}p{#1}}
 
-\title[Groups factorized by non-conjugate maximal subgroups]{Finite groups
+\title[Factorizations by non-conjugate maximal subgroups]{Finite groups
 that are the product of every pair of non-conjugate maximal subgroups are
 soluble}
 
@@ -66,20 +66,15 @@ groups, simple groups, Kourovka Notebook Problem 10.34}
 We prove that every finite group that is the product of every pair of its
 non-conjugate maximal subgroups is soluble, answering Problem 10.34 of the
 Kourovka Notebook. The almost-simple case was proved by Tikhonenko and
-Tyutyanov. We treat the remaining minimal-counterexample branch, where the
-unique minimal normal subgroup has the form $S^k$, with $S$ nonabelian simple
-and $k\geq2$. Two automorphism-stable coordinate subgroup classes satisfying a
-maximal-supplement criterion produce non-conjugate maximal supplements. If the
-factorization hypothesis held, their product would impose a $p$-adic
-divisibility requirement growing linearly with $k$, while the quotient
-contributes only coordinate outer automorphisms and a factor dividing $k!$. A
-fixed valuation gap therefore excludes every $k\geq2$ at once. Suitable
-subgroup classes are constructed uniformly across the infinite families of
-finite simple groups using parabolic, torus, and primitive-prime-divisor
-arguments; stable flag parabolics handle graph fusion, while GAP computations
-verify the remaining finite and sporadic cases. The resulting all-$k$
-obstruction provides a reusable mechanism for eliminating direct-power socles
-in finite-group factorization problems.
+Tyutyanov. We treat the remaining minimal-counterexample case with socle
+$S^k$, $k\geq2$. Two automorphism-stable coordinate subgroup classes yield
+non-conjugate maximal supplements. Under the factorization hypothesis their
+product forces a $p$-adic divisibility requirement whose exponent grows
+linearly with $k$, whereas the quotient contributes only coordinate outer
+automorphisms and a factor dividing $k!$. A fixed valuation gap excludes all
+$k\geq2$. Uniform parabolic, torus, and primitive-prime-divisor arguments
+cover the infinite simple-group families, while GAP computations handle the
+remaining finite and sporadic cases.
 \end{abstract}
 
 \maketitle
@@ -117,10 +112,6 @@ Yang submitted a separately authored preprint dated 19 August 2026 that states
 the same theorem \cite{LiYang2026}. Their argument differs from ours in that it
 uses product--socle lifting from nonfactorizing almost-simple coordinate
 subgroups rather than the stable-class valuation obstruction.
-
-For comparison, Theorem~\ref{thm:Dprime}
-also recovers the almost-simple conclusion; it is not used in the proof of
-Theorem~\ref{thm:main}.
 
 The maximal factorizations of finite simple groups and their automorphism
 groups were classified by Liebeck, Praeger, and Saxl \cite{LPS1990}. Those
@@ -635,26 +626,6 @@ excludes a complement. The wreath-top valuation budget is shared preliminary
 machinery for two otherwise different arguments; neither proof reduces to the
 other criterion.
 
-The criterion has a $k=1$ counterpart, which recovers the almost
-simple case.
-
-\begin{theorem}[$k=1$: the almost simple case]\label{thm:Dprime}
-Let $S\leq G\leq\Aut(S)$ with $S$ non-abelian simple, and put $X:=G$,
-so that $x:=|G/S|=t$. Let $[V]\neq[W]$ be maximal elements of
-$\Pos_X(S)$, both normally saturating, and set $B_V:=N_G(V)$,
-$B_W:=N_G(W)$. Then:
-\begin{enumerate}
-\item $B_V\cap S=V$, $B_VS=G$, and $|B_V|=t|V|$;
-\item $B_V$ and $B_W$ are non-conjugate maximal subgroups of $G$;
-\item if $\eta=\vp{p}(|S|)-\vp{p}(|V|)-\vp{p}(|W|)>\vp{p}(x)$ for some
-prime $p$, then $G$ does not have property $\mathrm{P}$.
-\end{enumerate}
-\end{theorem}
-
-The proof is recorded in Appendix~\ref{app:almost-simple}. It is retained as
-a comparison with the $k\geq2$ mechanism and is not used in the proof of the
-main theorem.
-
 \begin{convention}\label{conv:excluded}
 From now on, ``$S$ is \emph{excluded}'' means: for every $X$ with
 $\Inn(S)\leq X\leq\Aut(S)$ there exist classes as in
@@ -932,9 +903,8 @@ classification of finite simple groups.
 
 \section{Supplementary and infinite-family proofs}\label{app:families}
 
-This appendix first records the unused $k=1$ comparison and then discharges the
-repetitive infinite-family obligations while the main body retains the two
-mechanisms that teach the method. Every family case follows the same
+This appendix discharges the repetitive infinite-family obligations while the
+main body retains the two mechanisms that teach the method. Every family case follows the same
 order: \emph{selected classes}; \emph{maximality and
 stability}; \emph{obstruction prime}; \emph{occurrence in $|S|$};
 \emph{avoidance of the selected subgroup orders}; \emph{outer contribution};
@@ -942,40 +912,6 @@ stability}; \emph{obstruction prime}; \emph{occurrence in $|S|$};
 stable-class criterion}. Closely related branches share a heading when the
 same argument proves several of these items at once.
 
-\subsection*{Supplementary almost-simple argument}\label{app:almost-simple}
-
-\begin{proof}[Proof of Theorem~\ref{thm:Dprime}]
-\emph{Supplement and order.} By the Frattini argument via $X$-stability,
-as in Lemma~\ref{lem:A}, we have $B_VS=G$. Moreover,
-$B_V\cap S=N_S(V)=V$, and hence $|B_V|=t|V|$.
-
-\emph{Maximality.} The proof of Lemma~\ref{lem:B} applies without its
-coordinate-kernel step; normal saturation enters only through that step and is
-not needed at $k=1$ (the hypothesis is kept for uniformity with
-Theorem~\ref{thm:D}). Let $B_V\leq H\leq G$ and put $T:=H\cap S$, an
-$H$-invariant subgroup containing $V$. If $T=S$, then $H\supseteq S$ and
-$H=HS=G$. Otherwise $G=B_VS=HS$. For $g=hs$, with $h\in H$ and
-$s\in S$, one has $T^g=(T^h)^s=T^s$; hence $[T]$ is $G$-stable and,
-since $X=G$, also $X$-stable. The normalizer tower of $T$ ends at a proper
-self-normalizing subgroup $U$. Stability propagates up the tower, so
-$[U]\in\Pos_X(S)$ and $[U]\geq[V]$. Poset maximality of $[V]$ forces
-$[U]=[V]$, and $V\leq T\leq U$ gives $T=V$. Thus
-$H\leq N_G(V)=B_V$.
-
-\emph{Nonconjugacy.} If $B_V^g=B_W$ with $g\in G$, then
-$V^g=(B_V\cap S)^g=B_W\cap S=W$, and $X$-stability of $[V]$ gives
-$[W]=[V]$, a contradiction.
-
-\emph{Arithmetic.} Property $\mathrm{P}$ would force $G=B_VB_W$, so
-$t\,|V||W|/|S|\in\Z$, equivalently $p^\eta\mid t=x$, contrary to
-$\eta>\vp{p}(x)$.
-\end{proof}
-
-Applying Theorem~\ref{thm:Dprime} to the witnesses in
-Proposition~\ref{prop:coverage} gives a supplementary proof that no almost
-simple group has property $\mathrm{P}$. This comparison is not used in the
-proof of Theorem~\ref{thm:main}, whose $k=1$ branch continues to use
-Tikhonenko--Tyutyanov \cite{TT2010}.
 
 \subsection*{Common inputs for the family analysis}\label{app:common-inputs}
 
