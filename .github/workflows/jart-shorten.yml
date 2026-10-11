@@ -24,19 +24,38 @@ jobs:
         run: |
           python3 - <<'PY'
           from pathlib import Path
-          import re
 
           path = Path('supporting-materials/paper/kourovka1034.tex')
           text = path.read_text()
 
-          # Journal-compliant running title.
-          old = r'\title[Groups factorized by non-conjugate maximal subgroups]'
-          new = r'\title[Factorizations by non-conjugate maximal subgroups]'
-          if old not in text:
-              raise SystemExit('expected running title not found')
-          text = text.replace(old, new, 1)
+          def replace_once(old, new, label):
+              global text
+              if text.count(old) != 1:
+                  raise SystemExit(f'{label}: expected exactly one match, found {text.count(old)}')
+              text = text.replace(old, new, 1)
 
-          # A shorter abstract preserves every substantive element while fitting JART's concise-abstract preference.
+          def cut_between(start, end, label):
+              global text
+              a = text.find(start)
+              if a < 0:
+                  raise SystemExit(f'{label}: start marker not found')
+              b = text.find(end, a)
+              if b < 0:
+                  raise SystemExit(f'{label}: end marker not found')
+              text = text[:a] + '\n' + text[b:]
+
+          replace_once(
+              r'\title[Groups factorized by non-conjugate maximal subgroups]',
+              r'\title[Factorizations by non-conjugate maximal subgroups]',
+              'running title',
+          )
+
+          abstract_start = text.find(r'\begin{abstract}')
+          abstract_end_marker = r'\end{abstract}'
+          abstract_end = text.find(abstract_end_marker, abstract_start)
+          if abstract_start < 0 or abstract_end < 0:
+              raise SystemExit('abstract markers not found')
+          abstract_end += len(abstract_end_marker)
           abstract = r'''\begin{abstract}
           We prove that every finite group that is the product of every pair of its
           non-conjugate maximal subgroups is soluble, answering Problem 10.34 of the
@@ -51,55 +70,39 @@ jobs:
           cover the infinite simple-group families, while GAP computations handle the
           remaining finite and sporadic cases.
           \end{abstract}'''
-          text, n = re.subn(r'\\begin\{abstract\}.*?\\end\{abstract\}', abstract, text, count=1, flags=re.S)
-          if n != 1:
-              raise SystemExit(f'abstract replacement count={n}')
+          text = text[:abstract_start] + abstract + text[abstract_end:]
 
-          # The paper already uses Tikhonenko--Tyutyanov for k=1.  The following
-          # theorem and appendix proof are explicitly supplementary and unused in the
-          # proof of the main theorem, so remove them rather than compressing any
-          # proof-essential family casework.
-          intro_compare = '''For comparison, Theorem~\\ref{thm:Dprime}
+          replace_once(
+              '''For comparison, Theorem~\\ref{thm:Dprime}
           also recovers the almost-simple conclusion; it is not used in the proof of
           Theorem~\\ref{thm:main}.
 
-          '''
-          if intro_compare not in text:
-              raise SystemExit('intro comparison paragraph not found')
-          text = text.replace(intro_compare, '', 1)
-
-          body_pat = re.compile(
-              r'\nThe criterion has a \$k=1\$ counterpart, which recovers the almost\n'
-              r'simple case\.\n\n'
-              r'\\begin\{theorem\}\[\$k=1\$: the almost simple case\]\\label\{thm:Dprime\}.*?'
-              r'The proof is recorded in Appendix~\\ref\{app:almost-simple\}\. It is retained as\n'
-              r'a comparison with the \$k\\geq2\$ mechanism and is not used in the proof of the\n'
-              r'main theorem\.\n\n',
-              re.S,
+          ''',
+              '',
+              'intro comparison paragraph',
           )
-          text, n = body_pat.subn('\n', text, count=1)
-          if n != 1:
-              raise SystemExit(f'optional k=1 theorem removal count={n}')
 
-          old_appendix_intro = '''This appendix first records the unused $k=1$ comparison and then discharges the
+          cut_between(
+              '\nThe criterion has a $k=1$ counterpart, which recovers the almost\nsimple case.\n',
+              '\\begin{convention}\\label{conv:excluded}',
+              'optional k=1 theorem',
+          )
+
+          replace_once(
+              '''This appendix first records the unused $k=1$ comparison and then discharges the
           repetitive infinite-family obligations while the main body retains the two
-          mechanisms that teach the method.'''
-          new_appendix_intro = '''This appendix discharges the repetitive infinite-family obligations while the
-          main body retains the two mechanisms that teach the method.'''
-          if old_appendix_intro not in text:
-              raise SystemExit('appendix introduction not found')
-          text = text.replace(old_appendix_intro, new_appendix_intro, 1)
-
-          app_pat = re.compile(
-              r'\n\\subsection\*\{Supplementary almost-simple argument\}\\label\{app:almost-simple\}.*?'
-              r'(?=\n\\subsection\*\{Common inputs for the family analysis\}\\label\{app:common-inputs\})',
-              re.S,
+          mechanisms that teach the method.''',
+              '''This appendix discharges the repetitive infinite-family obligations while the
+          main body retains the two mechanisms that teach the method.''',
+              'appendix introduction',
           )
-          text, n = app_pat.subn('\n', text, count=1)
-          if n != 1:
-              raise SystemExit(f'supplementary appendix removal count={n}')
 
-          # Fail closed on dangling references to the deleted optional comparison.
+          cut_between(
+              '\n\\subsection*{Supplementary almost-simple argument}\\label{app:almost-simple}',
+              '\n\\subsection*{Common inputs for the family analysis}\\label{app:common-inputs}',
+              'supplementary almost-simple appendix',
+          )
+
           for token in ('thm:Dprime', 'app:almost-simple', 'Supplementary almost-simple argument'):
               if token in text:
                   raise SystemExit(f'dangling deleted-comparison token: {token}')
