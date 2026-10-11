@@ -1,0 +1,136 @@
+name: One-shot JART manuscript shortening
+
+on:
+  push:
+    branches:
+      - jart-25-page
+    paths:
+      - .github/workflows/jart-shorten.yml
+
+permissions:
+  contents: write
+
+jobs:
+  shorten-and-build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: jart-25-page
+          fetch-depth: 0
+
+      - name: Shorten manuscript without touching the main proof
+        shell: bash
+        run: |
+          python3 - <<'PY'
+          from pathlib import Path
+          import re
+
+          path = Path('supporting-materials/paper/kourovka1034.tex')
+          text = path.read_text()
+
+          # Journal-compliant running title.
+          old = r'\title[Groups factorized by non-conjugate maximal subgroups]'
+          new = r'\title[Factorizations by non-conjugate maximal subgroups]'
+          if old not in text:
+              raise SystemExit('expected running title not found')
+          text = text.replace(old, new, 1)
+
+          # A shorter abstract preserves every substantive element while fitting JART's concise-abstract preference.
+          abstract = r'''\begin{abstract}
+          We prove that every finite group that is the product of every pair of its
+          non-conjugate maximal subgroups is soluble, answering Problem 10.34 of the
+          Kourovka Notebook. The almost-simple case was proved by Tikhonenko and
+          Tyutyanov. We treat the remaining minimal-counterexample case with socle
+          $S^k$, $k\geq2$. Two automorphism-stable coordinate subgroup classes yield
+          non-conjugate maximal supplements. Under the factorization hypothesis their
+          product forces a $p$-adic divisibility requirement whose exponent grows
+          linearly with $k$, whereas the quotient contributes only coordinate outer
+          automorphisms and a factor dividing $k!$. A fixed valuation gap excludes all
+          $k\geq2$. Uniform parabolic, torus, and primitive-prime-divisor arguments
+          cover the infinite simple-group families, while GAP computations handle the
+          remaining finite and sporadic cases.
+          \end{abstract}'''
+          text, n = re.subn(r'\\begin\{abstract\}.*?\\end\{abstract\}', abstract, text, count=1, flags=re.S)
+          if n != 1:
+              raise SystemExit(f'abstract replacement count={n}')
+
+          # The paper already uses Tikhonenko--Tyutyanov for k=1.  The following
+          # theorem and appendix proof are explicitly supplementary and unused in the
+          # proof of the main theorem, so remove them rather than compressing any
+          # proof-essential family casework.
+          intro_compare = '''For comparison, Theorem~\\ref{thm:Dprime}
+          also recovers the almost-simple conclusion; it is not used in the proof of
+          Theorem~\\ref{thm:main}.
+
+          '''
+          if intro_compare not in text:
+              raise SystemExit('intro comparison paragraph not found')
+          text = text.replace(intro_compare, '', 1)
+
+          body_pat = re.compile(
+              r'\nThe criterion has a \$k=1\$ counterpart, which recovers the almost\n'
+              r'simple case\.\n\n'
+              r'\\begin\{theorem\}\[\$k=1\$: the almost simple case\]\\label\{thm:Dprime\}.*?'
+              r'The proof is recorded in Appendix~\\ref\{app:almost-simple\}\. It is retained as\n'
+              r'a comparison with the \$k\\geq2\$ mechanism and is not used in the proof of the\n'
+              r'main theorem\.\n\n',
+              re.S,
+          )
+          text, n = body_pat.subn('\n', text, count=1)
+          if n != 1:
+              raise SystemExit(f'optional k=1 theorem removal count={n}')
+
+          old_appendix_intro = '''This appendix first records the unused $k=1$ comparison and then discharges the
+          repetitive infinite-family obligations while the main body retains the two
+          mechanisms that teach the method.'''
+          new_appendix_intro = '''This appendix discharges the repetitive infinite-family obligations while the
+          main body retains the two mechanisms that teach the method.'''
+          if old_appendix_intro not in text:
+              raise SystemExit('appendix introduction not found')
+          text = text.replace(old_appendix_intro, new_appendix_intro, 1)
+
+          app_pat = re.compile(
+              r'\n\\subsection\*\{Supplementary almost-simple argument\}\\label\{app:almost-simple\}.*?'
+              r'(?=\n\\subsection\*\{Common inputs for the family analysis\}\\label\{app:common-inputs\})',
+              re.S,
+          )
+          text, n = app_pat.subn('\n', text, count=1)
+          if n != 1:
+              raise SystemExit(f'supplementary appendix removal count={n}')
+
+          # Fail closed on dangling references to the deleted optional comparison.
+          for token in ('thm:Dprime', 'app:almost-simple', 'Supplementary almost-simple argument'):
+              if token in text:
+                  raise SystemExit(f'dangling deleted-comparison token: {token}')
+
+          path.write_text(text)
+          PY
+
+      - name: Install LaTeX and PDF tools
+        run: |
+          sudo apt-get update -qq
+          sudo apt-get install -y -qq latexmk texlive-latex-extra texlive-fonts-recommended poppler-utils
+
+      - name: Build and enforce JART page limit
+        shell: bash
+        run: |
+          cd supporting-materials/paper
+          latexmk -pdf -interaction=nonstopmode -halt-on-error kourovka1034.tex
+          pages=$(pdfinfo kourovka1034.pdf | awk '/^Pages:/ {print $2}')
+          echo "Compiled manuscript pages: $pages"
+          if [ -z "$pages" ] || [ "$pages" -gt 25 ]; then
+            echo "JART requires at most 25 pages; got $pages" >&2
+            exit 1
+          fi
+          cp kourovka1034.pdf ../../kourovka1034.pdf
+
+      - name: Commit shortened source and rebuilt PDF
+        shell: bash
+        run: |
+          git config user.name "Richie Sater"
+          git config user.email "15129476+RichieSater@users.noreply.github.com"
+          git rm .github/workflows/jart-shorten.yml
+          git add supporting-materials/paper/kourovka1034.tex kourovka1034.pdf
+          git commit -m "Shorten 10.34 manuscript for JART submission"
+          git push origin HEAD:jart-25-page
